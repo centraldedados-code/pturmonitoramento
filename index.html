@@ -133,6 +133,24 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .fbtn{background:var(--br);border:1.5px solid #dde4ee;color:var(--az);font-size:10px;font-weight:700;padding:6px 14px;border-radius:20px;cursor:pointer;transition:all .18s;text-transform:uppercase;letter-spacing:.5px;font-family:'Montserrat',sans-serif}
 .fbtn.on,.fbtn:hover{background:var(--az);color:var(--am);border-color:var(--az)}
 
+/* PASTA CARD */
+.pcard{background:var(--br);border:1.5px solid #dde4ee;border-radius:12px;padding:16px 18px;transition:border-color .18s,transform .18s,box-shadow .18s;display:flex;flex-direction:column;gap:8px}
+.pcard:hover{border-color:var(--azs);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,183,215,.14)}
+.pcard.stR{border-left:4px solid var(--gv)}
+.pcard.stP{border-left:4px solid #c9940a}
+.pcard.stC{border-left:4px solid #cc2222}
+.pcard-mes{font-size:13px;font-weight:700;color:var(--az);font-family:'Montserrat',sans-serif}
+.pcard-fase{font-size:10px;color:#999}
+.pcard-terr{font-size:11px;color:var(--azs);font-weight:700;font-family:'Montserrat',sans-serif}
+.pcard-btn{display:inline-block;background:var(--az);color:var(--am);font-size:10px;font-weight:700;letter-spacing:.5px;padding:7px 14px;border-radius:8px;text-decoration:none;text-align:center;font-family:'Montserrat',sans-serif;transition:background .18s;margin-top:4px}
+.pcard-btn:hover{background:var(--azs);color:var(--br)}
+.pcard-btn.vazia{background:#dde4ee;color:#999;cursor:default;pointer-events:none}
+.pterr-grupo{margin-bottom:28px}
+.pterr-nome{font-size:13px;font-weight:700;color:var(--br);background:var(--az);padding:10px 16px;border-radius:10px 10px 0 0;font-family:'Montserrat',sans-serif;letter-spacing:.3px}
+.pterr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;background:var(--br);border:1.5px solid #dde4ee;border-top:none;border-radius:0 0 10px 10px;padding:14px}
+@media(max-width:900px){.pterr-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.pterr-grid{grid-template-columns:repeat(2,1fr)}}
+
 /* FOOTER */
 .foot{background:var(--az);border-radius:12px;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;margin-top:32px;flex-wrap:wrap;gap:10px}
 .ftxt{color:rgba(255,255,255,.45);font-size:11px}
@@ -184,6 +202,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
         <button class="nbtn" onclick="goV('relatorios')">Relatorios</button>
         <button class="nbtn" onclick="goV('evidencias')">Evidencias</button>
         <button class="nbtn" onclick="goV('diagnosticos')">Diagnosticos</button>
+        <button class="nbtn" onclick="goV('pastas')">Pastas Drive</button>
       </nav>
     </div>
   </header>
@@ -256,6 +275,13 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
       <div id="tbl-diag"></div>
     </div>
 
+    <!-- PASTAS DRIVE -->
+    <div class="vw" id="vw-pastas">
+      <div class="st">Pastas de Evidencias no Google Drive</div>
+      <div style="font-size:12px;color:#888;margin-bottom:20px">Clique em ABRIR PASTA para acessar a pasta do mes no Drive. Links preenchidos na aba LINKS_DRIVE da planilha.</div>
+      <div id="pastas-content"></div>
+    </div>
+
     <div class="foot">
       <div class="ftxt">Prospera Turismo - Instituto BR Arte x Prefeitura do Rio de Janeiro - 12 meses - 8 territorios</div>
       <div class="fbadge">Monitoramento Operacional</div>
@@ -268,6 +294,122 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 // CONSTANTES
 // ─────────────────────────────────────────────
 var SENHA = atob('QnJhcnRlQDIwMjY='); // Brarte@2026
+
+// ─── LINKS DAS PASTAS DO DRIVE (hardcoded) ──────────────────────────
+var LINKS_FIXOS = {
+  'Cantagalo': {
+    '2026-06': 'https://drive.google.com/drive/folders/1RiUJvyUSBTwtWE9EWMY8nGYZPRSUTGlY',
+    '2026-07': 'https://drive.google.com/drive/folders/1yRkGoW4JOUU18T_eLnhC9lMwh1iM0GZk',
+    '2026-08': 'https://drive.google.com/drive/folders/1e766bSEhiVoEOggxIWLuOl5f6U4si_kJ',
+    '2026-09': 'https://drive.google.com/drive/folders/1U1jW_T1YGUiiUYdrMP_RRPN02skjHQf4',
+    '2026-10': 'https://drive.google.com/drive/folders/18pnitM8dZbwfytYbpNwAHWdSCVmkLxZz',
+    '2026-11': 'https://drive.google.com/drive/folders/1s08jv1DJeqV3KX7StLIOZ5ytwkh_tJZj',
+    '2026-12': 'https://drive.google.com/drive/folders/10wGHVdS6_peIcb6GiTQ6UolJdgft6-lg',
+    '2027-01': 'https://drive.google.com/drive/folders/1APYLwdNXyDVMoOe9TtlC_2zgVB2F0Q-i',
+    '2027-02': 'https://drive.google.com/drive/folders/1accMgBp5XtRxb1dMBVBGpgXWmhmewvs2',
+    '2027-03': 'https://drive.google.com/drive/folders/1jKF4U2IqXOCB6PIVqS6l9OoAnGjIRjjr',
+    '2027-04': 'https://drive.google.com/drive/folders/1NyVp4wJtyDEb3HEhez0J1iR8vNMKnN1F',
+    '2027-05': 'https://drive.google.com/drive/folders/1wzS0NWBNF5MmogLRUdcb-2PTBfzogIJA'
+  },
+  'Chapéu Mangueira / Babilônia': {
+    '2026-06': 'https://drive.google.com/drive/folders/1FXasAVIwzy36zHgr2wSW2Fc1Sfq2SXa0',
+    '2026-07': 'https://drive.google.com/drive/folders/19XOhnIIK0sDHSneQUsWWwOoFpnq1f-ow',
+    '2026-08': 'https://drive.google.com/drive/folders/1a5ezzoS4cTWv9Cr-v4EWaxe8uzVnRSXS',
+    '2026-09': 'https://drive.google.com/drive/folders/1tzUvsMop58oPipguhJFDDSMzO9_KhfTw',
+    '2026-10': 'https://drive.google.com/drive/folders/1ULtYqGdHg23D7EWiP3fQyX5SzD1ZIAyB',
+    '2026-11': 'https://drive.google.com/drive/folders/14bxficm3P6Zq-m1diTa5bN6MyliDYxve',
+    '2026-12': 'https://drive.google.com/drive/folders/1f6E3aghv3DhpH8YuYjCK362MOTY8LeMZ',
+    '2027-01': 'https://drive.google.com/drive/folders/1CPWGucleIBMxbI7R27lH1MdElTPm9MhV',
+    '2027-02': 'https://drive.google.com/drive/folders/1Xf5H3LVQfRryIy72-EXAFPwOgCPOYDcy',
+    '2027-03': 'https://drive.google.com/drive/folders/1TS-CwvWxd7FnoABxWIuoAg3RXbLkd1wz',
+    '2027-04': 'https://drive.google.com/drive/folders/10xyo__t1fc4eNJhwEhNkVnB3uw9AC8_7',
+    '2027-05': 'https://drive.google.com/drive/folders/1N1aQt8ysyAklh3hVG9apLWz80dRHIiOz'
+  },
+  'Complexo da Maré': {
+    '2026-06': 'https://drive.google.com/drive/folders/1pcJTRdDlGU5--xge-Julk-rohfBUT31I',
+    '2026-07': 'https://drive.google.com/drive/folders/1ar9_82gk66ENiOSufxygE1NwI6iTFtbf',
+    '2026-08': 'https://drive.google.com/drive/folders/18qHqGWy_qDcUlh0gEpkEfv_r59NuCrZa',
+    '2026-09': 'https://drive.google.com/drive/folders/1yBi2-dhmGgkIRmyZsaSfd_BjdZLJyRPv',
+    '2026-10': 'https://drive.google.com/drive/folders/1xgrO6lhQk0o_7J0M4Tbf_2N1l-b3D-dI',
+    '2026-11': 'https://drive.google.com/drive/folders/1aChLU1nuuLJ21E4fCwpfnRdvcyW72DBF',
+    '2026-12': 'https://drive.google.com/drive/folders/1rFohu9YI85vzbHAvRWIFRe60WSJj3OKf',
+    '2027-01': 'https://drive.google.com/drive/folders/1z8bCKRIeKRvL0mEIt_uH8jCJxTiR82yg',
+    '2027-02': 'https://drive.google.com/drive/folders/1ebO-QODbqNJuYbKyeyvAc9E69A37Qa9g',
+    '2027-03': 'https://drive.google.com/drive/folders/1M8RGTWAjAN6Fjq4VMworzp2Q5Vq6vQpX',
+    '2027-04': 'https://drive.google.com/drive/folders/1MOrngLN2gcq4sSZSTGSRTYngpGJ5fy0X',
+    '2027-05': 'https://drive.google.com/drive/folders/1ELYXsgjqf3_rcaIZ4bbf-GlMbfT5GXSI'
+  },
+  'Complexo do Alemão': {
+    '2026-06': 'https://drive.google.com/drive/folders/1uuwVmuHEjJ439S9R3eCm0hYkrCmnvnxQ',
+    '2026-07': 'https://drive.google.com/drive/folders/1s21WVwqU2Ao8OQJbH5Z0efF7p7MbzjxC',
+    '2026-08': 'https://drive.google.com/drive/folders/1SGxkIogR7WberdTtXwBG5WByvxjCrMUv',
+    '2026-09': 'https://drive.google.com/drive/folders/14giIefJJ9i8ksW653stovTxRgGgnCBPT',
+    '2026-10': 'https://drive.google.com/drive/folders/1V69s1yhtl9ygB-ZjQUTm3hK6LBlvO2ru',
+    '2026-11': 'https://drive.google.com/drive/folders/1qxrRuGf07UTsqzrd2DBCqD7qN_qAiVPw',
+    '2026-12': 'https://drive.google.com/drive/folders/1bE-LyJ3leTR1j_siE4mIxbxhCtV2lLaT',
+    '2027-01': 'https://drive.google.com/drive/folders/1RMu9fx3wz0RWQ8WcuxaCYi8PINfMz2eB',
+    '2027-02': 'https://drive.google.com/drive/folders/1PqmcArRF48ihSJTda9-hJUWscR2qLWNt',
+    '2027-03': 'https://drive.google.com/drive/folders/1Outv4_uxqo00nR0Epo_J_VWT3kHTz99q',
+    '2027-04': 'https://drive.google.com/drive/folders/14wLMjCFgiT4yP4e1PpNOqC-4c4JgNv0y',
+    '2027-05': 'https://drive.google.com/drive/folders/1PRNgdw8eizb6dTvwi94xpbS3PjtiZbmo'
+  },
+  'Mangueira': {
+    '2026-06': 'https://drive.google.com/drive/folders/1WEtrEnJZuRigDU5P8SRU-Rb63TKjT0rp',
+    '2026-07': 'https://drive.google.com/drive/folders/19fVyARrDPOydcg23kk_9vZcfJ13AunJO',
+    '2026-08': 'https://drive.google.com/drive/folders/1K77rHk6AfmDvidhthMBNKVk7jawUsUb_',
+    '2026-09': 'https://drive.google.com/drive/folders/1HPSkQl9TTjp5syTG-UXehTLkWzVxkTAz',
+    '2026-10': 'https://drive.google.com/drive/folders/1fRoljYD7MFPMQdPaDGeT-jGbpzm96r-4',
+    '2026-11': 'https://drive.google.com/drive/folders/1uvVqfhHbv03gwh2CiokUdoZa1wPtVG50',
+    '2026-12': 'https://drive.google.com/drive/folders/1WWEmYq4B5C1doqNvJYa_LclRpFI33U9d',
+    '2027-01': 'https://drive.google.com/drive/folders/1zCSWClytShmyauHiGdcMQwLckPq6LJFH',
+    '2027-02': 'https://drive.google.com/drive/folders/16DDAtUrqxqe_NXVgKDXfUqMK4Xp8RIYa',
+    '2027-03': 'https://drive.google.com/drive/folders/1UmdGgvmufxkG9fktPOfjmPfdDrClXC6Z',
+    '2027-04': 'https://drive.google.com/drive/folders/1E2gFYSLZCcf7F_ehFiQoXpFoQewnpdTI',
+    '2027-05': 'https://drive.google.com/drive/folders/1x07jQrS3g72aJWKhal2rpQpXQPKEvmBX'
+  },
+  'Rocinha': {
+    '2026-06': 'https://drive.google.com/drive/folders/1p0vpuUA_s6k3jYzbLlKEoxYsBxNzASMq',
+    '2026-07': 'https://drive.google.com/drive/folders/1oohqYtRHfrUV9_ge4FqgDE71f1a3I-_g',
+    '2026-08': 'https://drive.google.com/drive/folders/12d_NLGAJCnpkZx4HFEY2n1ELXz6GGRCf',
+    '2026-09': 'https://drive.google.com/drive/folders/1Wm3130c8_YtFNN9xea13EH8QN4b0uZDq',
+    '2026-10': 'https://drive.google.com/drive/folders/1VwJza-DP57-nnm4Vp3qFNLYmJrD-qQA1',
+    '2026-11': 'https://drive.google.com/drive/folders/1dcdeCpxPbS_8_W8CSwsU6ApZTvYwTdcT',
+    '2026-12': 'https://drive.google.com/drive/folders/1mS-vY_dyL-61Tu8TAPMmLbZHRVCerrts',
+    '2027-01': 'https://drive.google.com/drive/folders/1ofy4y9jv-L1pqoakx4UycDjTtCpdzjPA',
+    '2027-02': 'https://drive.google.com/drive/folders/1s1NdugF6poqQCcX9kY-HWyC0ZyLxM87Z',
+    '2027-03': 'https://drive.google.com/drive/folders/15Hrm5hgAzUGOAzFud0n7Pr9H5xJzlrS5',
+    '2027-04': 'https://drive.google.com/drive/folders/1Ybq8tzIDF9IOW4w2-R45kyQ2bDVP_Rzd',
+    '2027-05': 'https://drive.google.com/drive/folders/1mpJ66m3KIZQ4B2bHw-KgF6Iksb-B2slh'
+  },
+  'Santa Marta': {
+    '2026-06': 'https://drive.google.com/drive/folders/1DkW8ghC8JUA25OpupwzHjoSjKJdPAZ0m',
+    '2026-07': 'https://drive.google.com/drive/folders/1FxToYt-AEMigVo3CwxXDsj184XOm7Hoy',
+    '2026-08': 'https://drive.google.com/drive/folders/1Yv-pLLWxuRsK8Cg-eQsRw_Qv7fcpeysz',
+    '2026-09': 'https://drive.google.com/drive/folders/1rJvXC8Ulr9FDe6hEzLQrT7Uv7WvIZB9C',
+    '2026-10': 'https://drive.google.com/drive/folders/102EfN8aUhltimZV22gvVr4_HZdIQSHdz',
+    '2026-11': 'https://drive.google.com/drive/folders/1P1O9I0p6pjikCB9HfQkFk8OJWkMXjGsP',
+    '2026-12': 'https://drive.google.com/drive/folders/1FSFrXVDbGRkH33VdeeExwPYTTOnmftUB',
+    '2027-01': 'https://drive.google.com/drive/folders/15HZYym7qNRKs3IyTGt8D-PBCKmQWIhAI',
+    '2027-02': 'https://drive.google.com/drive/folders/16YDwvQtSOKq7ls1lfZDT9Y5KeZo2XmEU',
+    '2027-03': 'https://drive.google.com/drive/folders/1ftgLQ7ftdKMU6IBm-VAS2y9586HGvX5w',
+    '2027-04': 'https://drive.google.com/drive/folders/1AoyXJjPfD7xqL-oUz6xHXDQcY5GwD8KP',
+    '2027-05': 'https://drive.google.com/drive/folders/17VubvYic-S7-60MddjM_noHEN1U7cf-5'
+  },
+  'Vidigal': {
+    '2026-06': 'https://drive.google.com/drive/folders/1faw4hQOU8hOLlFP7sLHAihbpsiZESH5H',
+    '2026-07': 'https://drive.google.com/drive/folders/1_sA4PTdw8uRF1oqZcEqpu7HAOVqhTlII',
+    '2026-08': 'https://drive.google.com/drive/folders/1-9B28UUySYhuvtBkaSJ9Wum4NQAo4xdd',
+    '2026-09': 'https://drive.google.com/drive/folders/1AH0YatwXz959hsjqJEik6RSUpdRhNy7P',
+    '2026-10': 'https://drive.google.com/drive/folders/1pBRLaJypKdwRcGpRnQ4RqbEy52Zbdt8Z',
+    '2026-11': 'https://drive.google.com/drive/folders/1IbgpxSC1I8HQrE4pR51iBlqPRLRQgLa3',
+    '2026-12': 'https://drive.google.com/drive/folders/1P5MTj43SYDBAl1PamtYwyoB9_RG0j1eB',
+    '2027-01': 'https://drive.google.com/drive/folders/1oe07OCbXs3sann8dS_UNbSzMamcJwQZA',
+    '2027-02': 'https://drive.google.com/drive/folders/133qTFLS7eTwttO235aQXo3chzn9hawR9',
+    '2027-03': 'https://drive.google.com/drive/folders/1uj8UC7wy_nK8_ZRHV3QdrmYJQ9ntxggU',
+    '2027-04': 'https://drive.google.com/drive/folders/1AmzRECkm3dkYp2ocA7D2p71V6c1DrTb6',
+    '2027-05': 'https://drive.google.com/drive/folders/1URA8LSDLqt5ofIcMXAHpHdRWp3nbw0w1'
+  }
+};
 
 // ─── PREENCHA APOS O DEPLOY DO WEB APP ─────────────────────────────
 // Cole aqui a URL do seu Apps Script Web App (termina em /exec)
@@ -444,6 +586,7 @@ function renderAll() {
   renderRel();
   renderEv();
   renderDiag();
+  renderPastas();
 }
 
 // ─────────────────────────────────────────────
@@ -574,7 +717,7 @@ function renderDetalhe(idx) {
   COMP_ORD.forEach(function(mes){
     var row = tR.find(function(r){return r['Competencia']===mes});
     var st = row ? stComp(row) : 'Pendente';
-    var lk = row ? (row['Link da Pasta Drive']||'') : '';
+    var lk = (LINKS_FIXOS[nome] && LINKS_FIXOS[nome][mes]) ? LINKS_FIXOS[nome][mes] : (row ? (row['Link da Pasta Drive']||'') : '');
     var obs = row ? (row['Observacao']||'') : '';
     h += '<div class="ccard st'+st.charAt(0)+'">';
     h += '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">';
@@ -841,6 +984,40 @@ function encTerr(t) {
 // ─────────────────────────────────────────────
 // INIT
 // ─────────────────────────────────────────────
+function renderPastas() {
+  var rows = LD();
+  var html = '';
+  TERR.forEach(function(terr) {
+    var terrRows = rows.filter(function(r){ return r['Territorio'] === terr; });
+    html += '<div class="pterr-grupo">';
+    html += '<div class="pterr-nome">' + terr + '</div>';
+    html += '<div class="pterr-grid">';
+    COMP_ORD.forEach(function(mes) {
+      var row = terrRows.find(function(r){ return r['Competencia'] === mes; });
+      var st  = row ? stComp(row) : 'Pendente';
+      var obs = row ? (row['Observacao'] || '') : '';
+      var lk  = (LINKS_FIXOS[terr] && LINKS_FIXOS[terr][mes])
+                ? LINKS_FIXOS[terr][mes]
+                : (row ? (row['Link da Pasta Drive'] || '') : '');
+      html += '<div class="pcard st' + st.charAt(0) + '">';
+      html += '<div style="display:flex;align-items:center;justify-content:space-between;gap:4px">';
+      html += '<div class="pcard-mes">' + MESES[mes] + '</div>';
+      html += '<span class="badge ' + bcl(st) + '" style="font-size:9px;padding:2px 7px">' + st + '</span>';
+      html += '</div>';
+      html += '<div class="pcard-fase">' + FASES[mes] + '</div>';
+      if (obs) html += '<div style="font-size:10px;color:#aaa;font-style:italic">' + obs + '</div>';
+      if (lk) {
+        html += '<a class="pcard-btn" href="' + lk + '" target="_blank">ABRIR PASTA</a>';
+      } else {
+        html += '<span class="pcard-btn vazia">SEM LINK</span>';
+      }
+      html += '</div>';
+    });
+    html += '</div></div>';
+  });
+  document.getElementById('pastas-content').innerHTML = html;
+}
+
 window.addEventListener('DOMContentLoaded', function(){
   if (sessionStorage.getItem('ptur_ok') === '1') {
     document.getElementById('pwd').classList.add('off');
