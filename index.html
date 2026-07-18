@@ -30,6 +30,9 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .pbtn:hover{background:var(--azs);color:var(--br)}
 .perr{color:#cc0000;font-size:12px;margin-top:8px;min-height:18px}
 .pfoot{margin-top:20px;font-size:11px;color:rgba(255,255,255,.4)}
+.pcapa{width:100%;max-width:700px;border-radius:12px;margin-bottom:20px;display:block}
+.plogo-img{height:80px;object-fit:contain;margin-bottom:16px;display:block;margin-left:auto;margin-right:auto}
+.pregua{width:100%;max-width:700px;margin-top:24px;display:block;border-radius:8px}
 
 /* LOADING */
 #ld{display:none;position:fixed;inset:0;z-index:500;background:var(--cz);align-items:center;justify-content:center;flex-direction:column;gap:16px}
@@ -143,16 +146,17 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 
 <!-- SENHA -->
 <div id="pwd">
+  <img class="pcapa" src="https://centraldedados-code.github.io/pturmonitoramento/assets/capa-prospera-turismo.png" alt="Prospera Turismo">
   <div class="pbox">
-    <div class="psub">PTUR - Prospera Turismo</div>
-    <div class="ptit">Sistema de Monitoramento Operacional</div>
+    <img class="plogo-img" src="https://centraldedados-code.github.io/pturmonitoramento/assets/logo-prospera-turismo.png" alt="Prospera Turismo">
+    <div class="psub">Sistema de Monitoramento Operacional</div>
     <div class="phint">Acesso restrito - Coordenacao Instituto BR Arte</div>
     <input class="pin" type="password" id="pf" placeholder="Senha de acesso"
            onkeydown="if(event.key==='Enter')chkPwd()">
     <button class="pbtn" onclick="chkPwd()">ACESSAR SISTEMA</button>
     <div class="perr" id="perr"></div>
   </div>
-  <div class="pfoot">Instituto BR Arte x Prefeitura do Rio de Janeiro</div>
+  <img class="pregua" src="https://centraldedados-code.github.io/pturmonitoramento/assets/regua-instituto-prefeitura.png" alt="Instituto BR Arte e Prefeitura Rio">
 </div>
 
 <!-- LOADING -->
@@ -166,7 +170,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
   <header class="hdr">
     <div class="hdri">
       <div style="display:flex;align-items:center;gap:16px">
-        <img id="logo" class="hlogo" src="" alt="Instituto BR Arte" onerror="this.style.display='none'">
+        <img id="logo" class="hlogo" src="https://centraldedados-code.github.io/pturmonitoramento/assets/regua-instituto-prefeitura.png" alt="Instituto BR Arte" style="filter:none;height:36px">
         <div class="hdiv"></div>
         <div>
           <div class="htit">PROSPERA TURISMO</div>
@@ -268,7 +272,7 @@ var SENHA = atob('QnJhcnRlQDIwMjY='); // Brarte@2026
 // ─── PREENCHA APOS O DEPLOY DO WEB APP ─────────────────────────────
 // Cole aqui a URL do seu Apps Script Web App (termina em /exec)
 // Exemplo: https://script.google.com/macros/s/AKfyc.../exec
-var APPS_SCRIPT_URL = 'COLE_A_URL_DO_WEB_APP_AQUI';
+var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzI3Qa16rLtpfn5-pPtDLL4TVbhwZ1Qre2ACXXIvr8qI2VRKUdH9sW5I5V37nOVWcgS/exec';
 // ────────────────────────────────────────────────────────────────────
 
 var TERR = [
