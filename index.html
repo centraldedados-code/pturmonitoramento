@@ -219,7 +219,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:16px">
           <div>
             <div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;color:var(--az)">Prospera Turismo - 8 Territorios - 12 Competencias (Jun/2026 a Mai/2027)</div>
-            <div style="font-size:11px;color:#888;margin-top:3px">Percentual de competencias com status Realizado sobre o total previsto (96)</div>
+            <div style="font-size:11px;color:#888;margin-top:3px">Percentual medio de evidencias depositadas nos meses ja iniciados (Jun/2026 e Jul/2026)</div>
           </div>
           <div id="sc-txt" style="font-family:Montserrat,sans-serif;font-size:44px;font-weight:700;color:var(--azs);white-space:nowrap">--</div>
         </div>
@@ -569,16 +569,28 @@ function scl(n) {
 function scT(nome) {
   var rows = LD().filter(function(r){return r['Territorio']===nome});
   if (!rows.length) return 0;
-  var total = 0;
+  var hoje = new Date();
+  var totalPct = 0, mesesAtivos = 0;
   rows.forEach(function(r){
-    var pct = parseFloat(r['Percentual de Execucao'] || 0) || 0;
-    // fallback: se nao tem percentual, usa status binario
-    if (!pct && r['Percentual de Execucao'] === undefined) {
-      pct = stComp(r) === 'Realizado' ? 100 : 0;
+    var comp = (r['Competencia']||'').trim();
+    // Ignorar meses que ainda nao comecaram
+    if (comp) {
+      var p = comp.split('-');
+      if (p.length === 2) {
+        if (new Date(parseInt(p[0]), parseInt(p[1])-1, 1) > hoje) return;
+      }
     }
-    total += pct;
+    mesesAtivos++;
+    var pct = parseFloat(r['Percentual de Execucao']||0)||0;
+    // Fallback para status se coluna Percentual ainda nao existe
+    if (!pct) {
+      var st = (r['Status da Competencia']||'').toLowerCase();
+      if (st === 'realizado') pct = 100;
+      else if (st === 'em andamento') pct = 50;
+    }
+    totalPct += pct;
   });
-  return Math.round(total / 12);
+  return mesesAtivos > 0 ? Math.round(totalPct / mesesAtivos) : 0;
 }
 
 function scG() {
