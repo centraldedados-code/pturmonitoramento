@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PTUR - Prospera Turismo | Monitoramento</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+:root{
+  --az:#092040;--azs:#00B7D7;--am:#ECC203;
+  --cz:#EFF1F3;--es:#021738;--br:#FFFFFF;
+  --gv:#1A6B3C;--gvb:#ebf7eb;
+  --aw:#7A4F00;--awb:#fff8e0;
+  --rd:#8B1A1A;--rdb:#fce8e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',Arial,sans-serif;background:var(--cz);color:var(--es);min-height:100vh}
+h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
+
+/* SENHA */
+#pwd{position:fixed;inset:0;z-index:9999;background:var(--az);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+#pwd.off{display:none}
+.pbox{background:var(--br);border-radius:16px;padding:36px 40px;max-width:420px;width:100%;text-align:center}
+.psub{color:var(--am);font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:6px;text-transform:uppercase;font-family:'Montserrat',sans-serif}
+.ptit{font-size:17px;font-weight:700;color:var(--az);margin-bottom:4px;font-family:'Montserrat',sans-serif}
+.phint{font-size:12px;color:#999;margin-bottom:20px}
+.pin{width:100%;padding:12px 16px;border:2px solid #dde4ee;border-radius:10px;font-size:15px;letter-spacing:2px;font-family:'Open Sans',sans-serif;color:var(--az);outline:none;transition:border-color .2s;margin-bottom:12px}
+.pin:focus{border-color:var(--azs)}
+.pbtn{width:100%;padding:13px;background:var(--az);color:var(--am);border:none;border-radius:10px;font-size:14px;font-weight:700;letter-spacing:1px;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background .2s}
+.pbtn:hover{background:var(--azs);color:var(--br)}
+.perr{color:#cc0000;font-size:12px;margin-top:8px;min-height:18px}
+.pfoot{margin-top:20px;font-size:11px;color:rgba(255,255,255,.4)}
+
+/* LOADING */
+#ld{display:none;position:fixed;inset:0;z-index:500;background:var(--cz);align-items:center;justify-content:center;flex-direction:column;gap:16px}
+#ld.on{display:flex}
+.spin{width:48px;height:48px;border:4px solid var(--azs);border-top-color:var(--am);border-radius:50%;animation:giro .8s linear infinite}
+@keyframes giro{to{transform:rotate(360deg)}}
+.ltxt{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--az);font-size:14px}
+
+/* APP */
+#app{display:none}
+#app.on{display:block}
+
+/* HEADER */
+.hdr{background:var(--az);position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.hdri{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:16px}
+.hlogo{height:40px;object-fit:contain;filter:brightness(0) invert(1)}
+.hdiv{width:1px;height:32px;background:rgba(255,255,255,.2)}
+.htit{color:var(--am);font-size:15px;font-weight:700;letter-spacing:.5px;font-family:'Montserrat',sans-serif}
+.hsub{color:rgba(255,255,255,.5);font-size:11px;margin-top:2px}
+.hnav{display:flex;gap:4px}
+.nbtn{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.6);font-size:11px;font-weight:700;letter-spacing:.5px;padding:8px 12px;border-radius:8px;text-transform:uppercase;transition:all .2s;font-family:'Montserrat',sans-serif}
+.nbtn:hover{color:var(--br);background:rgba(255,255,255,.1)}
+.nbtn.on{color:var(--am);background:rgba(236,194,3,.15)}
+
+/* WRAP */
+.wrap{max-width:1200px;margin:0 auto;padding:24px 16px}
+
+/* VIEWS */
+.vw{display:none}
+.vw.on{display:block}
+
+/* SECTION TITLE */
+.st{font-size:11px;font-weight:700;color:var(--az);text-transform:uppercase;letter-spacing:1.5px;margin:22px 0 12px;padding-left:10px;border-left:4px solid var(--azs);font-family:'Montserrat',sans-serif}
+
+/* KPI */
+.kpi{background:var(--az);border-radius:12px;padding:18px;text-align:center}
+.knum{color:var(--am);font-size:26px;font-weight:700;font-family:'Montserrat',sans-serif}
+.klab{color:rgba(255,255,255,.65);font-size:11px;margin-top:4px}
+
+/* SCORE BAR */
+.sbw{background:#dde4ee;border-radius:999px;overflow:hidden}
+.sb{border-radius:999px;transition:width 1.2s ease;height:100%}
+.shi{background:var(--gv)}.smid{background:var(--azs)}.slow{background:#c9940a}.scrit{background:#cc2222}
+
+/* BADGES */
+.badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;font-family:'Montserrat',sans-serif}
+.bR{background:var(--gvb);color:var(--gv)}
+.bP{background:var(--awb);color:var(--aw)}
+.bC{background:var(--rdb);color:var(--rd)}
+.bA{background:#e8f0f8;color:var(--az)}
+.bT{background:#e0f7fb;color:#006080}
+.bE{background:#fff8e0;color:#7A4F00}
+
+/* CARD */
+.card{background:var(--br);border:1.5px solid #dde4ee;border-radius:12px;padding:16px 18px}
+
+/* TERRITORY CARD */
+.tcard{background:var(--br);border:1.5px solid #dde4ee;border-radius:14px;padding:20px;cursor:pointer;transition:border-color .18s,transform .18s,box-shadow .18s}
+.tcard:hover{border-color:var(--azs);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,183,215,.15)}
+.tnome{font-size:14px;font-weight:700;color:var(--az);margin-bottom:10px;font-family:'Montserrat',sans-serif}
+.tsc{font-size:30px;font-weight:700;color:var(--azs);font-family:'Montserrat',sans-serif}
+.tmeta{font-size:11px;color:#666;margin-top:2px}
+.tlink{color:var(--azs);font-size:11px;font-weight:700;margin-top:12px;display:block;font-family:'Montserrat',sans-serif}
+
+/* COMPETENCIA CARD */
+.ccard{background:var(--br);border:1.5px solid #dde4ee;border-radius:10px;padding:14px;transition:border-color .18s,box-shadow .18s}
+.ccard:hover{border-color:var(--azs);box-shadow:0 4px 12px rgba(0,183,215,.12)}
+.ccard.stR{border-left:4px solid var(--gv)}
+.ccard.stP{border-left:4px solid #c9940a}
+.ccard.stC{border-left:4px solid #cc2222}
+.cmes{font-size:13px;font-weight:700;color:var(--az);font-family:'Montserrat',sans-serif}
+.cfase{font-size:10px;color:#999;margin:3px 0 8px}
+.clink{font-size:11px;color:var(--azs);font-weight:700;margin-top:8px;display:block;text-decoration:none}
+
+/* TABLE */
+.tbl{width:100%;border-collapse:collapse;font-size:12px}
+.tbl th{background:var(--az);color:var(--br);padding:10px 12px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.5px;font-weight:700;font-family:'Montserrat',sans-serif}
+.tbl td{padding:10px 12px;border-bottom:1px solid #eee;vertical-align:middle}
+.tbl tr:hover td{background:#f8fafc}
+.tbl a{color:var(--azs);text-decoration:none;font-weight:700}
+.tbl a:hover{text-decoration:underline}
+
+/* ALERT BOX */
+.abox{background:var(--rdb);border:1px solid #f5b5b5;border-radius:10px;padding:14px 18px;margin-bottom:12px}
+.atit{font-weight:700;color:var(--rd);font-size:13px;margin-bottom:4px;font-family:'Montserrat',sans-serif}
+
+/* GRIDS */
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+/* BACK */
+.back{background:none;border:2px solid var(--az);color:var(--az);font-size:11px;font-weight:700;letter-spacing:.5px;padding:8px 16px;border-radius:8px;cursor:pointer;text-transform:uppercase;transition:all .2s;margin-bottom:20px;font-family:'Montserrat',sans-serif}
+.back:hover{background:var(--az);color:var(--br)}
+
+/* FILTERS */
+.fbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.fbtn{background:var(--br);border:1.5px solid #dde4ee;color:var(--az);font-size:10px;font-weight:700;padding:6px 14px;border-radius:20px;cursor:pointer;transition:all .18s;text-transform:uppercase;letter-spacing:.5px;font-family:'Montserrat',sans-serif}
+.fbtn.on,.fbtn:hover{background:var(--az);color:var(--am);border-color:var(--az)}
+
+/* FOOTER */
+.foot{background:var(--az);border-radius:12px;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;margin-top:32px;flex-wrap:wrap;gap:10px}
+.ftxt{color:rgba(255,255,255,.45);font-size:11px}
+.fbadge{background:var(--am);color:var(--az);font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;font-family:'Montserrat',sans-serif}
+
+@media(max-width:900px){.g4,.g3{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}.hnav{display:none}}
+@media(max-width:480px){.g4,.g3,.g2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- SENHA -->
+<div id="pwd">
+  <div class="pbox">
+    <div class="psub">PTUR - Prospera Turismo</div>
+    <div class="ptit">Sistema de Monitoramento Operacional</div>
+    <div class="phint">Acesso restrito - Coordenacao Instituto BR Arte</div>
+    <input class="pin" type="password" id="pf" placeholder="Senha de acesso"
+           onkeydown="if(event.key==='Enter')chkPwd()">
+    <button class="pbtn" onclick="chkPwd()">ACESSAR SISTEMA</button>
+    <div class="perr" id="perr"></div>
+  </div>
+  <div class="pfoot">Instituto BR Arte x Prefeitura do Rio de Janeiro</div>
+</div>
+
+<!-- LOADING -->
+<div id="ld">
+  <div class="spin"></div>
+  <div class="ltxt">Carregando dados do projeto...</div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <header class="hdr">
+    <div class="hdri">
+      <div style="display:flex;align-items:center;gap:16px">
+        <img id="logo" class="hlogo" src="" alt="Instituto BR Arte" onerror="this.style.display='none'">
+        <div class="hdiv"></div>
+        <div>
+          <div class="htit">PROSPERA TURISMO</div>
+          <div class="hsub">Sistema de Monitoramento Operacional</div>
+        </div>
+      </div>
+      <nav class="hnav">
+        <button class="nbtn on" onclick="goV('dashboard')">Dashboard</button>
+        <button class="nbtn" onclick="goV('territorios')">Territorios</button>
+        <button class="nbtn" onclick="goV('metas')">Metas</button>
+        <button class="nbtn" onclick="goV('relatorios')">Relatorios</button>
+        <button class="nbtn" onclick="goV('evidencias')">Evidencias</button>
+        <button class="nbtn" onclick="goV('diagnosticos')">Diagnosticos</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- DASHBOARD -->
+    <div class="vw on" id="vw-dashboard">
+      <div class="st">Visao Geral do Projeto</div>
+      <div class="g4" id="kpi-row" style="margin-bottom:20px"></div>
+      <div class="st">Indice Global de Execucao</div>
+      <div class="card" style="padding:22px 26px;margin-bottom:20px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:16px">
+          <div>
+            <div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;color:var(--az)">Prospera Turismo - 8 Territorios - 12 Competencias (Jun/2026 a Mai/2027)</div>
+            <div style="font-size:11px;color:#888;margin-top:3px">Percentual de competencias com status Realizado sobre o total previsto (96)</div>
+          </div>
+          <div id="sc-txt" style="font-family:Montserrat,sans-serif;font-size:44px;font-weight:700;color:var(--azs);white-space:nowrap">--</div>
+        </div>
+        <div class="sbw" style="height:22px"><div class="sb" id="bar-g" style="width:0%"></div></div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:#bbb">
+          <span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span>
+        </div>
+      </div>
+      <div class="st">Execucao por Territorio</div>
+      <div class="g4" id="dash-terr" style="margin-bottom:20px"></div>
+      <div class="st">Alertas Criticos</div>
+      <div id="dash-alertas" style="margin-bottom:20px"></div>
+      <div class="st">Resumo de Relatorios a Prefeitura</div>
+      <div class="g3" id="dash-rel" style="margin-bottom:8px"></div>
+    </div>
+
+    <!-- TERRITORIOS -->
+    <div class="vw" id="vw-territorios">
+      <div id="tlist">
+        <div class="st">Selecione um Territorio</div>
+        <div class="g4" id="lista-terr"></div>
+      </div>
+      <div id="tdetalhe" style="display:none">
+        <button class="back" onclick="voltarLista()">Voltar aos Territorios</button>
+        <div id="det-content"></div>
+      </div>
+    </div>
+
+    <!-- METAS -->
+    <div class="vw" id="vw-metas">
+      <div class="st">Acompanhamento de Metas e Indicadores</div>
+      <div class="fbar" id="flt-metas"></div>
+      <div id="tbl-metas"></div>
+    </div>
+
+    <!-- RELATORIOS -->
+    <div class="vw" id="vw-relatorios">
+      <div class="st">Relatorios Mensais Enviados a Prefeitura</div>
+      <div class="fbar" id="flt-rel"></div>
+      <div id="tbl-rel"></div>
+    </div>
+
+    <!-- EVIDENCIAS -->
+    <div class="vw" id="vw-evidencias">
+      <div class="st">Registro de Evidencias por Territorio</div>
+      <div class="fbar" id="flt-ev"></div>
+      <div id="tbl-ev"></div>
+    </div>
+
+    <!-- DIAGNOSTICOS -->
+    <div class="vw" id="vw-diagnosticos">
+      <div class="st">Diagnosticos e Relatorios Empresariais por Territorio</div>
+      <div class="fbar" id="flt-diag"></div>
+      <div id="tbl-diag"></div>
+    </div>
+
+    <div class="foot">
+      <div class="ftxt">Prospera Turismo - Instituto BR Arte x Prefeitura do Rio de Janeiro - 12 meses - 8 territorios</div>
+      <div class="fbadge">Monitoramento Operacional</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────
+// CONSTANTES
+// ─────────────────────────────────────────────
+var SENHA = atob('QnJhcnRlQDIwMjY='); // Brarte@2026
+
+// ─── PREENCHA APOS O DEPLOY DO WEB APP ─────────────────────────────
+// Cole aqui a URL do seu Apps Script Web App (termina em /exec)
+// Exemplo: https://script.google.com/macros/s/AKfyc.../exec
+var APPS_SCRIPT_URL = 'COLE_A_URL_DO_WEB_APP_AQUI';
+// ────────────────────────────────────────────────────────────────────
+
+var TERR = [
+  'Cantagalo',
+  'Chapéu Mangueira / Babilônia',
+  'Complexo da Maré',
+  'Complexo do Alemão',
+  'Mangueira',
+  'Rocinha',
+  'Santa Marta',
+  'Vidigal'
+];
+
+var MESES = {
+  '2026-06':'Jun/2026','2026-07':'Jul/2026','2026-08':'Ago/2026',
+  '2026-09':'Set/2026','2026-10':'Out/2026','2026-11':'Nov/2026',
+  '2026-12':'Dez/2026','2027-01':'Jan/2027','2027-02':'Fev/2027',
+  '2027-03':'Mar/2027','2027-04':'Abr/2027','2027-05':'Mai/2027'
+};
+
+var FASES = {
+  '2026-06':'Mes 1 - Planejamento e Lancamento Territorial',
+  '2026-07':'Mes 2 - Bolsas, Diagnosticos e Preparacao',
+  '2026-08':'Mes 3 - Inicio das Formacoes Profissionais',
+  '2026-09':'Mes 4 - Execucao Intensa das Formacoes',
+  '2026-10':'Mes 5 - Formacoes, Consultorias e Conteudos',
+  '2026-11':'Mes 6 - Seminarios e Estruturacao de Rotas',
+  '2026-12':'Mes 7 - Implementacao Territorial e Sinalizacao',
+  '2027-01':'Mes 8 - Conclusao das Formacoes e Diagnosticos',
+  '2027-02':'Mes 9 - Capital Semente e Rotas Estruturadas',
+  '2027-03':'Mes 10 - Implantacao da Sinalizacao Turistica',
+  '2027-04':'Mes 11 - Consolidacao e Operacao das Rotas',
+  '2027-05':'Mes 12 - Avaliacao, Monitoramento Final e Encerramento'
+};
+
+var COMP_ORD = Object.keys(MESES);
+var D = null;
+
+// ─────────────────────────────────────────────
+// AUTH
+// ─────────────────────────────────────────────
+function chkPwd() {
+  var v = document.getElementById('pf').value;
+  if (v === SENHA) {
+    document.getElementById('pwd').classList.add('off');
+    sessionStorage.setItem('ptur_ok','1');
+    carregarApp();
+  } else {
+    document.getElementById('perr').textContent = 'Senha incorreta. Verifique com a coordenacao.';
+    document.getElementById('pf').value = '';
+    document.getElementById('pf').focus();
+  }
+}
+
+// ─────────────────────────────────────────────
+// CARGA DE DADOS
+// ─────────────────────────────────────────────
+function carregarApp() {
+  document.getElementById('ld').classList.add('on');
+
+  if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === 'COLE_A_URL_DO_WEB_APP_AQUI') {
+    document.getElementById('ld').classList.remove('on');
+    document.getElementById('app').classList.add('on');
+    D = {config:{},linksive:[],metas:[],relatorios:[],evidencias:[],diagnosticos:[]};
+    alert('Atencao: preencha a constante APPS_SCRIPT_URL no inicio do script com a URL do seu Web App.');
+    renderAll();
+    return;
+  }
+
+  fetch(APPS_SCRIPT_URL + '?action=api')
+    .then(function(resp) {
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      return resp.json();
+    })
+    .then(function(data) {
+      D = data;
+      document.getElementById('ld').classList.remove('on');
+      document.getElementById('app').classList.add('on');
+      if (D.config && D.config['URL Logo Instituto BR Arte (GitHub)']) {
+        document.getElementById('logo').src = D.config['URL Logo Instituto BR Arte (GitHub)'];
+      }
+      renderAll();
+    })
+    .catch(function(err) {
+      D = {config:{},linksive:[],metas:[],relatorios:[],evidencias:[],diagnosticos:[]};
+      document.getElementById('ld').classList.remove('on');
+      document.getElementById('app').classList.add('on');
+      renderAll();
+      console.error('Erro ao carregar dados:', err);
+    });
+}
+
+// ─────────────────────────────────────────────
+// NAVEGACAO
+// ─────────────────────────────────────────────
+function goV(v) {
+  document.querySelectorAll('.vw').forEach(function(e){e.classList.remove('on')});
+  document.querySelectorAll('.nbtn').forEach(function(e){e.classList.remove('on')});
+  document.getElementById('vw-'+v).classList.add('on');
+  document.querySelectorAll('.nbtn').forEach(function(e){
+    if ((e.getAttribute('onclick')||'').indexOf("'"+v+"'") !== -1) e.classList.add('on');
+  });
+}
+
+function voltarLista() {
+  document.getElementById('tlist').style.display = 'block';
+  document.getElementById('tdetalhe').style.display = 'none';
+}
+
+function abrirTerr(idx) {
+  document.getElementById('tlist').style.display = 'none';
+  document.getElementById('tdetalhe').style.display = 'block';
+  renderDetalhe(idx);
+}
+
+// ─────────────────────────────────────────────
+// UTILIDADES
+// ─────────────────────────────────────────────
+function LD() { return (D && D.linksive) ? D.linksive : []; }
+
+function stComp(row) {
+  var st = (row['Status da Competencia'] || '').trim();
+  var lk = (row['Link da Pasta Drive'] || '').trim();
+  var cp = (row['Competencia'] || '').trim();
+  if (!lk && cp) {
+    var p = cp.split('-');
+    if (p.length === 2) {
+      var ref = new Date(parseInt(p[0]), parseInt(p[1]) - 1, 1);
+      if (ref < new Date()) return 'Critico';
+    }
+  }
+  return st || 'Pendente';
+}
+
+function bcl(st) {
+  if (!st) return 'bP';
+  var s = st.toLowerCase();
+  if (s==='realizado'||s==='enviado') return 'bR';
+  if (s==='critico'||s==='atrasado') return 'bC';
+  return 'bP';
+}
+
+function scl(n) {
+  if (n >= 75) return 'shi';
+  if (n >= 40) return 'smid';
+  if (n >= 10) return 'slow';
+  return 'scrit';
+}
+
+function scT(nome) {
+  var rows = LD().filter(function(r){return r['Territorio']===nome});
+  if (!rows.length) return 0;
+  return Math.round(rows.filter(function(r){return stComp(r)==='Realizado'}).length / 12 * 100);
+}
+
+function scG() {
+  return Math.round(TERR.reduce(function(a,t){return a+scT(t)},0) / TERR.length);
+}
+
+function fd(v) { return (v && v !== '' && v !== '0') ? String(v) : '-'; }
+
+// ─────────────────────────────────────────────
+// RENDER ALL
+// ─────────────────────────────────────────────
+function renderAll() {
+  renderDash();
+  renderListaT();
+  renderMetas();
+  renderRel();
+  renderEv();
+  renderDiag();
+}
+
+// ─────────────────────────────────────────────
+// DASHBOARD
+// ─────────────────────────────────────────────
+function kpi(n,l) {
+  return '<div class="kpi"><div class="knum">'+n+'</div><div class="klab">'+l+'</div></div>';
+}
+
+function renderDash() {
+  var rows = LD();
+  var real = rows.filter(function(r){return stComp(r)==='Realizado'}).length;
+  var crit = rows.filter(function(r){return stComp(r)==='Critico'}).length;
+  var relD = (D && D.relatorios) || [];
+  var relE = relD.filter(function(r){return (r['Status']||'')==='Enviado'}).length;
+  var metD = (D && D.metas) || [];
+  var metR = metD.filter(function(m){return (m['Status']||'').toLowerCase()==='realizado'}).length;
+
+  document.getElementById('kpi-row').innerHTML =
+    kpi(TERR.length,'Territorios Ativos') +
+    kpi(real+' / 96','Competencias Realizadas') +
+    kpi(crit,'Alertas Criticos') +
+    kpi(relE+' / '+relD.length,'Relatorios Enviados');
+
+  var sg = scG();
+  document.getElementById('sc-txt').textContent = sg + '%';
+  var bg = document.getElementById('bar-g');
+  bg.style.width = sg + '%';
+  bg.className = 'sb ' + scl(sg);
+
+  // Cards de territorio no dashboard
+  var th = '';
+  TERR.forEach(function(t,i){
+    var sc = scT(t);
+    var cr = LD().filter(function(r){return r['Territorio']===t && stComp(r)==='Critico'}).length;
+    th += '<div class="tcard" onclick="goV(\'territorios\');setTimeout(function(){abrirTerr('+i+')},120)">';
+    th += '<div class="tnome">'+t+'</div>';
+    th += '<div class="tsc">'+sc+'%</div>';
+    th += '<div style="margin:8px 0"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div></div>';
+    if (cr > 0) th += '<span class="badge bC">'+cr+' critico(s)</span>';
+    else th += '<span class="badge bR" style="opacity:.7">Em dia</span>';
+    th += '</div>';
+  });
+  document.getElementById('dash-terr').innerHTML = th;
+
+  // Alertas
+  var crows = rows.filter(function(r){return stComp(r)==='Critico'});
+  var ah = '';
+  if (!crows.length) {
+    ah = '<div class="card" style="color:#666;font-size:13px">Nenhum alerta critico no momento.</div>';
+  } else {
+    ah += '<div class="abox"><div class="atit">'+crows.length+' competencia(s) critica(s) - requerem atencao imediata</div></div>';
+    ah += '<div class="card" style="padding:0;overflow:auto"><table class="tbl">';
+    ah += '<tr><th>Territorio</th><th>Competencia</th><th>Fase</th><th>Observacao</th></tr>';
+    crows.forEach(function(r){
+      ah += '<tr><td><strong>'+(r['Territorio']||'-')+'</strong></td>';
+      ah += '<td><span class="badge bC">'+(MESES[r['Competencia']]||r['Competencia']||'-')+'</span></td>';
+      ah += '<td style="font-size:11px">'+(r['Fase do Cronograma']||FASES[r['Competencia']]||'-')+'</td>';
+      ah += '<td style="font-size:11px;color:#888">'+(r['Observacao']||'Sem link ou evidencia registrada')+'</td></tr>';
+    });
+    ah += '</table></div>';
+  }
+  document.getElementById('dash-alertas').innerHTML = ah;
+
+  // Resumo relatorios
+  var atras = relD.filter(function(r){
+    if ((r['Status']||'')==='Enviado') return false;
+    var dp = r['Data Prevista de Envio'];
+    if (dp && dp !== '-') {
+      var pts = dp.split('/');
+      if (pts.length === 3) {
+        return new Date(parseInt(pts[2]), parseInt(pts[1])-1, parseInt(pts[0])) < new Date();
+      }
+    }
+    return false;
+  }).length;
+  document.getElementById('dash-rel').innerHTML =
+    kpi(relD.length,'Total Previstos') +
+    kpi('<span style="color:#4CAF50">'+relE+'</span>','Enviados a Prefeitura') +
+    kpi('<span style="color:#cc2222">'+atras+'</span>','Em Atraso');
+}
+
+// ─────────────────────────────────────────────
+// LISTA DE TERRITORIOS
+// ─────────────────────────────────────────────
+function renderListaT() {
+  var h = '';
+  TERR.forEach(function(t,i){
+    var sc = scT(t);
+    var rl = LD().filter(function(r){return r['Territorio']===t && stComp(r)==='Realizado'}).length;
+    var cr = LD().filter(function(r){return r['Territorio']===t && stComp(r)==='Critico'}).length;
+    h += '<div class="tcard" onclick="abrirTerr('+i+')">';
+    h += '<div class="tnome">'+t+'</div>';
+    h += '<div class="tsc">'+sc+'%</div>';
+    h += '<div class="tmeta">'+rl+' de 12 competencias realizadas</div>';
+    h += '<div style="margin:10px 0"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div></div>';
+    if (cr > 0) h += '<span class="badge bC" style="margin-bottom:4px;display:inline-block">'+cr+' critico(s)</span>';
+    h += '<div class="tlink">Ver competencias e evidencias -&gt;</div>';
+    h += '</div>';
+  });
+  document.getElementById('lista-terr').innerHTML = h;
+}
+
+// ─────────────────────────────────────────────
+// DETALHE DE TERRITORIO
+// ─────────────────────────────────────────────
+function renderDetalhe(idx) {
+  var nome = TERR[idx];
+  var tR = LD().filter(function(r){return r['Territorio']===nome});
+  var sc = scT(nome);
+  var rl = tR.filter(function(r){return stComp(r)==='Realizado'}).length;
+  var h = '';
+
+  // Cabecalho do territorio
+  h += '<div class="card" style="background:var(--az);padding:22px 26px;margin-bottom:20px">';
+  h += '<div style="font-size:18px;font-weight:700;color:var(--am);font-family:Montserrat,sans-serif">'+nome+'</div>';
+  h += '<div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px">Monitoramento por Competencia - Jun/2026 a Mai/2027</div>';
+  h += '<div style="margin-top:14px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">';
+  h += '<div style="font-size:40px;font-weight:700;color:var(--br);font-family:Montserrat,sans-serif">'+sc+'%</div>';
+  h += '<div style="flex:1;min-width:160px">';
+  h += '<div class="sbw" style="height:14px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div>';
+  h += '<div style="color:rgba(255,255,255,.5);font-size:11px;margin-top:4px">'+rl+' de 12 competencias realizadas</div>';
+  h += '</div></div></div>';
+
+  // Competencias em grid
+  h += '<div class="st">Competencias Mensais</div>';
+  h += '<div class="g3" style="margin-bottom:24px">';
+  COMP_ORD.forEach(function(mes){
+    var row = tR.find(function(r){return r['Competencia']===mes});
+    var st = row ? stComp(row) : 'Pendente';
+    var lk = row ? (row['Link da Pasta Drive']||'') : '';
+    var obs = row ? (row['Observacao']||'') : '';
+    h += '<div class="ccard st'+st.charAt(0)+'">';
+    h += '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">';
+    h += '<div class="cmes">'+MESES[mes]+'</div>';
+    h += '<span class="badge '+bcl(st)+'">'+st+'</span></div>';
+    h += '<div class="cfase">'+FASES[mes]+'</div>';
+    if (lk) h += '<a class="clink" href="'+lk+'" target="_blank">Abrir pasta no Drive</a>';
+    else h += '<div style="font-size:11px;color:#ccc;margin-top:6px">Sem link registrado</div>';
+    if (obs) h += '<div style="font-size:10px;color:#888;margin-top:6px;font-style:italic">'+obs+'</div>';
+    h += '</div>';
+  });
+  h += '</div>';
+
+  // Metas do territorio
+  var metT = ((D && D.metas) || []).filter(function(m){
+    return m['Territorio']===nome || (m['Abrangencia']||'')==='Projeto Inteiro';
+  });
+  if (metT.length) {
+    h += '<div class="st">Metas neste Territorio</div>';
+    h += '<div class="card" style="padding:0;overflow:auto;margin-bottom:24px"><table class="tbl">';
+    h += '<tr><th>Meta</th><th>Categoria</th><th>Total Projeto</th><th>Por Territorio</th><th>Realizado</th><th>%</th><th>Status</th></tr>';
+    metT.forEach(function(m){
+      var pT = parseFloat(m['Quantidade Prevista Total (Projeto)'])||0;
+      var pP = parseFloat(m['Quantidade Prevista por Territorio'])||0;
+      var rv = parseFloat(m['Quantidade Realizada'])||0;
+      var base = pP||pT;
+      var pc = base>0 ? Math.round((rv/base)*100) : 0;
+      h += '<tr><td style="max-width:220px"><strong>'+(m['Descricao da Meta']||m['ID Meta']||'-')+'</strong></td>';
+      h += '<td><span class="badge bT">'+(m['Categoria']||'-')+'</span></td>';
+      h += '<td style="text-align:center">'+(pT||'-')+'</td>';
+      h += '<td style="text-align:center">'+(pP||'-')+'</td>';
+      h += '<td style="text-align:center">'+rv+'</td>';
+      h += '<td style="min-width:90px"><div class="sbw" style="height:6px;margin-bottom:2px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(pc,100)+'%"></div></div><span style="font-size:10px;color:#888">'+pc+'%</span></td>';
+      h += '<td><span class="badge '+bcl(m['Status']||'Pendente')+'">'+(m['Status']||'Pendente')+'</span></td></tr>';
+    });
+    h += '</table></div>';
+  }
+
+  // Relatorios do territorio
+  var relT = ((D && D.relatorios) || []).filter(function(r){return r['Territorio']===nome});
+  if (relT.length) {
+    h += '<div class="st">Relatorios Mensais a Prefeitura</div>';
+    h += '<div class="card" style="padding:0;overflow:auto;margin-bottom:24px"><table class="tbl">';
+    h += '<tr><th>Competencia</th><th>Previsto</th><th>Enviado em</th><th>Status</th><th>Documento</th><th>Obs</th></tr>';
+    relT.forEach(function(r){
+      h += '<tr><td>'+(MESES[r['Competencia']]||r['Competencia']||'-')+'</td>';
+      h += '<td>'+fd(r['Data Prevista de Envio'])+'</td>';
+      h += '<td>'+fd(r['Data Efetiva de Envio'])+'</td>';
+      h += '<td><span class="badge '+bcl(r['Status']||'Pendente')+'">'+(r['Status']||'Pendente')+'</span></td>';
+      h += '<td>'+(r['Link do Documento Enviado']?'<a href="'+r['Link do Documento Enviado']+'" target="_blank">Abrir</a>':'-')+'</td>';
+      h += '<td style="font-size:11px;color:#888">'+(r['Observacao']||'')+'</td></tr>';
+    });
+    h += '</table></div>';
+  }
+
+  // Evidencias do territorio
+  var evT = ((D && D.evidencias) || []).filter(function(e){return e['Territorio']===nome});
+  if (evT.length) {
+    h += '<div class="st">Evidencias Registradas</div>';
+    h += '<div class="card" style="padding:0;overflow:auto;margin-bottom:24px"><table class="tbl">';
+    h += '<tr><th>ID</th><th>Competencia</th><th>Meta</th><th>Tipo</th><th>Descricao</th><th>Data</th><th>Arquivo</th></tr>';
+    evT.forEach(function(e){
+      h += '<tr><td><strong>'+(e['ID Evidencia']||'-')+'</strong></td>';
+      h += '<td>'+(MESES[e['Competencia']]||e['Competencia']||'-')+'</td>';
+      h += '<td>'+(e['Meta Vinculada (ID)']||'-')+'</td>';
+      h += '<td><span class="badge bT">'+(e['Tipo de Evidencia']||'-')+'</span></td>';
+      h += '<td style="max-width:180px">'+(e['Descricao']||'-')+'</td>';
+      h += '<td>'+fd(e['Data de Registro'])+'</td>';
+      h += '<td>'+(e['Link do Arquivo']?'<a href="'+e['Link do Arquivo']+'" target="_blank">Abrir</a>':'-')+'</td></tr>';
+    });
+    h += '</table></div>';
+  }
+
+  // Diagnosticos do territorio
+  var diagT = ((D && D.diagnosticos) || []).filter(function(d){return d['Territorio']===nome});
+  if (diagT.length) {
+    var dcnt = diagT.filter(function(d){return d['Tipo']==='Diagnostico'}).length;
+    var rcnt = diagT.filter(function(d){return d['Tipo']==='Relatorio Empresarial'}).length;
+    h += '<div class="st">Diagnosticos e Relatorios Empresariais</div>';
+    h += '<div class="g3" style="margin-bottom:12px">';
+    h += kpi(diagT.length,'Total Registrado')+kpi(dcnt,'Diagnosticos')+kpi(rcnt,'Relatorios Empresariais');
+    h += '</div>';
+    h += '<div class="card" style="padding:0;overflow:auto;margin-bottom:24px"><table class="tbl">';
+    h += '<tr><th>ID</th><th>Tipo</th><th>Empreendedor</th><th>Competencia</th><th>Data</th><th>Status</th><th>Arquivo</th></tr>';
+    diagT.forEach(function(d){
+      h += '<tr><td><strong>'+(d['ID']||'-')+'</strong></td>';
+      h += '<td><span class="badge bA">'+(d['Tipo']||'-')+'</span></td>';
+      h += '<td>'+(d['Empreendedor']||'-')+'</td>';
+      h += '<td>'+(MESES[d['Competencia']]||d['Competencia']||'-')+'</td>';
+      h += '<td>'+fd(d['Data'])+'</td>';
+      h += '<td><span class="badge '+bcl(d['Status']||'Pendente')+'">'+(d['Status']||'Pendente')+'</span></td>';
+      h += '<td>'+(d['Link do Arquivo']?'<a href="'+d['Link do Arquivo']+'" target="_blank">Abrir</a>':'-')+'</td></tr>';
+    });
+    h += '</table></div>';
+  }
+
+  document.getElementById('det-content').innerHTML = h;
+}
+
+// ─────────────────────────────────────────────
+// METAS
+// ─────────────────────────────────────────────
+function renderMetas(fTerr) {
+  fTerr = fTerr || 'Todos';
+  var metas = (D && D.metas) || [];
+  var fb = '<button class="fbtn'+(fTerr==='Todos'?' on':'')+'" onclick="renderMetas(\'Todos\')">Todos</button>';
+  TERR.forEach(function(t){
+    var ts = t.length>16 ? t.substring(0,16)+'...' : t;
+    fb += '<button class="fbtn'+(fTerr===t?' on':'')+'" onclick="renderMetas(\''+encTerr(t)+'\')">'+ts+'</button>';
+  });
+  fb += '<button class="fbtn'+(fTerr==='Projeto Inteiro'?' on':'')+'" onclick="renderMetas(\'Projeto Inteiro\')">Projeto Inteiro</button>';
+  document.getElementById('flt-metas').innerHTML = fb;
+
+  var fil = fTerr==='Todos' ? metas : metas.filter(function(m){
+    return m['Territorio']===fTerr || (m['Abrangencia']||'')==='Projeto Inteiro';
+  });
+  if (!fil.length) {
+    document.getElementById('tbl-metas').innerHTML='<div class="card" style="color:#666;font-size:13px">Nenhuma meta registrada para este filtro.</div>';
+    return;
+  }
+  var h = '<div class="card" style="padding:0;overflow:auto"><table class="tbl">';
+  h += '<tr><th>ID</th><th>Categoria</th><th>Meta</th><th>Territorio</th><th>Total Projeto</th><th>Por Territorio</th><th>Realizado</th><th>Progresso</th><th>Status</th><th>Verificacao</th></tr>';
+  fil.forEach(function(m){
+    var pT = parseFloat(m['Quantidade Prevista Total (Projeto)'])||0;
+    var pP = parseFloat(m['Quantidade Prevista por Territorio'])||0;
+    var rv = parseFloat(m['Quantidade Realizada'])||0;
+    var base = pP||pT;
+    var pc = base>0 ? Math.round((rv/base)*100) : 0;
+    h += '<tr>';
+    h += '<td><strong>'+(m['ID Meta']||'-')+'</strong></td>';
+    h += '<td><span class="badge bT">'+(m['Categoria']||'-')+'</span></td>';
+    h += '<td style="max-width:200px">'+(m['Descricao da Meta']||'-')+'</td>';
+    h += '<td style="white-space:nowrap">'+(m['Territorio']||m['Abrangencia']||'-')+'</td>';
+    h += '<td style="text-align:center">'+(pT||'-')+'</td>';
+    h += '<td style="text-align:center">'+(pP||'-')+'</td>';
+    h += '<td style="text-align:center">'+rv+'</td>';
+    h += '<td style="min-width:100px"><div class="sbw" style="height:6px;margin-bottom:2px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(pc,100)+'%"></div></div><span style="font-size:10px;color:#888">'+pc+'%</span></td>';
+    h += '<td><span class="badge '+bcl(m['Status']||'Pendente')+'">'+(m['Status']||'Pendente')+'</span></td>';
+    h += '<td style="font-size:11px;color:#888">'+(m['Meio de Verificacao']||'-')+'</td>';
+    h += '</tr>';
+  });
+  h += '</table></div>';
+  document.getElementById('tbl-metas').innerHTML = h;
+}
+
+// ─────────────────────────────────────────────
+// RELATORIOS
+// ─────────────────────────────────────────────
+function renderRel(fSt) {
+  fSt = fSt || 'Todos';
+  var rels = (D && D.relatorios) || [];
+  var opts = ['Todos','Enviado','Pendente','Atrasado','Consolidado'];
+  var fb = opts.map(function(o){
+    return '<button class="fbtn'+(fSt===o?' on':'')+'" onclick="renderRel(\''+o+'\')">'+o+'</button>';
+  }).join('');
+  TERR.forEach(function(t){
+    var ts = t.length>16 ? t.substring(0,16)+'...' : t;
+    fb += '<button class="fbtn'+(fSt===t?' on':'')+'" onclick="renderRel(\''+encTerr(t)+'\')">'+ts+'</button>';
+  });
+  document.getElementById('flt-rel').innerHTML = fb;
+
+  var fil;
+  if (fSt==='Todos') fil = rels;
+  else if (fSt==='Consolidado') fil = rels.filter(function(r){return (r['Territorio']||'').indexOf('Consolidado')!==-1});
+  else if (['Enviado','Pendente','Atrasado'].indexOf(fSt)!==-1) fil = rels.filter(function(r){return (r['Status']||'')===fSt});
+  else fil = rels.filter(function(r){return r['Territorio']===fSt});
+
+  if (!fil.length){document.getElementById('tbl-rel').innerHTML='<div class="card" style="color:#666;font-size:13px">Nenhum relatorio para este filtro.</div>';return;}
+  var h = '<div class="card" style="padding:0;overflow:auto"><table class="tbl">';
+  h += '<tr><th>Territorio</th><th>Competencia</th><th>Previsto</th><th>Enviado em</th><th>Status</th><th>Documento</th><th>Observacao</th></tr>';
+  fil.forEach(function(r){
+    h += '<tr><td><strong>'+(r['Territorio']||'-')+'</strong></td>';
+    h += '<td>'+(MESES[r['Competencia']]||r['Competencia']||'-')+'</td>';
+    h += '<td>'+fd(r['Data Prevista de Envio'])+'</td>';
+    h += '<td>'+fd(r['Data Efetiva de Envio'])+'</td>';
+    h += '<td><span class="badge '+bcl(r['Status']||'Pendente')+'">'+(r['Status']||'Pendente')+'</span></td>';
+    h += '<td>'+(r['Link do Documento Enviado']?'<a href="'+r['Link do Documento Enviado']+'" target="_blank">Abrir</a>':'-')+'</td>';
+    h += '<td style="font-size:11px;color:#888">'+(r['Observacao']||'')+'</td></tr>';
+  });
+  h += '</table></div>';
+  document.getElementById('tbl-rel').innerHTML = h;
+}
+
+// ─────────────────────────────────────────────
+// EVIDENCIAS
+// ─────────────────────────────────────────────
+function renderEv(fTerr) {
+  fTerr = fTerr || 'Todos';
+  var evs = (D && D.evidencias) || [];
+  var fb = '<button class="fbtn'+(fTerr==='Todos'?' on':'')+'" onclick="renderEv(\'Todos\')">Todos</button>';
+  TERR.forEach(function(t){
+    var ts = t.length>16 ? t.substring(0,16)+'...' : t;
+    fb += '<button class="fbtn'+(fTerr===t?' on':'')+'" onclick="renderEv(\''+encTerr(t)+'\')">'+ts+'</button>';
+  });
+  document.getElementById('flt-ev').innerHTML = fb;
+  var fil = fTerr==='Todos' ? evs : evs.filter(function(e){return e['Territorio']===fTerr});
+  if (!fil.length){document.getElementById('tbl-ev').innerHTML='<div class="card" style="color:#666;font-size:13px">Nenhuma evidencia registrada.</div>';return;}
+  var h = '<div class="card" style="padding:0;overflow:auto"><table class="tbl">';
+  h += '<tr><th>ID</th><th>Territorio</th><th>Competencia</th><th>Meta</th><th>Tipo</th><th>Descricao</th><th>Data</th><th>Arquivo</th></tr>';
+  fil.forEach(function(e){
+    h += '<tr><td><strong>'+(e['ID Evidencia']||'-')+'</strong></td>';
+    h += '<td>'+(e['Territorio']||'-')+'</td>';
+    h += '<td>'+(MESES[e['Competencia']]||e['Competencia']||'-')+'</td>';
+    h += '<td>'+(e['Meta Vinculada (ID)']||'-')+'</td>';
+    h += '<td><span class="badge bT">'+(e['Tipo de Evidencia']||'-')+'</span></td>';
+    h += '<td style="max-width:180px">'+(e['Descricao']||'-')+'</td>';
+    h += '<td>'+fd(e['Data de Registro'])+'</td>';
+    h += '<td>'+(e['Link do Arquivo']?'<a href="'+e['Link do Arquivo']+'" target="_blank">Abrir</a>':'-')+'</td></tr>';
+  });
+  h += '</table></div>';
+  document.getElementById('tbl-ev').innerHTML = h;
+}
+
+// ─────────────────────────────────────────────
+// DIAGNOSTICOS
+// ─────────────────────────────────────────────
+function renderDiag(fTipo) {
+  fTipo = fTipo || 'Todos';
+  var diags = (D && D.diagnosticos) || [];
+  var fb = '<button class="fbtn'+(fTipo==='Todos'?' on':'')+'" onclick="renderDiag(\'Todos\')">Todos</button>';
+  fb += '<button class="fbtn'+(fTipo==='Diagnostico'?' on':'')+'" onclick="renderDiag(\'Diagnostico\')">Diagnosticos</button>';
+  fb += '<button class="fbtn'+(fTipo==='Relatorio Empresarial'?' on':'')+'" onclick="renderDiag(\'Relatorio Empresarial\')">Relatorios Empresariais</button>';
+  TERR.forEach(function(t){
+    var ts = t.length>16 ? t.substring(0,16)+'...' : t;
+    fb += '<button class="fbtn'+(fTipo===t?' on':'')+'" onclick="renderDiag(\''+encTerr(t)+'\')">'+ts+'</button>';
+  });
+  document.getElementById('flt-diag').innerHTML = fb;
+
+  var fil;
+  if (fTipo==='Todos') fil=diags;
+  else if (fTipo==='Diagnostico'||fTipo==='Relatorio Empresarial') fil=diags.filter(function(d){return d['Tipo']===fTipo});
+  else fil=diags.filter(function(d){return d['Territorio']===fTipo});
+
+  var dc = fil.filter(function(d){return d['Tipo']==='Diagnostico'}).length;
+  var rc = fil.filter(function(d){return d['Tipo']==='Relatorio Empresarial'}).length;
+  var h = '<div class="g3" style="margin-bottom:16px">'+kpi(fil.length,'Total Registrado')+kpi(dc,'Diagnosticos')+kpi(rc,'Relatorios Empresariais')+'</div>';
+
+  if (!fil.length){document.getElementById('tbl-diag').innerHTML=h+'<div class="card" style="color:#666;font-size:13px">Nenhum registro para este filtro.</div>';return;}
+  h += '<div class="card" style="padding:0;overflow:auto"><table class="tbl">';
+  h += '<tr><th>ID</th><th>Territorio</th><th>Tipo</th><th>Empreendedor</th><th>Competencia</th><th>Data</th><th>Status</th><th>Arquivo</th><th>Obs</th></tr>';
+  fil.forEach(function(d){
+    h += '<tr><td><strong>'+(d['ID']||'-')+'</strong></td>';
+    h += '<td style="white-space:nowrap">'+(d['Territorio']||'-')+'</td>';
+    h += '<td><span class="badge bA">'+(d['Tipo']||'-')+'</span></td>';
+    h += '<td>'+(d['Empreendedor']||'-')+'</td>';
+    h += '<td>'+(MESES[d['Competencia']]||d['Competencia']||'-')+'</td>';
+    h += '<td>'+fd(d['Data'])+'</td>';
+    h += '<td><span class="badge '+bcl(d['Status']||'Pendente')+'">'+(d['Status']||'Pendente')+'</span></td>';
+    h += '<td>'+(d['Link do Arquivo']?'<a href="'+d['Link do Arquivo']+'" target="_blank">Abrir</a>':'-')+'</td>';
+    h += '<td style="font-size:11px;color:#888">'+(d['Observacao']||'')+'</td></tr>';
+  });
+  h += '</table></div>';
+  document.getElementById('tbl-diag').innerHTML = h;
+}
+
+// ─────────────────────────────────────────────
+// UTILITARIO: encode nome de territorio para onclick
+// ─────────────────────────────────────────────
+function encTerr(t) {
+  // Escapa aspas simples; restante (acentos, /, espacos) e valido em UTF-8
+  return t.replace(/'/g, "\\'");
+}
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', function(){
+  if (sessionStorage.getItem('ptur_ok') === '1') {
+    document.getElementById('pwd').classList.add('off');
+    carregarApp();
+  } else {
+    setTimeout(function(){
+      var f = document.getElementById('pf');
+      if (f) f.focus();
+    }, 100);
+  }
+});
+</script>
+</body>
+</html>
