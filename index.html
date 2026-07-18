@@ -103,6 +103,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .ccard.stR{border-left:4px solid var(--gv)}
 .ccard.stP{border-left:4px solid #c9940a}
 .ccard.stC{border-left:4px solid #cc2222}
+.ccard.stE{border-left:4px solid var(--azs)}
 .cmes{font-size:13px;font-weight:700;color:var(--az);font-family:'Montserrat',sans-serif}
 .cfase{font-size:10px;color:#999;margin:3px 0 8px}
 .clink{font-size:11px;color:var(--azs);font-weight:700;margin-top:8px;display:block;text-decoration:none}
@@ -554,6 +555,7 @@ function bcl(st) {
   var s = st.toLowerCase();
   if (s==='realizado'||s==='enviado') return 'bR';
   if (s==='critico'||s==='atrasado') return 'bC';
+  if (s==='em andamento') return 'bE';
   return 'bP';
 }
 
@@ -567,7 +569,16 @@ function scl(n) {
 function scT(nome) {
   var rows = LD().filter(function(r){return r['Territorio']===nome});
   if (!rows.length) return 0;
-  return Math.round(rows.filter(function(r){return stComp(r)==='Realizado'}).length / 12 * 100);
+  var total = 0;
+  rows.forEach(function(r){
+    var pct = parseFloat(r['Percentual de Execucao'] || 0) || 0;
+    // fallback: se nao tem percentual, usa status binario
+    if (!pct && r['Percentual de Execucao'] === undefined) {
+      pct = stComp(r) === 'Realizado' ? 100 : 0;
+    }
+    total += pct;
+  });
+  return Math.round(total / 12);
 }
 
 function scG() {
@@ -607,7 +618,7 @@ function renderDash() {
 
   document.getElementById('kpi-row').innerHTML =
     kpi(TERR.length,'Territorios Ativos') +
-    kpi(real+' / 96','Competencias Realizadas') +
+    kpi(scG()+'%','Execucao Global') +
     kpi(crit,'Alertas Criticos') +
     kpi(relE+' / '+relD.length,'Relatorios Enviados');
 
@@ -716,14 +727,19 @@ function renderDetalhe(idx) {
   h += '<div class="g3" style="margin-bottom:24px">';
   COMP_ORD.forEach(function(mes){
     var row = tR.find(function(r){return r['Competencia']===mes});
-    var st = row ? stComp(row) : 'Pendente';
-    var lk = (LINKS_FIXOS[nome] && LINKS_FIXOS[nome][mes]) ? LINKS_FIXOS[nome][mes] : (row ? (row['Link da Pasta Drive']||'') : '');
+    var st  = row ? stComp(row) : 'Pendente';
+    var lk  = (LINKS_FIXOS[nome] && LINKS_FIXOS[nome][mes]) ? LINKS_FIXOS[nome][mes] : (row ? (row['Link da Pasta Drive']||'') : '');
     var obs = row ? (row['Observacao']||'') : '';
+    var pct = row ? (parseFloat(row['Percentual de Execucao']||0)||0) : 0;
     h += '<div class="ccard st'+st.charAt(0)+'">';
     h += '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">';
     h += '<div class="cmes">'+MESES[mes]+'</div>';
     h += '<span class="badge '+bcl(st)+'">'+st+'</span></div>';
     h += '<div class="cfase">'+FASES[mes]+'</div>';
+    if (pct > 0 && pct < 100) {
+      h += '<div class="sbw" style="height:4px;margin:4px 0"><div class="sb '+scl(pct)+'" style="width:'+pct+'%"></div></div>';
+      h += '<div style="font-size:10px;color:#888;margin-bottom:4px">'+pct+'% das evidencias</div>';
+    }
     if (lk) h += '<a class="clink" href="'+lk+'" target="_blank">Abrir pasta no Drive</a>';
     else h += '<div style="font-size:11px;color:#ccc;margin-top:6px">Sem link registrado</div>';
     if (obs) h += '<div style="font-size:10px;color:#888;margin-top:6px;font-style:italic">'+obs+'</div>';
