@@ -169,7 +169,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
   <div class="pbox">
     <img class="plogo-img" src="https://centraldedados-code.github.io/pturmonitoramento/assets/logo-prospera-turismo.png" alt="Prospera Turismo">
     <div class="psub">Sistema de Monitoramento Operacional</div>
-    <div class="phint">Acesso restrito - Coordenacao Instituto BR Arte</div>
+    <div class="phint">Acesso restrito - Coordenação Instituto BR Arte</div>
     <input class="pin" type="password" id="pf" placeholder="Senha de acesso"
            onkeydown="if(event.key==='Enter')chkPwd()">
     <button class="pbtn" onclick="chkPwd()">ACESSAR SISTEMA</button>
@@ -198,11 +198,11 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
       </div>
       <nav class="hnav">
         <button class="nbtn on" onclick="goV('dashboard')">Dashboard</button>
-        <button class="nbtn" onclick="goV('territorios')">Territorios</button>
+        <button class="nbtn" onclick="goV('territorios')">Territórios</button>
         <button class="nbtn" onclick="goV('metas')">Metas</button>
-        <button class="nbtn" onclick="goV('relatorios')">Relatorios</button>
-        <button class="nbtn" onclick="goV('evidencias')">Evidencias</button>
-        <button class="nbtn" onclick="goV('diagnosticos')">Diagnosticos</button>
+        <button class="nbtn" onclick="goV('relatorios')">Relatórios</button>
+        <button class="nbtn" onclick="goV('evidencias')">Evidências</button>
+        <button class="nbtn" onclick="goV('diagnosticos')">Diagnósticos</button>
         <button class="nbtn" onclick="goV('pastas')">Pastas Drive</button>
       </nav>
     </div>
@@ -212,14 +212,14 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 
     <!-- DASHBOARD -->
     <div class="vw on" id="vw-dashboard">
-      <div class="st">Visao Geral do Projeto</div>
+      <div class="st">Visão Geral do Projeto</div>
       <div class="g4" id="kpi-row" style="margin-bottom:20px"></div>
-      <div class="st">Indice Global de Execucao</div>
+      <div class="st">Indice Global de Execução</div>
       <div class="card" style="padding:22px 26px;margin-bottom:20px">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:16px">
           <div>
-            <div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;color:var(--az)">Prospera Turismo - 8 Territorios - 12 Competencias (Jun/2026 a Mai/2027)</div>
-            <div style="font-size:11px;color:#888;margin-top:3px">Percentual medio de evidencias depositadas nos meses ja iniciados (Jun/2026 e Jul/2026)</div>
+            <div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;color:var(--az)">Prospera Turismo - 8 Territórios - 12 Competências (Jun/2026 a Mai/2027)</div>
+            <div style="font-size:11px;color:#888;margin-top:3px">Percentual medio de evidências depositadas nos meses já iniciados (Jun/2026 e Jul/2026)</div>
           </div>
           <div id="sc-txt" style="font-family:Montserrat,sans-serif;font-size:44px;font-weight:700;color:var(--azs);white-space:nowrap">--</div>
         </div>
@@ -228,22 +228,22 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
           <span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span>
         </div>
       </div>
-      <div class="st">Execucao por Territorio</div>
+      <div class="st">Execução por Território</div>
       <div class="g4" id="dash-terr" style="margin-bottom:20px"></div>
-      <div class="st">Alertas Criticos</div>
+      <div class="st">Alertas Críticos</div>
       <div id="dash-alertas" style="margin-bottom:20px"></div>
-      <div class="st">Resumo de Relatorios a Prefeitura</div>
+      <div class="st">Resumo de Relatórios a Prefeitura</div>
       <div class="g3" id="dash-rel" style="margin-bottom:8px"></div>
     </div>
 
     <!-- TERRITORIOS -->
     <div class="vw" id="vw-territorios">
       <div id="tlist">
-        <div class="st">Selecione um Territorio</div>
+        <div class="st">Selecione um Território</div>
         <div class="g4" id="lista-terr"></div>
       </div>
       <div id="tdetalhe" style="display:none">
-        <button class="back" onclick="voltarLista()">Voltar aos Territorios</button>
+        <button class="back" onclick="voltarLista()">Voltar aos Territórios</button>
         <div id="det-content"></div>
       </div>
     </div>
@@ -257,34 +257,34 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 
     <!-- RELATORIOS -->
     <div class="vw" id="vw-relatorios">
-      <div class="st">Relatorios Mensais Enviados a Prefeitura</div>
+      <div class="st">Relatórios Mensais Enviados a Prefeitura</div>
       <div class="fbar" id="flt-rel"></div>
       <div id="tbl-rel"></div>
     </div>
 
     <!-- EVIDENCIAS -->
     <div class="vw" id="vw-evidencias">
-      <div class="st">Registro de Evidencias por Territorio</div>
+      <div class="st">Registro de Evidências por Território</div>
       <div class="fbar" id="flt-ev"></div>
       <div id="tbl-ev"></div>
     </div>
 
-    <!-- DIAGNOSTICOS -->
+    <!-- DIAGNÓSTICOS -->
     <div class="vw" id="vw-diagnosticos">
-      <div class="st">Diagnosticos e Relatorios Empresariais por Territorio</div>
+      <div class="st">Diagnósticos e Relatórios Empresariais por Território</div>
       <div class="fbar" id="flt-diag"></div>
       <div id="tbl-diag"></div>
     </div>
 
     <!-- PASTAS DRIVE -->
     <div class="vw" id="vw-pastas">
-      <div class="st">Pastas de Evidencias no Google Drive</div>
+      <div class="st">Pastas de Evidências no Google Drive</div>
       <div style="font-size:12px;color:#888;margin-bottom:20px">Clique em ABRIR PASTA para acessar a pasta do mes no Drive. Links preenchidos na aba LINKS_DRIVE da planilha.</div>
       <div id="pastas-content"></div>
     </div>
 
     <div class="foot">
-      <div class="ftxt">Prospera Turismo - Instituto BR Arte x Prefeitura do Rio de Janeiro - 12 meses - 8 territorios</div>
+      <div class="ftxt">Prospera Turismo - Instituto BR Arte x Prefeitura do Rio de Janeiro - 12 meses - 8 territórios</div>
       <div class="fbadge">Monitoramento Operacional</div>
     </div>
   </div>
