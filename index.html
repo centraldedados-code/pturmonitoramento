@@ -21,7 +21,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 #pwd.off{display:none}
 .pbox{background:var(--br);border-radius:16px;padding:36px 40px;max-width:430px;width:100%;text-align:center}
 .plogo-main{height:58px;max-width:270px;object-fit:contain;display:block;margin:0 auto 22px}
-.pfoot-logo{height:58px;max-width:260px;object-fit:contain;display:block;margin:28px auto 0}
+.pfoot-logo{height:auto;max-height:70px;max-width:520px;width:min(92vw,520px);object-fit:contain;display:block;margin:28px auto 0}
 .psub{color:var(--am);font-size:11px;font-weight:700;letter-spacing:1.3px;margin-bottom:8px;text-transform:uppercase;font-family:'Montserrat',sans-serif;line-height:1.45}
 .phint{font-size:12px;color:#8390a0;margin-bottom:20px}
 .pin{width:100%;padding:12px 16px;border:2px solid var(--bd);border-radius:10px;font-size:15px;letter-spacing:2px;color:var(--az);outline:none;margin-bottom:12px}
@@ -41,7 +41,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .hdr{background:var(--az);position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.3)}
 .hdri{max-width:1220px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;min-height:68px;padding:8px 24px;gap:18px}
 .brandwrap{display:flex;align-items:center;gap:14px;min-width:0}
-.hlogo{height:43px;max-width:200px;object-fit:contain;background:var(--br);border-radius:8px;padding:5px 10px}
+.hlogo{height:43px;max-width:245px;object-fit:contain;background:var(--br);border-radius:8px;padding:5px 10px}
 .hdiv{width:1px;height:34px;background:rgba(255,255,255,.2)}
 .htit{color:var(--am);font-size:15px;font-weight:700;letter-spacing:.5px;font-family:'Montserrat',sans-serif}
 .hsub{color:rgba(255,255,255,.62);font-size:10.5px;margin-top:2px}
@@ -145,21 +145,31 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 @media(max-width:950px){.g4,.g3{grid-template-columns:repeat(2,1fr)}.hnav{display:none}}
 @media(max-width:600px){.g4,.g3,.g2{grid-template-columns:1fr}.hdri{padding:8px 14px}.hlogo{height:38px;max-width:145px}.hsub{display:none}.wrap{padding:18px 12px}}
 
-#pwd{display:none!important}
+.bI{background:#e8f0f8;color:#092040}
+.bProg{background:#edf2f7;color:#5b6572}
+.bNA{background:#f1f3f5;color:#6b7280}
+.bAnd{background:#e0f7fb;color:#176377}
+.oscard.stInst{border-left:4px solid #092040}
+.oscard.stProg{border-left:4px solid #a0aec0}
+.oscard.stNA{border-left:4px solid #cbd5e0}
+.oscard.stAnd{border-left:4px solid #00B7D7}
+.api-error{background:#fce8e8;border:1px solid #f5b5b5;border-left:5px solid #8B1A1A;border-radius:10px;padding:12px 15px;color:#8B1A1A;font-size:11px;line-height:1.5}
+.api-ok{background:#f6fbf7;border:1px solid #cfe8d7;border-left:5px solid #1A6B3C;border-radius:10px;padding:10px 14px;color:#1A6B3C;font-size:11px;line-height:1.5}
+
 </style>
 </head>
 
 <body>
 <section id="pwd">
   <div class="pbox">
-    <img class="plogo-main" src="assets/logo-prospera-turismo.png" alt="Prospera Turismo">
+    <img class="plogo-main" src="https://centraldedados-code.github.io/pturmonitoramento/assets/logo-prospera-turismo.png" alt="Prospera Turismo">
     <div class="psub">Sistema de Monitoramento de Prestação de Contas — SMPC</div>
     <div class="phint">Acesso ao painel executivo do projeto</div>
     <input class="pin" type="password" id="pf" placeholder="Senha de acesso" onkeydown="if(event.key==='Enter')chkPwd()">
     <button class="pbtn" onclick="chkPwd()">ACESSAR SISTEMA</button>
     <div class="perr" id="perr"></div>
   </div>
-  <img class="pfoot-logo" src="assets/logo-prospera-turismo.png" alt="Instituto BR Arte">
+  <img class="pfoot-logo" src="https://centraldedados-code.github.io/pturmonitoramento/assets/regua-instituto-prefeitura.png" alt="Instituto BR Arte e Prefeitura do Rio de Janeiro">
 </section>
 
 <div id="ld">
@@ -171,7 +181,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 <header class="hdr">
   <div class="hdri">
     <div class="brandwrap">
-      <img class="hlogo" src="assets/logo-prospera-turismo.png" alt="Instituto BR Arte">
+      <img class="hlogo" src="https://centraldedados-code.github.io/pturmonitoramento/assets/regua-instituto-prefeitura.png" alt="Instituto BR Arte e Prefeitura do Rio de Janeiro">
       <div class="hdiv"></div>
       <div>
         <div class="htit">PROSPERA TURISMO</div>
@@ -190,6 +200,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 
 <main class="wrap">
   <section class="vw on" id="vw-dashboard">
+    <div id="api-status" style="display:none;margin-bottom:12px"></div>
     <div class="st">Ficha do Projeto</div>
     <div class="card" id="ficha-card"></div>
 
@@ -252,9 +263,12 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
     <div class="filters">
       <button class="fbtn on" data-status="TODOS" onclick="setFiltro('TODOS',this)">Todas</button>
       <button class="fbtn" data-status="Completo" onclick="setFiltro('Completo',this)">Completas</button>
+      <button class="fbtn" data-status="Em Andamento" onclick="setFiltro('Em Andamento',this)">Em andamento</button>
       <button class="fbtn" data-status="Insuficiente" onclick="setFiltro('Insuficiente',this)">Insuficientes</button>
       <button class="fbtn" data-status="Pendente" onclick="setFiltro('Pendente',this)">Pendentes</button>
-      <input id="busca" class="search" placeholder="Buscar território, competência ou curso..." oninput="renderAtividades()">
+      <button class="fbtn" data-status="Programado" onclick="setFiltro('Programado',this)">Programadas</button>
+      <button class="fbtn" data-status="Institucional" onclick="setFiltro('Institucional',this)">Institucional</button>
+      <input id="busca" class="search" placeholder="Buscar território, competência ou atividade..." oninput="renderAtividades()">
     </div>
     <div id="atividades-content"></div>
   </section>
@@ -273,7 +287,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
   </section>
 
   <div class="foot">
-    <div class="ftxt">Prospera Turismo — Instituto BR Arte × FUNARTE — 12 territórios<br><span id="ultimaAtualizacaoPainel">Atualização automática ativa</span></div>
+    <div class="ftxt">Prospera Turismo — Instituto BR Arte × Prefeitura do Rio de Janeiro — 8 territórios<br><span id="ultimaAtualizacaoPainel">Atualização automática ativa</span></div>
     <div class="fbadge">Sistema de Monitoramento de Prestação de Contas — SMPC</div>
   </div>
 </main>
@@ -283,21 +297,20 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 var D = null;
 var TERR = [];
 var FILTRO = 'TODOS';
+var API_OK = false;
 
-var SENHA = 'GERENCIADA_FORA_DO_BACKUP';
+var SENHA = "Brarte@2026";
 var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzI3Qa16rLtpfn5-pPtDLL4TVbhwZ1Qre2ACXXIvr8qI2VRKUdH9sW5I5V37nOVWcgS/exec";
+var TERR_FALLBACK = ['Cantagalo','Chapéu Mangueira / Babilônia','Complexo da Maré','Complexo do Alemão','Mangueira','Rocinha','Santa Marta','Vidigal'];
 
-function esc(v){
-  return String(v == null ? '' : v)
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;').replace(/'/g,'&#039;');
-}
+function esc(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;')}
+function normaliza(v){return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim()}
 
 function chkPwd(){
-  var v = document.getElementById('pf').value;
-  if(v === SENHA){
+  var v=document.getElementById('pf').value;
+  if(v===SENHA){
     document.getElementById('pwd').classList.add('off');
-    sessionStorage.setItem('cc_ok','1');
+    sessionStorage.setItem('ptur_smpc_v2_ok','1');
     carregarApp();
   }else{
     document.getElementById('perr').textContent='Senha incorreta. Verifique com a coordenação.';
@@ -306,475 +319,170 @@ function chkPwd(){
   }
 }
 
+function setApiStatus(ok,msg){
+  var el=document.getElementById('api-status'); if(!el)return;
+  el.style.display='block'; el.className=ok?'api-ok':'api-error'; el.textContent=msg;
+}
+
 function carregarApp(){
   document.getElementById('ld').classList.remove('off');
-
-  fetch(APPS_SCRIPT_URL + '?action=api')
-    .then(function(resp){
-      if(!resp.ok) throw new Error('HTTP '+resp.status);
-      return resp.json();
-    })
+  fetch(APPS_SCRIPT_URL+'?action=api&_='+Date.now(),{cache:'no-store'})
+    .then(function(resp){if(!resp.ok)throw new Error('HTTP '+resp.status);return resp.json()})
     .then(function(data){
-      D = data || {};
-      TERR = Array.isArray(D.territorios) ? D.territorios : [];
-      document.getElementById('ld').classList.add('off');
-      document.getElementById('app').classList.add('on');
-      renderAll();
-      iniciarAtualizacaoAutomatica();
+      if(!data||!Array.isArray(data.atividades)||!data.atividades.length)throw new Error('A API respondeu, mas não entregou a aba ATIVIDADES.');
+      D=data; TERR=Array.isArray(D.territorios)&&D.territorios.length?D.territorios:TERR_FALLBACK.slice(); API_OK=true;
+      document.getElementById('ld').classList.add('off'); document.getElementById('app').classList.add('on');
+      setApiStatus(true,'Dados conectados ao SMPC do Prospera Turismo. Atualização automática ativa.');
+      renderAll(); iniciarAtualizacaoAutomatica();
       var ua=document.getElementById('ultimaAtualizacaoPainel');
-      if(ua){ua.textContent='Atualizado às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});}
+      if(ua)ua.textContent='Atualizado às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
     })
     .catch(function(err){
-      D = {ficha:null,atividades:[],metas:{territorios:[],total:null},territorios:[]};
-      TERR = [];
-      document.getElementById('ld').classList.add('off');
-      document.getElementById('app').classList.add('on');
-      renderAll();
-      console.error('Erro ao carregar dados:',err);
+      API_OK=false; D={ficha:null,atividades:[],metas:{territorios:[],total:null},metasDetalhadas:[],territorios:TERR_FALLBACK}; TERR=TERR_FALLBACK.slice();
+      document.getElementById('ld').classList.add('off'); document.getElementById('app').classList.add('on');
+      setApiStatus(false,'Não foi possível carregar os dados ao vivo. O painel não exibirá zeros como se fossem execução real. Verifique se o Code.gs v3 foi salvo e se a implantação do Web App foi atualizada para uma nova versão. Detalhe: '+err.message);
+      renderAll(); console.error('Erro ao carregar dados:',err);
     });
 }
 
-function goV(v,btn){
-  document.querySelectorAll('.vw').forEach(function(e){e.classList.remove('on')});
-  document.querySelectorAll('.nbtn').forEach(function(e){e.classList.remove('on')});
-  document.getElementById('vw-'+v).classList.add('on');
-  if(btn) btn.classList.add('on');
-}
+function goV(v,btn){document.querySelectorAll('.vw').forEach(function(e){e.classList.remove('on')});document.querySelectorAll('.nbtn').forEach(function(e){e.classList.remove('on')});document.getElementById('vw-'+v).classList.add('on');if(btn)btn.classList.add('on')}
 
-function AT(){return (D && Array.isArray(D.atividades)) ? D.atividades : []}
+function AT(){return(D&&Array.isArray(D.atividades))?D.atividades:[]}
 function atividadesTerritorio(nome){return AT().filter(function(r){return r.territorio===nome})}
-function monitoravel(r){
-  if(!r) return false;
-  var st=String(r.status||'').toLowerCase();
-  if(st==='programado' || st==='institucional' || st==='não aplicável' || st==='nao aplicavel') return false;
-  return true;
-}
-function exigeLista(r){
-  var n=String((r&&r.curso)||'').toUpperCase();
-  return n.indexOf('CURSO')!==-1 || n.indexOf('OFICINA')!==-1 ||
-         n.indexOf('PALESTRA')!==-1 || n.indexOf('SEMINARIO')!==-1 ||
-         n.indexOf('SEMINÁRIO')!==-1;
-}
-function fmtEv(v){
-  var s=String(v==null?'':v).trim();
-  if(!s) return 'Não';
-  var n=s.toLowerCase();
-  if(n==='n/a' || n==='nao aplicavel' || n==='não aplicável') return 'N/A';
-  if(n==='programado') return 'Programado';
-  if(n.indexOf('consolida')!==-1) return s;
-  if(n==='sim') return 'Sim';
-  if(n==='não' || n==='nao') return 'Não';
-  return s;
-}
-
+function statusLimpo(r){return String((r&&r.status)||'').trim()||'Pendente'}
+function ehInstitucional(r){return normaliza(statusLimpo(r))==='institucional'}
+function ehProgramado(r){return normaliza(statusLimpo(r))==='programado'}
+function ehNaoAplicavel(r){return normaliza(statusLimpo(r))==='nao aplicavel'}
+function ehMonitoravel(r){return !ehInstitucional(r)&&!ehProgramado(r)&&!ehNaoAplicavel(r)}
+function ATM(){return AT().filter(ehMonitoravel)}
 
 function bcl(st){
-  if(st==='Completo') return 'bR';
-  if(st==='Insuficiente' || st==='Em Andamento') return 'bE';
-  if(st==='Pendente') return 'bP';
-  if(st==='Institucional' || st==='Programado' || st==='Não aplicável') return 'bA';
-  if(st && (st.indexOf('Alerta')===0 || st.indexOf('Erro')===0)) return 'bC';
-  return 'bN';
+  var s=normaliza(st);
+  if(s==='completo')return'bR'; if(s==='insuficiente')return'bE'; if(s==='em andamento')return'bAnd';
+  if(s==='pendente')return'bP'; if(s==='institucional')return'bI'; if(s==='programado')return'bProg';
+  if(s==='nao aplicavel')return'bNA'; if(s.indexOf('alerta')===0||s.indexOf('erro')===0)return'bC'; return'bN';
 }
 function stCls(st){
-  if(st==='Completo') return 'stC';
-  if(st==='Insuficiente' || st==='Em Andamento') return 'stI';
-  if(st==='Pendente') return 'stP';
-  return 'stA';
+  var s=normaliza(st);
+  if(s==='completo')return'stC'; if(s==='insuficiente')return'stI'; if(s==='em andamento')return'stAnd';
+  if(s==='pendente')return'stP'; if(s==='institucional')return'stInst'; if(s==='programado')return'stProg';
+  if(s==='nao aplicavel')return'stNA'; return'stA';
 }
-function scl(n){
-  if(n>=75) return 'shi';
-  if(n>=40) return 'smid';
-  if(n>=10) return 'slow';
-  return 'scrit';
-}
-function scT(nome){
-  var rows=atividadesTerritorio(nome).filter(monitoravel);
-  if(!rows.length) return 0;
-  var completas=rows.filter(function(r){return r.status==='Completo'}).length;
-  return Math.round((completas/rows.length)*100);
-}
-function scG(){
-  var rows=AT().filter(monitoravel);
-  if(!rows.length) return 0;
-  var completas=rows.filter(function(r){return r.status==='Completo'}).length;
-  return Math.round((completas/rows.length)*100);
-}
-function simNao(v){return (String(v||'').toLowerCase()==='sim')?'Sim':'Não'}
+function scl(n){if(n>=75)return'shi';if(n>=40)return'smid';if(n>=10)return'slow';return'scrit'}
+
+function monitoraveisTerritorio(nome){return atividadesTerritorio(nome).filter(ehMonitoravel)}
+function scT(nome){var rows=monitoraveisTerritorio(nome);if(!rows.length)return 0;var completas=rows.filter(function(r){return normaliza(r.status)==='completo'}).length;return Math.round(completas/rows.length*100)}
+function scG(){var rows=ATM();if(!rows.length)return 0;var completas=rows.filter(function(r){return normaliza(r.status)==='completo'}).length;return Math.round(completas/rows.length*100)}
+
+function exibirCampo(v){var s=String(v==null?'':v).trim();if(!s)return'Não informado';var n=normaliza(s);if(n==='sim')return'Sim';if(n==='nao')return'Não';if(n==='n/a'||n==='na')return'N/A';return s}
 
 function temEvidencia(r){
-  if(!r || !monitoravel(r)) return false;
-  var st=String(r.status||'');
-  return Number(r.qtdFotos||0)>0 ||
-    String(r.listaPresenca||'').toLowerCase()==='sim' ||
-    String(r.relatorioPedagogico||'').toLowerCase()==='sim' ||
-    String(r.relatorioPedagogico||'').toLowerCase().indexOf('consolida')!==-1 ||
-    String(r.certificacao||'').toLowerCase()==='sim' ||
-    st==='Completo' || st==='Insuficiente' || st==='Em Andamento';
+  if(!r||!ehMonitoravel(r))return false;
+  var st=normaliza(r.status),rel=normaliza(r.relatorioPedagogico);
+  return Number(r.qtdFotos||0)>0||normaliza(r.listaPresenca)==='sim'||rel==='sim'||rel.indexOf('consolid')!==-1||normaliza(r.certificacao)==='sim'||st==='completo'||st==='insuficiente'||st==='em andamento';
 }
+function statusTerritorio(nome,statusOriginal){var rows=monitoraveisTerritorio(nome);if(!rows.length)return statusOriginal||'Programado';var completos=rows.filter(function(r){return normaliza(r.status)==='completo'}).length;if(completos===rows.length)return'Completo';if(rows.some(temEvidencia))return'Em andamento';return statusOriginal||'Não iniciado'}
+function statusProjetoPublico(statusOriginal){if(ATM().some(temEvidencia))return'Em execução';return statusOriginal||'Não iniciado'}
 
-function statusTerritorio(nome,statusOriginal){
-  var rows=atividadesTerritorio(nome);
-  var completos=rows.filter(function(r){return r.status==='Completo'}).length;
-  if(rows.length && completos===rows.length) return 'Completo';
-  if(rows.some(temEvidencia)) return 'Em andamento';
-  return statusOriginal || 'Não iniciado';
-}
-
-function statusProjetoPublico(statusOriginal){
-  if(AT().some(temEvidencia)) return 'Em execução';
-  return statusOriginal || 'Não iniciado';
-}
-
-function pendenciasListaPresenca(){
-  return AT().filter(function(r){
-    return Number(r.qtdFotos||0) > 0 &&
-      String(r.listaPresenca||'').toLowerCase() !== 'sim';
-  });
-}
+function exigeListaPresenca(r){var s=normaliza((r&&(r.atividade||r.curso))||'');return s.indexOf('curso')!==-1||s.indexOf('oficina')!==-1||s.indexOf('palestra')!==-1||s.indexOf('seminario')!==-1}
+function pendenciasListaPresenca(){return ATM().filter(function(r){return exigeListaPresenca(r)&&Number(r.qtdFotos||0)>0&&normaliza(r.listaPresenca)!=='sim'})}
 
 function renderAlertasDocumentais(){
-  var pend=pendenciasListaPresenca();
-  var containers=[
-    document.getElementById('alertas-documentais'),
-    document.getElementById('alertas-atividades')
-  ];
-
-  var h='';
-
-  if(!pend.length){
-    h='<div class="alerta-doc ok">'+
-      '<div class="alerta-title">Nenhuma pendência deste tipo identificada</div>'+
-      '<div class="alerta-help">Não há atividade com fotos registradas e lista de presença ausente.</div>'+
-      '</div>';
+  var pend=pendenciasListaPresenca(),containers=[document.getElementById('alertas-documentais'),document.getElementById('alertas-atividades')],h='';
+  if(!API_OK){
+    h='<div class="alerta-doc"><div class="alerta-title">Dados ao vivo indisponíveis</div><div class="alerta-help">Os alertas documentais só são calculados quando a API do SMPC está conectada.</div></div>';
+  }else if(!pend.length){
+    h='<div class="alerta-doc ok"><div class="alerta-title">Nenhuma pendência de lista identificada nas atividades formativas com fotos</div><div class="alerta-help">Diagnóstico, mapeamento, mobilização, seleção e fase institucional não exigem lista de presença.</div></div>';
   }else{
-    h='<div class="alerta-doc">'+
-      '<div class="alerta-top">'+
-        '<div>'+
-          '<div class="alerta-title">⚠ Alerta documental — lista de presença ausente</div>'+
-          '<div class="alerta-help">Foram encontradas atividades com registros fotográficos, mas sem arquivo de lista de presença.</div>'+
-        '</div>'+
-        '<div class="alerta-count">'+pend.length+'</div>'+
-      '</div>'+
-      '<div class="alerta-list">';
-
-    pend.forEach(function(r){
-      h+='<div class="alerta-item">'+
-        '<strong>'+esc(r.territorio||'-')+' • '+esc(r.competencia||'-')+' • '+esc(r.curso||'-')+'</strong>'+
-        '<div class="alerta-meta">'+Number(r.qtdFotos||0)+' foto(s) registrada(s) • Lista de presença: NÃO LOCALIZADA</div>'+
-      '</div>';
-    });
-
-    h+='</div>'+
-      '<div class="alerta-regra">Providência esperada: anexar a lista de presença correspondente, assinada e contendo CPF conforme o padrão documental do projeto. O SMPC confirma a existência do arquivo; assinatura e CPF exigem conferência documental.</div>'+
-      '</div>';
+    h='<div class="alerta-doc"><div class="alerta-top"><div><div class="alerta-title">⚠ Alerta documental — lista de presença ausente</div><div class="alerta-help">Somente atividades formativas (curso, oficina, palestra e seminário) com fotos são cobradas por esta regra.</div></div><div class="alerta-count">'+pend.length+'</div></div><div class="alerta-list">';
+    pend.forEach(function(r){h+='<div class="alerta-item"><strong>'+esc(r.territorio||'-')+' • '+esc(r.competencia||'-')+' • '+esc(r.atividade||r.curso||'-')+'</strong><div class="alerta-meta">'+Number(r.qtdFotos||0)+' foto(s) registrada(s) • Lista de presença: NÃO LOCALIZADA</div></div>'});
+    h+='</div><div class="alerta-regra">Providência esperada: localizar e anexar a lista correspondente à atividade formativa. Atividades não formativas permanecem como N/A para presença.</div></div>';
   }
-
-  containers.forEach(function(el){
-    if(el) el.innerHTML=h;
-  });
+  containers.forEach(function(el){if(el)el.innerHTML=h});
 }
 
-function renderAll(){
-  renderFicha();
-  renderAlertasDocumentais();
-  renderDash();
-  renderListaT();
-  renderAtividades();
-  renderEstrutura();
-  renderMetas();
-}
+function renderAll(){renderFicha();renderAlertasDocumentais();renderDash();renderListaT();renderAtividades();renderEstrutura();renderMetas()}
 
 function renderFicha(){
-  var f=D && D.ficha;
-  var el=document.getElementById('ficha-card');
-  if(!f){
-    el.innerHTML='<div style="color:#666;font-size:13px">Ficha executiva ainda não disponível.</div>';
-    return;
-  }
-  var pct=Math.round((Number(f.percExecucao)||0)*100);
-  var h='<div class="ficha-grid">';
+  var f=D&&D.ficha,el=document.getElementById('ficha-card');
+  if(!API_OK||!f){el.innerHTML='<div style="color:#666;font-size:13px">Ficha executiva aguardando conexão com a API atualizada do PTUR.</div>';return}
+  var pct=Math.round((Number(f.percExecucao)||0)*100),h='<div class="ficha-grid">';
   h+='<div><div class="ficha-rot">Instrumento</div><div class="ficha-val">'+esc(f.instrumento||'-')+'</div></div>';
   h+='<div><div class="ficha-rot">Órgão financiador</div><div class="ficha-val">'+esc(f.orgao||'-')+'</div></div>';
   h+='<div><div class="ficha-rot">Vigência</div><div class="ficha-val">'+esc(f.inicioExecucao||'-')+' — '+esc(f.fimExecucao||'-')+'</div></div>';
   h+='<div><div class="ficha-rot">Status da fase</div><div class="ficha-val"><span class="badge bA">'+esc(f.statusFase||'-')+'</span></div></div>';
   h+='<div><div class="ficha-rot">Status da execução</div><div class="ficha-val">'+esc(statusProjetoPublico(f.statusExecucao))+'</div></div>';
-  h+='<div><div class="ficha-rot">Execução real</div><div class="ficha-val">'+pct+'%</div></div>';
-  h+='</div>';
+  h+='<div><div class="ficha-rot">Execução física acompanhada</div><div class="ficha-val">'+pct+'%</div></div></div>';
   el.innerHTML=h;
 }
 
 function renderDash(){
-  var rows=AT().filter(monitoravel);
-  var completas=rows.filter(function(r){return r.status==='Completo'}).length;
-  var insuf=rows.filter(function(r){return r.status==='Insuficiente'}).length;
-  var pend=rows.filter(function(r){return r.status==='Pendente'}).length;
-
-  document.getElementById('kpi-row').innerHTML=
-    '<div class="kpi"><div class="knum">'+TERR.length+'</div><div class="klab">Territórios</div></div>'+
-    '<div class="kpi"><div class="knum">'+rows.length+'</div><div class="klab">Ações Monitoráveis até o momento</div></div>'+
-    '<div class="kpi"><div class="knum">'+completas+'</div><div class="klab">Ações Completas</div></div>'+
-    '<div class="kpi"><div class="knum">'+(insuf+pend)+'</div><div class="klab">Em acompanhamento</div></div>';
-
-  var sg=scG();
-  document.getElementById('sc-txt').textContent=sg+'%';
-  var bg=document.getElementById('bar-g');
-  bg.style.width=sg+'%';
-  bg.className='sb '+scl(sg);
-
-  var comEv=rows.filter(temEvidencia).length;
-  var pctEv=rows.length ? Math.round((comEv/rows.length)*100) : 0;
-  document.getElementById('ev-txt').textContent=comEv+' de '+rows.length+' • '+pctEv+'%';
-  document.getElementById('bar-ev').style.width=pctEv+'%';
-
-  var h='';
-  TERR.forEach(function(t,i){
-    var sc=scT(t), rt=atividadesTerritorio(t).filter(monitoravel);
-    var comp=rt.filter(function(r){return r.status==='Completo'}).length;
-    h+='<div class="tcard" onclick="abrirTerr('+i+',true)">';
-    h+='<div class="tnome">'+esc(t)+'</div>';
-    h+='<div class="tsc">'+sc+'%</div>';
-    var iniciadas=rt.filter(temEvidencia).length;
-    h+='<div class="tmeta">'+comp+' completas • '+iniciadas+' com evidência de '+rt.length+'</div>';
-    h+='<div style="margin-top:9px"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div></div>';
-    h+='</div>';
-  });
-  document.getElementById('dash-terr').innerHTML=h || '<div class="card">Nenhum território disponível.</div>';
+  var rows=ATM();
+  if(!API_OK){
+    document.getElementById('kpi-row').innerHTML='<div class="kpi"><div class="knum">8</div><div class="klab">Territórios</div></div><div class="kpi"><div class="knum">—</div><div class="klab">Ações Monitoráveis</div></div><div class="kpi"><div class="knum">—</div><div class="klab">Ações Completas</div></div><div class="kpi"><div class="knum">—</div><div class="klab">Em acompanhamento</div></div>';
+    document.getElementById('sc-txt').textContent='—';document.getElementById('bar-g').style.width='0%';document.getElementById('ev-txt').textContent='Dados indisponíveis';document.getElementById('bar-ev').style.width='0%';document.getElementById('dash-terr').innerHTML='<div class="card">Aguardando conexão com a API do SMPC.</div>';return;
+  }
+  var completas=rows.filter(function(r){return normaliza(r.status)==='completo'}).length,insuf=rows.filter(function(r){return normaliza(r.status)==='insuficiente'}).length,and=rows.filter(function(r){return normaliza(r.status)==='em andamento'}).length,pend=rows.filter(function(r){return normaliza(r.status)==='pendente'}).length;
+  document.getElementById('kpi-row').innerHTML='<div class="kpi"><div class="knum">'+TERR.length+'</div><div class="klab">Territórios</div></div><div class="kpi"><div class="knum">'+rows.length+'</div><div class="klab">Ações Monitoráveis até o momento</div></div><div class="kpi"><div class="knum">'+completas+'</div><div class="klab">Ações Completas</div></div><div class="kpi"><div class="knum">'+(insuf+and+pend)+'</div><div class="klab">Em acompanhamento</div></div>';
+  var sg=scG();document.getElementById('sc-txt').textContent=sg+'%';var bg=document.getElementById('bar-g');bg.style.width=sg+'%';bg.className='sb '+scl(sg);
+  var comEv=rows.filter(temEvidencia).length,pctEv=rows.length?Math.round(comEv/rows.length*100):0;document.getElementById('ev-txt').textContent=comEv+' de '+rows.length+' • '+pctEv+'%';document.getElementById('bar-ev').style.width=pctEv+'%';
+  var h='';TERR.forEach(function(t,i){var sc=scT(t),rt=monitoraveisTerritorio(t),comp=rt.filter(function(r){return normaliza(r.status)==='completo'}).length,iniciadas=rt.filter(temEvidencia).length;h+='<div class="tcard" onclick="abrirTerr('+i+',true)"><div class="tnome">'+esc(t)+'</div><div class="tsc">'+sc+'%</div><div class="tmeta">'+comp+' completas • '+iniciadas+' com evidência de '+rt.length+' monitoráveis</div><div style="margin-top:9px"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div></div></div>'});document.getElementById('dash-terr').innerHTML=h||'<div class="card">Nenhum território disponível.</div>';
 }
 
 function renderListaT(){
-  var h='';
-  TERR.forEach(function(t,i){
-    var sc=scT(t), rows=atividadesTerritorio(t).filter(monitoravel);
-    var comp=rows.filter(function(r){return r.status==='Completo'}).length;
-    h+='<div class="tcard" onclick="abrirTerr('+i+',false)">';
-    h+='<div class="tnome">'+esc(t)+'</div>';
-    h+='<div class="tsc">'+sc+'%</div>';
-    var iniciadas=rows.filter(temEvidencia).length;
-    h+='<div class="tmeta">'+comp+' completas • '+iniciadas+' com evidência de '+rows.length+'</div>';
-    h+='<div style="margin-top:9px"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div></div>';
-    h+='</div>';
-  });
-  document.getElementById('lista-terr').innerHTML=h || '<div class="card">Nenhum território disponível.</div>';
+  var h='';TERR.forEach(function(t,i){var sc=scT(t),rows=monitoraveisTerritorio(t),comp=rows.filter(function(r){return normaliza(r.status)==='completo'}).length,iniciadas=rows.filter(temEvidencia).length;h+='<div class="tcard" onclick="abrirTerr('+i+',false)"><div class="tnome">'+esc(t)+'</div><div class="tsc">'+(API_OK?sc+'%':'—')+'</div><div class="tmeta">'+(API_OK?(comp+' completas • '+iniciadas+' com evidência de '+rows.length+' monitoráveis'):'Aguardando dados ao vivo')+'</div><div style="margin-top:9px"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+(API_OK?sc:0)+'%"></div></div></div></div>'});document.getElementById('lista-terr').innerHTML=h||'<div class="card">Nenhum território disponível.</div>';
 }
 
-function abrirTerr(idx,fromDash){
-  if(fromDash){
-    document.querySelectorAll('.vw').forEach(function(e){e.classList.remove('on')});
-    document.querySelectorAll('.nbtn').forEach(function(e){e.classList.remove('on')});
-    document.getElementById('vw-territorios').classList.add('on');
-  }
-  document.getElementById('tlist').style.display='none';
-  document.getElementById('tdetalhe').style.display='block';
-  renderDetalhe(idx);
-}
-function voltarLista(){
-  document.getElementById('tlist').style.display='block';
-  document.getElementById('tdetalhe').style.display='none';
-}
+function abrirTerr(idx,fromDash){if(fromDash){document.querySelectorAll('.vw').forEach(function(e){e.classList.remove('on')});document.querySelectorAll('.nbtn').forEach(function(e){e.classList.remove('on')});document.getElementById('vw-territorios').classList.add('on')}document.getElementById('tlist').style.display='none';document.getElementById('tdetalhe').style.display='block';renderDetalhe(idx)}
+function voltarLista(){document.getElementById('tlist').style.display='block';document.getElementById('tdetalhe').style.display='none'}
 
 function renderDetalhe(idx){
-  var nome=TERR[idx], rows=atividadesTerritorio(nome), sc=scT(nome);
-  var h='<div class="card" style="background:var(--az);padding:22px 26px;margin-bottom:18px">';
-  h+='<div style="font:700 17px Montserrat;color:var(--am)">'+esc(nome)+'</div>';
-  h+='<div style="color:rgba(255,255,255,.62);font-size:11px;margin-top:4px">Acompanhamento das atividades e evidências registradas no SMPC</div>';
-  h+='<div style="font:700 38px Montserrat;color:#fff;margin-top:10px">'+sc+'%</div>';
-  h+='</div>';
-
-  var porComp={};
-  rows.forEach(function(r){
-    var c=r.competencia||'Sem competência informada';
-    if(!porComp[c]) porComp[c]=[];
-    porComp[c].push(r);
-  });
-
-  Object.keys(porComp).sort().forEach(function(comp){
-    h+='<div class="st">'+esc(comp)+'</div><div class="g3">';
-    porComp[comp].forEach(function(r){
-      h+='<div class="oscard '+stCls(r.status)+'">';
-      h+='<div style="display:flex;align-items:center;justify-content:space-between;gap:8px">';
-      h+='<div class="osnome">'+esc(r.curso||'-')+'</div><span class="badge '+bcl(r.status)+'">'+esc(r.status||'-')+'</span></div>';
-      h+='<div class="osfase">Fotos: '+Number(r.qtdFotos||0)+' · Presença: '+esc(fmtEv(r.listaPresenca))+
-         '<br>Relatório: '+esc(fmtEv(r.relatorioPedagogico))+' · Certificação: '+esc(fmtEv(r.certificacao))+'</div>';
-      h+='</div>';
-    });
-    h+='</div>';
-  });
-  document.getElementById('det-content').innerHTML=h;
+  var nome=TERR[idx],rows=atividadesTerritorio(nome),sc=scT(nome),h='<div class="card" style="background:var(--az);padding:22px 26px;margin-bottom:18px"><div style="font:700 17px Montserrat;color:var(--am)">'+esc(nome)+'</div><div style="color:rgba(255,255,255,.62);font-size:11px;margin-top:4px">Acompanhamento das atividades e evidências registradas no SMPC</div><div style="font:700 38px Montserrat;color:#fff;margin-top:10px">'+(API_OK?sc+'%':'—')+'</div></div>';
+  if(!API_OK||!rows.length){h+='<div class="card">Dados do território aguardando conexão com a API.</div>';document.getElementById('det-content').innerHTML=h;return}
+  var porComp={};rows.forEach(function(r){var c=r.competencia||'Sem competência informada';if(!porComp[c])porComp[c]=[];porComp[c].push(r)});
+  Object.keys(porComp).sort().forEach(function(comp){h+='<div class="st">'+esc(comp)+'</div><div class="g3">';porComp[comp].forEach(function(r){h+='<div class="oscard '+stCls(r.status)+'"><div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><div class="osnome">'+esc(r.atividade||r.curso||'-')+'</div><span class="badge '+bcl(r.status)+'">'+esc(statusLimpo(r))+'</span></div><div class="osfase">Fotos: '+Number(r.qtdFotos||0)+' · Presença: '+esc(exibirCampo(r.listaPresenca))+'<br>Documento/Relatório: '+esc(exibirCampo(r.relatorioPedagogico))+' · Certificação: '+esc(exibirCampo(r.certificacao))+'</div></div>'});h+='</div>'});document.getElementById('det-content').innerHTML=h;
 }
 
-function setFiltro(st,btn){
-  FILTRO=st;
-  document.querySelectorAll('.fbtn').forEach(function(b){b.classList.remove('on')});
-  if(btn) btn.classList.add('on');
-  renderAtividades();
-}
+function setFiltro(st,btn){FILTRO=st;document.querySelectorAll('.fbtn').forEach(function(b){b.classList.remove('on')});if(btn)btn.classList.add('on');renderAtividades()}
 
 function renderAtividades(){
-  var busca=(document.getElementById('busca') ? document.getElementById('busca').value : '').toLowerCase().trim();
-  var rows=AT().filter(function(r){
-    var okStatus=FILTRO==='TODOS' || r.status===FILTRO;
-    var blob=((r.territorio||'')+' '+(r.competencia||'')+' '+(r.curso||'')).toLowerCase();
-    return okStatus && (!busca || blob.indexOf(busca)!==-1);
-  });
+  var busca=(document.getElementById('busca')?document.getElementById('busca').value:'').toLowerCase().trim(),rows=AT().filter(function(r){var okStatus=FILTRO==='TODOS'||normaliza(r.status)===normaliza(FILTRO),blob=((r.territorio||'')+' '+(r.competencia||'')+' '+(r.atividade||r.curso||'')).toLowerCase();return okStatus&&(!busca||blob.indexOf(busca)!==-1)});
+  if(!API_OK){document.getElementById('atividades-content').innerHTML='<div class="card" style="color:#666;font-size:13px">Atividades aguardando conexão com a API atualizada.</div>';return}
+  if(!rows.length){document.getElementById('atividades-content').innerHTML='<div class="card" style="color:#666;font-size:13px">Nenhuma atividade encontrada para este filtro.</div>';return}
+  var h='<div class="tblwrap"><table class="tbl"><thead><tr><th>Território</th><th>Competência</th><th>Atividade</th><th>Status</th><th>Fotos</th><th>Presença</th><th>Documento/Relatório</th><th>Certificação</th></tr></thead><tbody>';
+  rows.forEach(function(r){h+='<tr><td><strong>'+esc(r.territorio||'-')+'</strong></td><td>'+esc(r.competencia||'-')+'</td><td>'+esc(r.atividade||r.curso||'-')+'</td><td><span class="badge '+bcl(r.status)+'">'+esc(statusLimpo(r))+'</span></td><td>'+Number(r.qtdFotos||0)+'</td><td>'+esc(exibirCampo(r.listaPresenca))+'</td><td>'+esc(exibirCampo(r.relatorioPedagogico))+'</td><td>'+esc(exibirCampo(r.certificacao))+'</td></tr>'});h+='</tbody></table></div>';document.getElementById('atividades-content').innerHTML=h;
+}
 
-  if(!rows.length){
-    document.getElementById('atividades-content').innerHTML='<div class="card" style="color:#666;font-size:13px">Nenhuma atividade encontrada para este filtro.</div>';
-    return;
-  }
-
-  var h='<div class="tblwrap"><table class="tbl"><thead><tr>'+
-    '<th>Território</th><th>Competência</th><th>Atividade</th><th>Status</th>'+
-    '<th>Fotos</th><th>Presença</th><th>Relatório</th><th>Certificação</th>'+
-    '</tr></thead><tbody>';
-
-  rows.forEach(function(r){
-    h+='<tr>';
-    h+='<td><strong>'+esc(r.territorio||'-')+'</strong></td>';
-    h+='<td>'+esc(r.competencia||'-')+'</td>';
-    h+='<td>'+esc(r.curso||'-')+'</td>';
-    h+='<td><span class="badge '+bcl(r.status)+'">'+esc(r.status||'-')+'</span></td>';
-    h+='<td>'+Number(r.qtdFotos||0)+'</td>';
-    h+='<td>'+esc(fmtEv(r.listaPresenca))+'</td>';
-    h+='<td>'+esc(fmtEv(r.relatorioPedagogico))+'</td>';
-    h+='<td>'+esc(fmtEv(r.certificacao))+'</td>';
-    h+='</tr>';
-  });
-
-  h+='</tbody></table></div>';
-  document.getElementById('atividades-content').innerHTML=h;
+function estruturaLinhas(r){
+  var formativa=exigeListaPresenca(r);
+  if(ehInstitucional(r))return[['Fase institucional','Sim'],['Lista de presença','N/A'],['Registros fotográficos',Number(r.qtdFotos||0)+' arquivo(s)'],['Documento institucional',exibirCampo(r.relatorioPedagogico)],['Certificação','N/A']];
+  if(ehNaoAplicavel(r))return[['Aplicabilidade','N/A nesta competência'],['Regra do cronograma','Remanejada/programada para competência posterior']];
+  if(ehProgramado(r))return[['Situação','Programado conforme cronograma'],['Evidências','Ainda não exigíveis para esta competência']];
+  return[['01_LISTAS_DE_PRESENCA',formativa?exibirCampo(r.listaPresenca):'N/A'],['02_REGISTROS_FOTOGRAFICOS',Number(r.qtdFotos||0)+' arquivo(s)'],['03_REGISTROS_AUDIOVISUAIS','Estrutura disponível'],['04_DOCUMENTO_OU_RELATORIO_CHAVE',exibirCampo(r.relatorioPedagogico)],['05_AVALIACAO_QUESTIONARIO_SATISFACAO',formativa?'Estrutura disponível':'N/A'],['06_CERTIFICACAO',formativa?exibirCampo(r.certificacao):'N/A']];
 }
 
 function renderEstrutura(){
-  var el=document.getElementById('estrutura-content');
-  var h='';
-
-  TERR.forEach(function(terr){
-    var rows=atividadesTerritorio(terr);
-    var porComp={};
-
-    rows.forEach(function(r){
-      var c=r.competencia||'Sem competência';
-      if(!porComp[c]) porComp[c]=[];
-      porComp[c].push(r);
-    });
-
-    var iniciadas=rows.filter(temEvidencia).length;
-
-    h+='<div class="folder-terr">';
-    h+='<div class="folder-head"><div>📁 '+esc(terr)+'</div><span>'+iniciadas+' ação(ões) com evidência</span></div>';
-    h+='<div class="comp-wrap">';
-
-    Object.keys(porComp).sort().forEach(function(comp){
-      h+='<div class="comp-title">📂 '+esc(comp)+'</div>';
-      h+='<div class="course-grid">';
-
-      porComp[comp].forEach(function(r){
-        h+='<div class="course-folder">';
-        h+='<h4>📁 '+esc(r.curso||'-')+'</h4>';
-        h+='<div class="evline"><strong>01_LISTAS_DE_PRESENCA</strong>: '+esc(fmtEv(r.listaPresenca))+'</div>';
-        h+='<div class="evline"><strong>02_REGISTROS_FOTOGRAFICOS</strong>: '+Number(r.qtdFotos||0)+' arquivo(s)</div>';
-        h+='<div class="evline"><strong>03_REGISTROS_AUDIOVISUAIS</strong>: estrutura disponível</div>';
-        h+='<div class="evline"><strong>04_RELATORIO_PEDAGOGICO_DO_INSTRUTOR</strong>: '+esc(fmtEv(r.relatorioPedagogico))+'</div>';
-        h+='<div class="evline"><strong>05_AVALIACAO_QUESTIONARIO_SATISFACAO</strong>: estrutura disponível</div>';
-        h+='<div class="evline"><strong>06_CERTIFICACAO</strong>: '+esc(fmtEv(r.certificacao))+'</div>';
-        h+='<div style="margin-top:7px"><span class="badge '+bcl(r.status)+'">'+esc(r.status||'Pendente')+'</span></div>';
-        h+='</div>';
-      });
-
-      h+='</div>';
-    });
-
-    h+='</div></div>';
-  });
-
-  el.innerHTML=h || '<div class="card">Estrutura ainda não disponível.</div>';
+  var el=document.getElementById('estrutura-content');if(!API_OK){el.innerHTML='<div class="card">Estrutura aguardando conexão com a API do SMPC.</div>';return}
+  var h='';TERR.forEach(function(terr){var rows=atividadesTerritorio(terr),porComp={};rows.forEach(function(r){var c=r.competencia||'Sem competência';if(!porComp[c])porComp[c]=[];porComp[c].push(r)});var iniciadas=rows.filter(temEvidencia).length;h+='<div class="folder-terr"><div class="folder-head"><div>📁 '+esc(terr)+'</div><span>'+iniciadas+' ação(ões) monitoráveis com evidência</span></div><div class="comp-wrap">';Object.keys(porComp).sort().forEach(function(comp){h+='<div class="comp-title">📂 '+esc(comp)+'</div><div class="course-grid">';porComp[comp].forEach(function(r){h+='<div class="course-folder"><h4>📁 '+esc(r.atividade||r.curso||'-')+'</h4>';estruturaLinhas(r).forEach(function(x){h+='<div class="evline"><strong>'+esc(x[0])+'</strong>: '+esc(x[1])+'</div>'});h+='<div style="margin-top:7px"><span class="badge '+bcl(r.status)+'">'+esc(statusLimpo(r))+'</span></div></div>'});h+='</div>'});h+='</div></div>'});el.innerHTML=h||'<div class="card">Estrutura ainda não disponível.</div>';
 }
 
 function renderMetas(){
-  var metas=(D && D.metas && Array.isArray(D.metas.territorios)) ? D.metas.territorios : [];
-  var total=(D && D.metas) ? D.metas.total : null;
-  var h='';
-
-  if(total){
-    var pcTotal=Math.round((Number(total.percentual)||0)*100);
-    h+='<div class="card" style="background:var(--am);border-color:var(--am);display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px">';
-    h+='<strong style="font-family:Montserrat;color:var(--az)">TOTAL DO PROJETO — '+Number(total.completo||0)+' de '+Number(total.previsto||0)+' ações completas</strong>';
-    h+='<strong style="font:700 20px Montserrat;color:var(--az)">'+pcTotal+'%</strong></div>';
-  }
-
-  h+='<div class="tblwrap"><table class="tbl"><thead><tr><th>Território</th><th>Previsto</th><th>Completo</th><th>Progresso</th><th>Status</th></tr></thead><tbody>';
-  metas.forEach(function(m){
-    var pc=Math.round((Number(m.percentual)||0)*100);
-    h+='<tr><td><strong>'+esc(m.territorio||'-')+'</strong></td><td>'+Number(m.previsto||0)+'</td><td>'+Number(m.completo||0)+'</td>';
-    h+='<td style="min-width:130px"><div class="sbw" style="height:7px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(pc,100)+'%"></div></div><div style="font-size:10px;color:#777;margin-top:3px">'+pc+'%</div></td>';
-    var stMeta=statusTerritorio(m.territorio,m.status);
-    h+='<td><span class="badge '+(stMeta==='Completo'?'bR':stMeta==='Não iniciado'?'bP':'bE')+'">'+esc(stMeta)+'</span></td></tr>';
-  });
-  h+='</tbody></table></div>';
-  document.getElementById('tbl-metas').innerHTML=h;
-  var det=(D && Array.isArray(D.metasDetalhadas)) ? D.metasDetalhadas : [];
-  if(det.length){
-    var grp={};
-    det.forEach(function(m){
-      var id=String(m['ID Meta']||'').split('-')[0];
-      var desc=String(m['Descricao da Meta']||'');
-      if(!id || !desc) return;
-      if(!grp[id]) grp[id]={id:id,cat:m['Categoria']||'',desc:desc,prev:0,real:0};
-      grp[id].prev=Math.max(grp[id].prev,Number(m['Quantidade Prevista Total (Projeto)']||0));
-      grp[id].real+=Number(m['Quantidade Realizada']||0);
-    });
-    var ks=Object.keys(grp).sort();
-    var hd='<div class="st" style="margin-top:28px">Metas contratuais do Prospera Turismo</div>'+
-      '<div class="tblwrap"><table class="tbl"><thead><tr><th>Meta</th><th>Categoria</th><th>Descrição</th><th>Previsto</th><th>Realizado registrado</th></tr></thead><tbody>';
-    ks.forEach(function(k){
-      var g=grp[k];
-      hd+='<tr><td><strong>'+esc(g.id)+'</strong></td><td>'+esc(g.cat)+'</td><td>'+esc(g.desc)+'</td><td>'+g.prev+'</td><td>'+g.real+'</td></tr>';
-    });
-    hd+='</tbody></table></div>';
-    document.getElementById('tbl-metas').innerHTML += hd;
-  }
-
+  var metas=(D&&D.metas&&Array.isArray(D.metas.territorios))?D.metas.territorios:[],total=(D&&D.metas)?D.metas.total:null,h='';
+  if(!API_OK){document.getElementById('tbl-metas').innerHTML='<div class="card">Metas aguardando conexão com a API do SMPC.</div>';return}
+  if(total){var pcTotal=Math.round((Number(total.percentual)||0)*100);h+='<div class="card" style="background:var(--am);border-color:var(--am);display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px"><strong style="font-family:Montserrat;color:var(--az)">TOTAL MONITORÁVEL ATÉ O MOMENTO — '+Number(total.completo||0)+' de '+Number(total.previsto||0)+' ações completas</strong><strong style="font:700 20px Montserrat;color:var(--az)">'+pcTotal+'%</strong></div>'}
+  h+='<div class="tblwrap"><table class="tbl"><thead><tr><th>Território</th><th>Previsto até o momento</th><th>Completo</th><th>Progresso</th><th>Status</th></tr></thead><tbody>';
+  metas.forEach(function(m){var pc=Math.round((Number(m.percentual)||0)*100),stMeta=statusTerritorio(m.territorio,m.status);h+='<tr><td><strong>'+esc(m.territorio||'-')+'</strong></td><td>'+Number(m.previsto||0)+'</td><td>'+Number(m.completo||0)+'</td><td style="min-width:130px"><div class="sbw" style="height:7px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(pc,100)+'%"></div></div><div style="font-size:10px;color:#777;margin-top:3px">'+pc+'%</div></td><td><span class="badge '+(stMeta==='Completo'?'bR':stMeta==='Não iniciado'?'bP':'bE')+'">'+esc(stMeta)+'</span></td></tr>'});h+='</tbody></table></div><div class="notice" style="margin-top:12px">Junho/2026 é fase institucional e atividades marcadas como Programado ou Não aplicável não entram no denominador da execução física territorial.</div>';document.getElementById('tbl-metas').innerHTML=h;
 }
-
 
 function atualizarPainelSilenciosamente(){
-  if(!APPS_SCRIPT_URL) return;
-
-  fetch(APPS_SCRIPT_URL + '?action=api&_=' + Date.now(), {cache:'no-store'})
-    .then(function(resp){
-      if(!resp.ok) throw new Error('HTTP '+resp.status);
-      return resp.json();
-    })
-    .then(function(data){
-      D = data || {};
-      TERR = Array.isArray(D.territorios) ? D.territorios : [];
-      renderAll();
-
-      var el=document.getElementById('ultimaAtualizacaoPainel');
-      if(el){
-        el.textContent='Atualizado automaticamente às '+
-          new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-      }
-    })
-    .catch(function(err){
-      console.error('Atualização automática do SMPC:',err);
-    });
+  if(!APPS_SCRIPT_URL||!API_OK)return;
+  fetch(APPS_SCRIPT_URL+'?action=api&_='+Date.now(),{cache:'no-store'}).then(function(resp){if(!resp.ok)throw new Error('HTTP '+resp.status);return resp.json()}).then(function(data){if(!data||!Array.isArray(data.atividades)||!data.atividades.length)return;D=data;TERR=Array.isArray(D.territorios)&&D.territorios.length?D.territorios:TERR_FALLBACK.slice();renderAll();var el=document.getElementById('ultimaAtualizacaoPainel');if(el)el.textContent='Atualizado automaticamente às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}).catch(function(err){console.error('Atualização automática do SMPC:',err)});
 }
-
-function iniciarAtualizacaoAutomatica(){
-  if(window.__SMPC_CC_REFRESH__) clearInterval(window.__SMPC_CC_REFRESH__);
-
-  window.__SMPC_CC_REFRESH__ = setInterval(
-    atualizarPainelSilenciosamente,
-    5 * 60 * 1000
-  );
-}
+function iniciarAtualizacaoAutomatica(){if(window.__SMPC_PTUR_REFRESH__)clearInterval(window.__SMPC_PTUR_REFRESH__);window.__SMPC_PTUR_REFRESH__=setInterval(atualizarPainelSilenciosamente,5*60*1000)}
 
 window.addEventListener('DOMContentLoaded',function(){
-  var pwd=document.getElementById('pwd');
-  if(pwd) pwd.classList.add('off');
-  carregarApp();
+  if(sessionStorage.getItem('ptur_smpc_v2_ok')==='1'){document.getElementById('pwd').classList.add('off');carregarApp()}
+  else{document.getElementById('ld').classList.add('off');setTimeout(function(){var f=document.getElementById('pf');if(f)f.focus()},100)}
 });
 </script>
 </body>
