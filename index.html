@@ -572,7 +572,7 @@ function bcl(st) {
   if (s==='realizado'||s==='enviado') return 'bR';
   if (s==='critico'||s==='atrasado') return 'bC';
   if (s==='em andamento') return 'bE';
-  if (s==='institucional') return 'bI';
+  if (s==='institucional'||s==='nao aplicavel'||s==='não aplicável') return 'bI';
   return 'bP';
 }
 
@@ -691,11 +691,18 @@ function mesesAtivosLabel() {
   return base + '. Junho/2026 foi fase institucional do projeto (equipe, identidade visual, planejamento executivo), nao avaliada por evidencia territorial.';
 }
 
+function relAplicaveis(relD) {
+  return relD.filter(function(r){
+    var s = (r['Status']||'').toLowerCase();
+    return s !== 'nao aplicavel' && s !== 'não aplicável';
+  });
+}
+
 function renderDash() {
   var rows = LD();
   var real = rows.filter(function(r){return stComp(r)==='Realizado'}).length;
   var crit = rows.filter(function(r){return stComp(r)==='Critico'}).length;
-  var relD = (D && D.relatorios) || [];
+  var relD = relAplicaveis((D && D.relatorios) || []);
   var relE = relD.filter(function(r){return (r['Status']||'')==='Enviado'}).length;
   var metD = (D && D.metas) || [];
   var metR = metD.filter(function(m){return (m['Status']||'').toLowerCase()==='realizado'}).length;
