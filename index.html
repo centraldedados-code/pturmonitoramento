@@ -238,7 +238,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
     <div class="st">Ficha do Projeto</div>
     <div class="card" id="ficha-card"></div>
 
-    <div class="st">Alertas Documentais</div>
+    <div class="st">Cobertura Fotográfica — Mapeamento</div>
     <div id="alertas-documentais"></div>
 
     <div class="st">Visão Geral</div>
@@ -517,18 +517,60 @@ function nomeAtividadeExibida(r){
 
 function atividadeExigeLista(r){
   if(!r || !ehMonitoravel(r)) return false;
+  var c=String(r.competencia||'').trim();
+  if(c==='2026-07' || c==='2026-08') return false;
   var a=norm((r.atividade||r.curso||''));
   return a.indexOf('curso')!==-1 || a.indexOf('oficina')!==-1 || a.indexOf('palestra')!==-1 || a.indexOf('seminario')!==-1;
 }
 
-function pendenciasListaPresenca(){
-  return AT().filter(function(r){
-    return atividadeExigeLista(r) && Number(r.qtdFotos||0)>0 && norm(r.listaPresenca)!=='sim';
+function resumoFotosMapeamento(){
+  var comps=['2026-07','2026-08'];
+  var itens=[];
+
+  TERR.forEach(function(t){
+    comps.forEach(function(c){
+      var rows=AT().filter(function(r){
+        if(String(r.territorio||'')!==String(t)) return false;
+        if(String(r.competencia||'')!==c) return false;
+        var a=norm((r.atividade||r.curso||''));
+        return a.indexOf('mapeamento')!==-1 || (c==='2026-07' && a.indexOf('fotografia')!==-1);
+      });
+
+      var qtd=0, evidLocalizada=false, link='', atividade='';
+      rows.forEach(function(r){
+        var q=Number(r.qtdFotos||0);
+        if(q>qtd) qtd=q;
+        var rel=norm(r.relatorioPedagogico||'');
+        if(q>0 || rel.indexOf('fotograf')!==-1) evidLocalizada=true;
+        if(!link && r.linkPasta) link=r.linkPasta;
+        if(!atividade && norm((r.atividade||r.curso||'')).indexOf('mapeamento')!==-1){
+          atividade=nomeAtividadeExibida(r);
+          if(r.linkPasta) link=r.linkPasta;
+        }
+      });
+
+      itens.push({
+        territorio:t,
+        competencia:c,
+        qtdFotos:qtd,
+        temFotos:evidLocalizada || qtd>0,
+        linkPasta:link,
+        atividade:atividade || 'Mapeamento de Ativos Turísticos'
+      });
+    });
   });
+
+  return itens;
+}
+
+function pendenciasFotograficasMapeamento(){
+  return resumoFotosMapeamento().filter(function(x){return !x.temFotos;});
 }
 
 function renderAlertasDocumentais(){
-  var pend=pendenciasListaPresenca();
+  var resumo=resumoFotosMapeamento();
+  var pend=resumo.filter(function(x){return !x.temFotos;});
+  var cobertas=resumo.length-pend.length;
   var containers=[
     document.getElementById('alertas-documentais'),
     document.getElementById('alertas-atividades')
@@ -538,29 +580,35 @@ function renderAlertasDocumentais(){
 
   if(!pend.length){
     h='<div class="alerta-doc ok">'+
-      '<div class="alerta-title">Nenhuma pendência deste tipo identificada</div>'+
-      '<div class="alerta-help">Não há atividade com fotos registradas e lista de presença ausente.</div>'+
+      '<div class="alerta-top">'+
+        '<div>'+
+          '<div class="alerta-title">✓ Cobertura fotográfica do mapeamento — julho e agosto</div>'+
+          '<div class="alerta-help">'+cobertas+' de '+resumo.length+' combinações território/competência possuem registros fotográficos localizados. Lista de presença não se aplica ao mapeamento de ativos.</div>'+
+        '</div>'+
+        '<div class="alerta-count">'+cobertas+'/'+resumo.length+'</div>'+
+      '</div>'+
       '</div>';
   }else{
     h='<div class="alerta-doc">'+
       '<div class="alerta-top">'+
         '<div>'+
-          '<div class="alerta-title">⚠ Alerta documental — lista de presença ausente</div>'+
-          '<div class="alerta-help">Foram encontradas atividades com registros fotográficos, mas sem arquivo de lista de presença.</div>'+
+          '<div class="alerta-title">⚠ Alerta de evidência — fotos do mapeamento ausentes</div>'+
+          '<div class="alerta-help">A regra de julho e agosto verifica exclusivamente a presença de registros fotográficos do mapeamento de ativos por território. Lista de presença = N/A.</div>'+
         '</div>'+
         '<div class="alerta-count">'+pend.length+'</div>'+
       '</div>'+
       '<div class="alerta-list">';
 
-    pend.forEach(function(r){
+    pend.forEach(function(x){
       h+='<div class="alerta-item">'+
-        '<strong>'+esc(r.territorio||'-')+' • '+esc(r.competencia||'-')+' • '+esc(nomeAtividadeExibida(r))+'</strong>'+
-        '<div class="alerta-meta">'+Number(r.qtdFotos||0)+' foto(s) registrada(s) • Lista de presença: NÃO LOCALIZADA</div>'+
+        '<strong>'+esc(x.territorio||'-')+' • '+esc(x.competencia||'-')+' • MAPEAMENTO DE ATIVOS TURÍSTICOS</strong>'+
+        '<div class="alerta-meta">Nenhum registro fotográfico localizado para esta competência.</div>'+
+        (x.linkPasta ? '<div style="margin-top:9px"><a class="btn" target="_blank" rel="noopener" href="'+esc(x.linkPasta)+'">ABRIR PASTA DE EVIDÊNCIAS</a></div>' : '')+
       '</div>';
     });
 
     h+='</div>'+
-      '<div class="alerta-regra">Providência esperada: anexar a lista de presença correspondente, assinada e contendo CPF conforme o padrão documental do projeto. O SMPC confirma a existência do arquivo; assinatura e CPF exigem conferência documental.</div>'+
+      '<div class="alerta-regra">Providência esperada: localizar e organizar os registros fotográficos do mapeamento na pasta da competência/atividade correspondente. Não há cobrança de lista de presença para julho e agosto.</div>'+
       '</div>';
   }
 
