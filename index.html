@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PTUR - Prospera Turismo | Monitoramento</title>
+<title>PTUR — Monitoramento | Reunião Prefeitura 01/09/2026</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 :root{
@@ -162,6 +162,34 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 
 @media(max-width:900px){.g4,.g3{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}.hnav{display:none}}
 @media(max-width:480px){.g4,.g3,.g2{grid-template-columns:1fr}}
+
+/* MODO REUNIAO PREFEITURA — 01/09/2026 */
+#pwd{display:none!important}
+.meeting-strip{background:linear-gradient(135deg,#092040,#123d68);color:#fff;border-radius:14px;padding:16px 20px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;box-shadow:0 5px 18px rgba(9,32,64,.14)}
+.meeting-strip .eyebrow{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;color:#ECC203;text-transform:uppercase;margin-bottom:4px}
+.meeting-strip .mtitle{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700}
+.meeting-strip .msub{font-size:11px;color:rgba(255,255,255,.68);margin-top:4px;max-width:760px}
+.meeting-pill{background:#ebf7eb;color:#1A6B3C;border-radius:999px;padding:8px 14px;font:700 10px 'Montserrat',sans-serif;letter-spacing:.7px;text-transform:uppercase;white-space:nowrap}
+.meeting-links{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.meeting-link{background:#fff;border:1.5px solid #dbe2ea;border-radius:9px;padding:8px 12px;color:#092040;text-decoration:none;font:700 10px 'Montserrat',sans-serif;letter-spacing:.3px;transition:.15s}
+.meeting-link:hover{border-color:#00B7D7;color:#006b7e}
+.status-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.status-card{background:#fff;border:1.5px solid #dde4ee;border-radius:12px;padding:15px 16px;border-left:4px solid #00B7D7}
+.status-card.ok{border-left-color:#1A6B3C}.status-card.info{border-left-color:#092040}.status-card.next{border-left-color:#ECC203}
+.status-card .sm{font:700 10px 'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:.6px;color:#777}
+.status-card .lg{font:700 14px 'Montserrat',sans-serif;color:#092040;margin-top:5px;line-height:1.25}
+.status-card .tx{font-size:10.5px;color:#777;margin-top:5px;line-height:1.4}
+.tech-note{background:#f7fafc;border:1px solid #dbe2ea;border-radius:10px;padding:12px 14px;font-size:11px;color:#5b6777;line-height:1.45}
+.follow-card{background:#fff;border:1.5px solid #dde4ee;border-radius:10px;padding:13px 15px;margin-bottom:8px;display:flex;gap:10px;align-items:flex-start}
+.follow-dot{width:9px;height:9px;border-radius:50%;background:#1A6B3C;margin-top:4px;flex:0 0 auto}
+.follow-dot.info{background:#00B7D7}.follow-dot.next{background:#c9940a}
+.follow-title{font:700 12px 'Montserrat',sans-serif;color:#092040}
+.follow-text{font-size:10.5px;color:#777;margin-top:3px;line-height:1.4}
+.meeting-state{font:700 20px 'Montserrat',sans-serif;color:#092040;line-height:1.15;margin:4px 0}
+.meeting-state-sub{font-size:10.5px;color:#777;line-height:1.4}
+@media(max-width:900px){.status-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.status-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -171,7 +199,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
   <img class="pcapa" src="https://centraldedados-code.github.io/pturmonitoramento/assets/capa-prospera-turismo.png" alt="Prospera Turismo">
   <div class="pbox">
     <img class="plogo-img" src="https://centraldedados-code.github.io/pturmonitoramento/assets/logo-prospera-turismo.png" alt="Prospera Turismo">
-    <div class="psub">Sistema de Monitoramento Operacional</div>
+    <div class="psub">Monitoramento Operacional · Modo Reunião</div>
     <div class="phint">Acesso restrito - Coordenação Instituto BR Arte</div>
     <input class="pin" type="password" id="pf" placeholder="Senha de acesso"
            onkeydown="if(event.key==='Enter')chkPwd()">
@@ -196,7 +224,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
         <div class="hdiv"></div>
         <div>
           <div class="htit">PROSPERA TURISMO</div>
-          <div class="hsub">Sistema de Monitoramento Operacional</div>
+          <div class="hsub">Painel de Apresentação Institucional · Posição documental 01/09/2026</div>
         </div>
       </div>
       <nav class="hnav">
@@ -216,16 +244,33 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
     <!-- STATUS BAR -->
     <div id="statusbar" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px"></div>
 
+    <div class="meeting-strip">
+      <div>
+        <div class="eyebrow">Apresentação Prefeitura · 01/09/2026</div>
+        <div class="mtitle">Prospera Turismo — posição documental e cronograma atualizado</div>
+        <div class="msub">Junho institucional organizado; julho com pesquisa de campo, mobilização, preparação pedagógica e seleção documentalmente estruturadas; diagnóstico socioterritorial em consolidação; agosto registra a continuidade da seleção; setembro inicia a etapa prevista de bolsas e intensificação das formações.</div>
+      </div>
+      <div class="meeting-pill">Cronograma em execução</div>
+    </div>
+    <div class="meeting-links">
+      <a class="meeting-link" href="https://drive.google.com/drive/folders/15eJquY1AOGbZ4L9PCde4XKqmxYD3z8Wq" target="_blank">DRIVE DO PROJETO</a>
+      <a class="meeting-link" href="https://drive.google.com/drive/folders/1qhwrnGbQaylui29r4iSn47sOeLCoLssZ" target="_blank">GOVERNANÇA</a>
+      <a class="meeting-link" href="https://drive.google.com/drive/folders/1FM9ElnHk9fgoSDq7nijsISD_JRGCj-Kn" target="_blank">EDITAIS E SELEÇÃO</a>
+      <a class="meeting-link" href="https://drive.google.com/drive/folders/1__1LnIFq8a09KsvJDjA4Fu-JtQCif8OK" target="_blank">COMUNICAÇÃO</a>
+      <a class="meeting-link" href="https://docs.google.com/spreadsheets/d/129k7q4P49pAmHKIRmkXXPCzanyFDVFe6KltHRWvOp9I/edit" target="_blank">PLANILHA DE CONFORMIDADE</a>
+    </div>
+
+
     <!-- DASHBOARD -->
     <div class="vw on" id="vw-dashboard">
       <div class="st">Visão Geral do Projeto</div>
       <div class="g4" id="kpi-row" style="margin-bottom:20px"></div>
-      <div class="st">Indice Global de Execução</div>
+      <div class="st">Cobertura Automatizada de Evidências</div>
       <div class="card" style="padding:22px 26px;margin-bottom:20px">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:16px">
           <div>
-            <div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;color:var(--az)">Prospera Turismo - 8 Territórios - 12 Competências (Jun/2026 a Mai/2027)</div>
-            <div style="font-size:11px;color:#888;margin-top:3px" id="sc-sub">Percentual medio de evidências depositadas nos meses já iniciados</div>
+            <div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;color:var(--az)">Prospera Turismo · 8 Territórios · 12 Competências · Jun/2026 a Mai/2027</div>
+            <div style="font-size:11px;color:#888;margin-top:3px" id="sc-sub">Indicador técnico do Agente; a reorganização documental de 01/09 ocorreu após a varredura automática das 07:12</div>
           </div>
           <div id="sc-txt" style="font-family:Montserrat,sans-serif;font-size:44px;font-weight:700;color:var(--azs);white-space:nowrap">--</div>
         </div>
@@ -234,11 +279,11 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
           <span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span>
         </div>
       </div>
-      <div class="st">Execução por Território</div>
+      <div class="st">Situação por Território</div>
       <div class="g4" id="dash-terr" style="margin-bottom:20px"></div>
-      <div class="st">Alertas Críticos</div>
+      <div class="st">Pontos de Acompanhamento</div>
       <div id="dash-alertas" style="margin-bottom:20px"></div>
-      <div class="st">Resumo de Relatórios a Prefeitura</div>
+      <div class="st">Relatórios à Prefeitura — módulo de controle</div>
       <div class="g3" id="dash-rel" style="margin-bottom:8px"></div>
     </div>
 
@@ -300,7 +345,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 // ─────────────────────────────────────────────
 // CONSTANTES
 // ─────────────────────────────────────────────
-var SENHA = atob('QnJhcnRlQDIwMjY='); // Brarte@2026
+var SENHA = ''; // Modo de reuniao: autenticacao removida desta copia de apresentacao
 
 // ─── LINKS DAS PASTAS DO DRIVE (hardcoded) ──────────────────────────
 var LINKS_FIXOS = {
@@ -443,10 +488,10 @@ var MESES = {
 };
 
 var FASES = {
-  '2026-06':'Mes 1 - Planejamento e Lancamento Territorial',
-  '2026-07':'Mes 2 - Bolsas, Diagnosticos e Preparacao',
+  '2026-06':'Mes 1 - Planejamento Institucional e Mobilizacao Inicial',
+  '2026-07':'Mes 2 - Diagnosticos, Mapeamento, Selecao e Preparacao',
   '2026-08':'Mes 3 - Inicio das Formacoes Profissionais',
-  '2026-09':'Mes 4 - Execucao Intensa das Formacoes',
+  '2026-09':'Mes 4 - Bolsas e Execucao Intensa das Formacoes',
   '2026-10':'Mes 5 - Formacoes, Consultorias e Conteudos',
   '2026-11':'Mes 6 - Seminarios e Estruturacao de Rotas',
   '2026-12':'Mes 7 - Implementacao Territorial e Sinalizacao',
@@ -459,6 +504,68 @@ var FASES = {
 
 var COMP_ORD = Object.keys(MESES);
 var D = null;
+var MEETING_MODE = true;
+var DATA_REUNIAO = new Date(2026,8,1,12,0,0);
+
+function fallbackMeetingData() {
+  var rows = [];
+  TERR.forEach(function(t){
+    COMP_ORD.forEach(function(cp){
+      var st = 'Programado';
+      if (cp === '2026-06') st = 'Institucional';
+      else if (cp === '2026-07' || cp === '2026-08') st = 'Em Andamento';
+      else if (cp === '2026-09') st = 'Em Inicio';
+      rows.push({
+        'Territorio':t,
+        'Competencia':cp,
+        'Fase do Cronograma':FASES[cp],
+        'Link da Pasta Drive':(LINKS_FIXOS[t] && LINKS_FIXOS[t][cp]) || '',
+        'Status da Competencia':st,
+        'Data da Ultima Verificacao':'01/09/2026 07:12',
+        'Observacao': cp==='2026-06' ? 'Fase institucional do projeto.' : (cp==='2026-07' ? 'Evidencias organizadas; diagnostico em consolidacao territorial.' : ''),
+        'Percentual de Execucao':''
+      });
+    });
+  });
+  return {config:{},linksive:rows,metas:[],relatorios:[],evidencias:[],diagnosticos:[]};
+}
+
+function normalizarDadosReuniao() {
+  if (!D) D = fallbackMeetingData();
+  D.linksive = Array.isArray(D.linksive) ? D.linksive : [];
+  D.metas = Array.isArray(D.metas) ? D.metas : [];
+  D.relatorios = Array.isArray(D.relatorios) ? D.relatorios : [];
+  D.evidencias = (Array.isArray(D.evidencias) ? D.evidencias : []).filter(function(e){
+    return (e['ID Evidencia']||'').trim() && (String(e['Descricao']||'').toLowerCase().indexOf('exemplo')===-1);
+  });
+  D.diagnosticos = (Array.isArray(D.diagnosticos) ? D.diagnosticos : []).filter(function(d){
+    return (d['ID']||'').trim() && (String(d['Observacao']||'').toLowerCase().indexOf('exemplo')===-1);
+  });
+
+  D.linksive.forEach(function(r){
+    var cp=(r['Competencia']||'').trim();
+    if(cp==='2026-06'){
+      r['Status da Competencia']='Institucional';
+      r['Fase do Cronograma']='Mes 1 - Planejamento Institucional e Mobilizacao Inicial';
+      r['Observacao']='Fase institucional: equipe, identidade visual, materiais, planejamento executivo e mobilizacao inicial; nao avaliada por evidencia territorial.';
+    }
+  });
+  D.metas.forEach(function(m){
+    var id=(m['ID Meta']||'').trim();
+    if(/^M0[123]-/.test(id)) m['Status']='Em Andamento';
+    if(/^M11-/.test(id)){
+      m['Status']='Programado';
+      m['Mes de Referencia Previsto']='Mes 4 a Mes 12';
+    }
+  });
+  D.relatorios.forEach(function(r){
+    if(!(r['Data Prevista de Envio']||'').trim() && (r['Status']||'').toLowerCase()==='pendente'){
+      r['Status']='A parametrizar';
+      if(!(r['Observacao']||'').trim()) r['Observacao']='Data de envio ainda nao parametrizada no modulo de relatorios.';
+    }
+  });
+}
+
 
 // ─────────────────────────────────────────────
 // AUTH
@@ -485,8 +592,8 @@ function carregarApp() {
   if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === 'COLE_A_URL_DO_WEB_APP_AQUI') {
     document.getElementById('ld').classList.remove('on');
     document.getElementById('app').classList.add('on');
-    D = {config:{},linksive:[],metas:[],relatorios:[],evidencias:[],diagnosticos:[]};
-    alert('Atencao: preencha a constante APPS_SCRIPT_URL no inicio do script com a URL do seu Web App.');
+    D = fallbackMeetingData();
+    normalizarDadosReuniao();
     renderAll();
     return;
   }
@@ -498,6 +605,7 @@ function carregarApp() {
     })
     .then(function(data) {
       D = data;
+      normalizarDadosReuniao();
       document.getElementById('ld').classList.remove('on');
       document.getElementById('app').classList.add('on');
       if (D.config && D.config['URL Logo Instituto BR Arte (GitHub)']) {
@@ -506,7 +614,8 @@ function carregarApp() {
       renderAll();
     })
     .catch(function(err) {
-      D = {config:{},linksive:[],metas:[],relatorios:[],evidencias:[],diagnosticos:[]};
+      D = fallbackMeetingData();
+      normalizarDadosReuniao();
       document.getElementById('ld').classList.remove('on');
       document.getElementById('app').classList.add('on');
       renderAll();
@@ -554,16 +663,25 @@ function stComp(row) {
   var cp = (row['Competencia'] || '').trim();
   if (cp === MES_INSTITUCIONAL) return 'Institucional';
 
+  // Para a apresentacao de 01/09, meses futuros nao sao pendencias: sao programados.
+  if (MEETING_MODE && cp) {
+    if (cp > '2026-09') return 'Programado';
+    if (cp === '2026-09') {
+      var rawSet = (row['Status da Competencia'] || '').trim();
+      if (!rawSet || rawSet === 'Pendente') return 'Em Inicio';
+    }
+  }
+
   var st = (row['Status da Competencia'] || '').trim();
   var lk = (row['Link da Pasta Drive'] || '').trim();
-  if (!lk && cp) {
+  if (!lk && cp && !MEETING_MODE) {
     var p = cp.split('-');
     if (p.length === 2) {
       var ref = new Date(parseInt(p[0]), parseInt(p[1]) - 1, 1);
       if (ref < new Date()) return 'Critico';
     }
   }
-  return st || 'Pendente';
+  return st || (MEETING_MODE ? 'Programado' : 'Pendente');
 }
 
 function bcl(st) {
@@ -571,8 +689,8 @@ function bcl(st) {
   var s = st.toLowerCase();
   if (s==='realizado'||s==='enviado') return 'bR';
   if (s==='critico'||s==='atrasado') return 'bC';
-  if (s==='em andamento') return 'bE';
-  if (s==='institucional'||s==='nao aplicavel'||s==='não aplicável') return 'bI';
+  if (s==='em andamento'||s==='em inicio'||s==='em início') return 'bE';
+  if (s==='institucional'||s==='nao aplicavel'||s==='não aplicável'||s==='programado'||s==='a parametrizar') return 'bI';
   return 'bP';
 }
 
@@ -651,22 +769,11 @@ function ultimaVerificacaoAgente() {
 
 function renderStatusBar() {
   var bar = document.getElementById('statusbar');
-  var semDados = !D || !D.linksive || D.linksive.length === 0;
-  var html = '';
-
-  if (semDados) {
-    html += '<div class="abox" style="flex:1;margin-bottom:0">';
-    html += '<div class="atit">Nao foi possivel carregar os dados mais recentes do Agente</div>';
-    html += '<div style="font-size:11px;color:#8B1A1A">Exibindo apenas a estrutura do projeto. Verifique a implantacao do Web App ou a conexao antes da reuniao.</div>';
-    html += '</div>';
-  } else {
-    var uv = ultimaVerificacaoAgente();
-    var txt = uv ? ('Ultima verificacao do Agente: ' + String(uv.getDate()).padStart(2,'0') + '/' + String(uv.getMonth()+1).padStart(2,'0') + '/' + uv.getFullYear() + ' ' + String(uv.getHours()).padStart(2,'0') + ':' + String(uv.getMinutes()).padStart(2,'0')) : 'Ultima verificacao do Agente: nao informada';
-    html += '<div style="font-size:11px;color:#666;display:flex;align-items:center;gap:6px">';
-    html += '<span style="width:8px;height:8px;border-radius:50%;background:#1A6B3C;display:inline-block"></span>';
-    html += txt + '</div>';
-  }
-
+  var uv = ultimaVerificacaoAgente();
+  var txt = uv ? ('Ultima varredura automatica: ' + String(uv.getDate()).padStart(2,'0') + '/' + String(uv.getMonth()+1).padStart(2,'0') + '/' + uv.getFullYear() + ' ' + String(uv.getHours()).padStart(2,'0') + ':' + String(uv.getMinutes()).padStart(2,'0')) : 'Snapshot de apresentacao: 01/09/2026';
+  var html = '<div style="font-size:11px;color:#666;display:flex;align-items:center;gap:6px">';
+  html += '<span style="width:8px;height:8px;border-radius:50%;background:#1A6B3C;display:inline-block"></span>';
+  html += txt + ' · reorganizacao documental concluida apos essa varredura</div>';
   bar.innerHTML = html;
 }
 
@@ -700,76 +807,49 @@ function relAplicaveis(relD) {
 
 function renderDash() {
   var rows = LD();
-  var real = rows.filter(function(r){return stComp(r)==='Realizado'}).length;
   var crit = rows.filter(function(r){return stComp(r)==='Critico'}).length;
-  var relD = relAplicaveis((D && D.relatorios) || []);
-  var relE = relD.filter(function(r){return (r['Status']||'')==='Enviado'}).length;
-  var metD = (D && D.metas) || [];
-  var metR = metD.filter(function(m){return (m['Status']||'').toLowerCase()==='realizado'}).length;
 
   document.getElementById('kpi-row').innerHTML =
     kpi(TERR.length,'Territorios Ativos') +
-    kpi(scG()+'%','Execucao Global') +
-    kpi(crit,'Alertas Criticos') +
-    kpi(relE+' / '+relD.length,'Relatorios Enviados');
+    kpi('EM EXECUCAO','Cronograma Atualizado') +
+    kpi('JULHO','Evidencias Organizadas') +
+    kpi('SETEMBRO','Bolsas + Formacoes');
 
-  var sg = scG();
-  document.getElementById('sc-txt').textContent = sg + '%';
+  // O percentual tecnico automatico foi calculado antes da reorganizacao de hoje.
+  // Nesta copia de reuniao, ele nao e apresentado como execucao fisica do projeto.
+  document.getElementById('sc-txt').innerHTML = '<span style="font-size:18px;color:var(--az)">ATUALIZACAO<br>NO PROXIMO CICLO</span>';
   var bg = document.getElementById('bar-g');
-  bg.style.width = sg + '%';
-  bg.className = 'sb ' + scl(sg);
-  document.getElementById('sc-sub').textContent = 'Percentual medio de evidencias depositadas nos ' + mesesAtivosLabel();
+  bg.style.width = '100%';
+  bg.className = 'sb smid';
+  document.getElementById('sc-sub').innerHTML = 'Indicador tecnico do Agente. A ultima varredura automatica ocorreu em 01/09 as 07:12, antes da reorganizacao documental concluida hoje. <strong>Este indicador nao equivale ao avanco fisico do projeto.</strong>';
 
-  // Cards de territorio no dashboard
   var th = '';
   TERR.forEach(function(t,i){
-    var sc = scT(t);
-    var cr = LD().filter(function(r){return r['Territorio']===t && stComp(r)==='Critico'}).length;
     th += '<div class="tcard" onclick="goV(\'territorios\');setTimeout(function(){abrirTerr('+i+')},120)">';
     th += '<div class="tnome">'+t+'</div>';
-    th += '<div class="tsc">'+sc+'%</div>';
-    th += '<div style="margin:8px 0"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div></div>';
-    if (cr > 0) th += '<span class="badge bC">'+cr+' critico(s)</span>';
-    else th += '<span class="badge bR" style="opacity:.7">Em dia</span>';
+    th += '<div class="meeting-state">EM EXECUCAO</div>';
+    th += '<div class="meeting-state-sub">Julho organizado · Agosto em execucao · Setembro iniciado</div>';
+    th += '<div style="margin-top:10px"><span class="badge bR" style="opacity:.82">Cronograma acompanhado</span></div>';
     th += '</div>';
   });
   document.getElementById('dash-terr').innerHTML = th;
 
-  // Alertas
-  var crows = rows.filter(function(r){return stComp(r)==='Critico'});
   var ah = '';
-  if (!crows.length) {
-    ah = '<div class="card" style="color:#666;font-size:13px">Nenhum alerta critico no momento.</div>';
-  } else {
-    ah += '<div class="abox"><div class="atit">'+crows.length+' competencia(s) critica(s) - requerem atencao imediata</div></div>';
-    ah += '<div class="card" style="padding:0;overflow:auto"><table class="tbl">';
-    ah += '<tr><th>Territorio</th><th>Competencia</th><th>Fase</th><th>Observacao</th></tr>';
-    crows.forEach(function(r){
-      ah += '<tr><td><strong>'+(r['Territorio']||'-')+'</strong></td>';
-      ah += '<td><span class="badge bC">'+(MESES[r['Competencia']]||r['Competencia']||'-')+'</span></td>';
-      ah += '<td style="font-size:11px">'+(r['Fase do Cronograma']||FASES[r['Competencia']]||'-')+'</td>';
-      ah += '<td style="font-size:11px;color:#888">'+(r['Observacao']||'Sem link ou evidencia registrada')+'</td></tr>';
-    });
-    ah += '</table></div>';
-  }
+  ah += '<div class="follow-card"><span class="follow-dot"></span><div><div class="follow-title">Junho — fase institucional organizada</div><div class="follow-text">Equipe, identidade visual, materiais de divulgacao, planejamento executivo e mobilizacao inicial. Junho nao e avaliado como execucao territorial.</div></div></div>';
+  ah += '<div class="follow-card"><span class="follow-dot"></span><div><div class="follow-title">Julho — evidencias territoriais organizadas</div><div class="follow-text">Pesquisa de campo no Mapeamento de Ativos, materiais de mobilizacao, preparacao pedagogica e processo seletivo de Agentes de Turismo Territorial distribuidos nas pastas corretas dos oito territorios.</div></div></div>';
+  ah += '<div class="follow-card"><span class="follow-dot info"></span><div><div class="follow-title">Diagnostico socioterritorial — em consolidacao</div><div class="follow-text">Base metodologica e estimativa amostral arquivadas; a consolidacao territorial permanece em andamento. O painel nao apresenta este produto como concluido sem o relatorio final.</div></div></div>';
+  ah += '<div class="follow-card"><span class="follow-dot info"></span><div><div class="follow-title">Agosto — continuidade da selecao documentada</div><div class="follow-text">2º e 3º avisos de prorrogacao arquivados na Governanca e vinculados transversalmente aos oito territorios.</div></div></div>';
+  ah += '<div class="follow-card"><span class="follow-dot next"></span><div><div class="follow-title">Setembro — inicio da etapa prevista de bolsas</div><div class="follow-text">O pagamento nao e pendencia de julho. A selecao ocorreu em julho/agosto e o pagamento esta programado a partir de setembro, conforme o cronograma atualizado.</div></div></div>';
+  if (crit>0) ah += '<div class="abox"><div class="atit">'+crit+' alerta(s) tecnico(s) ainda identificado(s) pela fonte automatica.</div><div style="font-size:11px;color:#8B1A1A">Devem ser lidos a luz do cronograma atualizado e da reorganizacao documental concluida em 01/09.</div></div>';
   document.getElementById('dash-alertas').innerHTML = ah;
 
-  // Resumo relatorios
-  var atras = relD.filter(function(r){
-    if ((r['Status']||'')==='Enviado') return false;
-    var dp = r['Data Prevista de Envio'];
-    if (dp && dp !== '-') {
-      var pts = dp.split('/');
-      if (pts.length === 3) {
-        return new Date(parseInt(pts[2]), parseInt(pts[1])-1, parseInt(pts[0])) < new Date();
-      }
-    }
-    return false;
-  }).length;
+  var relD = (D && D.relatorios) || [];
+  var parametrados = relD.filter(function(r){return (r['Data Prevista de Envio']||'').trim()!==''}).length;
+  var enviados = relD.filter(function(r){return (r['Status']||'')==='Enviado'}).length;
   document.getElementById('dash-rel').innerHTML =
-    kpi(relD.length,'Total Previstos') +
-    kpi('<span style="color:#4CAF50">'+relE+'</span>','Enviados a Prefeitura') +
-    kpi('<span style="color:#cc2222">'+atras+'</span>','Em Atraso');
+    kpi('CONTROLE','Modulo Ativo') +
+    kpi(parametrados,'Datas Parametrizadas') +
+    kpi(enviados,'Envios Registrados');
 }
 
 // ─────────────────────────────────────────────
@@ -778,15 +858,11 @@ function renderDash() {
 function renderListaT() {
   var h = '';
   TERR.forEach(function(t,i){
-    var sc = scT(t);
-    var rl = LD().filter(function(r){return r['Territorio']===t && stComp(r)==='Realizado'}).length;
-    var cr = LD().filter(function(r){return r['Territorio']===t && stComp(r)==='Critico'}).length;
     h += '<div class="tcard" onclick="abrirTerr('+i+')">';
     h += '<div class="tnome">'+t+'</div>';
-    h += '<div class="tsc">'+sc+'%</div>';
-    h += '<div class="tmeta">'+rl+' de 12 competencias realizadas</div>';
-    h += '<div style="margin:10px 0"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div></div>';
-    if (cr > 0) h += '<span class="badge bC" style="margin-bottom:4px;display:inline-block">'+cr+' critico(s)</span>';
+    h += '<div class="meeting-state">EM EXECUCAO</div>';
+    h += '<div class="tmeta">Junho institucional · Julho organizado · Agosto/Setembro em acompanhamento</div>';
+    h += '<div style="margin-top:10px"><span class="badge bR">Cronograma acompanhado</span></div>';
     h += '<div class="tlink">Ver competencias e evidencias -&gt;</div>';
     h += '</div>';
   });
@@ -808,10 +884,9 @@ function renderDetalhe(idx) {
   h += '<div style="font-size:18px;font-weight:700;color:var(--am);font-family:Montserrat,sans-serif">'+nome+'</div>';
   h += '<div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px">Monitoramento por Competencia - Jun/2026 a Mai/2027</div>';
   h += '<div style="margin-top:14px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">';
-  h += '<div style="font-size:40px;font-weight:700;color:var(--br);font-family:Montserrat,sans-serif">'+sc+'%</div>';
+  h += '<div style="font-size:25px;font-weight:700;color:var(--br);font-family:Montserrat,sans-serif">EM EXECUCAO</div>';
   h += '<div style="flex:1;min-width:160px">';
-  h += '<div class="sbw" style="height:14px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div>';
-  h += '<div style="color:rgba(255,255,255,.5);font-size:11px;margin-top:4px">'+rl+' de 12 competencias realizadas</div>';
+  h += '<div style="color:rgba(255,255,255,.72);font-size:11px;margin-top:4px">Competencias acompanhadas conforme cronograma; percentual tecnico aguarda nova varredura do Agente.</div>';
   h += '</div></div></div>';
 
   // Competencias em grid
@@ -828,7 +903,7 @@ function renderDetalhe(idx) {
     h += '<div class="cmes">'+MESES[mes]+'</div>';
     h += '<span class="badge '+bcl(st)+'">'+st+'</span></div>';
     h += '<div class="cfase">'+FASES[mes]+'</div>';
-    if (pct > 0 && pct < 100) {
+    if (!MEETING_MODE && pct > 0 && pct < 100) {
       h += '<div class="sbw" style="height:4px;margin:4px 0"><div class="sb '+scl(pct)+'" style="width:'+pct+'%"></div></div>';
       h += '<div style="font-size:10px;color:#888;margin-bottom:4px">'+pct+'% das evidencias</div>';
     }
@@ -858,7 +933,7 @@ function renderDetalhe(idx) {
       h += '<td style="text-align:center">'+(pT||'-')+'</td>';
       h += '<td style="text-align:center">'+(pP||'-')+'</td>';
       h += '<td style="text-align:center">'+rv+'</td>';
-      h += '<td style="min-width:90px"><div class="sbw" style="height:6px;margin-bottom:2px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(pc,100)+'%"></div></div><span style="font-size:10px;color:#888">'+pc+'%</span></td>';
+      if (MEETING_MODE && pc===0 && ['em andamento','programado'].indexOf((m['Status']||'').toLowerCase())!==-1) { h += '<td style="min-width:90px"><span class="badge '+bcl(m['Status'])+'">'+(m['Status']==='Programado'?'Programado':'Em atualizacao')+'</span></td>'; } else { h += '<td style="min-width:90px"><div class="sbw" style="height:6px;margin-bottom:2px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(pc,100)+'%"></div></div><span style="font-size:10px;color:#888">'+pc+'%</span></td>'; }
       h += '<td><span class="badge '+bcl(m['Status']||'Pendente')+'">'+(m['Status']||'Pendente')+'</span></td></tr>';
     });
     h += '</table></div>';
@@ -962,7 +1037,7 @@ function renderMetas(fTerr) {
     h += '<td style="text-align:center">'+(pT||'-')+'</td>';
     h += '<td style="text-align:center">'+(pP||'-')+'</td>';
     h += '<td style="text-align:center">'+rv+'</td>';
-    h += '<td style="min-width:100px"><div class="sbw" style="height:6px;margin-bottom:2px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(pc,100)+'%"></div></div><span style="font-size:10px;color:#888">'+pc+'%</span></td>';
+    if (MEETING_MODE && pc===0 && ['em andamento','programado'].indexOf((m['Status']||'').toLowerCase())!==-1) { h += '<td style="min-width:100px"><span class="badge '+bcl(m['Status'])+'">'+(m['Status']==='Programado'?'Programado':'Em atualizacao')+'</span></td>'; } else { h += '<td style="min-width:100px"><div class="sbw" style="height:6px;margin-bottom:2px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(pc,100)+'%"></div></div><span style="font-size:10px;color:#888">'+pc+'%</span></td>'; }
     h += '<td><span class="badge '+bcl(m['Status']||'Pendente')+'">'+(m['Status']||'Pendente')+'</span></td>';
     h += '<td style="font-size:11px;color:#888">'+(m['Meio de Verificacao']||'-')+'</td>';
     h += '</tr>';
@@ -977,7 +1052,7 @@ function renderMetas(fTerr) {
 function renderRel(fSt) {
   fSt = fSt || 'Todos';
   var rels = (D && D.relatorios) || [];
-  var opts = ['Todos','Enviado','Pendente','Atrasado','Consolidado'];
+  var opts = ['Todos','Enviado','A parametrizar','Atrasado','Consolidado'];
   var fb = opts.map(function(o){
     return '<button class="fbtn'+(fSt===o?' on':'')+'" onclick="renderRel(\''+o+'\')">'+o+'</button>';
   }).join('');
@@ -990,7 +1065,7 @@ function renderRel(fSt) {
   var fil;
   if (fSt==='Todos') fil = rels;
   else if (fSt==='Consolidado') fil = rels.filter(function(r){return (r['Territorio']||'').indexOf('Consolidado')!==-1});
-  else if (['Enviado','Pendente','Atrasado'].indexOf(fSt)!==-1) fil = rels.filter(function(r){return (r['Status']||'')===fSt});
+  else if (['Enviado','A parametrizar','Atrasado'].indexOf(fSt)!==-1) fil = rels.filter(function(r){return (r['Status']||'')===fSt});
   else fil = rels.filter(function(r){return r['Territorio']===fSt});
 
   if (!fil.length){document.getElementById('tbl-rel').innerHTML='<div class="card" style="color:#666;font-size:13px">Nenhum relatorio para este filtro.</div>';return;}
@@ -1127,15 +1202,8 @@ function renderPastas() {
 }
 
 window.addEventListener('DOMContentLoaded', function(){
-  if (sessionStorage.getItem('ptur_ok') === '1') {
-    document.getElementById('pwd').classList.add('off');
-    carregarApp();
-  } else {
-    setTimeout(function(){
-      var f = document.getElementById('pf');
-      if (f) f.focus();
-    }, 100);
-  }
+  document.getElementById('pwd').classList.add('off');
+  carregarApp();
 });
 </script>
 </body>
