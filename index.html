@@ -85,6 +85,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .bA{background:#e8f0f8;color:var(--az)}
 .bT{background:#e0f7fb;color:#006080}
 .bE{background:#fff8e0;color:#7A4F00}
+.bI{background:#e8f0f8;color:#092040}
 
 /* CARD */
 .card{background:var(--br);border:1.5px solid #dde4ee;border-radius:12px;padding:16px 18px}
@@ -104,6 +105,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .ccard.stP{border-left:4px solid #c9940a}
 .ccard.stC{border-left:4px solid #cc2222}
 .ccard.stE{border-left:4px solid var(--azs)}
+.ccard.stI{border-left:4px solid #092040}
 .cmes{font-size:13px;font-weight:700;color:var(--az);font-family:'Montserrat',sans-serif}
 .cfase{font-size:10px;color:#999;margin:3px 0 8px}
 .clink{font-size:11px;color:var(--azs);font-weight:700;margin-top:8px;display:block;text-decoration:none}
@@ -140,6 +142,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .pcard.stR{border-left:4px solid var(--gv)}
 .pcard.stP{border-left:4px solid #c9940a}
 .pcard.stC{border-left:4px solid #cc2222}
+.pcard.stI{border-left:4px solid #092040}
 .pcard-mes{font-size:13px;font-weight:700;color:var(--az);font-family:'Montserrat',sans-serif}
 .pcard-fase{font-size:10px;color:#999}
 .pcard-terr{font-size:11px;color:var(--azs);font-weight:700;font-family:'Montserrat',sans-serif}
@@ -210,6 +213,9 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 
   <div class="wrap">
 
+    <!-- STATUS BAR -->
+    <div id="statusbar" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px"></div>
+
     <!-- DASHBOARD -->
     <div class="vw on" id="vw-dashboard">
       <div class="st">Visão Geral do Projeto</div>
@@ -219,7 +225,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:16px">
           <div>
             <div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;color:var(--az)">Prospera Turismo - 8 Territórios - 12 Competências (Jun/2026 a Mai/2027)</div>
-            <div style="font-size:11px;color:#888;margin-top:3px">Percentual medio de evidências depositadas nos meses já iniciados (Jun/2026 e Jul/2026)</div>
+            <div style="font-size:11px;color:#888;margin-top:3px" id="sc-sub">Percentual medio de evidências depositadas nos meses já iniciados</div>
           </div>
           <div id="sc-txt" style="font-family:Montserrat,sans-serif;font-size:44px;font-weight:700;color:var(--azs);white-space:nowrap">--</div>
         </div>
@@ -536,10 +542,20 @@ function abrirTerr(idx) {
 // ─────────────────────────────────────────────
 function LD() { return (D && D.linksive) ? D.linksive : []; }
 
+// Mes 1 (Junho/2026) e fase institucional do projeto inteiro (equipe,
+// identidade visual, material de divulgacao, planejamento executivo),
+// nao execucao territorial. O Agente so verifica evidencia dentro das
+// pastas ATV de cada territorio, entao Junho nunca vai ter evidencia
+// territorial por natureza, nao por atraso. Por isso Junho nunca
+// aparece como Critico: aparece como Institucional.
+var MES_INSTITUCIONAL = '2026-06';
+
 function stComp(row) {
+  var cp = (row['Competencia'] || '').trim();
+  if (cp === MES_INSTITUCIONAL) return 'Institucional';
+
   var st = (row['Status da Competencia'] || '').trim();
   var lk = (row['Link da Pasta Drive'] || '').trim();
-  var cp = (row['Competencia'] || '').trim();
   if (!lk && cp) {
     var p = cp.split('-');
     if (p.length === 2) {
@@ -556,6 +572,7 @@ function bcl(st) {
   if (s==='realizado'||s==='enviado') return 'bR';
   if (s==='critico'||s==='atrasado') return 'bC';
   if (s==='em andamento') return 'bE';
+  if (s==='institucional') return 'bI';
   return 'bP';
 }
 
@@ -573,6 +590,8 @@ function scT(nome) {
   var totalPct = 0, mesesAtivos = 0;
   rows.forEach(function(r){
     var comp = (r['Competencia']||'').trim();
+    // Junho e fase institucional, nao mede evidencia territorial: fora da media
+    if (comp === MES_INSTITUCIONAL) return;
     // Ignorar meses que ainda nao comecaram
     if (comp) {
       var p = comp.split('-');
@@ -603,6 +622,7 @@ function fd(v) { return (v && v !== '' && v !== '0') ? String(v) : '-'; }
 // RENDER ALL
 // ─────────────────────────────────────────────
 function renderAll() {
+  renderStatusBar();
   renderDash();
   renderListaT();
   renderMetas();
@@ -613,10 +633,62 @@ function renderAll() {
 }
 
 // ─────────────────────────────────────────────
+// BARRA DE STATUS (atualizacao e alerta de conexao)
+// ─────────────────────────────────────────────
+function ultimaVerificacaoAgente() {
+  var rows = LD();
+  var maisRecente = null;
+  rows.forEach(function(r) {
+    var v = (r['Data da Ultima Verificacao'] || '').trim();
+    if (!v) return;
+    var m = v.match(/^(\d{2})\/(\d{2})\/(\d{4})\s+(\d{2}):(\d{2})/);
+    if (!m) return;
+    var dt = new Date(parseInt(m[3]), parseInt(m[2]) - 1, parseInt(m[1]), parseInt(m[4]), parseInt(m[5]));
+    if (!maisRecente || dt > maisRecente) maisRecente = dt;
+  });
+  return maisRecente;
+}
+
+function renderStatusBar() {
+  var bar = document.getElementById('statusbar');
+  var semDados = !D || !D.linksive || D.linksive.length === 0;
+  var html = '';
+
+  if (semDados) {
+    html += '<div class="abox" style="flex:1;margin-bottom:0">';
+    html += '<div class="atit">Nao foi possivel carregar os dados mais recentes do Agente</div>';
+    html += '<div style="font-size:11px;color:#8B1A1A">Exibindo apenas a estrutura do projeto. Verifique a implantacao do Web App ou a conexao antes da reuniao.</div>';
+    html += '</div>';
+  } else {
+    var uv = ultimaVerificacaoAgente();
+    var txt = uv ? ('Ultima verificacao do Agente: ' + String(uv.getDate()).padStart(2,'0') + '/' + String(uv.getMonth()+1).padStart(2,'0') + '/' + uv.getFullYear() + ' ' + String(uv.getHours()).padStart(2,'0') + ':' + String(uv.getMinutes()).padStart(2,'0')) : 'Ultima verificacao do Agente: nao informada';
+    html += '<div style="font-size:11px;color:#666;display:flex;align-items:center;gap:6px">';
+    html += '<span style="width:8px;height:8px;border-radius:50%;background:#1A6B3C;display:inline-block"></span>';
+    html += txt + '</div>';
+  }
+
+  bar.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────
 // DASHBOARD
 // ─────────────────────────────────────────────
 function kpi(n,l) {
   return '<div class="kpi"><div class="knum">'+n+'</div><div class="klab">'+l+'</div></div>';
+}
+
+function mesesAtivosLabel() {
+  var hoje = new Date();
+  var ativos = COMP_ORD.filter(function(mes){
+    if (mes === MES_INSTITUCIONAL) return false; // Junho e institucional, nao entra na media territorial
+    var p = mes.split('-');
+    return new Date(parseInt(p[0]), parseInt(p[1])-1, 1) <= hoje;
+  });
+  if (!ativos.length) return 'nenhum mes de execucao territorial iniciado ainda';
+  var base;
+  if (ativos.length === 1) base = '1 mes de execucao territorial ja iniciado (' + MESES[ativos[0]] + ')';
+  else base = ativos.length + ' meses de execucao territorial ja iniciados (' + MESES[ativos[0]] + ' a ' + MESES[ativos[ativos.length-1]] + ')';
+  return base + '. Junho/2026 foi fase institucional do projeto (equipe, identidade visual, planejamento executivo), nao avaliada por evidencia territorial.';
 }
 
 function renderDash() {
@@ -639,6 +711,7 @@ function renderDash() {
   var bg = document.getElementById('bar-g');
   bg.style.width = sg + '%';
   bg.className = 'sb ' + scl(sg);
+  document.getElementById('sc-sub').textContent = 'Percentual medio de evidencias depositadas nos ' + mesesAtivosLabel();
 
   // Cards de territorio no dashboard
   var th = '';
