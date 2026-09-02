@@ -49,9 +49,6 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .nbtn{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.65);font-size:10.5px;font-weight:700;letter-spacing:.45px;padding:8px 11px;border-radius:8px;text-transform:uppercase;font-family:'Montserrat',sans-serif}
 .nbtn:hover{color:var(--br);background:rgba(255,255,255,.1)}
 .nbtn.on{color:var(--am);background:rgba(236,194,3,.15)}
-.hnav a.nbtn{text-decoration:none;display:inline-flex;align-items:center}
-.portal-nav{border:1px solid rgba(236,194,3,.65)!important;color:var(--am)!important}
-.portal-nav:hover{background:var(--am)!important;color:var(--az)!important}
 .diag-top{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:12px}
 .diag-main{background:linear-gradient(135deg,#092040 0%,#0d3768 100%);border-radius:12px;padding:18px 20px;color:#fff}
 .diag-main .n{font:700 34px Montserrat;color:var(--am)}
@@ -65,7 +62,6 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .diag-note{font-size:10.5px;color:#657180;line-height:1.55;margin-top:10px}
 @media(max-width:950px){.diag-top{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.diag-top{grid-template-columns:1fr}}
-
 
 .wrap{max-width:1220px;margin:0 auto;padding:24px 16px}
 .vw{display:none}
@@ -241,7 +237,6 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
     </div>
     <nav class="hnav">
       <button class="nbtn on" onclick="goV('dashboard',this)">Dashboard</button>
-      <a class="nbtn portal-nav" href="https://script.google.com/macros/s/AKfycbxX4EnJVSA-9l3UXOIY1XJHPJVmUZjYjKSbG1cRAEEWArOhSJo5XhFBwozGUG2LqF8zIQ/exec" target="_blank" rel="noopener noreferrer">Portal do Produtor</a>
       <button class="nbtn" onclick="goV('territorios',this)">Territórios</button>
       <button class="nbtn" onclick="goV('atividades',this)">Atividades</button>
       <button class="nbtn" onclick="goV('evidenciasdrive',this)">Evidências Drive</button>
@@ -259,7 +254,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
     <div class="st">Produção Diagnóstica e Relatoria</div>
     <div class="diag-top">
       <div class="diag-main">
-        <div class="n">502</div>
+        <div class="n" id="diag-total">--</div>
         <div class="t">Diagnósticos completos</div>
         <div class="s">Produção diagnóstica vinculada à jornada de acompanhamento e às consultorias territoriais.</div>
       </div>
@@ -280,9 +275,9 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
         <a class="diag-portal" href="https://script.google.com/macros/s/AKfycbxX4EnJVSA-9l3UXOIY1XJHPJVmUZjYjKSbG1cRAEEWArOhSJo5XhFBwozGUG2LqF8zIQ/exec" target="_blank" rel="noopener noreferrer">Abrir Portal do Produtor</a>
       </div>
     </div>
-    <div class="diag-note">Indicadores consolidados. Os links individualizados dos diagnósticos permanecem na Planilha de Conformidade e não são expostos neste painel público.</div>
+    <div class="diag-note">Total atualizado automaticamente a partir da Planilha de Conformidade. Os links individualizados dos diagnósticos permanecem na área de rastreabilidade e não são exibidos no painel.</div>
 
-    <div class="st">Alertas Documentais</div>
+    <div class="st">Cobertura Fotográfica — Mapeamento</div>
     <div id="alertas-documentais"></div>
 
     <div class="st">Visão Geral</div>
@@ -561,18 +556,60 @@ function nomeAtividadeExibida(r){
 
 function atividadeExigeLista(r){
   if(!r || !ehMonitoravel(r)) return false;
+  var c=String(r.competencia||'').trim();
+  if(c==='2026-07' || c==='2026-08') return false;
   var a=norm((r.atividade||r.curso||''));
   return a.indexOf('curso')!==-1 || a.indexOf('oficina')!==-1 || a.indexOf('palestra')!==-1 || a.indexOf('seminario')!==-1;
 }
 
-function pendenciasListaPresenca(){
-  return AT().filter(function(r){
-    return atividadeExigeLista(r) && Number(r.qtdFotos||0)>0 && norm(r.listaPresenca)!=='sim';
+function resumoFotosMapeamento(){
+  var comps=['2026-07','2026-08'];
+  var itens=[];
+
+  TERR.forEach(function(t){
+    comps.forEach(function(c){
+      var rows=AT().filter(function(r){
+        if(String(r.territorio||'')!==String(t)) return false;
+        if(String(r.competencia||'')!==c) return false;
+        var a=norm((r.atividade||r.curso||''));
+        return a.indexOf('mapeamento')!==-1 || (c==='2026-07' && a.indexOf('fotografia')!==-1);
+      });
+
+      var qtd=0, evidLocalizada=false, link='', atividade='';
+      rows.forEach(function(r){
+        var q=Number(r.qtdFotos||0);
+        if(q>qtd) qtd=q;
+        var rel=norm(r.relatorioPedagogico||'');
+        if(q>0 || rel.indexOf('fotograf')!==-1) evidLocalizada=true;
+        if(!link && r.linkPasta) link=r.linkPasta;
+        if(!atividade && norm((r.atividade||r.curso||'')).indexOf('mapeamento')!==-1){
+          atividade=nomeAtividadeExibida(r);
+          if(r.linkPasta) link=r.linkPasta;
+        }
+      });
+
+      itens.push({
+        territorio:t,
+        competencia:c,
+        qtdFotos:qtd,
+        temFotos:evidLocalizada || qtd>0,
+        linkPasta:link,
+        atividade:atividade || 'Mapeamento de Ativos Turísticos'
+      });
+    });
   });
+
+  return itens;
+}
+
+function pendenciasFotograficasMapeamento(){
+  return resumoFotosMapeamento().filter(function(x){return !x.temFotos;});
 }
 
 function renderAlertasDocumentais(){
-  var pend=pendenciasListaPresenca();
+  var resumo=resumoFotosMapeamento();
+  var pend=resumo.filter(function(x){return !x.temFotos;});
+  var cobertas=resumo.length-pend.length;
   var containers=[
     document.getElementById('alertas-documentais'),
     document.getElementById('alertas-atividades')
@@ -582,29 +619,35 @@ function renderAlertasDocumentais(){
 
   if(!pend.length){
     h='<div class="alerta-doc ok">'+
-      '<div class="alerta-title">Nenhuma pendência deste tipo identificada</div>'+
-      '<div class="alerta-help">Não há atividade com fotos registradas e lista de presença ausente.</div>'+
+      '<div class="alerta-top">'+
+        '<div>'+
+          '<div class="alerta-title">✓ Cobertura fotográfica do mapeamento — julho e agosto</div>'+
+          '<div class="alerta-help">'+cobertas+' de '+resumo.length+' combinações território/competência possuem registros fotográficos localizados. Lista de presença não se aplica ao mapeamento de ativos.</div>'+
+        '</div>'+
+        '<div class="alerta-count">'+cobertas+'/'+resumo.length+'</div>'+
+      '</div>'+
       '</div>';
   }else{
     h='<div class="alerta-doc">'+
       '<div class="alerta-top">'+
         '<div>'+
-          '<div class="alerta-title">⚠ Alerta documental — lista de presença ausente</div>'+
-          '<div class="alerta-help">Foram encontradas atividades com registros fotográficos, mas sem arquivo de lista de presença.</div>'+
+          '<div class="alerta-title">⚠ Alerta de evidência — fotos do mapeamento ausentes</div>'+
+          '<div class="alerta-help">A regra de julho e agosto verifica exclusivamente a presença de registros fotográficos do mapeamento de ativos por território. Lista de presença = N/A.</div>'+
         '</div>'+
         '<div class="alerta-count">'+pend.length+'</div>'+
       '</div>'+
       '<div class="alerta-list">';
 
-    pend.forEach(function(r){
+    pend.forEach(function(x){
       h+='<div class="alerta-item">'+
-        '<strong>'+esc(r.territorio||'-')+' • '+esc(r.competencia||'-')+' • '+esc(nomeAtividadeExibida(r))+'</strong>'+
-        '<div class="alerta-meta">'+Number(r.qtdFotos||0)+' foto(s) registrada(s) • Lista de presença: NÃO LOCALIZADA</div>'+
+        '<strong>'+esc(x.territorio||'-')+' • '+esc(x.competencia||'-')+' • MAPEAMENTO DE ATIVOS TURÍSTICOS</strong>'+
+        '<div class="alerta-meta">Nenhum registro fotográfico localizado para esta competência.</div>'+
+        (x.linkPasta ? '<div style="margin-top:9px"><a class="btn" target="_blank" rel="noopener" href="'+esc(x.linkPasta)+'">ABRIR PASTA DE EVIDÊNCIAS</a></div>' : '')+
       '</div>';
     });
 
     h+='</div>'+
-      '<div class="alerta-regra">Providência esperada: anexar a lista de presença correspondente, assinada e contendo CPF conforme o padrão documental do projeto. O SMPC confirma a existência do arquivo; assinatura e CPF exigem conferência documental.</div>'+
+      '<div class="alerta-regra">Providência esperada: localizar e organizar os registros fotográficos do mapeamento na pasta da competência/atividade correspondente. Não há cobrança de lista de presença para julho e agosto.</div>'+
       '</div>';
   }
 
@@ -613,8 +656,34 @@ function renderAlertasDocumentais(){
   });
 }
 
+
+function totalDiagnosticosPublicos(){
+  if(!D) return null;
+
+  if(D.diagnosticosResumo){
+    var v = D.diagnosticosResumo.totalCompletos;
+    if(v===undefined || v===null || v==='') v = D.diagnosticosResumo.total;
+    var n = Number(v);
+    if(Number.isFinite(n)) return n;
+  }
+
+  // Compatibilidade temporária com a API v3.1.
+  // A API v3.2 deixa de transportar os registros individualizados.
+  if(Array.isArray(D.diagnosticos)) return D.diagnosticos.length;
+
+  return null;
+}
+
+function renderDiagnosticos(){
+  var el=document.getElementById('diag-total');
+  if(!el) return;
+  var total=totalDiagnosticosPublicos();
+  el.textContent=(total===null) ? '--' : total.toLocaleString('pt-BR');
+}
+
 function renderAll(){
   renderFicha();
+  renderDiagnosticos();
   renderAlertasDocumentais();
   renderDash();
   renderListaT();
@@ -782,7 +851,7 @@ function renderAtividades(){
 function estruturaEvidencias(r){
   var a=norm((r.atividade||r.curso||''));
   var st=stNorm(r);
-  if(st==='institucional') return '<div class="evline"><strong>FASE_INSTITUCIONAL</strong>: planejamento, equipe, logística e preparação do projeto — presença/certificação não se aplicam.</div>';
+  if(st==='institucional') return '<div class="evline"><strong>FASE_INSTITUCIONAL</strong>: planejamento, equipe, logística e preparação do projeto.</div><div class="evline"><strong>LISTA_DE_PRESENCA</strong>: aplicável somente quando houver reunião/planejamento formal — '+esc(simNao(r.listaPresenca))+'</div><div class="evline"><strong>CERTIFICACAO</strong>: N/A</div>';
   if(st==='programado') return '<div class="evline"><strong>ESTRUTURA_PROGRAMADA</strong>: competência futura conforme cronograma.</div>';
   if(st==='nao aplicavel') return '<div class="evline"><strong>NÃO_APLICÁVEL</strong>: atividade remanejada para outra competência conforme cronograma atualizado.</div>';
   if(a.indexOf('diagnost')!==-1){
@@ -1036,6 +1105,6 @@ window.addEventListener('DOMContentLoaded',function(){
   }
 });
 </script>
-<!-- PATCH PTUR 2026-09-02: Portal do Produtor + Produção Diagnóstica consolidada -->
+<!-- PTUR 2026-09-02: Diagnósticos dinâmicos + mapeamento Jul/Ago + Portal somente no card SMPC -->
 </body>
 </html>
