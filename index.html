@@ -198,6 +198,33 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 @media(max-width:950px){.drive-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.drive-grid{grid-template-columns:1fr}.evid-hero{align-items:flex-start}.evid-hero-badge{display:none}}
 
+/* METAS — cards executivos padronizados */
+.metas-group{margin-top:20px}
+.metas-group-title{font:700 11px Montserrat;color:var(--az);text-transform:uppercase;letter-spacing:1px;margin:0 0 10px;padding-left:9px;border-left:4px solid var(--ci)}
+.metas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.meta-card{background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:17px 18px;display:flex;flex-direction:column;min-height:250px;box-shadow:0 3px 12px rgba(9,32,64,.04)}
+.meta-card:hover{border-color:var(--ci);box-shadow:0 7px 20px rgba(0,183,215,.10)}
+.meta-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.meta-id{font:700 10px Montserrat;color:var(--ci);letter-spacing:.5px}
+.meta-status{display:inline-block;font:700 9px Montserrat;padding:4px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+.meta-status.concluida{background:var(--gvb);color:var(--gv)}
+.meta-status.andamento{background:#e0f7fb;color:#176377}
+.meta-status.nao-iniciada{background:var(--awb);color:var(--aw)}
+.meta-title{font:700 13px Montserrat;color:var(--az);line-height:1.45;min-height:38px}
+.meta-category{font:700 9px Montserrat;color:#6f7884;text-transform:uppercase;letter-spacing:.6px;margin-top:5px}
+.meta-numbers{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 10px}
+.meta-number{background:#f7f9fb;border:1px solid #e7ebf0;border-radius:10px;padding:10px 11px}
+.meta-number .lab{font:700 9px Montserrat;color:#7b8490;text-transform:uppercase;letter-spacing:.45px}
+.meta-number .val{font:700 20px Montserrat;color:var(--az);margin-top:3px}
+.meta-number.real .val{color:var(--ci)}
+.meta-reading{background:#f8fbfc;border-left:4px solid var(--ci);border-radius:8px;padding:10px 11px;font-size:10.5px;color:#5f6975;line-height:1.5;margin:2px 0 12px}
+.meta-reading strong{font-family:Montserrat;color:var(--az)}
+.meta-scope{font-size:10px;color:#7a8490;margin-top:auto;margin-bottom:8px}
+.meta-progress-row{display:flex;justify-content:space-between;gap:10px;font-size:9.5px;color:#737d88;margin-bottom:5px}
+.meta-progress-row strong{font-family:Montserrat;color:var(--az)}
+@media(max-width:950px){.metas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.metas-grid{grid-template-columns:1fr}.meta-card{min-height:auto}}
+
 @media(max-width:950px){.course-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.course-grid{grid-template-columns:1fr}}
 
@@ -384,7 +411,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
   </section>
 
   <section class="vw" id="vw-metas">
-    <div class="st">Acompanhamento de Metas por Território</div>
+    <div class="st">Acompanhamento das Metas do Projeto</div>
     <div id="tbl-metas"></div>
   </section>
 
@@ -1037,28 +1064,151 @@ function renderEstrutura(){
   el.innerHTML=h || '<div class="card">Estrutura ainda não disponível.</div>';
 }
 
-function renderMetas(){
-  var metas=(D && D.metas && Array.isArray(D.metas.territorios)) ? D.metas.territorios : [];
-  var total=(D && D.metas) ? D.metas.total : null;
-  var h='';
+function campoMetaPTUR(obj,nomes){
+  if(!obj) return '';
+  for(var i=0;i<nomes.length;i++){
+    if(Object.prototype.hasOwnProperty.call(obj,nomes[i])) return obj[nomes[i]];
+  }
+  return '';
+}
 
-  if(total){
-    var pcTotal=Math.round((Number(total.percentual)||0)*100);
-    h+='<div class="card" style="background:var(--am);border-color:var(--am);display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px">';
-    h+='<strong style="font-family:Montserrat;color:var(--az)">TOTAL DO PROJETO — '+Number(total.completo||0)+' de '+Number(total.previsto||0)+' ações completas</strong>';
-    h+='<strong style="font:700 20px Montserrat;color:var(--az)">'+pcTotal+'%</strong></div>';
+function numeroMetaPTUR(v){
+  var s=String(v==null?'':v).replace(/\./g,'').replace(',','.').trim();
+  var n=Number(s);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function baseIdMetaPTUR(id){
+  var s=String(id||'').trim().toUpperCase();
+  var m=s.match(/^(M\d+)/);
+  return m ? m[1] : s;
+}
+
+function metasDetalhadasAgrupadasPTUR(){
+  var rows=(D && Array.isArray(D.metasDetalhadas)) ? D.metasDetalhadas : [];
+  var mapa={}, ordem=[];
+
+  rows.forEach(function(r){
+    var id=String(campoMetaPTUR(r,['ID Meta','ID','Meta'])||'').trim();
+    if(!id || id.toLowerCase().indexOf('nota:')===0) return;
+
+    var base=baseIdMetaPTUR(id);
+    if(!base) return;
+
+    if(!mapa[base]){
+      mapa[base]={
+        id:base,
+        categoria:String(campoMetaPTUR(r,['Categoria'])||'Meta').trim(),
+        descricao:String(campoMetaPTUR(r,['Descricao da Meta','Descrição da Meta','Descricao','Descrição'])||base).trim(),
+        abrangencia:String(campoMetaPTUR(r,['Abrangencia','Abrangência'])||'').trim(),
+        previstoTotal:0,
+        previstoTerritorio:0,
+        realizado:0,
+        indicador:String(campoMetaPTUR(r,['Indicador de Acompanhamento','Indicador'])||'').trim(),
+        meio:String(campoMetaPTUR(r,['Meio de Verificacao','Meio de Verificação'])||'').trim(),
+        territorios:{},
+        linhas:0
+      };
+      ordem.push(base);
+    }
+
+    var g=mapa[base];
+    var prevTotal=numeroMetaPTUR(campoMetaPTUR(r,['Quantidade Prevista Total (Projeto)','Quantidade Prevista Total','Quantidade Prevista']));
+    var prevTerr=numeroMetaPTUR(campoMetaPTUR(r,['Quantidade Prevista por Territorio','Quantidade Prevista por Território']));
+    var realizado=numeroMetaPTUR(campoMetaPTUR(r,['Quantidade Realizada','Realizado']));
+    var terr=String(campoMetaPTUR(r,['Territorio','Território'])||'').trim();
+
+    if(!g.previstoTotal && prevTotal) g.previstoTotal=prevTotal;
+    if(prevTerr) g.previstoTerritorio+=prevTerr;
+    g.realizado+=realizado;
+    g.linhas++;
+
+    if(terr && norm(terr)!=='todos') g.territorios[terr]=true;
+  });
+
+  return ordem.map(function(id){
+    var g=mapa[id];
+    if(!g.previstoTotal && g.previstoTerritorio) g.previstoTotal=g.previstoTerritorio;
+    return g;
+  });
+}
+
+function statusMetaDetalhadaPTUR(meta){
+  var previsto=Number(meta.previstoTotal||0);
+  var realizado=Number(meta.realizado||0);
+  if(previsto>0 && realizado>=previsto) return {texto:'Concluída',classe:'concluida'};
+  if(realizado>0) return {texto:'Em andamento',classe:'andamento'};
+  return {texto:'Não iniciada',classe:'nao-iniciada'};
+}
+
+function leituraAgenteMetaPTUR(meta){
+  var previsto=Number(meta.previstoTotal||0);
+  var realizado=Number(meta.realizado||0);
+
+  if(previsto>0 && realizado>=previsto){
+    return 'O Agente registra a meta física integralmente alcançada.';
+  }
+  if(realizado>0){
+    return 'O Agente registra '+realizado.toLocaleString('pt-BR')+' de '+previsto.toLocaleString('pt-BR')+' unidade(s) previstas nesta meta.';
+  }
+  return 'O Agente ainda não registra execução contabilizada para esta meta.';
+}
+
+function renderMetas(){
+  var el=document.getElementById('tbl-metas');
+  var metas=metasDetalhadasAgrupadasPTUR();
+
+  if(!metas.length){
+    el.innerHTML='<div class="card" style="color:#666;font-size:13px">Metas detalhadas ainda não disponíveis.</div>';
+    return;
   }
 
-  h+='<div class="tblwrap"><table class="tbl"><thead><tr><th>Território</th><th>Previsto</th><th>Completo</th><th>Progresso</th><th>Status</th></tr></thead><tbody>';
+  var grupos={};
+  var ordemGrupos=[];
+
   metas.forEach(function(m){
-    var pc=Math.round((Number(m.percentual)||0)*100);
-    h+='<tr><td><strong>'+esc(m.territorio||'-')+'</strong></td><td>'+Number(m.previsto||0)+'</td><td>'+Number(m.completo||0)+'</td>';
-    h+='<td style="min-width:130px"><div class="sbw" style="height:7px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(pc,100)+'%"></div></div><div style="font-size:10px;color:#777;margin-top:3px">'+pc+'%</div></td>';
-    var stMeta=statusTerritorio(m.territorio,m.status);
-    h+='<td><span class="badge '+(stMeta==='Completo'?'bR':stMeta==='Não iniciado'?'bP':'bE')+'">'+esc(stMeta)+'</span></td></tr>';
+    var cat=m.categoria||'Outras metas';
+    if(!grupos[cat]){grupos[cat]=[];ordemGrupos.push(cat);}
+    grupos[cat].push(m);
   });
-  h+='</tbody></table></div>';
-  document.getElementById('tbl-metas').innerHTML=h;
+
+  var h='';
+
+  ordemGrupos.forEach(function(cat){
+    h+='<div class="metas-group">';
+    h+='<div class="metas-group-title">'+esc(cat)+'</div>';
+    h+='<div class="metas-grid">';
+
+    grupos[cat].forEach(function(m){
+      var previsto=Number(m.previstoTotal||0);
+      var realizado=Number(m.realizado||0);
+      var pct=previsto>0 ? Math.round((realizado/previsto)*100) : 0;
+      var pctBar=Math.max(0,Math.min(pct,100));
+      var st=statusMetaDetalhadaPTUR(m);
+      var terrQtd=Object.keys(m.territorios||{}).length;
+      var escopo=terrQtd>0 ? terrQtd+' território(s)' : (m.abrangencia||'Projeto inteiro');
+
+      h+='<div class="meta-card">';
+      h+='<div class="meta-card-top"><div class="meta-id">'+esc(m.id)+'</div><span class="meta-status '+st.classe+'">'+esc(st.texto)+'</span></div>';
+      h+='<div class="meta-title">'+esc(m.descricao||m.id)+'</div>';
+      h+='<div class="meta-category">'+esc(m.categoria||'Meta')+'</div>';
+
+      h+='<div class="meta-numbers">';
+      h+='<div class="meta-number"><div class="lab">Meta</div><div class="val">'+previsto.toLocaleString('pt-BR')+'</div></div>';
+      h+='<div class="meta-number real"><div class="lab">Realizado</div><div class="val">'+realizado.toLocaleString('pt-BR')+'</div></div>';
+      h+='</div>';
+
+      h+='<div class="meta-reading"><strong>Leitura do Agente</strong><br>'+esc(leituraAgenteMetaPTUR(m))+'</div>';
+      h+='<div class="meta-scope">Abrangência: <strong>'+esc(escopo)+'</strong></div>';
+      h+='<div class="meta-progress-row"><span>Progresso físico</span><strong>'+realizado.toLocaleString('pt-BR')+' de '+previsto.toLocaleString('pt-BR')+' · '+pct+'%</strong></div>';
+      h+='<div class="sbw" style="height:9px"><div class="sb '+scl(pct)+'" style="width:'+pctBar+'%"></div></div>';
+      h+='</div>';
+    });
+
+    h+='</div></div>';
+  });
+
+  el.innerHTML=h;
 }
 
 
