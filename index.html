@@ -198,6 +198,26 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 @media(max-width:950px){.drive-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.drive-grid{grid-template-columns:1fr}.evid-hero{align-items:flex-start}.evid-hero-badge{display:none}}
 
+
+/* ATIVIDADES — cards didáticos padronizados */
+.atividade-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.atividade-card{background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:17px 18px;display:flex;flex-direction:column;min-height:285px;box-shadow:0 3px 12px rgba(9,32,64,.04)}
+.atividade-card:hover{border-color:var(--ci);box-shadow:0 7px 20px rgba(0,183,215,.10)}
+.atividade-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:9px}
+.atividade-territorio{font:700 10px Montserrat;color:var(--ci);letter-spacing:.35px;line-height:1.4}
+.atividade-titulo{font:700 13px Montserrat;color:var(--az);line-height:1.45;margin-top:2px}
+.atividade-categoria{font:700 9px Montserrat;color:#6f7884;text-transform:uppercase;letter-spacing:.6px;margin-top:5px}
+.atividade-competencia{font-size:10px;color:#7a8490;margin-top:6px}
+.atividade-evid-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 10px}
+.atividade-evid{background:#f7f9fb;border:1px solid #e7ebf0;border-radius:10px;padding:9px 10px}
+.atividade-evid .lab{font:700 8.5px Montserrat;color:#7b8490;text-transform:uppercase;letter-spacing:.4px}
+.atividade-evid .val{font:700 13px Montserrat;color:var(--az);margin-top:3px;overflow-wrap:anywhere}
+.atividade-evid.fotos .val{color:var(--ci)}
+.atividade-reading{background:#f8fbfc;border-left:4px solid var(--ci);border-radius:8px;padding:10px 11px;font-size:10.5px;color:#5f6975;line-height:1.5;margin-top:auto}
+.atividade-reading strong{font-family:Montserrat;color:var(--az)}
+@media(max-width:950px){.atividade-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.atividade-grid{grid-template-columns:1fr}.atividade-card{min-height:auto}}
+
 /* METAS — cards executivos padronizados */
 .metas-group{margin-top:20px}
 .metas-group-title{font:700 11px Montserrat;color:var(--az);text-transform:uppercase;letter-spacing:1px;margin:0 0 10px;padding-left:9px;border-left:4px solid var(--ci)}
@@ -839,11 +859,56 @@ function setFiltro(st,btn){
   renderAtividades();
 }
 
+function textoPtBRAtividade_(valor){
+  var s=String(valor||'').replace(/_/g,' ').replace(/\s+/g,' ').trim();
+  var trocas=[
+    [/Instalacao/gi,'Instalação'],[/Logistica/gi,'Logística'],[/Diagnostico/gi,'Diagnóstico'],
+    [/Consolidacao/gi,'Consolidação'],[/Mobilizacao/gi,'Mobilização'],[/Estruturacao/gi,'Estruturação'],
+    [/Conclusao/gi,'Conclusão'],[/Selecao/gi,'Seleção'],[/Nao/gi,'Não'],[/Evidencia/gi,'Evidência'],
+    [/Evidencias/gi,'Evidências'],[/Fotografica/gi,'Fotográfica'],[/Fotograficos/gi,'Fotográficos'],
+    [/Turisticos/gi,'Turísticos'],[/Turisticas/gi,'Turísticas'],[/Gravacoes/gi,'Gravações'],
+    [/Inicio/gi,'Início'],[/Producao/gi,'Produção'],[/Avanco/gi,'Avanço'],[/Formacoes/gi,'Formações'],
+    [/Construcao/gi,'Construção'],[/Seminarios/gi,'Seminários'],[/Intermediarios/gi,'Intermediários'],
+    [/Validacao/gi,'Validação'],[/Catalogos/gi,'Catálogos'],[/Experiencias/gi,'Experiências'],
+    [/Finalizacao/gi,'Finalização'],[/Conteudos/gi,'Conteúdos'],[/Premios/gi,'Prêmios'],
+    [/Comunicacao/gi,'Comunicação'],[/Sinalizacao/gi,'Sinalização'],[/Acoes/gi,'Ações'],
+    [/Ativacoes/gi,'Ativações'],[/Avaliacao/gi,'Avaliação'],[/Relatorio/gi,'Relatório'],
+    [/Pedagogico/gi,'Pedagógico'],[/Territorio/gi,'Território']
+  ];
+  trocas.forEach(function(t){s=s.replace(t[0],t[1]);});
+  return s;
+}
+
+function categoriaAtividadeDidaticaPTUR_(r){
+  var partes=String((r&&(r.atividade||r.curso))||'').split(' — ');
+  var cat=partes.length>=3 ? partes[2] : '';
+  return textoPtBRAtividade_(cat||'Atividade');
+}
+
+function tituloAtividadeDidaticaPTUR_(r){
+  var partes=String((r&&(r.atividade||r.curso))||'').split(' — ');
+  var titulo=partes.length>=4 ? partes.slice(3).join(' — ') : nomeAtividadeExibida(r);
+  titulo=textoPtBRAtividade_(titulo);
+  return titulo || 'Atividade';
+}
+
+function leituraAgenteAtividadePTUR_(r){
+  var st=stNorm(r);
+  if(st==='completo') return 'O Agente registra evidências suficientes para considerar esta atividade completa.';
+  if(st==='em andamento') return 'O Agente localizou evidências e mantém esta atividade em acompanhamento.';
+  if(st==='insuficiente') return 'O Agente localizou evidências, mas a comprovação ainda está incompleta.';
+  if(st==='programado') return 'Atividade programada para esta competência; ainda sem execução contabilizada.';
+  if(st==='institucional') return 'Atividade institucional registrada; presença e certificação podem não se aplicar.';
+  if(st==='nao aplicavel') return 'Atividade não aplicável nesta competência, conforme o cronograma.';
+  if(temEvidencia(r)) return 'O Agente localizou registros, mas a atividade ainda não está concluída.';
+  return 'O Agente ainda não registra evidências suficientes para esta atividade.';
+}
+
 function renderAtividades(){
   var busca=(document.getElementById('busca') ? document.getElementById('busca').value : '').toLowerCase().trim();
   var rows=AT().filter(function(r){
     var okStatus=FILTRO==='TODOS' || r.status===FILTRO;
-    var blob=((r.territorio||'')+' '+(r.competencia||'')+' '+(r.curso||'')).toLowerCase();
+    var blob=((r.territorio||'')+' '+(r.competencia||'')+' '+(r.curso||'')+' '+tituloAtividadeDidaticaPTUR_(r)).toLowerCase();
     return okStatus && (!busca || blob.indexOf(busca)!==-1);
   });
 
@@ -852,28 +917,32 @@ function renderAtividades(){
     return;
   }
 
-  var h='<div class="tblwrap"><table class="tbl"><thead><tr>'+
-    '<th>Território</th><th>Competência</th><th>Atividade</th><th>Status</th>'+
-    '<th>Fotos</th><th>Presença</th><th>Relatório</th><th>Certificação</th>'+
-    '</tr></thead><tbody>';
+  var h='<div class="atividade-grid">';
 
   rows.forEach(function(r){
-    h+='<tr>';
-    h+='<td><strong>'+esc(r.territorio||'-')+'</strong></td>';
-    h+='<td>'+esc(r.competencia||'-')+'</td>';
-    h+='<td>'+esc(nomeAtividadeExibida(r))+'</td>';
-    h+='<td><span class="badge '+bcl(r.status)+'">'+esc(r.status||'-')+'</span></td>';
-    h+='<td>'+Number(r.qtdFotos||0)+'</td>';
-    h+='<td>'+esc(simNao(r.listaPresenca))+'</td>';
-    h+='<td>'+esc(simNao(r.relatorioPedagogico))+'</td>';
-    h+='<td>'+esc(simNao(r.certificacao))+'</td>';
-    h+='</tr>';
+    var pres=simNao(r.listaPresenca);
+    var rel=simNao(r.relatorioPedagogico);
+    var cert=simNao(r.certificacao);
+    h+='<div class="atividade-card">';
+    h+='<div class="atividade-card-top"><div class="atividade-territorio">'+esc(r.territorio||'-')+'</div><span class="badge '+bcl(r.status)+'">'+esc(r.status||'-')+'</span></div>';
+    h+='<div class="atividade-titulo">'+esc(tituloAtividadeDidaticaPTUR_(r))+'</div>';
+    h+='<div class="atividade-categoria">'+esc(categoriaAtividadeDidaticaPTUR_(r))+'</div>';
+    h+='<div class="atividade-competencia">Competência: <strong>'+esc(r.competencia||'-')+'</strong></div>';
+
+    h+='<div class="atividade-evid-grid">';
+    h+='<div class="atividade-evid fotos"><div class="lab">Fotos</div><div class="val">'+Number(r.qtdFotos||0).toLocaleString('pt-BR')+'</div></div>';
+    h+='<div class="atividade-evid"><div class="lab">Presença</div><div class="val">'+esc(pres)+'</div></div>';
+    h+='<div class="atividade-evid"><div class="lab">Relatório</div><div class="val">'+esc(rel)+'</div></div>';
+    h+='<div class="atividade-evid"><div class="lab">Certificação</div><div class="val">'+esc(cert)+'</div></div>';
+    h+='</div>';
+
+    h+='<div class="atividade-reading"><strong>Leitura do Agente</strong><br>'+esc(leituraAgenteAtividadePTUR_(r))+'</div>';
+    h+='</div>';
   });
 
-  h+='</tbody></table></div>';
+  h+='</div>';
   document.getElementById('atividades-content').innerHTML=h;
 }
-
 
 function estruturaEvidencias(r){
   var a=norm((r.atividade||r.curso||''));
