@@ -1389,6 +1389,14 @@ function statusMetaDetalhadaPTUR(meta){
   var previsto=Number(meta.previstoTotal||0);
   var realizado=Number(meta.realizado||0);
   var pct=previsto>0 ? realizado/previsto : 0;
+  var id=String(meta.id||'').toUpperCase();
+  var statusFonte=norm(meta.statusFonte||'');
+
+  // M11 é uma meta recorrente de bolsas. Alcançar 400 beneficiários não
+  // encerra automaticamente o ciclo se os pagamentos ainda estiverem em andamento.
+  if(id==='M11' && statusFonte!=='realizado'){
+    return {texto:'Em andamento',classe:'em-prazo'};
+  }
 
   if(previsto>0 && pct>=1) return {texto:'Concluída',classe:'concluida'};
 
@@ -1410,6 +1418,9 @@ function leituraAgenteMetaPTUR(meta){
   var realizado=Number(meta.realizado||0);
   var st=statusMetaDetalhadaPTUR(meta);
 
+  if(String(meta.id||'').toUpperCase()==='M11' && realizado>=previsto && norm(meta.statusFonte||'')!=='realizado'){
+    return 'Os 400 beneficiários já foram alcançados e o 1º mês da bolsa foi pago. A cobertura quantitativa chegou a 400 de 400, mas o ciclo de pagamentos permanece em andamento.';
+  }
   if(previsto>0 && realizado>=previsto){
     return 'Meta física integralmente alcançada conforme o quantitativo realizado registrado na aba METAS.';
   }
