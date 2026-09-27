@@ -230,6 +230,23 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .meta-status.concluida{background:var(--gvb);color:var(--gv)}
 .meta-status.andamento{background:#e0f7fb;color:#176377}
 .meta-status.nao-iniciada{background:var(--awb);color:var(--aw)}
+.meta-status.atrasada{background:var(--rdb);color:var(--rd)}
+.meta-status.programada{background:#edf2f7;color:#5b6572}
+.meta-status.em-prazo{background:#e0f7fb;color:#176377}
+.monitor-note{margin-top:10px;font-size:10.5px;color:#657180;line-height:1.5}
+.monitor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.monitor-mini{background:#fff;border:1.5px solid var(--bd);border-radius:12px;padding:15px 17px}
+.monitor-mini .n{font:700 24px Montserrat;color:var(--ci)}
+.monitor-mini .t{font:700 10px Montserrat;color:var(--az);text-transform:uppercase;letter-spacing:.4px;margin-top:3px}
+.monitor-mini .s{font-size:10px;color:#718096;margin-top:5px;line-height:1.4}
+.monitor-mini.atraso{border-left:5px solid #8B1A1A}
+.monitor-mini.atraso .n{color:#8B1A1A}
+.monitor-mini.ok{border-left:5px solid #1A6B3C}
+.monitor-mini.futuro{border-left:5px solid #718096}
+.monitor-mini.prazo{border-left:5px solid #00B7D7}
+@media(max-width:950px){.monitor-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.monitor-grid{grid-template-columns:1fr}}
+
 .meta-title{font:700 13px Montserrat;color:var(--az);line-height:1.45;min-height:38px}
 .meta-category{font:700 9px Montserrat;color:#6f7884;text-transform:uppercase;letter-spacing:.6px;margin-top:5px}
 .meta-numbers{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 10px}
@@ -330,31 +347,51 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
     <div class="st">Visão Geral</div>
     <div class="g4" id="kpi-row"></div>
 
-    <div class="st">Índice Global de Execução</div>
+    <div class="st">Execução Física do Plano de Trabalho</div>
     <div class="card" style="padding:22px 26px">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px;flex-wrap:wrap">
         <div>
-          <div style="font:700 14px Montserrat;color:var(--az)">Execução física acompanhada pelo SMPC</div>
-          <div style="font-size:11px;color:#7b8490;margin-top:4px">Percentual calculado a partir das ações com evidência considerada completa pelo Agente.</div>
+          <div style="font:700 14px Montserrat;color:var(--az)">Cumprimento das 25 metas oficiais</div>
+          <div style="font-size:11px;color:#7b8490;margin-top:4px;max-width:820px">
+            Calculado exclusivamente pelas quantidades realizadas registradas na aba <strong>METAS</strong>.
+            Cada meta oficial possui o mesmo peso no índice global. Evidências existentes no Drive não são tratadas como conclusão física.
+          </div>
         </div>
         <div id="sc-txt" style="font:700 42px Montserrat;color:var(--ci)">--</div>
       </div>
       <div class="sbw" style="height:20px"><div class="sb" id="bar-g" style="width:0%"></div></div>
+      <div class="monitor-note" id="fisico-nota"></div>
     </div>
 
-    <div class="st">Cobertura de Evidências</div>
-    <div class="card" style="padding:18px 22px">
-      <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:10px">
-        <div>
-          <div style="font:700 13px Montserrat;color:var(--az)">Ações que já possuem algum registro de execução</div>
-          <div style="font-size:11px;color:#7b8490;margin-top:3px">Inclui evidências parciais, mesmo quando a ação ainda não atingiu o critério de conclusão.</div>
+    <div class="st">Situação das Metas Oficiais</div>
+    <div class="monitor-grid" id="meta-kpi-row"></div>
+
+    <div class="st">Monitoramento Documental das Ações</div>
+    <div class="g2">
+      <div class="card" style="padding:18px 22px">
+        <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:10px">
+          <div>
+            <div style="font:700 13px Montserrat;color:var(--az)">Conformidade documental das ações verificadas</div>
+            <div style="font-size:11px;color:#7b8490;margin-top:3px">Percentual de ações monitoráveis classificadas como completas pelo Agente. Este indicador não é execução física do projeto.</div>
+          </div>
+          <div id="doc-txt" style="font:700 30px Montserrat;color:var(--ci)">--</div>
         </div>
-        <div id="ev-txt" style="font:700 30px Montserrat;color:var(--ci)">--</div>
+        <div class="sbw" style="height:14px"><div class="sb" id="bar-doc" style="width:0%"></div></div>
       </div>
-      <div class="sbw" style="height:14px"><div class="sb smid" id="bar-ev" style="width:0%"></div></div>
+
+      <div class="card" style="padding:18px 22px">
+        <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:10px">
+          <div>
+            <div style="font:700 13px Montserrat;color:var(--az)">Cobertura de evidências</div>
+            <div style="font-size:11px;color:#7b8490;margin-top:3px">Ações que já possuem algum registro documental ou fotográfico, mesmo que ainda não cumpram a meta física.</div>
+          </div>
+          <div id="ev-txt" style="font:700 30px Montserrat;color:var(--ci)">--</div>
+        </div>
+        <div class="sbw" style="height:14px"><div class="sb smid" id="bar-ev" style="width:0%"></div></div>
+      </div>
     </div>
 
-    <div class="st">Execução por Território</div>
+    <div class="st">Execução Física por Território</div>
     <div class="g4" id="dash-terr"></div>
 
     <div class="st">Escopo do Painel Público</div>
@@ -366,7 +403,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 
   <section class="vw" id="vw-territorios">
     <div id="tlist">
-      <div class="st">Selecione um Território</div>
+      <div class="st">Selecione um Território — Execução Física das Metas</div>
       <div class="g4" id="lista-terr"></div>
     </div>
     <div id="tdetalhe" style="display:none">
@@ -545,17 +582,110 @@ function scl(n){
   if(n>=10) return 'slow';
   return 'scrit';
 }
-function scT(nome){
-  var rows=monitoraveisTerritorio(nome);
-  if(!rows.length) return 0;
-  var completas=rows.filter(function(r){return stNorm(r)==='completo'}).length;
-  return Math.round((completas/rows.length)*100);
+function mesAtualProjetoPTUR(){
+  var inicio='';
+  if(D && D.config && D.config.vigenciaInicial) inicio=String(D.config.vigenciaInicial);
+  if(!inicio && D && D.ficha && D.ficha.inicioExecucao) inicio=String(D.ficha.inicioExecucao);
+
+  var m=inicio.match(/^(\d{4})-(\d{2})/);
+  if(!m) return 1;
+
+  var yi=Number(m[1]), mi=Number(m[2])-1;
+  var hoje=new Date();
+  var n=((hoje.getFullYear()-yi)*12)+(hoje.getMonth()-mi)+1;
+  return Math.max(1,Math.min(12,n));
 }
+
+function faixaMesMetaPTUR(valor){
+  var nums=String(valor||'').match(/\d+/g);
+  if(!nums || !nums.length) return null;
+  nums=nums.map(Number).filter(function(n){return n>=1 && n<=12;});
+  if(!nums.length) return null;
+  return {inicio:Math.min.apply(null,nums),fim:Math.max.apply(null,nums)};
+}
+
+function progressoPctMetaPTUR(meta){
+  var previsto=Number(meta&&meta.previstoTotal||0);
+  var realizado=Number(meta&&meta.realizado||0);
+  if(!(previsto>0)) return 0;
+  return Math.max(0,Math.min(100,(realizado/previsto)*100));
+}
+
+function linhasMetasTerritorioPTUR(nome){
+  var rows=(D && Array.isArray(D.metasDetalhadas)) ? D.metasDetalhadas : [];
+  return rows.filter(function(r){
+    var id=String(campoMetaPTUR(r,['ID Meta','ID','Meta'])||'').trim();
+    var terr=String(campoMetaPTUR(r,['Territorio','Território'])||'').trim();
+    if(!id || !terr || norm(terr)==='todos') return false;
+    return terr===nome;
+  }).map(function(r){
+    var previsto=numeroMetaPTUR(campoMetaPTUR(r,['Quantidade Prevista por Territorio','Quantidade Prevista por Território']));
+    var realizado=numeroMetaPTUR(campoMetaPTUR(r,['Quantidade Realizada','Realizado']));
+    return {
+      id:baseIdMetaPTUR(String(campoMetaPTUR(r,['ID Meta','ID','Meta'])||'')),
+      previsto:previsto,
+      realizado:realizado,
+      mesRef:String(campoMetaPTUR(r,['Mes de Referencia Previsto','Mês de Referência Previsto'])||'').trim()
+    };
+  }).filter(function(x){return x.previsto>0;});
+}
+
+function resumoFisicoTerritorioPTUR(nome){
+  var metas=linhasMetasTerritorioPTUR(nome);
+  if(!metas.length) return {disponivel:false,pct:0,total:0,concluidas:0,comRealizado:0};
+
+  var soma=0, concluidas=0, comRealizado=0;
+  metas.forEach(function(m){
+    var p=Math.max(0,Math.min(1,m.realizado/m.previsto));
+    soma+=p;
+    if(m.realizado>0) comRealizado++;
+    if(m.realizado>=m.previsto) concluidas++;
+  });
+
+  return {
+    disponivel:true,
+    pct:Math.round((soma/metas.length)*100),
+    total:metas.length,
+    concluidas:concluidas,
+    comRealizado:comRealizado
+  };
+}
+
+function resumoFisicoGlobalPTUR(){
+  var metas=metasDetalhadasAgrupadasPTUR().filter(function(m){return Number(m.previstoTotal||0)>0;});
+  if(!metas.length){
+    return {disponivel:false,pct:0,total:0,concluidas:0,comRealizado:0,atrasadas:0,emPrazo:0,futuras:0};
+  }
+
+  var soma=0, concluidas=0, comRealizado=0, atrasadas=0, emPrazo=0, futuras=0;
+  metas.forEach(function(m){
+    soma+=progressoPctMetaPTUR(m)/100;
+    if(Number(m.realizado||0)>0) comRealizado++;
+    var st=statusMetaDetalhadaPTUR(m);
+    if(st.classe==='concluida') concluidas++;
+    else if(st.classe==='atrasada') atrasadas++;
+    else if(st.classe==='programada') futuras++;
+    else emPrazo++;
+  });
+
+  return {
+    disponivel:true,
+    pct:Math.round((soma/metas.length)*100),
+    total:metas.length,
+    concluidas:concluidas,
+    comRealizado:comRealizado,
+    atrasadas:atrasadas,
+    emPrazo:emPrazo,
+    futuras:futuras
+  };
+}
+
+function scT(nome){
+  return resumoFisicoTerritorioPTUR(nome).pct;
+}
+
 function scG(){
-  var rows=ATM();
-  if(!rows.length) return 0;
-  var completas=rows.filter(function(r){return stNorm(r)==='completo'}).length;
-  return Math.round((completas/rows.length)*100);
+  return resumoFisicoGlobalPTUR().pct;
 }
 function simNao(v){
   var s=String(v==null?'':v).trim();
@@ -747,33 +877,65 @@ function renderFicha(){
     el.innerHTML='<div style="color:#666;font-size:13px">Ficha executiva ainda não disponível.</div>';
     return;
   }
-  var pct=Math.round((Number(f.percExecucao)||0)*100);
+
+  var rg=resumoFisicoGlobalPTUR();
+  var pct=rg.disponivel ? rg.pct : 0;
+
   var h='<div class="ficha-grid">';
   h+='<div><div class="ficha-rot">Instrumento</div><div class="ficha-val">'+esc(f.instrumento||'-')+'</div></div>';
   h+='<div><div class="ficha-rot">Órgão financiador</div><div class="ficha-val">'+esc(f.orgao||'-')+'</div></div>';
   h+='<div><div class="ficha-rot">Vigência</div><div class="ficha-val">'+esc(f.inicioExecucao||'-')+' — '+esc(f.fimExecucao||'-')+'</div></div>';
   h+='<div><div class="ficha-rot">Status da fase</div><div class="ficha-val"><span class="badge bA">'+esc(f.statusFase||'-')+'</span></div></div>';
   h+='<div><div class="ficha-rot">Status da execução</div><div class="ficha-val">'+esc(statusProjetoPublico(f.statusExecucao))+'</div></div>';
-  h+='<div><div class="ficha-rot">Execução real</div><div class="ficha-val">'+pct+'%</div></div>';
+  h+='<div><div class="ficha-rot">Execução física registrada</div><div class="ficha-val">'+(rg.disponivel?pct+'%':'--')+'</div></div>';
   h+='</div>';
+  h+='<div class="monitor-note">Execução física baseada nas quantidades realizadas da aba METAS. A classificação documental das pastas é apresentada separadamente no Dashboard.</div>';
   el.innerHTML=h;
 }
 
 function renderDash(){
   var rows=ATM();
-  var completas=rows.filter(function(r){return stNorm(r)==='completo'}).length;
-  var acompan=rows.filter(function(r){var s=stNorm(r);return s==='insuficiente'||s==='pendente'||s==='em andamento'}).length;
+  var completasDoc=rows.filter(function(r){return stNorm(r)==='completo'}).length;
+  var rg=resumoFisicoGlobalPTUR();
+  var mesAtual=mesAtualProjetoPTUR();
 
   document.getElementById('kpi-row').innerHTML=
     '<div class="kpi"><div class="knum">'+TERR.length+'</div><div class="klab">Territórios</div></div>'+
-    '<div class="kpi"><div class="knum">'+rows.length+'</div><div class="klab">Ações Monitoráveis até o momento</div></div>'+
-    '<div class="kpi"><div class="knum">'+completas+'</div><div class="klab">Ações Completas</div></div>'+
-    '<div class="kpi"><div class="knum">'+acompan+'</div><div class="klab">Em Acompanhamento</div></div>';
+    '<div class="kpi"><div class="knum">'+(rg.disponivel?rg.total:'--')+'</div><div class="klab">Metas Oficiais do Plano</div></div>'+
+    '<div class="kpi"><div class="knum">'+mesAtual+'/12</div><div class="klab">Mês da Vigência</div></div>'+
+    '<div class="kpi"><div class="knum">'+(rg.disponivel?rg.atrasadas:'--')+'</div><div class="klab">Metas com Prazo Vencido</div></div>';
 
-  var sg=scG();
-  document.getElementById('sc-txt').textContent=sg+'%';
+  var sg=rg.disponivel ? rg.pct : 0;
+  document.getElementById('sc-txt').textContent=rg.disponivel ? sg+'%' : '--';
   var bg=document.getElementById('bar-g');
-  bg.style.width=sg+'%'; bg.className='sb '+scl(sg);
+  bg.style.width=sg+'%';
+  bg.className='sb '+scl(sg);
+
+  var nota=document.getElementById('fisico-nota');
+  if(nota){
+    nota.innerHTML=rg.disponivel
+      ? '<strong>'+rg.comRealizado+' de '+rg.total+' metas</strong> possuem quantitativo realizado lançado. '+
+        'O índice não aumenta apenas porque há fotos, listas ou documentos no Drive.'
+      : 'As metas oficiais ainda não foram carregadas pela API.';
+  }
+
+  var mk=document.getElementById('meta-kpi-row');
+  if(mk){
+    mk.innerHTML=
+      '<div class="monitor-mini ok"><div class="n">'+(rg.disponivel?rg.concluidas:'--')+'</div><div class="t">Concluídas</div><div class="s">Meta física integralmente alcançada.</div></div>'+
+      '<div class="monitor-mini prazo"><div class="n">'+(rg.disponivel?rg.emPrazo:'--')+'</div><div class="t">Na janela de execução</div><div class="s">Prazo ainda vigente segundo o Plano de Trabalho.</div></div>'+
+      '<div class="monitor-mini atraso"><div class="n">'+(rg.disponivel?rg.atrasadas:'--')+'</div><div class="t">Prazo vencido</div><div class="s">Meta não integralizada após o fim da janela prevista.</div></div>'+
+      '<div class="monitor-mini futuro"><div class="n">'+(rg.disponivel?rg.futuras:'--')+'</div><div class="t">Programadas</div><div class="s">Janela de execução ainda não iniciada.</div></div>';
+  }
+
+  var pctDoc=rows.length ? Math.round((completasDoc/rows.length)*100) : 0;
+  var docTxt=document.getElementById('doc-txt');
+  if(docTxt) docTxt.textContent=completasDoc+' de '+rows.length+' • '+pctDoc+'%';
+  var barDoc=document.getElementById('bar-doc');
+  if(barDoc){
+    barDoc.style.width=pctDoc+'%';
+    barDoc.className='sb '+scl(pctDoc);
+  }
 
   var comEv=rows.filter(temEvidencia).length;
   var pctEv=rows.length ? Math.round((comEv/rows.length)*100) : 0;
@@ -782,26 +944,41 @@ function renderDash(){
 
   var h='';
   TERR.forEach(function(t,i){
-    var sc=scT(t), rt=monitoraveisTerritorio(t);
-    var comp=rt.filter(function(r){return stNorm(r)==='completo'}).length;
+    var rt=resumoFisicoTerritorioPTUR(t);
+    var sc=rt.pct;
+    var evRows=monitoraveisTerritorio(t);
+    var comEvTerr=evRows.filter(temEvidencia).length;
+
     h+='<div class="tcard" onclick="abrirTerr('+i+',true)">';
-    h+='<div class="tnome">'+esc(t)+'</div><div class="tsc">'+sc+'%</div>';
-    var iniciadas=rt.filter(temEvidencia).length;
-    h+='<div class="tmeta">'+comp+' completas • '+iniciadas+' com evidência de '+rt.length+'</div>';
+    h+='<div class="tnome">'+esc(t)+'</div><div class="tsc">'+(rt.disponivel?sc+'%':'--')+'</div>';
+    h+='<div class="tmeta">'+
+      (rt.disponivel
+        ? rt.concluidas+' de '+rt.total+' metas concluídas • '+rt.comRealizado+' com quantitativo lançado'
+        : 'Metas territoriais não disponíveis')+
+      '</div>';
+    h+='<div class="tmeta" style="margin-top:5px;color:#7b8490">'+comEvTerr+' de '+evRows.length+' ações com alguma evidência</div>';
     h+='<div style="margin-top:9px"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div></div></div>';
   });
+
   document.getElementById('dash-terr').innerHTML=h || '<div class="card">Nenhum território disponível.</div>';
 }
 
 function renderListaT(){
   var h='';
   TERR.forEach(function(t,i){
-    var sc=scT(t), rows=monitoraveisTerritorio(t);
-    var comp=rows.filter(function(r){return stNorm(r)==='completo'}).length;
+    var rt=resumoFisicoTerritorioPTUR(t);
+    var sc=rt.pct;
+    var rows=monitoraveisTerritorio(t);
+    var evidencias=rows.filter(temEvidencia).length;
+
     h+='<div class="tcard" onclick="abrirTerr('+i+',false)">';
-    h+='<div class="tnome">'+esc(t)+'</div><div class="tsc">'+sc+'%</div>';
-    var iniciadas=rows.filter(temEvidencia).length;
-    h+='<div class="tmeta">'+comp+' completas • '+iniciadas+' com evidência de '+rows.length+'</div>';
+    h+='<div class="tnome">'+esc(t)+'</div><div class="tsc">'+(rt.disponivel?sc+'%':'--')+'</div>';
+    h+='<div class="tmeta">'+
+      (rt.disponivel
+        ? rt.concluidas+' de '+rt.total+' metas concluídas • '+rt.comRealizado+' com quantitativo lançado'
+        : 'Metas territoriais não disponíveis')+
+      '</div>';
+    h+='<div class="tmeta" style="margin-top:5px;color:#7b8490">'+evidencias+' de '+rows.length+' ações com alguma evidência</div>';
     h+='<div style="margin-top:9px"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div></div></div>';
   });
   document.getElementById('lista-terr').innerHTML=h || '<div class="card">Nenhum território disponível.</div>';
@@ -823,11 +1000,14 @@ function voltarLista(){
 }
 
 function renderDetalhe(idx){
-  var nome=TERR[idx], rows=atividadesTerritorio(nome), sc=scT(nome);
+  var nome=TERR[idx], rows=atividadesTerritorio(nome), rt=resumoFisicoTerritorioPTUR(nome), sc=rt.pct;
   var h='<div class="card" style="background:var(--az);padding:22px 26px;margin-bottom:18px">';
   h+='<div style="font:700 17px Montserrat;color:var(--am)">'+esc(nome)+'</div>';
-  h+='<div style="color:rgba(255,255,255,.62);font-size:11px;margin-top:4px">Acompanhamento das atividades e evidências registradas no SMPC</div>';
-  h+='<div style="font:700 38px Montserrat;color:#fff;margin-top:10px">'+sc+'%</div>';
+  h+='<div style="color:rgba(255,255,255,.62);font-size:11px;margin-top:4px">Execução física registrada nas metas territoriais; abaixo permanecem as atividades e evidências documentais do SMPC.</div>';
+  h+='<div style="font:700 38px Montserrat;color:#fff;margin-top:10px">'+(rt.disponivel?sc+'%':'--')+'</div>';
+  if(rt.disponivel){
+    h+='<div style="color:rgba(255,255,255,.72);font-size:10.5px;margin-top:3px">'+rt.concluidas+' de '+rt.total+' metas territoriais concluídas • '+rt.comRealizado+' com quantitativo realizado lançado</div>';
+  }
   h+='</div>';
 
   var porComp={};
@@ -1175,6 +1355,9 @@ function metasDetalhadasAgrupadasPTUR(){
         realizado:0,
         indicador:String(campoMetaPTUR(r,['Indicador de Acompanhamento','Indicador'])||'').trim(),
         meio:String(campoMetaPTUR(r,['Meio de Verificacao','Meio de Verificação'])||'').trim(),
+        mesRef:String(campoMetaPTUR(r,['Mes de Referencia Previsto','Mês de Referência Previsto'])||'').trim(),
+        statusFonte:String(campoMetaPTUR(r,['Status'])||'').trim(),
+        observacao:String(campoMetaPTUR(r,['Observacao','Observação'])||'').trim(),
         territorios:{},
         linhas:0
       };
@@ -1205,7 +1388,19 @@ function metasDetalhadasAgrupadasPTUR(){
 function statusMetaDetalhadaPTUR(meta){
   var previsto=Number(meta.previstoTotal||0);
   var realizado=Number(meta.realizado||0);
-  if(previsto>0 && realizado>=previsto) return {texto:'Concluída',classe:'concluida'};
+  var pct=previsto>0 ? realizado/previsto : 0;
+
+  if(previsto>0 && pct>=1) return {texto:'Concluída',classe:'concluida'};
+
+  var faixa=faixaMesMetaPTUR(meta.mesRef);
+  var atual=mesAtualProjetoPTUR();
+
+  if(faixa){
+    if(atual<faixa.inicio) return {texto:'Programada',classe:'programada'};
+    if(atual>faixa.fim) return {texto:'Prazo vencido',classe:'atrasada'};
+    return {texto:realizado>0?'Em andamento':'Em prazo',classe:'em-prazo'};
+  }
+
   if(realizado>0) return {texto:'Em andamento',classe:'andamento'};
   return {texto:'Não iniciada',classe:'nao-iniciada'};
 }
@@ -1213,14 +1408,24 @@ function statusMetaDetalhadaPTUR(meta){
 function leituraAgenteMetaPTUR(meta){
   var previsto=Number(meta.previstoTotal||0);
   var realizado=Number(meta.realizado||0);
+  var st=statusMetaDetalhadaPTUR(meta);
 
   if(previsto>0 && realizado>=previsto){
-    return 'O Agente registra a meta física integralmente alcançada.';
+    return 'Meta física integralmente alcançada conforme o quantitativo realizado registrado na aba METAS.';
   }
   if(realizado>0){
-    return 'O Agente registra '+realizado.toLocaleString('pt-BR')+' de '+previsto.toLocaleString('pt-BR')+' unidade(s) previstas nesta meta.';
+    return 'Há '+realizado.toLocaleString('pt-BR')+' de '+previsto.toLocaleString('pt-BR')+' unidade(s) realizadas registradas para esta meta.';
   }
-  return 'O Agente ainda não registra execução contabilizada para esta meta.';
+  if(st.classe==='atrasada'){
+    return 'A janela prevista no Plano de Trabalho terminou e ainda não há quantitativo realizado registrado. Requer conferência da equipe de monitoramento.';
+  }
+  if(st.classe==='programada'){
+    return 'A janela prevista para esta meta ainda não começou. Não deve ser tratada como pendência atual.';
+  }
+  if(st.classe==='em-prazo'){
+    return 'A meta está na janela de execução, mas ainda não há quantitativo realizado registrado na aba METAS.';
+  }
+  return 'Ainda não há execução física quantificada para esta meta.';
 }
 
 function renderMetas(){
@@ -1232,6 +1437,16 @@ function renderMetas(){
     return;
   }
 
+  var resumo=resumoFisicoGlobalPTUR();
+  var resumoHtml=
+    '<div class="monitor-grid" style="margin-bottom:18px">'+
+      '<div class="monitor-mini"><div class="n">'+resumo.total+'</div><div class="t">Metas oficiais</div><div class="s">Tabela de Metas e Indicadores do Plano de Trabalho.</div></div>'+
+      '<div class="monitor-mini ok"><div class="n">'+resumo.concluidas+'</div><div class="t">Concluídas</div><div class="s">Quantidade realizada atingiu a meta prevista.</div></div>'+
+      '<div class="monitor-mini atraso"><div class="n">'+resumo.atrasadas+'</div><div class="t">Prazo vencido</div><div class="s">Janela prevista terminou sem integralização física.</div></div>'+
+      '<div class="monitor-mini prazo"><div class="n">'+resumo.comRealizado+'</div><div class="t">Com realizado lançado</div><div class="s">Metas com algum quantitativo físico registrado.</div></div>'+
+    '</div>'+
+    '<div class="notice" style="margin-bottom:18px"><strong>Regra do painel:</strong> fotos, listas, relatórios e pastas no Drive comprovam execução documental, mas não alteram sozinhos o percentual físico. O progresso desta tela vem da coluna <strong>Quantidade Realizada</strong> da aba METAS.</div>';
+
   var grupos={};
   var ordemGrupos=[];
 
@@ -1241,7 +1456,7 @@ function renderMetas(){
     grupos[cat].push(m);
   });
 
-  var h='';
+  var h=resumoHtml;
 
   ordemGrupos.forEach(function(cat){
     h+='<div class="metas-group">';
@@ -1267,8 +1482,11 @@ function renderMetas(){
       h+='<div class="meta-number real"><div class="lab">Realizado</div><div class="val">'+realizado.toLocaleString('pt-BR')+'</div></div>';
       h+='</div>';
 
-      h+='<div class="meta-reading"><strong>Leitura do Agente</strong><br>'+esc(leituraAgenteMetaPTUR(m))+'</div>';
+      h+='<div class="meta-reading"><strong>Leitura do monitoramento</strong><br>'+esc(leituraAgenteMetaPTUR(m))+'</div>';
+      h+='<div class="meta-scope">Prazo no Plano: <strong>'+esc(m.mesRef||'Não informado')+'</strong></div>';
       h+='<div class="meta-scope">Abrangência: <strong>'+esc(escopo)+'</strong></div>';
+      if(m.indicador) h+='<div class="meta-scope">Indicador: <strong>'+esc(m.indicador)+'</strong></div>';
+      if(m.meio) h+='<div class="meta-scope">Meio de verificação: <strong>'+esc(m.meio)+'</strong></div>';
       h+='<div class="meta-progress-row"><span>Progresso físico</span><strong>'+realizado.toLocaleString('pt-BR')+' de '+previsto.toLocaleString('pt-BR')+' · '+pct+'%</strong></div>';
       h+='<div class="sbw" style="height:9px"><div class="sb '+scl(pct)+'" style="width:'+pctBar+'%"></div></div>';
       h+='</div>';
