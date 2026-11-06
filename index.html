@@ -336,6 +336,87 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .ptur-cronoitem summary{font-weight:700;cursor:pointer}
 .ptur-crono-paginacao{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:16px 0}
 @media(max-width:700px){.ptur-crono{grid-template-columns:1fr}}
+
+/* PTUR V2 - streamlined evidence-first design */
+.vw-v2legacy,.pturV2-legacy{display:none!important}
+body{background:#f3f6fa}
+.hdri{max-width:1360px;min-height:78px;gap:16px}
+.hnav{display:flex!important;flex-wrap:wrap;gap:5px;align-items:center;justify-content:flex-end}
+.nbtn{font-size:11px;letter-spacing:.1px;padding:10px 12px;text-transform:none}
+.nbtn.on{background:#ecc203;color:#092040}
+.wrap{max-width:1300px;padding:26px 22px}
+.v2-hero,.v2-pagehead{background:#092040;color:#fff;border-radius:16px;padding:34px 40px}
+.v2-hero{background:linear-gradient(110deg,#071b38,#0c3c66);position:relative;overflow:hidden}
+.v2-hero:after{content:'';height:230px;width:230px;border-radius:100%;background:rgba(0,183,215,.09);position:absolute;right:-60px;top:-70px;pointer-events:none}
+.v2-eyebrow{color:#ECC203;text-transform:uppercase;letter-spacing:1.4px;font:700 10px Montserrat,sans-serif}
+.v2-eyebrow.muted{color:#00B7D7}
+.v2-hero h1,.v2-pagehead h1{font:700 clamp(24px,3.6vw,37px) Montserrat,Arial,sans-serif;line-height:1.21;max-width:840px;margin:10px 0}
+.v2-hero p,.v2-pagehead p{font-size:14px;line-height:1.8;color:#dce9f4;max-width:920px}
+.v2-pagehead{background:#fff;border:1px solid #dbe4ee;color:#092040;padding:26px 28px}
+.v2-pagehead p{color:#62748b}
+.v2-heroactions{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}
+.v2-btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9px;border:1px solid transparent;padding:12px 16px;min-height:42px;font:700 11px Montserrat,Arial,sans-serif;cursor:pointer;text-decoration:none;transition:filter .1s}
+.v2-btn:hover{filter:brightness(.95)}
+.v2-btn.main{background:#ecc203;color:#092040}
+.v2-btn.outline-light{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.35);color:#fff}
+.v2-btn.secondary{background:#092040;color:#fff}
+.v2-numbers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:16px 0 24px}
+.v2-num{background:#fff;border:1px solid #dae5ef;border-radius:13px;padding:20px 22px;min-width:0}
+.v2-num strong{display:block;font:700 30px Montserrat,Arial;color:#009dbe}
+.v2-num span{display:block;font-size:12px;color:#657287;line-height:1.5;margin-top:4px}
+.v2-sectiontitle{font:700 16px Montserrat;color:#092040;margin:30px 0 14px;padding-left:11px;border-left:4px solid #00B7D7}
+.v2-startgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.v2-startcard{cursor:pointer;display:flex;text-align:left;flex-direction:column;align-items:flex-start;gap:9px;padding:22px;background:white;border:1px solid #dce5f0;border-radius:14px;color:#092040}
+.v2-startcard:hover{border-color:#00B7D7;box-shadow:0 9px 30px rgba(9,32,64,.10)}
+.v2-startcard .v2-starticon{font-size:24px}.v2-startcard strong{font:700 15px Montserrat}.v2-startcard>span:not(.v2-starticon){font-size:12px;color:#69798b;line-height:1.6}.v2-startcard em{font:700 11px Montserrat;color:#078cac;font-style:normal;margin-top:auto}
+.v2-previewgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.v2-previewgrid button{border:1px solid #d6e2eb;border-radius:10px;padding:0;overflow:hidden;background:white;cursor:pointer}
+.v2-previewgrid img{height:145px;width:100%;object-fit:cover;display:block}
+.v2-photogrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:14px}
+.v2-photo{background:#fff;border:1px solid #dce4ed;border-radius:13px;overflow:hidden;min-width:0;box-shadow:0 2px 10px rgba(13,43,73,.035)}
+.v2-photo-media{width:100%;height:190px;position:relative;overflow:hidden;background:#e8eef4}
+.v2-photo-media img{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer}
+.v2-photo-label{position:absolute;bottom:10px;left:10px;right:10px;background:rgba(9,32,64,.86);color:#fff;font:700 10px Montserrat;padding:6px 8px;border-radius:5px;pointer-events:none}
+.v2-photo-body{padding:13px}.v2-photo-body h3{font:700 12px Montserrat;color:#092040;line-height:1.45;margin:0 0 5px}.v2-photo-body p{font-size:10px;color:#6b7b8a;line-height:1.55;margin:3px 0 12px}
+.v2-photo-actions{display:flex;gap:7px}.v2-photo-actions button,.v2-photo-actions a{border-radius:6px;padding:8px 9px;border:1px solid #c7d8e8;font:700 10px Montserrat;text-decoration:none;cursor:pointer;color:#092040;background:#fff}.v2-photo-actions button{background:#e9f8fc;border-color:#aee5f0}
+.v2-filters{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px;background:white;border:1px solid #dae4ee;border-radius:13px;padding:14px 16px;margin-top:17px}
+.v2-filters label{display:flex;flex-direction:column;gap:6px;min-width:150px;flex:1 1 170px;color:#56687c;font-size:11px;font-weight:700}
+.v2-filters .v2-grow{flex:2 1 240px}
+.v2-filters select,.v2-filters input{height:44px;width:100%;padding:0 11px;border:1px solid #cfdde9;border-radius:8px;background:white;color:#092040;font:12px 'Open Sans',sans-serif;min-width:0}
+.v2-counter{font-size:12px;color:#586e80;margin:16px 2px 8px}
+.v2-center{display:flex;justify-content:center;margin:20px 0}
+.v2-clarifier{font-size:11px;color:#718091;line-height:1.7;background:#eff7f9;padding:13px 16px;border-radius:8px;margin-top:16px}
+.v2-actiongrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.v2-action{background:#fff;border:1px solid #dce4ed;border-radius:13px;padding:18px;min-width:0;display:flex;flex-direction:column;gap:11px}
+.v2-action.has-photo{border-left:4px solid #00B7D7}
+.v2-action h3{font:700 14px Montserrat;line-height:1.45;color:#092040;margin:0}
+.v2-actionrow{display:flex;align-items:flex-start;gap:10px;justify-content:space-between}
+.v2-chip{display:inline-block;padding:5px 9px;border-radius:999px;font:700 10px Montserrat;color:#092040;background:#e3f7fa}
+.v2-chip.yellow{background:#fff3b5;color:#795f00}
+.v2-action p{font-size:12px;line-height:1.65;color:#617183;margin:0}
+.v2-action small{font-size:10px;color:#82909e}
+.v2-thumbs{display:flex;gap:7px;flex-wrap:wrap}.v2-thumbs img{height:77px;width:calc(25% - 6px);min-width:60px;max-width:130px;object-fit:cover;border-radius:7px;background:#e7edf4}
+.v2-action-links{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}
+.v2-doclink{background:#edf3f8;border:1px solid #d3e1eb;border-radius:7px;padding:9px 11px;color:#092040;text-decoration:none;font:700 10px Montserrat}
+.v2-doclink:hover{text-decoration:underline}
+.v2-detail{margin-top:22px;background:#fff;padding:24px;border:1px solid #ccdce9;border-radius:15px;scroll-margin-top:115px}
+.v2-detail[hidden]{display:none}
+.v2-detail h2{font:700 19px Montserrat;margin:12px 0;color:#092040}
+.v2-detail p{font-size:12px;color:#62758a;line-height:1.65}
+.v2-detail-tools{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.v2-doclist{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.v2-territorios{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-top:16px}
+.v2-territorio{border:1px solid #dce6ee;border-radius:12px;background:white;padding:19px;display:flex;flex-direction:column;gap:10px}
+.v2-territorio strong{font:700 14px Montserrat;line-height:1.45;color:#092040}
+.v2-territorio span{font-size:12px;color:#64758a;line-height:1.55}
+.v2-territorio .v2-btn{margin-top:auto}
+.ptur-mobile-menu.v2-mobile{display:none}
+@media(max-width:1080px){.v2-territorios,.v2-photogrid{grid-template-columns:repeat(3,minmax(0,1fr))}.v2-previewgrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:780px){.hnav{display:none!important}.v2-numbers{grid-template-columns:repeat(2,minmax(0,1fr))}.v2-territorios,.v2-photogrid{grid-template-columns:repeat(2,minmax(0,1fr))}.v2-startgrid,.v2-actiongrid{grid-template-columns:1fr}.v2-previewgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.ptur-mobile-menu.v2-mobile{display:flex;justify-content:space-around;position:sticky;bottom:0;z-index:100;gap:3px;background:#092040;border-radius:12px;padding:6px;margin-top:22px}.ptur-mobile-menu.v2-mobile button{background:transparent;border:0;color:#ecc203;padding:10px 7px;font-size:11px;cursor:pointer}.v2-hero,.v2-pagehead{padding:25px 22px}}
+@media(max-width:520px){.wrap{padding:14px 12px}.v2-photogrid,.v2-territorios{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.v2-photo-media{height:150px}.v2-photo-actions{flex-wrap:wrap}.v2-photo-body{padding:9px}.v2-photo-body h3{font-size:11px}.v2-num{padding:15px}.v2-num strong{font-size:23px}.v2-previewgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.v2-previewgrid img{height:88px}}
+
+
+.v2-photo-body h3,.v2-startcard strong,.v2-action h3,.v2-chip,.v2-doclink,.v2-startcard em,.v2-hero h1,.v2-pagehead h1,.v2-btn,.v2-num strong,.v2-sectiontitle,.v2-territorio strong,.v2-detail h2{font-family:Montserrat,Arial,sans-serif}
 </style>
 </head>
 
@@ -368,21 +449,33 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
         <div class="hsub">Sistema de Monitoramento de Prestação de Contas — SMPC</div>
       </div>
     </div>
-    <nav class="hnav">
-      <button class="nbtn on" onclick="goV('dashboard',this)">Dashboard</button>
-      <button class="nbtn" onclick="goV('territorios',this)">Territórios</button>
-      <button class="nbtn" onclick="goV('atividades',this)">Atividades</button>
-      <button class="nbtn" onclick="goV('evidenciasdrive',this)">Evidências Drive</button>
-      <button class="nbtn" onclick="goV('estrutura',this)">Estrutura</button>
-      <button class="nbtn" onclick="goV('metas',this)">Metas</button>
-      <button class="nbtn" onclick="goV('galeria',this)">Galeria por meta</button>
-      <button class="nbtn" onclick="goV('prefeitura',this)">Prefeitura · item 2.4</button>
+    <nav class="hnav" aria-label="Navegação principal">
+      <button class="nbtn on" data-view="dashboard" onclick="pturV2Go('dashboard')">Início</button>
+      <button class="nbtn" data-view="acoes" onclick="pturV2Go('acoes')">Ações e comprovações</button>
+      <button class="nbtn" data-view="evidenciasdrive" onclick="pturV2Go('evidenciasdrive')">Galeria de fotos</button>
+      <button class="nbtn" data-view="territorios" onclick="pturV2Go('territorios')">Territórios</button>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
   <section class="vw on" id="vw-dashboard">
+<div class="v2-hero"><div class="v2-eyebrow">PROSPERA TURISMO · CENTRAL DE EVIDÊNCIAS</div>
+<h1>Encontre a ação. Confira a comprovação.</h1>
+<p>Selecione um item do plano de trabalho para ver fotografias, registros e os arquivos originais organizados por território. Cada vínculo mostra o que já foi localizado e o que ainda precisa de conferência.</p>
+<div class="v2-heroactions"><button class="v2-btn main" onclick="pturV2Go('acoes')">Consultar ações e evidências</button><button class="v2-btn outline-light" onclick="pturV2Go('evidenciasdrive')">Abrir galeria de fotos</button></div>
+</div>
+<div id="v2-overview" class="v2-numbers" aria-live="polite"></div>
+<h2 class="v2-sectiontitle">Comece pelas comprovações</h2>
+<div class="v2-startgrid">
+ <button class="v2-startcard" onclick="pturV2AbrirAcao('5.1')"><span class="v2-starticon">📷</span><strong>Seminários territoriais</strong><span>Fotografias de outubro, organizadas por território e vinculadas ao item 5.1.</span><em>Ver evidências</em></button>
+ <button class="v2-startcard" onclick="pturV2AbrirAcao('2.4')"><span class="v2-starticon">🗂️</span><strong>Registros fotográficos iniciais</strong><span>Consulte as fotos de campo e verifique o item 2.4 do cronograma.</span><em>Ver evidências</em></button>
+ <button class="v2-startcard" onclick="pturV2Go('territorios')"><span class="v2-starticon">📍</span><strong>Consultar por território</strong><span>Escolha um dos oito núcleos e veja as fotografias existentes.</span><em>Escolher território</em></button>
+</div>
+<h2 class="v2-sectiontitle">Fotografias recentes do acervo</h2>
+<div id="v2-home-photos" class="v2-previewgrid"></div>
+
+<div class="pturV2-legacy" aria-hidden="true" style="display:none">
 
     <div class="ptur-hero">
       <span class="ptur-eyebrow">Painel executivo para acompanhamento técnico</span>
@@ -484,9 +577,14 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
       Este painel apresenta dados executivos e indicadores operacionais sanitizados.
       A área <strong>Evidências Drive</strong> disponibiliza atalhos controlados para pastas de comprovação; o acesso aos arquivos continua sujeito às permissões do Google Drive.
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="vw" id="vw-territorios">
+<div class="v2-pagehead"><span class="v2-eyebrow muted">NAVEGAÇÃO POR TERRITÓRIO</span><h1>Oito territórios. Evidências organizadas.</h1><p>Escolha um território para encontrar suas fotografias e pastas vinculadas às ações.</p></div>
+<div class="v2-territorios" id="v2-territorios"></div>
+
+<div class="pturV2-legacy" aria-hidden="true" style="display:none">
     <div id="tlist">
       <div class="st">Selecione um Território — Execução Física das Metas</div>
       <div class="g4" id="lista-terr"></div>
@@ -495,9 +593,10 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
       <button class="back" onclick="voltarLista()">Voltar aos Territórios</button>
       <div id="det-content"></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="vw" id="vw-atividades">
+  <section class="vw-v2legacy" id="vw-atividades">
     <div class="st">Pendências Documentais Prioritárias</div>
     <div id="alertas-atividades"></div>
 
@@ -517,6 +616,20 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
   </section>
 
   <section class="vw" id="vw-evidenciasdrive">
+<div class="v2-pagehead"><span class="v2-eyebrow muted">ACERVO FOTOGRÁFICO</span><h1>Galeria de fotografias do projeto</h1><p>Explore as imagens dos seminários, diagnósticos e mapeamentos. Amplie uma imagem ou abra o documento original no Drive.</p></div>
+<div class="v2-numbers" id="v2-gallery-numbers"></div>
+<div class="v2-filters" aria-label="Filtros da galeria">
+ <label>Tipo de ação<select id="v2-g-cat" onchange="pturV2ResetGallery()"><option value="">Todas as ações</option><option value="Seminário">Seminários</option><option value="Mapeamento">Mapeamentos</option><option value="Diagnóstico">Diagnósticos</option></select></label>
+ <label>Território<select id="v2-g-ter" onchange="pturV2ResetGallery()"><option value="">Todos os territórios</option></select></label>
+ <label>Competência<select id="v2-g-mes" onchange="pturV2ResetGallery()"><option value="">Todos os períodos</option><option value="2026-07">Julho/2026</option><option value="2026-10">Outubro/2026</option></select></label>
+ <label class="v2-grow">Pesquisar<input id="v2-g-search" type="search" placeholder="Buscar território, evento ou categoria" oninput="pturV2ResetGallery()"></label>
+</div>
+<div id="v2-gallery-label" class="v2-counter" aria-live="polite"></div>
+<div id="v2-gallery" class="v2-photogrid"></div>
+<div class="v2-center"><button id="v2-gallery-more" class="v2-btn secondary" onclick="pturV2MoreGallery()">Mostrar mais fotografias</button></div>
+<p class="v2-clarifier">Fotos indexadas a partir de arquivos existentes no Drive. O vínculo com cada item é indicado para conferência documental e não substitui a validação da execução física.</p>
+
+<div class="pturV2-legacy" aria-hidden="true" style="display:none">
     <div class="st">Explorador de Evidências no Google Drive</div>
     <div class="evid-hero">
       <div>
@@ -542,9 +655,10 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
       O botão <strong>ABRIR COMPETÊNCIA</strong> abre a pasta mensal do território. Quando a API disponibiliza o link da atividade, <strong>ABRIR EVIDÊNCIAS</strong> leva diretamente à pasta onde a comprovação está organizada. Atividades sem evidência não aparecem nesta área.
     </div>
     <div id="drive-evidencias-content"></div>
-  </section>
+  </div>
+</section>
 
-  <section class="vw" id="vw-estrutura">
+  <section class="vw-v2legacy" id="vw-estrutura">
     <div class="st">Estrutura de Evidências</div>
     <div class="notice" style="margin-bottom:14px">
       Visualização segura da organização do projeto. A estrutura é apresentada sem links internos do Google Drive.
@@ -552,13 +666,13 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
     <div id="estrutura-content"></div>
   </section>
 
-  <section class="vw" id="vw-metas">
+  <section class="vw-v2legacy" id="vw-metas">
     <div class="st">Acompanhamento das Metas do Projeto</div>
     <div id="tbl-metas"></div>
   </section>
 
 
-  <section class="vw" id="vw-galeria" aria-label="Galeria por meta">
+  <section class="vw-v2legacy" id="vw-galeria" aria-label="Galeria por meta">
     <div class="st">Galeria de fotos organizada por meta</div>
     <div class="ptur-hero"><span class="ptur-eyebrow">Trilha visual de comprovação</span><h1>Selecione a meta. Veja a evidência.</h1><p>Fotos agrupadas por meta, território e competência. Abra a imagem para ampliar ou consulte diretamente seu arquivo original no Google Drive.</p></div>
     <div class="ptur-kpis" id="ptur-gallery-kpis"></div>
@@ -574,7 +688,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
     <p class="ptur-caption">Clique em “Ver evidências” para filtrar a galeria pela meta. Uma meta sem miniatura nesta versão não significa falta de documentos.</p>
     <div id="ptur-list-metas" class="ptur-listmetas"></div>
   </section>
-  <section class="vw" id="vw-prefeitura" aria-label="Acompanhamento da Prefeitura">
+  <section class="vw-v2legacy" id="vw-prefeitura" aria-label="Acompanhamento da Prefeitura">
     <div class="st">Acompanhamento técnico da Prefeitura</div>
     <div class="ptur-hero"><span class="ptur-eyebrow">Cronograma municipal • item 2.4 • M2</span><h1>Registros fotográficos iniciais</h1><p>Acompanhamento rastreável dos documentos e das fotografias solicitados no cronograma da Prefeitura, com acesso aos arquivos correspondentes por território.</p><div class="ptur-links"><button class="ptur-primary" onclick="pturAbrirFotosPrefeitura()">Ver fotos de julho de 2026</button><a class="ptur-link" target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1LajBrObWng1QrXw7gRoFoT2VD4jVpRuc/edit">Planilha da Prefeitura</a></div></div>
     <div class="ptur-prefgrid">
@@ -598,9 +712,23 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
     <div class="ptur-modal-inner"><div class="ptur-modal-head"><strong id="ptur-modal-title">Fotografia</strong><button class="ptur-modal-close" onclick="pturFecharFoto()">× Fechar</button></div><img id="ptur-modal-img" class="ptur-modal-image" alt="Registro fotográfico selecionado"><div class="ptur-modal-actions"><a id="ptur-modal-drive" class="ptur-link" target="_blank" rel="noopener">Abrir imagem original no Drive</a><a id="ptur-modal-folder" class="ptur-link" target="_blank" rel="noopener">Pasta da atividade</a></div></div>
   </div>
 
-  <div class="ptur-mobile-menu" aria-label="Menu rápido para celular"><button onclick="goV('dashboard')">Início</button><button onclick="goV('metas')">Metas</button><button onclick="goV('galeria')">Fotos</button><button onclick="goV('prefeitura')">Prefeitura</button></div>
+  
+<section class="vw" id="vw-acoes" aria-label="Ações e comprovações do plano de trabalho">
+ <div class="v2-pagehead"><span class="v2-eyebrow muted">PLANO DE TRABALHO · RASTREABILIDADE</span><h1>Cada item com suas evidências</h1><p>Pesquise pelo número ou pelo nome da atividade. Ao abrir um item, o sistema apresenta as fotos e as fontes documentais vinculadas. Quando ainda não houver vínculo, isso será informado.</p></div>
+ <div class="v2-filters" aria-label="Filtros das ações">
+  <label class="v2-grow">Localizar item<input id="v2-a-search" type="search" placeholder="Ex.: 5.1, seminário, diagnóstico, mobilização" oninput="pturV2RenderActions()"></label>
+  <label>Exibir<select id="v2-a-filter" onchange="pturV2RenderActions()"><option value="">Todos os itens</option><option value="foto">Com fotografias</option><option value="documento">Com documento ou pasta vinculada</option><option value="pendente">Sem arquivo vinculado</option></select></label>
+  <label>Período<select id="v2-a-mes" onchange="pturV2RenderActions()"><option value="">Todos os períodos</option></select></label>
+ </div>
+ <div id="v2-actions-count" class="v2-counter" aria-live="polite"></div>
+ <div id="v2-action-list" class="v2-actiongrid"></div>
+ <div class="v2-center"><button class="v2-btn secondary" id="v2-action-more" onclick="pturV2MoreActions()">Mostrar mais itens</button></div>
+ <section class="v2-detail" id="v2-action-detail" hidden aria-live="polite"></section>
+</section>
+
+<nav class="ptur-mobile-menu v2-mobile" aria-label="Navegação rápida"><button onclick="pturV2Go('dashboard')">Início</button><button onclick="pturV2Go('acoes')">Ações</button><button onclick="pturV2Go('evidenciasdrive')">Fotos</button><button onclick="pturV2Go('territorios')">Territórios</button></nav>
   <div class="foot">
-    <div class="ftxt">Prospera Turismo — Instituto BR Arte × Prefeitura do Rio de Janeiro — 8 territórios<br><span id="ultimaAtualizacaoPainel">Atualização automática ativa</span></div>
+    <div class="ftxt">Prospera Turismo — Instituto BR Arte — 8 territórios<br><span id="ultimaAtualizacaoPainel">Atualização automática ativa</span></div>
     <div class="fbadge">Sistema de Monitoramento de Prestação de Contas — SMPC</div>
   </div>
 </main>
@@ -997,6 +1125,7 @@ function renderAll(){
   renderMetas();
   renderGaleriaPTUR();
   renderPrefeituraPTUR();
+  pturV2RenderTudo();
 }
 
 function renderFicha(){
@@ -1716,7 +1845,7 @@ function pturAbrirFotosPrefeitura(){goV('galeria');var s=document.getElementById
 function renderPrefeituraPTUR(){var fotos=pturDados().filter(function(x){return x.competencia==='2026-07';});var terr=Array.from(new Set(fotos.map(function(x){return x.territorio})));var k=document.getElementById('ptur-pref-kpis');if(k)k.innerHTML='<div class="ptur-kpi"><strong>2.4</strong><span>Item do cronograma municipal</span></div><div class="ptur-kpi"><strong>Jul/2026</strong><span>Período previsto da entrega</span></div><div class="ptur-kpi"><strong>'+terr.length+'/8</strong><span>Territórios com fotos na amostra</span></div><div class="ptur-kpi"><strong>'+fotos.length+'</strong><span>Miniaturas exemplificativas indexadas</span></div>';var grid=document.getElementById('ptur-pref-fotos');var vistos={};var amostra=fotos.filter(function(r){return r.meta==='M02';}).filter(function(r){if(vistos[r.territorio])return false;vistos[r.territorio]=true;return true;});if(grid)grid.innerHTML=amostra.length?amostra.map(function(r){return pturFotoHTML(r,pturDados().indexOf(r));}).join(''):'<div class="ptur-empty">Amostra ainda não carregada. A consulta aos documentos originais continua disponível pelo Drive oficial.</div>';}
 function pturIniciarGaleria(){
  if(PTUR_GALLERY_LOAD)return PTUR_GALLERY_LOAD;
- PTUR_GALLERY_LOAD=fetch('amostra_fotos_drive.json?rev=20261106',{cache:'no-store'}).then(function(res){if(!res.ok)throw new Error('manifesto indisponível');return res.json()}).then(function(doc){PTUR_GALLERY_DATA=doc;renderGaleriaPTUR();renderPrefeituraPTUR();return doc}).catch(function(e){console.warn('Não foi possível carregar a amostra fotográfica:',e);PTUR_GALLERY_DATA={fotos:[]};renderGaleriaPTUR();renderPrefeituraPTUR();});
+ PTUR_GALLERY_LOAD=fetch('amostra_fotos_drive.json?rev=20261106',{cache:'no-store'}).then(function(res){if(!res.ok)throw new Error('manifesto indisponível');return res.json()}).then(function(doc){PTUR_GALLERY_DATA=doc;renderGaleriaPTUR();renderPrefeituraPTUR();pturV2RenderTudo();return doc}).catch(function(e){console.warn('Não foi possível carregar a amostra fotográfica:',e);PTUR_GALLERY_DATA={fotos:[]};renderGaleriaPTUR();renderPrefeituraPTUR();pturV2RenderTudo();});
  return PTUR_GALLERY_LOAD;
 }
 window.addEventListener('DOMContentLoaded',pturIniciarGaleria);
@@ -1737,8 +1866,86 @@ function pturRenderCronograma(){
  var count=document.getElementById('ptur-crono-count');if(count)count.textContent=show.length+' de '+rows.length+' atividade(s) encontradas';
  var more=document.getElementById('ptur-crono-mais');if(more)more.style.display=show.length<rows.length?'inline-flex':'none';
 }
-function pturCarregarCronograma(){fetch('cronograma_prefeitura.json?rev=20261106',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('cronograma indisponível');return r.json()}).then(function(d){PTUR_CRONOGRAMA=d;pturRenderCronograma()}).catch(function(e){console.warn('Cronograma municipal não carregou',e);pturRenderCronograma()});}
+function pturCarregarCronograma(){fetch('cronograma_prefeitura.json?rev=20261106',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('cronograma indisponível');return r.json()}).then(function(d){PTUR_CRONOGRAMA=d;pturRenderCronograma();pturV2RenderTudo()}).catch(function(e){console.warn('Cronograma municipal não carregou',e);pturRenderCronograma();pturV2RenderTudo()});}
 window.addEventListener('DOMContentLoaded',pturCarregarCronograma);
+
+
+/* Interface documental simples — todas as decisões de vínculo são explicitadas. */
+var PTURV2_PHOTO_LIMIT=36, PTURV2_ACTION_LIMIT=12, PTURV2_DETAIL_LIMIT=48;
+var PTURV2_SELECTED_ACTION=null;
+var PTURV2_EVENT_FOLDERS=[
+ {terr:'Chapéu Mangueira / Babilônia',date:'24/10/2026',root:'1mgRxl3egPMM9idCMBc6OY0ZbpiEtsXQY',cards:'1oBGymCSs648hADeUz3JY4mjt4QLVw8pK'},
+ {terr:'Mangueira',date:'30/10/2026',root:'1Bml-F9UIGPs4OwzL9uQkU3OaEcVLnGXh',cards:'17hK0_RX008W8djK-M5iXEfPLtT3K5A5I'},
+ {terr:'Cantagalo',date:'31/10/2026',root:'1L7IG5eWJwAVmS8P0K26zRdWRvbra6tER',cards:'1mdKVodwzDfYWsIEOxHJ2g9lZ8xzZvOdL'},
+ {terr:'Vidigal',date:'23/10/2026',root:'18Vk2rOVTun-bdquutqtqa92F-ndHlARH',cards:'17a3oUH2zSvTm27gSljatck2M3lDYuR8A'}
+];
+function pturV2Data(){return (typeof PTUR_GALLERY_DATA!=='undefined'&&PTUR_GALLERY_DATA&&Array.isArray(PTUR_GALLERY_DATA.fotos))?PTUR_GALLERY_DATA.fotos:[]}
+function pturV2Rows(){return (typeof PTUR_CRONOGRAMA!=='undefined'&&PTUR_CRONOGRAMA&&Array.isArray(PTUR_CRONOGRAMA.itens))?PTUR_CRONOGRAMA.itens:[]}
+function pturV2Folder(id){return 'https://drive.google.com/drive/folders/'+encodeURIComponent(id)}
+function pturV2SafeLink(u){return typeof u==='string'&&/^https:\/\//i.test(u)?u:''}
+function pturV2Unique(list){return Array.from(new Set(list))}
+function pturV2Go(view){
+ goV(view);document.querySelectorAll('.hnav [data-view]').forEach(function(b){b.classList.toggle('on',b.dataset.view===view)});
+ pturV2RenderTudo();window.scrollTo({top:0,behavior:'smooth'});
+}
+function pturV2SelecaoLista(id){var el=document.getElementById(id);return el?el.value:''}
+function pturV2FillSelect(id,values,allLabel){var el=document.getElementById(id);if(!el)return;var val=el.value;el.innerHTML='<option value="">'+esc(allLabel)+'</option>'+values.map(function(v){return '<option value="'+esc(v)+'">'+esc(v)+'</option>'}).join('');if(values.includes(val))el.value=val;}
+function pturV2ItemFotos(r){var id=String(r&&r.id||'').replace(/ \(continuação\)/g,'');var fotos=pturV2Data();return fotos.filter(function(f){return Array.isArray(f.itemIds)?f.itemIds.includes(id):String(f.linhaPrefeitura||'')===id})}
+function pturV2ItemLinks(r){
+ var links=[];if(r&&r.link){String(r.link).split(/[;,\s]+/).forEach(function(s){var u=pturV2SafeLink(s);if(u)links.push({label:'Documento ou referência da ação',url:u});})}
+ var id=String(r&&r.id||'').replace(/ \(continuação\)/g,'');
+ if(id==='5.1')PTURV2_EVENT_FOLDERS.forEach(function(g){links.push({label:g.terr+' · pasta do seminário',url:pturV2Folder(g.root)});links.push({label:g.terr+' · convites e cards',url:pturV2Folder(g.cards)})});
+ if(id==='2.4'||id==='2.2'||id==='3.2'||id==='2.1'||id==='3.1'){
+   var unique={};pturV2ItemFotos(r).forEach(function(f){var u=pturV2SafeLink(f.pasta);if(u&&!unique[u]){unique[u]=1;links.push({label:f.territorio+' · evidências de campo',url:u})}})
+ }
+ return links.filter(function(x,i,a){return a.findIndex(function(y){return y.url===x.url})===i});
+}
+function pturV2Thumb(f){return 'https://drive.google.com/thumbnail?id='+encodeURIComponent(f.id)+'&sz=w650'}
+function pturV2PhotoTile(f){var i=pturV2Data().findIndex(function(x){return x.id===f.id});return '<article class="v2-photo"><div class="v2-photo-media"><img loading="lazy" src="'+pturV2Thumb(f)+'" alt="'+esc(f.descricao||'Fotografia')+'" onclick="pturAbrirFoto('+i+')" onerror="this.onerror=null;this.style.opacity=0.18;this.alt=\'Prévia indisponível; abra a fonte no Drive\';"><span class="v2-photo-label">'+esc(f.categoria||f.tipo||'Registro')+'</span></div><div class="v2-photo-body"><h3>'+esc(f.territorio)+'</h3><p>'+esc(f.dataEvento?f.dataEvento.split('-').reverse().join('/'):f.competencia||'')+' · '+esc(f.tipo||'Fotografia')+'</p><div class="v2-photo-actions"><button onclick="pturAbrirFoto('+i+')">Ampliar</button><a target="_blank" rel="noopener" href="https://drive.google.com/file/d/'+encodeURIComponent(f.id)+'/view">Arquivo original</a></div></div></article>'}
+function pturV2Stats(){var rows=pturV2Rows(),imgs=pturV2Data(),events=pturV2Unique(imgs.filter(function(f){return f.categoria==='Seminário'}).map(function(f){return f.territorio})).length;
+ var text1='<div class="v2-num"><strong>'+rows.length+'</strong><span>Itens do plano de trabalho para consultar</span></div><div class="v2-num"><strong>'+imgs.length+'</strong><span>Fotografias indexadas e pesquisáveis</span></div><div class="v2-num"><strong>'+events+'</strong><span>Territórios com fotos de seminários localizadas</span></div><div class="v2-num"><strong>8</strong><span>Territórios abrangidos pelo projeto</span></div>';
+ var el=document.getElementById('v2-overview');if(el)el.innerHTML=text1;
+ var k=document.getElementById('v2-gallery-numbers');if(k)k.innerHTML=text1;
+ var home=document.getElementById('v2-home-photos');if(home){var seen={};var photos=imgs.filter(function(f){if(f.categoria!=='Seminário'||seen[f.territorio])return false;seen[f.territorio]=true;return true});photos=photos.concat(imgs.filter(function(f){return f.categoria!=='Seminário'}).slice(0,2));home.innerHTML=photos.slice(0,6).map(function(f){return '<button onclick="pturV2Go(\'evidenciasdrive\')" title="Abrir galeria de '+esc(f.territorio)+'"><img loading="lazy" src="'+pturV2Thumb(f)+'" alt="'+esc(f.territorio)+'"></button>'}).join('')}
+}
+
+function pturV2Interleave(items){
+ var pools=new Map();items.forEach(function(f){var key=(f.categoria==='Seminário'?'0':'1')+'|'+f.territorio;if(!pools.has(key))pools.set(key,[]);pools.get(key).push(f)});
+ var keys=Array.from(pools.keys()).sort(),ordered=[];var more=true;
+ while(more){more=false;keys.forEach(function(k){var q=pools.get(k);if(q.length){ordered.push(q.shift());more=true}})}
+ return ordered;
+}
+function pturV2ResetGallery(){PTURV2_PHOTO_LIMIT=36;pturV2RenderGallery()}
+function pturV2MoreGallery(){PTURV2_PHOTO_LIMIT+=48;pturV2RenderGallery()}
+function pturV2RenderGallery(){var fotos=pturV2Data();var terr=pturV2Unique(fotos.map(function(f){return f.territorio})).sort();pturV2FillSelect('v2-g-ter',terr,'Todos os territórios');
+ var cat=pturV2SelecaoLista('v2-g-cat'),t=pturV2SelecaoLista('v2-g-ter'),m=pturV2SelecaoLista('v2-g-mes'),s=(pturV2SelecaoLista('v2-g-search')||'').toLocaleLowerCase('pt-BR');
+ var matched=fotos.filter(function(f){return (!cat||f.categoria===cat)&&(!t||f.territorio===t)&&(!m||f.competencia===m)&&(!s||[f.territorio,f.tipo,f.descricao,f.categoria,f.meta].join(' ').toLocaleLowerCase('pt-BR').includes(s))});
+ matched=pturV2Interleave(matched);var el=document.getElementById('v2-gallery');if(el)el.innerHTML=matched.length?matched.slice(0,PTURV2_PHOTO_LIMIT).map(pturV2PhotoTile).join(''):'<div class="v2-clarifier">Nenhuma fotografia indexada para este filtro. Isso não significa que não haja arquivos no Drive.</div>';
+ var c=document.getElementById('v2-gallery-label');if(c)c.textContent=matched.length?'Exibindo '+Math.min(PTURV2_PHOTO_LIMIT,matched.length)+' de '+matched.length+' fotografias':'Nenhuma fotografia indexada neste filtro';
+ var b=document.getElementById('v2-gallery-more');if(b)b.style.display=matched.length>PTURV2_PHOTO_LIMIT?'inline-flex':'none';
+}
+function pturV2ActionPhotoPreview(fotos){if(!fotos.length)return '';var seen={};var images=fotos.filter(function(f){if(seen[f.territorio])return false;seen[f.territorio]=1;return true}).slice(0,4);return '<div class="v2-thumbs">'+images.map(function(f){return '<img loading="lazy" alt="'+esc(f.territorio)+'" src="'+pturV2Thumb(f)+'">'}).join('')+'</div>'}
+function pturV2RenderActions(){var rows=pturV2Rows();var term=(pturV2SelecaoLista('v2-a-search')||'').toLocaleLowerCase('pt-BR'),tipo=pturV2SelecaoLista('v2-a-filter'),mes=pturV2SelecaoLista('v2-a-mes');
+ pturV2FillSelect('v2-a-mes',pturV2Unique(rows.map(function(r){return r.mes}).filter(Boolean)).sort(),'Todos os períodos');mes=pturV2SelecaoLista('v2-a-mes');
+ var out=rows.map(function(r){var photos=pturV2ItemFotos(r),links=pturV2ItemLinks(r);return {r:r,photos:photos,links:links}}).filter(function(x){var r=x.r;return(!term||( /^\d+(?:\.\d+)?$/.test(term) ? String(r.id||'')===term : [r.id,r.atividade,r.evidencia,r.meta,r.produto,r.responsavel].join(' ').toLocaleLowerCase('pt-BR').includes(term)))&&(!mes||r.mes===mes)&&(!tipo||(tipo==='foto'&&x.photos.length)||(tipo==='documento'&&x.links.length)||(tipo==='pendente'&&!x.photos.length&&!x.links.length))});
+ out.sort(function(a,b){var w=function(r){var id=String(r.id||'');if(id==='5.1')return 0;if(id==='2.4')return 1;return 2};return (w(a.r)-w(b.r)) || (Number(b.photos.length>0)-Number(a.photos.length>0)) || (Number(b.links.length>0)-Number(a.links.length>0))});
+ var el=document.getElementById('v2-action-list');if(el)el.innerHTML=out.length?out.slice(0,PTURV2_ACTION_LIMIT).map(function(x){var r=x.r,photo=x.photos,docs=x.links;return '<article class="v2-action '+(photo.length?'has-photo':'')+'"><div class="v2-actionrow"><span class="v2-chip">Item '+esc(r.id)+'</span><span class="v2-chip yellow">'+esc(r.mes||'Sem período')+'</span></div><h3>'+esc(r.atividade||r.meta||'Ação sem descrição')+'</h3><p><strong>Comprovação prevista:</strong> '+esc(r.evidencia||'Consultar o detalhamento da ação')+'</p>'+pturV2ActionPhotoPreview(photo)+'<div><span class="v2-chip">'+photo.length+' fotos vinculadas</span> <span class="v2-chip">'+docs.length+' links de origem</span></div><small>Status registrado: '+esc(r.status||'Não informado')+' · Vínculos em conferência</small><div class="v2-action-links"><button class="v2-btn secondary" data-id="'+esc(r.id)+'" onclick="pturV2AbrirAcao(this.dataset.id)">Ver comprovações</button>'+(docs.length?'<a class="v2-doclink" target="_blank" rel="noopener" href="'+esc(docs[0].url)+'">Abrir fonte</a>':'')+'</div></article>'}).join(''):'<div class="v2-clarifier">Nenhum item corresponde aos filtros. Tente outro número ou palavra.</div>';
+ var c=document.getElementById('v2-actions-count');if(c)c.textContent=out.length+' itens encontrados no plano de trabalho';
+ var b=document.getElementById('v2-action-more');if(b)b.style.display=out.length>PTURV2_ACTION_LIMIT?'inline-flex':'none';}
+function pturV2MoreActions(){PTURV2_ACTION_LIMIT+=12;pturV2RenderActions()}
+function pturV2AbrirAcao(id){var r=pturV2Rows().find(function(x){return x.id===id});if(!r){pturV2Go('acoes');var search=document.getElementById('v2-a-search');if(search)search.value=id;pturV2RenderActions();return}
+ if(!document.getElementById('vw-acoes').classList.contains('on'))pturV2Go('acoes');PTURV2_SELECTED_ACTION=id;PTURV2_DETAIL_LIMIT=48;pturV2ShowDetail();}
+function pturV2MoreDetail(){PTURV2_DETAIL_LIMIT+=48;pturV2ShowDetail()}
+function pturV2ShowDetail(){if(!PTURV2_SELECTED_ACTION)return;var id=PTURV2_SELECTED_ACTION,r=pturV2Rows().find(function(x){return x.id===id});if(!r)return;
+ var photos=pturV2ItemFotos(r),docs=pturV2ItemLinks(r),el=document.getElementById('v2-action-detail');if(!el)return;
+ el.hidden=false;el.innerHTML='<button class="v2-btn secondary" onclick="pturV2CloseDetail()">Voltar à lista de ações</button><h2>Item '+esc(r.id)+' — '+esc(r.atividade||'Ação')+'</h2><p><strong>O que deve ser comprovado:</strong> '+esc(r.evidencia||'Conferir descrição do produto')+'</p><p><strong>Referência:</strong> '+esc(r.mes||'')+' · '+esc(r.inicio||'')+' a '+esc(r.fim||'')+' · Situação informada: '+esc(r.status||'Não informado')+'</p><div class="v2-numbers"><div class="v2-num"><strong>'+photos.length+'</strong><span>Fotografias vinculadas para conferência</span></div><div class="v2-num"><strong>'+docs.length+'</strong><span>Links de pastas ou documentos</span></div></div><h3 class="v2-sectiontitle">Documentos e fontes</h3>'+(docs.length?'<div class="v2-doclist">'+docs.map(function(d){return '<a class="v2-doclink" target="_blank" rel="noopener" href="'+esc(d.url)+'">'+esc(d.label)+' ↗</a>'}).join('')+'</div>':'<p class="v2-clarifier">Ainda não foi localizada uma fonte documental direta para este item. O vínculo poderá ser acrescentado quando for identificado.</p>')+(id==='5.1'?'<p class="v2-clarifier">As fotos de seminários foram localizadas em quatro territórios. Listas de presença e relatórios ainda precisam de vinculação documental para conferência completa.</p>':id==='2.4'?'<p class="v2-clarifier">A competência das pastas nem sempre confirma a data de captura. Confirme a data de cada registro antes da validação desta ação.</p>':'')+'<h3 class="v2-sectiontitle">Galeria de fotografias desta ação</h3>'+(photos.length?'<div class="v2-photogrid">'+photos.slice(0,PTURV2_DETAIL_LIMIT).map(pturV2PhotoTile).join('')+'</div>'+(photos.length>PTURV2_DETAIL_LIMIT?'<div class="v2-center"><button class="v2-btn secondary" onclick="pturV2MoreDetail()">Mostrar mais fotos</button></div>':''):'<p class="v2-clarifier">Nenhuma fotografia foi vinculada a este item nesta versão. Isso não comprova ausência de arquivos na origem.</p>')+'<p class="v2-clarifier">A vinculação é documental e precisa ser conferida pela equipe. Não representa homologação ou conclusão de meta.</p>';
+ el.scrollIntoView({block:'start',behavior:'smooth'});
+}
+function pturV2CloseDetail(){var d=document.getElementById('v2-action-detail');if(d)d.hidden=true;PTURV2_SELECTED_ACTION=null;window.scrollTo({top:0,behavior:'smooth'})}
+function pturV2RenderTerritorios(){var imgs=pturV2Data(),list=['Cantagalo','Chapéu Mangueira / Babilônia','Complexo da Maré','Complexo do Alemão','Mangueira','Rocinha','Santa Marta','Vidigal'];var el=document.getElementById('v2-territorios');if(!el)return;el.innerHTML=list.map(function(t){var p=imgs.filter(function(f){return f.territorio===t}),sems=p.filter(function(f){return f.categoria==='Seminário'});return '<article class="v2-territorio"><strong>'+esc(t)+'</strong><span>'+p.length+' fotografias indexadas'+(sems.length?' · '+sems.length+' do seminário':'')+'</span><button class="v2-btn secondary" data-ter="'+esc(t)+'" onclick="pturV2GaleriaTerritorio(this.dataset.ter)">Ver fotos do território</button></article>'}).join('')}
+function pturV2GaleriaTerritorio(t){pturV2Go('evidenciasdrive');var sel=document.getElementById('v2-g-ter');if(sel)sel.value=t;pturV2ResetGallery()}
+function pturV2RenderTudo(){try{pturV2Stats();pturV2RenderGallery();pturV2RenderActions();pturV2RenderTerritorios()}catch(e){console.warn('Falha de visualização do índice fotográfico',e)}}
+window.addEventListener('DOMContentLoaded',function(){pturV2RenderTudo()});
 
 </script>
 <!-- PTUR 2026-09-02: Diagnósticos dinâmicos + mapeamento Jul/Ago + Portal somente no card SMPC -->
