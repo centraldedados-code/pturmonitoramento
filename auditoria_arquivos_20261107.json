@@ -1,0 +1,541 @@
+{
+  "data": "2026-11-07",
+  "resumo": {
+    "planilhaFotosJulhoAgosto": 1753,
+    "arquivosIdentificadosJulhoAgosto": 1813,
+    "fotosSeminariosOutubro": 472,
+    "pastasVaziasExcluidas": 4,
+    "observacao": "O total da planilha não é o total de arquivos verificados; contagem física e vínculo podem divergir. Algumas fotos rotuladas como mapeamento estão em pastas de migração anteriormente relacionadas a diagnóstico.",
+    "arquivosDiagnosticoAdicionaisEmPastasDeOrigem": 141,
+    "totalIdsDeImagensCampoEncontradosIncluindoOrigens": 1954,
+    "dataConferenciaLocal": "2026-11-06"
+  },
+  "verificacoesPastas": [
+    {
+      "territorio": "Cantagalo",
+      "competencia": "2026-07",
+      "tipo": "diagnostico",
+      "planilha": 34,
+      "localizadas": 11,
+      "raiz": "1v0E1aoB4tSKUJJ2mu2aDVn1AmTbMCEf5",
+      "fotoFolder": "1LictJ7WWptPV-I9ghU0L05hdFcK_0rU-",
+      "visited": [
+        "1LictJ7WWptPV-I9ghU0L05hdFcK_0rU-"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_0"
+    },
+    {
+      "territorio": "Cantagalo",
+      "competencia": "2026-07",
+      "tipo": "mapeamento",
+      "planilha": 34,
+      "localizadas": 34,
+      "raiz": "1DyT7QCqEty5wMYmJQ6is8HlMgvmPDBCG",
+      "fotoFolder": "1wClke7srZIZfDDf-drDFmtB9tpfRoP_B",
+      "visited": [
+        "1wClke7srZIZfDDf-drDFmtB9tpfRoP_B",
+        "1aNgN_x2a9UBozPtH_M1RgOsqXkPYVxYd",
+        "19rZqhSZGvQ3y2yYQ9KLGqLHy2VNe1Qas"
+      ],
+      "subfoldersPending": 1,
+      "secao": "FOTOS_JA_0"
+    },
+    {
+      "territorio": "Cantagalo",
+      "competencia": "2026-08",
+      "tipo": "mapeamento",
+      "planilha": 119,
+      "localizadas": 119,
+      "raiz": "1uGHPe9QCWn8Lx-luNCtIhfbM6v7hyyAU",
+      "fotoFolder": "14hD5X3aITXqElosQ9nj-AUALcRC05Qnf",
+      "visited": [
+        "14hD5X3aITXqElosQ9nj-AUALcRC05Qnf",
+        "1bd5GZKXU0GDuKU2DtjssbRW03Ucjp6D4"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_0"
+    },
+    {
+      "territorio": "Chapéu Mangueira / Babilônia",
+      "competencia": "2026-07",
+      "tipo": "diagnostico",
+      "planilha": 18,
+      "localizadas": 17,
+      "raiz": "1b5AftcObVduT_S_XLXhlJaTqadCSDiAK",
+      "fotoFolder": "1hiJAP_8UbZH7ekE9Wd-ctwFGrtFYIflZ",
+      "visited": [
+        "1hiJAP_8UbZH7ekE9Wd-ctwFGrtFYIflZ"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_0"
+    },
+    {
+      "territorio": "Chapéu Mangueira / Babilônia",
+      "competencia": "2026-07",
+      "tipo": "mapeamento",
+      "planilha": 15,
+      "localizadas": 16,
+      "raiz": "1Yr3lB318eJXXSXNYwlLkHPvH-UaiJLQH",
+      "fotoFolder": "18g6g13PC1kVVB0EdILadoxfKbPRSeF2g",
+      "visited": [
+        "18g6g13PC1kVVB0EdILadoxfKbPRSeF2g",
+        "1XeL3cvlXHuvOs35zxT-tpIz37Ory29Xp",
+        "1eAlbEY7Hhts5HU1m3ZgMnBLjMhRuQ7cD"
+      ],
+      "subfoldersPending": 1,
+      "secao": "FOTOS_JA_1"
+    },
+    {
+      "territorio": "Chapéu Mangueira / Babilônia",
+      "competencia": "2026-08",
+      "tipo": "mapeamento",
+      "planilha": 15,
+      "localizadas": 15,
+      "raiz": "1bDKWkcZ2O_RMDAnmhrqsnT010cgUV67h",
+      "fotoFolder": "1-BYU9xWIE2X8QTc8nlCS8oertci7KDQE",
+      "visited": [
+        "1-BYU9xWIE2X8QTc8nlCS8oertci7KDQE",
+        "1ZHYW9lAzO7RsLXXCvNSWgUFW9ISsBf09"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_1"
+    },
+    {
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-07",
+      "tipo": "diagnostico",
+      "planilha": 153,
+      "localizadas": 0,
+      "raiz": "14-bxBRFhdiBhiBli4TkFAUYuXRoronr5",
+      "fotoFolder": "1zj1zI4iwrAyuwVWkEnmXquy13BRCar-f",
+      "visited": [
+        "1zj1zI4iwrAyuwVWkEnmXquy13BRCar-f"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_1"
+    },
+    {
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-07",
+      "tipo": "mapeamento",
+      "planilha": 44,
+      "localizadas": 197,
+      "raiz": "1wByvw6Z6wGbDAa4-2F7eh41G1iSSgSQa",
+      "fotoFolder": "1n17DF874aVTiNdTRNZAHphl58ae90l7b",
+      "visited": [
+        "1n17DF874aVTiNdTRNZAHphl58ae90l7b",
+        "1yc4IEaDQfSZDB9n--0TjPGctapVqkKfE",
+        "1zU0NwHuRyitPepU92HxnJ3cmDA9BlSZw"
+      ],
+      "subfoldersPending": 1,
+      "secao": "FOTOS_JA_1"
+    },
+    {
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-08",
+      "tipo": "mapeamento",
+      "planilha": 21,
+      "localizadas": 21,
+      "raiz": "1SvkgxeWFl13LFWe1ORqXVwLHbKcLsIll",
+      "fotoFolder": "1fiHoOEJ9Rzx197nmEP2U8BCBMfhiFF1f",
+      "visited": [
+        "1fiHoOEJ9Rzx197nmEP2U8BCBMfhiFF1f",
+        "1e8HFmpaQmYEjKEL8U-Qj-wtqm1DnZRWA"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_2"
+    },
+    {
+      "territorio": "Complexo do Alemão",
+      "competencia": "2026-07",
+      "tipo": "diagnostico",
+      "planilha": 142,
+      "localizadas": 0,
+      "raiz": "1_pkbNaDzirF8Su-z5EWYvm5hxbpH5VSK",
+      "fotoFolder": "1BPIXdlZ_uTZeI0w9v9I_KFdapsVnFhd7",
+      "visited": [
+        "1BPIXdlZ_uTZeI0w9v9I_KFdapsVnFhd7"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_2"
+    },
+    {
+      "territorio": "Complexo do Alemão",
+      "competencia": "2026-07",
+      "tipo": "mapeamento",
+      "planilha": 66,
+      "localizadas": 208,
+      "raiz": "1f1zHgRWHWfMD__WpllKXaZVIqbn1Skz0",
+      "fotoFolder": "1q8nbvhakxCJGRuaaaK0BpKRqq6O-H8jg",
+      "visited": [
+        "1q8nbvhakxCJGRuaaaK0BpKRqq6O-H8jg",
+        "1ZIF8LVNZae5W3-1c5wF2J-5bBxUt4aGJ",
+        "1T5iOqqWQJ0kSLS_rva190TuufKFjzJaI"
+      ],
+      "subfoldersPending": 1,
+      "secao": "FOTOS_JA_2"
+    },
+    {
+      "territorio": "Complexo do Alemão",
+      "competencia": "2026-08",
+      "tipo": "mapeamento",
+      "planilha": 179,
+      "localizadas": 179,
+      "raiz": "17LbS3ejxZQ6a3nY9AnJHE0WGZccCYm9W",
+      "fotoFolder": "1mZxwRghLYuApJYvqNTKJnzBqKyzMJy2a",
+      "visited": [
+        "1mZxwRghLYuApJYvqNTKJnzBqKyzMJy2a",
+        "1sooqcXmP6l94Hb-h-vGeQaQYlvRb9CIU"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_2"
+    },
+    {
+      "territorio": "Mangueira",
+      "competencia": "2026-07",
+      "tipo": "diagnostico",
+      "planilha": 339,
+      "localizadas": 2,
+      "raiz": "16FdqzoZV0KoBG_qVMuZVPZ_b7XjWKTtf",
+      "fotoFolder": "1QLfs3DfT-GIyTKTsN0LI7VWTGhU9-Fva",
+      "visited": [
+        "1QLfs3DfT-GIyTKTsN0LI7VWTGhU9-Fva"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_3"
+    },
+    {
+      "territorio": "Mangueira",
+      "competencia": "2026-07",
+      "tipo": "mapeamento",
+      "planilha": 9,
+      "localizadas": 346,
+      "raiz": "1xeQBMuq6_4eVFw6GFfc1z-lJh_qPhvU8",
+      "fotoFolder": "1W2IHyj7gvBaCgZgv5IimU_8jMze-mtKH",
+      "visited": [
+        "1W2IHyj7gvBaCgZgv5IimU_8jMze-mtKH",
+        "14U40C98eQmfgJZcOnEgmtbprApNa2L54",
+        "1Vju3PIzSaP6KogUFwfDPOVypXT8arfLD"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_3"
+    },
+    {
+      "territorio": "Mangueira",
+      "competencia": "2026-08",
+      "tipo": "mapeamento",
+      "planilha": 66,
+      "localizadas": 82,
+      "raiz": "1B1-7zjto_UGrtMwC1F-ZO4Yz2QqgqjaM",
+      "fotoFolder": "1W9q1u3Eb8Mf-Bp-3ow2YPrGVA0hYJ2cJ",
+      "visited": [
+        "1W9q1u3Eb8Mf-Bp-3ow2YPrGVA0hYJ2cJ",
+        "1q7ZagM_Dj9ATIYBIk5C7jflxveTsWIQP"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_3"
+    },
+    {
+      "territorio": "Rocinha",
+      "competencia": "2026-07",
+      "tipo": "diagnostico",
+      "planilha": 43,
+      "localizadas": 0,
+      "raiz": "1u4reuQ3u_s3AKgdfxHuI449_mv6nS6zA",
+      "fotoFolder": "1TeKPloATE4BSDgCASGwMossJq-TIjIyi",
+      "visited": [
+        "1TeKPloATE4BSDgCASGwMossJq-TIjIyi"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_3"
+    },
+    {
+      "territorio": "Rocinha",
+      "competencia": "2026-07",
+      "tipo": "mapeamento",
+      "planilha": 40,
+      "localizadas": 45,
+      "raiz": "13yKct84DmPCtAli398QNpXPNMRBNXNHQ",
+      "fotoFolder": "1WzXGNsLtdKwtEy2Of-JtYAO33YituwIS",
+      "visited": [
+        "1WzXGNsLtdKwtEy2Of-JtYAO33YituwIS",
+        "1AIdY6F9kF4LcNAWfr3_8obIMaHaR6ssr",
+        "18xxaEnsT49LZxokeFk9QXWZ_qS_TbDgz"
+      ],
+      "subfoldersPending": 2,
+      "secao": "FOTOS_JA_4"
+    },
+    {
+      "territorio": "Santa Marta",
+      "competencia": "2026-07",
+      "tipo": "diagnostico",
+      "planilha": 37,
+      "localizadas": 34,
+      "raiz": "1rV33xSGgNujsUvUAdxxH_d0y3C3qIZxy",
+      "fotoFolder": "1KfD7PDNxtDIdd05gwJV1eYqbvB8C8YLO",
+      "visited": [
+        "1KfD7PDNxtDIdd05gwJV1eYqbvB8C8YLO"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_4"
+    },
+    {
+      "territorio": "Santa Marta",
+      "competencia": "2026-07",
+      "tipo": "mapeamento",
+      "planilha": 87,
+      "localizadas": 23,
+      "raiz": "1c5i9WArn2v8NCdSjr_Mf4CfptsMeKbma",
+      "fotoFolder": "1sRq7azdNlydDCoFWG_0a86dP0kI93xdd",
+      "visited": [
+        "1sRq7azdNlydDCoFWG_0a86dP0kI93xdd",
+        "1V-Wwsd-JZcDLHiatxIGnO-kH0E3_jFVz",
+        "1uCu7UkDdDVPZAZBn-JhOIz2OOLv4qUpx"
+      ],
+      "subfoldersPending": 2,
+      "secao": "FOTOS_JA_4"
+    },
+    {
+      "territorio": "Santa Marta",
+      "competencia": "2026-08",
+      "tipo": "mapeamento",
+      "planilha": 122,
+      "localizadas": 169,
+      "raiz": "10c1yiAxiySD8Q2Yg5HYHhMRMevjK8qCq",
+      "fotoFolder": "1CG0ttvM3D9e5ClTTKnV2OEQOKpKUkwi5",
+      "visited": [
+        "1CG0ttvM3D9e5ClTTKnV2OEQOKpKUkwi5"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_4"
+    },
+    {
+      "territorio": "Vidigal",
+      "competencia": "2026-07",
+      "tipo": "diagnostico",
+      "planilha": 38,
+      "localizadas": 38,
+      "raiz": "1JE9oyB5uISyBL5q812nLhu9atMYgEwHv",
+      "fotoFolder": "1t_9Ix52RDsQ_tGgzGAMiZEDrz0xApx_4",
+      "visited": [
+        "1t_9Ix52RDsQ_tGgzGAMiZEDrz0xApx_4"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_5"
+    },
+    {
+      "territorio": "Vidigal",
+      "competencia": "2026-07",
+      "tipo": "mapeamento",
+      "planilha": 33,
+      "localizadas": 33,
+      "raiz": "18lhfGxCd4oUDX1EgvWNWxF_gdzQLafY2",
+      "fotoFolder": "1Kd6Zljd8pg7hpv6tO-gcVZPNK3w5EUMT",
+      "visited": [
+        "1Kd6Zljd8pg7hpv6tO-gcVZPNK3w5EUMT",
+        "1GkUdIW_NDiUbmsTuSvyNKyd3KRQGmja4"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_5"
+    },
+    {
+      "territorio": "Vidigal",
+      "competencia": "2026-08",
+      "tipo": "mapeamento",
+      "planilha": 99,
+      "localizadas": 99,
+      "raiz": "1myfVxwUVku5weDc1gdxwiTOswSa3bDof",
+      "fotoFolder": "16JCe19GJf0LipwA6a7mIhVvGgR4C-AVU",
+      "visited": [
+        "16JCe19GJf0LipwA6a7mIhVvGgR4C-AVU"
+      ],
+      "subfoldersPending": 0,
+      "secao": "FOTOS_JA_5"
+    },
+    {
+      "territorio": "Chapéu Mangueira / Babilônia",
+      "origem": "Celular",
+      "pasta": "1u0sthpsVki5IuJnQ_eWR_AKQxNqXjhE8",
+      "imagens": 47,
+      "total": 47,
+      "secao": "SEMINARIOS_FULL"
+    },
+    {
+      "territorio": "Chapéu Mangueira / Babilônia",
+      "origem": "Acervo",
+      "pasta": "1E6xbNEAzdTv-arGFtZDQpuwtEtRCMeqR",
+      "imagens": 78,
+      "total": 78,
+      "secao": "SEMINARIOS_FULL"
+    },
+    {
+      "territorio": "Mangueira",
+      "origem": "Acervo",
+      "pasta": "1mIXJyM2aKNrX1kr0QE4qZVZ0pCXOfTo6",
+      "imagens": 72,
+      "total": 72,
+      "secao": "SEMINARIOS_FULL"
+    },
+    {
+      "territorio": "Cantagalo",
+      "origem": "Fotografia",
+      "pasta": "1sQu9IFiloFugTTPuzn_rE5BtG2oGkwDK",
+      "imagens": 38,
+      "total": 38,
+      "secao": "SEMINARIOS_FULL"
+    },
+    {
+      "territorio": "Vidigal",
+      "origem": "Ivson Lima",
+      "pasta": "1psIGgNiDWC9XDGTBSv0J30gzLZb8fL9V",
+      "imagens": 144,
+      "total": 144,
+      "secao": "SEMINARIOS_FULL"
+    },
+    {
+      "territorio": "Vidigal",
+      "origem": "Heitor Arcanjo",
+      "pasta": "1Aya0vXeUHJwHOGIxJIYo1UsCvMRq1Kfd",
+      "imagens": 59,
+      "total": 59,
+      "secao": "SEMINARIOS_FULL"
+    },
+    {
+      "territorio": "Vidigal",
+      "origem": "Celular",
+      "pasta": "12GvAA8jjhz1pvA4T3YXBdSVWsK7cq8c7",
+      "imagens": 34,
+      "total": 34,
+      "secao": "SEMINARIOS_FULL"
+    }
+  ],
+  "localizadasPorTerritorio": [
+    {
+      "territorio": "Cantagalo",
+      "competencia": "2026-07",
+      "grupo": "diagnostico",
+      "arquivosFisicos": 11
+    },
+    {
+      "territorio": "Cantagalo",
+      "competencia": "2026-07",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 57
+    },
+    {
+      "territorio": "Cantagalo",
+      "competencia": "2026-08",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 119
+    },
+    {
+      "territorio": "Chapéu Mangueira / Babilônia",
+      "competencia": "2026-07",
+      "grupo": "diagnostico",
+      "arquivosFisicos": 17
+    },
+    {
+      "territorio": "Chapéu Mangueira / Babilônia",
+      "competencia": "2026-07",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 16
+    },
+    {
+      "territorio": "Chapéu Mangueira / Babilônia",
+      "competencia": "2026-08",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 15
+    },
+    {
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-07",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 197
+    },
+    {
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-08",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 21
+    },
+    {
+      "territorio": "Complexo do Alemão",
+      "competencia": "2026-07",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 208
+    },
+    {
+      "territorio": "Complexo do Alemão",
+      "competencia": "2026-08",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 179
+    },
+    {
+      "territorio": "Mangueira",
+      "competencia": "2026-07",
+      "grupo": "diagnostico",
+      "arquivosFisicos": 2
+    },
+    {
+      "territorio": "Mangueira",
+      "competencia": "2026-07",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 346
+    },
+    {
+      "territorio": "Mangueira",
+      "competencia": "2026-08",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 82
+    },
+    {
+      "territorio": "Rocinha",
+      "competencia": "2026-07",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 83
+    },
+    {
+      "territorio": "Santa Marta",
+      "competencia": "2026-07",
+      "grupo": "diagnostico",
+      "arquivosFisicos": 34
+    },
+    {
+      "territorio": "Santa Marta",
+      "competencia": "2026-07",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 87
+    },
+    {
+      "territorio": "Santa Marta",
+      "competencia": "2026-08",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 169
+    },
+    {
+      "territorio": "Vidigal",
+      "competencia": "2026-07",
+      "grupo": "diagnostico",
+      "arquivosFisicos": 38
+    },
+    {
+      "territorio": "Vidigal",
+      "competencia": "2026-07",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 33
+    },
+    {
+      "territorio": "Vidigal",
+      "competencia": "2026-08",
+      "grupo": "mapeamento",
+      "arquivosFisicos": 99
+    }
+  ],
+  "observacoes": [
+    "Pastas vazias não são comprovação",
+    "Pasta de diagnóstico vazia não significa ausência da atividade: parte das fotografias aparece em subpastas de mapeamento/migração",
+    "Há arquivos com data a validar e formatos HEIC; conferir manualmente antes de certificar execução"
+  ],
+  "dataConferenciaLocal": "2026-11-06"
+}
