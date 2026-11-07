@@ -418,6 +418,19 @@ body{background:#f3f6fa}
 
 .v2-photo-body h3,.v2-startcard strong,.v2-action h3,.v2-chip,.v2-doclink,.v2-startcard em,.v2-hero h1,.v2-pagehead h1,.v2-btn,.v2-num strong,.v2-sectiontitle,.v2-territorio strong,.v2-detail h2{font-family:Montserrat,Arial,sans-serif}
 </style>
+
+<style id="ptur-v3-media-styles">
+.v3-kind{position:absolute;top:12px;right:12px;background:#092040;color:#fff;border-radius:7px;padding:7px 9px;font:700 11px Montserrat;box-shadow:0 3px 12px #0003}
+.v3-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#0a4962;font:700 33px Montserrat;background:linear-gradient(135deg,#e4f1f7,#f4f7fa)}
+.v3-file{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;min-height:26px}
+.v3-photo-media{position:relative}.v2-photo-media img{position:relative;z-index:1}.v2-photo-label,.v3-kind{z-index:2}
+.v2-photo-actions a{flex:1;text-align:center}.v3-discrepancy{background:#fff7de;border-left:4px solid #D0A114;color:#725800;padding:12px 14px;border-radius:7px;font-size:12px;line-height:1.5;margin:14px 0}.v3-muted{color:#6d8090;font-size:12px}.v3-sub{font-size:12px;color:#647b8b;line-height:1.6;margin:6px 0}
+.v3-detail-title{border-left:5px solid #00B7D7;padding-left:14px;margin-top:18px}.v3-detail-title h2{margin:10px 0 8px}.v3-legalnote{font-size:11px;color:#5c7181;margin-top:18px}
+.v2-previewgrid button{position:relative}.v3-homecaption{display:block;font:700 10px Montserrat;padding:8px 4px;background:#fff;color:#092040}
+.v2-previewgrid img{height:110px}.v2-photo-body h3{min-height:16px}.v2-photo-body{display:flex;flex-direction:column;gap:3px}.v2-photo-actions{margin-top:auto}
+@media(max-width:750px){.v2-photogrid{grid-template-columns:repeat(2,minmax(0,1fr))}.v2-previewgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.v2-photo-media{height:150px}.v2-photo-actions{flex-wrap:wrap}}
+@media(max-width:440px){.v2-photogrid{grid-template-columns:1fr}.v2-previewgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
 </head>
 
 <body>
@@ -471,8 +484,11 @@ body{background:#f3f6fa}
  <button class="v2-startcard" onclick="pturV2AbrirAcao('5.1')"><span class="v2-starticon">📷</span><strong>Seminários territoriais</strong><span>Fotografias de outubro, organizadas por território e vinculadas ao item 5.1.</span><em>Ver evidências</em></button>
  <button class="v2-startcard" onclick="pturV2AbrirAcao('2.4')"><span class="v2-starticon">🗂️</span><strong>Registros fotográficos iniciais</strong><span>Consulte as fotos de campo e verifique o item 2.4 do cronograma.</span><em>Ver evidências</em></button>
  <button class="v2-startcard" onclick="pturV2Go('territorios')"><span class="v2-starticon">📍</span><strong>Consultar por território</strong><span>Escolha um dos oito núcleos e veja as fotografias existentes.</span><em>Escolher território</em></button>
+ <button class="v2-startcard" onclick="pturV2AbrirAcao('C.3')"><span class="v2-starticon">👥</span><strong>Treinamento da equipe</strong><span>343 fotografias do treinamento e 1 vídeo, com pastas originais.</span><em>Ver item C.3</em></button>
+ <button class="v2-startcard" onclick="pturV2AbrirAcao('C.16')"><span class="v2-starticon">🎨</span><strong>Identidade visual</strong><span>Logotipos, aplicações, elementos e réguas para conferência.</span><em>Ver item C.16</em></button>
+ <button class="v2-startcard" onclick="pturV2AbrirAcao('C.5')"><span class="v2-starticon">🎥</span><strong>Pesquisa de campo</strong><span>Vídeos da Rocinha e Santa Marta vinculados à pesquisa inicial.</span><em>Ver item C.5</em></button>
 </div>
-<h2 class="v2-sectiontitle">Fotografias recentes do acervo</h2>
+<h2 class="v2-sectiontitle">Prévia de diferentes tipos de evidência</h2>
 <div id="v2-home-photos" class="v2-previewgrid"></div>
 
 <div class="pturV2-legacy" aria-hidden="true" style="display:none">
@@ -616,18 +632,20 @@ body{background:#f3f6fa}
   </section>
 
   <section class="vw" id="vw-evidenciasdrive">
-<div class="v2-pagehead"><span class="v2-eyebrow muted">ACERVO FOTOGRÁFICO</span><h1>Galeria de fotografias do projeto</h1><p>Explore as imagens dos seminários, diagnósticos e mapeamentos. Amplie uma imagem ou abra o documento original no Drive.</p></div>
+<div class="v2-pagehead"><span class="v2-eyebrow muted">ACERVO FOTOGRÁFICO</span><h1>Galeria de fotos, vídeos e documentos</h1><p>Localize a evidência pelo item do cronograma, pelo tipo de ação, território ou período. Abra fotos, vídeos e documentos diretamente na origem.</p></div>
 <div class="v2-numbers" id="v2-gallery-numbers"></div>
 <div class="v2-filters" aria-label="Filtros da galeria">
  <label>Tipo de ação<select id="v2-g-cat" onchange="pturV2ResetGallery()"><option value="">Todas as ações</option><option value="Seminário">Seminários</option><option value="Mapeamento">Mapeamentos</option><option value="Diagnóstico">Diagnósticos</option></select></label>
+ <label>Formato<select id="v3-g-kind" onchange="pturV2ResetGallery()"><option value="">Fotos, vídeos e PDFs</option><option value="imagem">Fotografias e imagens</option><option value="video">Vídeos</option><option value="documento">Documentos PDF</option></select></label>
+ <label>Item do cronograma<select id="v3-g-item" onchange="pturV2ResetGallery()"><option value="">Todos os itens</option></select></label>
  <label>Território<select id="v2-g-ter" onchange="pturV2ResetGallery()"><option value="">Todos os territórios</option></select></label>
  <label>Competência<select id="v2-g-mes" onchange="pturV2ResetGallery()"><option value="">Todos os períodos</option><option value="2026-07">Julho/2026</option><option value="2026-10">Outubro/2026</option></select></label>
  <label class="v2-grow">Pesquisar<input id="v2-g-search" type="search" placeholder="Buscar território, evento ou categoria" oninput="pturV2ResetGallery()"></label>
 </div>
 <div id="v2-gallery-label" class="v2-counter" aria-live="polite"></div>
 <div id="v2-gallery" class="v2-photogrid"></div>
-<div class="v2-center"><button id="v2-gallery-more" class="v2-btn secondary" onclick="pturV2MoreGallery()">Mostrar mais fotografias</button></div>
-<p class="v2-clarifier">Fotos indexadas a partir de arquivos existentes no Drive. O vínculo com cada item é indicado para conferência documental e não substitui a validação da execução física.</p>
+<div class="v2-center"><button id="v2-gallery-more" class="v2-btn secondary" onclick="pturV2MoreGallery()">Mostrar mais arquivos</button></div>
+<p class="v2-clarifier">Arquivos localizados no Drive. A associação ao item é preliminar e não equivale à comprovação de execução, à aprovação formal ou à conferência de datas.</p>
 
 <div class="pturV2-legacy" aria-hidden="true" style="display:none">
     <div class="st">Explorador de Evidências no Google Drive</div>
@@ -717,7 +735,7 @@ body{background:#f3f6fa}
  <div class="v2-pagehead"><span class="v2-eyebrow muted">PLANO DE TRABALHO · RASTREABILIDADE</span><h1>Cada item com suas evidências</h1><p>Pesquise pelo número ou pelo nome da atividade. Ao abrir um item, o sistema apresenta as fotos e as fontes documentais vinculadas. Quando ainda não houver vínculo, isso será informado.</p></div>
  <div class="v2-filters" aria-label="Filtros das ações">
   <label class="v2-grow">Localizar item<input id="v2-a-search" type="search" placeholder="Ex.: 5.1, seminário, diagnóstico, mobilização" oninput="pturV2RenderActions()"></label>
-  <label>Exibir<select id="v2-a-filter" onchange="pturV2RenderActions()"><option value="">Todos os itens</option><option value="foto">Com fotografias</option><option value="documento">Com documento ou pasta vinculada</option><option value="pendente">Sem arquivo vinculado</option></select></label>
+  <label>Exibir<select id="v2-a-filter" onchange="pturV2RenderActions()"><option value="">Todos os itens</option><option value="foto">Com fotografias</option><option value="video">Com vídeos</option><option value="documento">Com documento ou pasta vinculada</option><option value="pendente">Sem arquivo vinculado</option></select></label>
   <label>Período<select id="v2-a-mes" onchange="pturV2RenderActions()"><option value="">Todos os períodos</option></select></label>
  </div>
  <div id="v2-actions-count" class="v2-counter" aria-live="polite"></div>
@@ -1845,7 +1863,7 @@ function pturAbrirFotosPrefeitura(){goV('galeria');var s=document.getElementById
 function renderPrefeituraPTUR(){var fotos=pturDados().filter(function(x){return x.competencia==='2026-07';});var terr=Array.from(new Set(fotos.map(function(x){return x.territorio})));var k=document.getElementById('ptur-pref-kpis');if(k)k.innerHTML='<div class="ptur-kpi"><strong>2.4</strong><span>Item do cronograma municipal</span></div><div class="ptur-kpi"><strong>Jul/2026</strong><span>Período previsto da entrega</span></div><div class="ptur-kpi"><strong>'+terr.length+'/8</strong><span>Territórios com fotos na amostra</span></div><div class="ptur-kpi"><strong>'+fotos.length+'</strong><span>Miniaturas exemplificativas indexadas</span></div>';var grid=document.getElementById('ptur-pref-fotos');var vistos={};var amostra=fotos.filter(function(r){return r.meta==='M02';}).filter(function(r){if(vistos[r.territorio])return false;vistos[r.territorio]=true;return true;});if(grid)grid.innerHTML=amostra.length?amostra.map(function(r){return pturFotoHTML(r,pturDados().indexOf(r));}).join(''):'<div class="ptur-empty">Amostra ainda não carregada. A consulta aos documentos originais continua disponível pelo Drive oficial.</div>';}
 function pturIniciarGaleria(){
  if(PTUR_GALLERY_LOAD)return PTUR_GALLERY_LOAD;
- PTUR_GALLERY_LOAD=fetch('amostra_fotos_drive.json?rev=20261106',{cache:'no-store'}).then(function(res){if(!res.ok)throw new Error('manifesto indisponível');return res.json()}).then(function(doc){PTUR_GALLERY_DATA=doc;renderGaleriaPTUR();renderPrefeituraPTUR();pturV2RenderTudo();return doc}).catch(function(e){console.warn('Não foi possível carregar a amostra fotográfica:',e);PTUR_GALLERY_DATA={fotos:[]};renderGaleriaPTUR();renderPrefeituraPTUR();pturV2RenderTudo();});
+ PTUR_GALLERY_LOAD=fetch('amostra_fotos_drive.json?rev=20261106-v3',{cache:'no-store'}).then(function(res){if(!res.ok)throw new Error('manifesto indisponível');return res.json()}).then(function(doc){PTUR_GALLERY_DATA=doc;renderGaleriaPTUR();renderPrefeituraPTUR();pturV2RenderTudo();return doc}).catch(function(e){console.warn('Não foi possível carregar a amostra fotográfica:',e);PTUR_GALLERY_DATA={fotos:[]};renderGaleriaPTUR();renderPrefeituraPTUR();pturV2RenderTudo();});
  return PTUR_GALLERY_LOAD;
 }
 window.addEventListener('DOMContentLoaded',pturIniciarGaleria);
@@ -1927,9 +1945,9 @@ function pturV2RenderGallery(){var fotos=pturV2Data();var terr=pturV2Unique(foto
 function pturV2ActionPhotoPreview(fotos){if(!fotos.length)return '';var seen={};var images=fotos.filter(function(f){if(seen[f.territorio])return false;seen[f.territorio]=1;return true}).slice(0,4);return '<div class="v2-thumbs">'+images.map(function(f){return '<img loading="lazy" alt="'+esc(f.territorio)+'" src="'+pturV2Thumb(f)+'">'}).join('')+'</div>'}
 function pturV2RenderActions(){var rows=pturV2Rows();var term=(pturV2SelecaoLista('v2-a-search')||'').toLocaleLowerCase('pt-BR'),tipo=pturV2SelecaoLista('v2-a-filter'),mes=pturV2SelecaoLista('v2-a-mes');
  pturV2FillSelect('v2-a-mes',pturV2Unique(rows.map(function(r){return r.mes}).filter(Boolean)).sort(),'Todos os períodos');mes=pturV2SelecaoLista('v2-a-mes');
- var out=rows.map(function(r){var photos=pturV2ItemFotos(r),links=pturV2ItemLinks(r);return {r:r,photos:photos,links:links}}).filter(function(x){var r=x.r;return(!term||( /^\d+(?:\.\d+)?$/.test(term) ? String(r.id||'')===term : [r.id,r.atividade,r.evidencia,r.meta,r.produto,r.responsavel].join(' ').toLocaleLowerCase('pt-BR').includes(term)))&&(!mes||r.mes===mes)&&(!tipo||(tipo==='foto'&&x.photos.length)||(tipo==='documento'&&x.links.length)||(tipo==='pendente'&&!x.photos.length&&!x.links.length))});
+ var out=rows.map(function(r){var photos=pturV2ItemFotos(r),links=pturV2ItemLinks(r);return {r:r,photos:photos,links:links}}).filter(function(x){var r=x.r;return(!term||( /^\d+(?:\.\d+)?$/.test(term) ? String(r.id||'')===term : [r.id,r.atividade,r.evidencia,r.meta,r.produto,r.responsavel].join(' ').toLocaleLowerCase('pt-BR').includes(term)))&&(!mes||r.mes===mes)&&(!tipo||(tipo==='foto'&&pturV3Qtd(x.photos,'imagem')>0)||(tipo==='video'&&pturV3Qtd(x.photos,'video')>0)||(tipo==='documento'&&(x.links.length||pturV3Qtd(x.photos,'documento')>0))||(tipo==='pendente'&&!x.photos.length&&!x.links.length))});
  out.sort(function(a,b){var w=function(r){var id=String(r.id||'');if(id==='5.1')return 0;if(id==='2.4')return 1;return 2};return (w(a.r)-w(b.r)) || (Number(b.photos.length>0)-Number(a.photos.length>0)) || (Number(b.links.length>0)-Number(a.links.length>0))});
- var el=document.getElementById('v2-action-list');if(el)el.innerHTML=out.length?out.slice(0,PTURV2_ACTION_LIMIT).map(function(x){var r=x.r,photo=x.photos,docs=x.links;return '<article class="v2-action '+(photo.length?'has-photo':'')+'"><div class="v2-actionrow"><span class="v2-chip">Item '+esc(r.id)+'</span><span class="v2-chip yellow">'+esc(r.mes||'Sem período')+'</span></div><h3>'+esc(r.atividade||r.meta||'Ação sem descrição')+'</h3><p><strong>Comprovação prevista:</strong> '+esc(r.evidencia||'Consultar o detalhamento da ação')+'</p>'+pturV2ActionPhotoPreview(photo)+'<div><span class="v2-chip">'+photo.length+' fotos vinculadas</span> <span class="v2-chip">'+docs.length+' links de origem</span></div><small>Status registrado: '+esc(r.status||'Não informado')+' · Vínculos em conferência</small><div class="v2-action-links"><button class="v2-btn secondary" data-id="'+esc(r.id)+'" onclick="pturV2AbrirAcao(this.dataset.id)">Ver comprovações</button>'+(docs.length?'<a class="v2-doclink" target="_blank" rel="noopener" href="'+esc(docs[0].url)+'">Abrir fonte</a>':'')+'</div></article>'}).join(''):'<div class="v2-clarifier">Nenhum item corresponde aos filtros. Tente outro número ou palavra.</div>';
+ var el=document.getElementById('v2-action-list');if(el)el.innerHTML=out.length?out.slice(0,PTURV2_ACTION_LIMIT).map(function(x){var r=x.r,photo=x.photos,docs=x.links;return '<article class="v2-action '+(photo.length?'has-photo':'')+'"><div class="v2-actionrow"><span class="v2-chip">Item '+esc(r.id)+'</span><span class="v2-chip yellow">'+esc(r.mes||'Sem período')+'</span></div><h3>'+esc(r.atividade||r.meta||'Ação sem descrição')+'</h3><p><strong>Comprovação prevista:</strong> '+esc(r.evidencia||'Consultar o detalhamento da ação')+'</p>'+pturV2ActionPhotoPreview(photo)+'<div><span class="v2-chip">'+pturV3Qtd(photo,'imagem')+' imagens · '+pturV3Qtd(photo,'video')+' vídeos · '+pturV3Qtd(photo,'documento')+' PDFs vinculados</span> <span class="v2-chip">'+docs.length+' links de origem</span></div><small>Status registrado: '+esc(r.status||'Não informado')+' · Vínculos em conferência</small><div class="v2-action-links"><button class="v2-btn secondary" data-id="'+esc(r.id)+'" onclick="pturV2AbrirAcao(this.dataset.id)">Ver comprovações</button>'+(docs.length?'<a class="v2-doclink" target="_blank" rel="noopener" href="'+esc(docs[0].url)+'">Abrir fonte</a>':'')+'</div></article>'}).join(''):'<div class="v2-clarifier">Nenhum item corresponde aos filtros. Tente outro número ou palavra.</div>';
  var c=document.getElementById('v2-actions-count');if(c)c.textContent=out.length+' itens encontrados no plano de trabalho';
  var b=document.getElementById('v2-action-more');if(b)b.style.display=out.length>PTURV2_ACTION_LIMIT?'inline-flex':'none';}
 function pturV2MoreActions(){PTURV2_ACTION_LIMIT+=12;pturV2RenderActions()}
@@ -1946,6 +1964,126 @@ function pturV2RenderTerritorios(){var imgs=pturV2Data(),list=['Cantagalo','Chap
 function pturV2GaleriaTerritorio(t){pturV2Go('evidenciasdrive');var sel=document.getElementById('v2-g-ter');if(sel)sel.value=t;pturV2ResetGallery()}
 function pturV2RenderTudo(){try{pturV2Stats();pturV2RenderGallery();pturV2RenderActions();pturV2RenderTerritorios()}catch(e){console.warn('Falha de visualização do índice fotográfico',e)}}
 window.addEventListener('DOMContentLoaded',function(){pturV2RenderTudo()});
+
+
+/* PTUR v3 — Trilha multimídia vinculada a itens do cronograma, 06/11/2026.
+   Fotos, vídeos e PDFs são arquivos localizados, não homologação de entregas. */
+function pturV3Classe(f){
+  if (f.classe) return f.classe;
+  if ((f.mime||'').startsWith('video/')) return 'video';
+  if ((f.mime||'')==='application/pdf') return 'documento';
+  return 'imagem';
+}
+function pturV3Href(f){return 'https://drive.google.com/file/d/'+encodeURIComponent(f.id)+'/view'}
+function pturV3Nome(f){return f.tipo||f.categoria||'Arquivo da atividade'}
+function pturV3Qtd(list,kind){return list.filter(function(x){return pturV3Classe(x)===kind}).length}
+function pturV3Format(label,n){return n+' '+label}
+function pturV2ItemLinks(r){
+  var id=String(r&&r.id||'').replace(/ \(continuação\)/g,''),out=[],seen={};
+  function add(label,url){if(!url||!/^https:\/\//.test(url)||seen[url])return;seen[url]=true;out.push({label:label,url:url})}
+  if(r&&r.link) String(r.link).split(/[;,\s]+/).forEach(function(l){add('Documento ou referência do cronograma',l)});
+  pturV2ItemFotos(r).forEach(function(f){
+    add((f.categoria||'Evidências')+' · '+(f.territorio||'Projeto inteiro'),f.pasta);
+    if(f.pastaSeminario)add('Seminário · '+f.territorio,f.pastaSeminario);
+  });
+  if(id==='5.1' && typeof PTURV2_EVENT_FOLDERS!=='undefined')PTURV2_EVENT_FOLDERS.forEach(function(p){add(p.terr+' · seminário',pturV2Folder(p.root));add(p.terr+' · convites',pturV2Folder(p.cards))});
+  if(typeof PTUR_GALLERY_DATA==='object'&&PTUR_GALLERY_DATA && Array.isArray(PTUR_GALLERY_DATA.fontesAdicionais)){
+    PTUR_GALLERY_DATA.fontesAdicionais.forEach(function(f){if((f.itemIds||[]).includes(id))add(f.rotulo,f.url)});
+  }
+  return out;
+}
+function pturV2PhotoTile(f){
+ var i=pturV2Data().findIndex(function(x){return x.id===f.id}),tipo=pturV3Classe(f),url=pturV3Href(f),isPhoto=tipo==='imagem';
+ var art=tipo==='video'?'▶':tipo==='documento'?'PDF':'📷';
+ var action=isPhoto?'<button type="button" onclick="pturAbrirFoto('+i+')">Ampliar</button>':'';
+ var tipoLabel=tipo==='video'?'Assistir vídeo':tipo==='documento'?'Abrir documento':'Original no Drive';
+ return '<article class="v2-photo v3-'+esc(tipo)+'"><div class="v2-photo-media">'+
+ '<div class="v3-fallback">'+art+'</div><img loading="lazy" referrerpolicy="no-referrer" alt="'+esc(f.descricao||f.nome||'Registro')+'" src="'+pturV2Thumb(f)+'" '+
+ (isPhoto?'onclick="pturAbrirFoto('+i+')"':'onclick="window.open(\''+url+'\',\'_blank\',\'noopener\')"')+
+ ' onerror="this.style.display=\'none\'">'+
+ (tipo!=='imagem'?'<span class="v3-kind">'+esc(tipo==='video'?'▶ VÍDEO':'▤ DOCUMENTO')+'</span>':'')+
+ '<span class="v2-photo-label">'+esc(f.categoria||f.tipo||'Registro')+'</span></div>'+
+ '<div class="v2-photo-body"><h3>'+esc(f.territorio||'Projeto inteiro')+'</h3><p>'+esc((f.competencia||'Período a conferir')+' · '+pturV3Nome(f))+'</p>'+
+ '<p class="v3-file" title="'+esc(f.nome||f.descricao||'')+'">'+esc(f.nome||f.descricao||'')+'</p>'+
+ '<div class="v2-photo-actions">'+action+'<a target="_blank" rel="noopener" href="'+url+'">'+tipoLabel+'</a></div></div></article>';
+}
+function pturAbrirFoto(i){
+ var f=pturV2Data()[i];if(!f)return;
+ if(pturV3Classe(f)!=='imagem'){window.open(pturV3Href(f),'_blank','noopener');return}
+ var modal=document.getElementById('ptur-photo-modal');if(!modal)return;
+ document.getElementById('ptur-modal-title').textContent=(f.categoria||f.meta||'Evidência')+' · '+(f.territorio||'Projeto inteiro')+' · '+(f.competencia||'');
+ var img=document.getElementById('ptur-modal-img');img.style.display='block';img.src=pturV2Thumb(f).replace('w650','w1600');img.onerror=function(){this.style.display='none'};
+ img.alt=(f.nome||f.descricao||'Foto')+' — '+f.territorio;
+ document.getElementById('ptur-modal-drive').href=pturV3Href(f);
+ document.getElementById('ptur-modal-folder').href=f.pasta || pturV3Href(f);
+ modal.classList.add('on');document.body.style.overflow='hidden';
+}
+function pturV2Stats(){
+ var all=pturV2Data(),rows=pturV2Rows();
+ var counts='<div class="v2-num"><strong>'+rows.length+'</strong><span>Itens consultáveis do cronograma</span></div>'+
+  '<div class="v2-num"><strong>'+pturV3Qtd(all,'imagem')+'</strong><span>Imagens e registros fotográficos</span></div>'+
+  '<div class="v2-num"><strong>'+pturV3Qtd(all,'video')+'</strong><span>Vídeos com acesso à origem</span></div>'+
+  '<div class="v2-num"><strong>'+pturV3Qtd(all,'documento')+'</strong><span>Documentos com prévia</span></div>';
+ ['v2-overview','v2-gallery-numbers'].forEach(function(id){var e=document.getElementById(id);if(e)e.innerHTML=counts});
+ var home=document.getElementById('v2-home-photos');if(home){
+  var metas=['Seminário','Treinamento','Pesquisa de campo','Identidade visual','Material impresso','Divulgação de cursos'];
+  var arr=metas.map(function(cat){return all.find(function(f){return f.categoria===cat && pturV3Classe(f)==='imagem'})}).filter(Boolean);
+  home.innerHTML=arr.map(function(f){return '<button onclick="pturV2Go(\'evidenciasdrive\');var s=document.getElementById(\'v2-g-cat\');if(s)s.value=\''+esc(f.categoria)+'\';pturV2ResetGallery()" title="Abrir '+esc(f.categoria)+'"><img loading="lazy" alt="'+esc(f.categoria)+'" src="'+pturV2Thumb(f)+'"><span class="v3-homecaption">'+esc(f.categoria)+'</span></button>'}).join('');
+ }
+}
+function pturV2ActionPhotoPreview(list){
+ var imgs=list.filter(function(f){return pturV3Classe(f)==='imagem'});
+ if(!imgs.length)imgs=list;
+ return '<div class="v2-thumbs">'+imgs.slice(0,4).map(function(f){return '<img loading="lazy" alt="'+esc(f.categoria)+'" src="'+pturV2Thumb(f)+'" onerror="this.style.display=\'none\'">'}).join('')+'</div>';
+}
+function pturV2RenderGallery(){
+ var all=pturV2Data();
+ pturV2FillSelect('v2-g-cat',pturV2Unique(all.map(function(f){return f.categoria}).filter(Boolean)).sort(),'Todos os tipos de ação');
+ pturV2FillSelect('v2-g-ter',pturV2Unique(all.map(function(f){return f.territorio}).filter(Boolean)).sort(),'Todos os territórios e projeto geral');
+ pturV2FillSelect('v2-g-mes',pturV2Unique(all.map(function(f){return f.competencia}).filter(Boolean)).sort(),'Todas as competências');
+ pturV2FillSelect('v3-g-item',pturV2Unique(all.flatMap(function(f){return f.itemIds||[]})).sort(),'Todos os itens do cronograma');
+ var cat=pturV2SelecaoLista('v2-g-cat'),ter=pturV2SelecaoLista('v2-g-ter'),mes=pturV2SelecaoLista('v2-g-mes'),kind=pturV2SelecaoLista('v3-g-kind'),item=pturV2SelecaoLista('v3-g-item');
+ var search=(pturV2SelecaoLista('v2-g-search')||'').toLocaleLowerCase('pt-BR');
+ var matched=all.filter(function(f){return (!cat||f.categoria===cat)&&(!ter||f.territorio===ter)&&(!mes||f.competencia===mes)&&(!kind||pturV3Classe(f)===kind)&&(!item||(f.itemIds||[]).includes(item))&&(!search||[f.territorio,f.nome,f.descricao,f.categoria,f.meta,f.tipo].concat(f.itemIds||[]).join(' ').toLocaleLowerCase('pt-BR').includes(search))});
+ matched=pturV2Interleave(matched);
+ var el=document.getElementById('v2-gallery');if(el)el.innerHTML=matched.length?matched.slice(0,PTURV2_PHOTO_LIMIT).map(pturV2PhotoTile).join(''):'<div class="v2-clarifier">Nenhum arquivo localizado nesta combinação de filtros. Confira as fontes no item correspondente.</div>';
+ var c=document.getElementById('v2-gallery-label');if(c)c.textContent=matched.length?'Exibindo '+Math.min(matched.length,PTURV2_PHOTO_LIMIT)+' de '+matched.length+' arquivos · '+pturV3Qtd(matched,'imagem')+' imagens · '+pturV3Qtd(matched,'video')+' vídeos · '+pturV3Qtd(matched,'documento')+' documentos':'Nenhum arquivo com esses filtros';
+ var b=document.getElementById('v2-gallery-more');if(b){b.style.display=matched.length>PTURV2_PHOTO_LIMIT?'inline-flex':'none';b.textContent='Mostrar mais arquivos'}
+}
+function pturV2ShowDetail(){
+ var id=PTURV2_SELECTED_ACTION;if(!id)return;var r=pturV2Rows().find(function(x){return x.id===id}),el=document.getElementById('v2-action-detail');if(!r||!el)return;
+ var files=pturV2ItemFotos(r),imgs=files.filter(function(f){return pturV3Classe(f)==='imagem'}),vids=files.filter(function(f){return pturV3Classe(f)==='video'}),docs=files.filter(function(f){return pturV3Classe(f)==='documento'}),sources=pturV2ItemLinks(r);
+ function section(name,desc,arr){return arr.length?'<h3 class="v2-sectiontitle">'+name+' <span class="v3-muted">('+arr.length+')</span></h3><p class="v3-sub">'+desc+'</p><div class="v2-photogrid">'+arr.slice(0,PTURV2_DETAIL_LIMIT).map(pturV2PhotoTile).join('')+'</div>':''}
+ el.hidden=false;
+ el.innerHTML='<button class="v2-btn secondary" onclick="pturV2CloseDetail()">Voltar à lista</button>'+
+ '<div class="v3-detail-title"><span class="v2-chip">Item '+esc(r.id)+'</span><h2>'+esc(r.atividade||r.meta||'Ação do projeto')+'</h2><p>'+esc(r.produto||'')+'</p></div>'+
+ '<p><strong>O que precisa ser comprovado:</strong> '+esc(r.evidencia||'Consultar descrição do produto no cronograma')+'</p>'+
+ '<p><strong>Período indicado:</strong> '+esc(r.mes||'Não definido')+' · '+esc(r.inicio||'—')+' a '+esc(r.fim||'—')+'</p>'+
+ '<div class="v2-numbers"><div class="v2-num"><strong>'+imgs.length+'</strong><span>Imagens e fotografias</span></div><div class="v2-num"><strong>'+vids.length+'</strong><span>Vídeos localizados</span></div><div class="v2-num"><strong>'+docs.length+'</strong><span>Documentos com prévia</span></div><div class="v2-num"><strong>'+sources.length+'</strong><span>Pastas e fontes</span></div></div>'+
+ (files.length?'<p class="v2-clarifier">Arquivos vinculados ao assunto da ação. O registro é preliminar: fotos, vídeos e peças gráficas não comprovam isoladamente a realização, aprovação ou entrega do produto.</p>':'<p class="v2-clarifier">Ainda não foram vinculados arquivos diretamente a este item. Consulte as referências abaixo; não se trata de declaração de ausência de execução.</p>')+
+ (pturV3NotaItem(id)?'<p class="v3-discrepancy">'+esc(pturV3NotaItem(id))+'</p>':'')+'<h3 class="v2-sectiontitle">Pastas e documentos de origem</h3>'+
+ (sources.length?'<div class="v2-doclist">'+sources.map(function(s){return '<a class="v2-doclink" target="_blank" rel="noopener" href="'+esc(s.url)+'">'+esc(s.label)+' ↗</a>'}).join('')+'</div>':'<p class="v3-sub">Nenhum link documental específico localizado nesta etapa.</p>')+
+ section('Fotografias e imagens','Toque em uma imagem para ampliar e acessar o arquivo original no Google Drive.',imgs)+
+ section('Vídeos','Use “Assistir vídeo” para abrir o reprodutor original do Drive.',vids)+
+ section('Documentos e peças PDF','A miniatura é uma prévia; consulte o PDF original para conferir o conteúdo.',docs)+
+ ((imgs.length>PTURV2_DETAIL_LIMIT||vids.length>PTURV2_DETAIL_LIMIT||docs.length>PTURV2_DETAIL_LIMIT)?'<div class="v2-center"><button class="v2-btn secondary" onclick="pturV2MoreDetail()">Mostrar mais mídias</button></div>':'')+
+ '<p class="v3-legalnote">Situação declarada no cronograma: '+esc(r.status||'Não informada')+' · vínculo das evidências sujeito à conferência.</p>';
+ el.scrollIntoView({block:'start',behavior:'smooth'});
+}
+function pturV2RenderTerritorios(){
+ var all=pturV2Data(),list=['Cantagalo','Chapéu Mangueira / Babilônia','Complexo da Maré','Complexo do Alemão','Mangueira','Rocinha','Santa Marta','Vidigal'],el=document.getElementById('v2-territorios');if(!el)return;
+ el.innerHTML=list.map(function(t){var rows=all.filter(function(f){return f.territorio===t});return '<article class="v2-territorio"><strong>'+esc(t)+'</strong><span>'+pturV3Qtd(rows,'imagem')+' fotos · '+pturV3Qtd(rows,'video')+' vídeos · '+pturV3Qtd(rows,'documento')+' documentos</span><button class="v2-btn secondary" data-ter="'+esc(t)+'" onclick="pturV2GaleriaTerritorio(this.dataset.ter)">Ver as evidências</button></article>'}).join('');
+}
+
+function pturV3NotaItem(id){
+ if(id==='C.3')return 'Atenção às datas: o cronograma municipal informa treinamento em 10/06/2026, enquanto as 343 fotografias estão nomeadas com 30/06/2026. Confirmar qual atividade e competência comprovam antes de homologar.';
+ if(id==='C.5')return 'Os 27 vídeos de pesquisa possuem nomenclatura de 09 e 10/07/2026, posterior à data de início de 01/07/2026 na linha complementar; são registros de continuidade de campo, não comprovação isolada do início.';
+ if(id==='C.16')return 'Arquivos de logotipo, aplicação e régua foram localizados, mas a existência dos arquivos não comprova a aprovação formal da identidade visual.';
+ if(id==='C.17'||id==='1.4')return 'Mockups, PDFs de arte e cards comprovam a existência de peças gráficas, mas não demonstram por si só a impressão, distribuição ou aprovação final dos materiais.';
+ if(id==='5.1')return 'Fotografias foram localizadas para quatro territórios nesta indexação. Listas de presença e relatórios devem ser conferidos separadamente.';
+ return '';
+}
+function pturV3AbrirCategoria(cat){pturV2Go('evidenciasdrive');var s=document.getElementById('v2-g-cat');if(s)s.value=cat;pturV2ResetGallery();}
 
 </script>
 <!-- PTUR 2026-09-02: Diagnósticos dinâmicos + mapeamento Jul/Ago + Portal somente no card SMPC -->
