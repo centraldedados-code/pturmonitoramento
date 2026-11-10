@@ -491,8 +491,7 @@ body{background:#f3f6fa}
 <div id="v2-overview" class="v2-numbers" aria-live="polite"></div>
 <h2 class="v2-sectiontitle">Comece pelas comprovações</h2>
 <div class="v2-startgrid">
- <button class="v2-startcard" onclick="pturV2AbrirAcao('5.1')"><span class="v2-starticon">📷</span><strong>Seminários territoriais</strong><span>Fotografias de outubro e novembro, organizadas por território e vinculadas ao item 5.1.</span><em>Ver evidências</em></button>
- <button class="v2-startcard" onclick="pturV2AbrirSeminarioMare()"><span class="v2-starticon">📸</span><strong>Seminário da Maré</strong><span>69 fotografias do evento de 07/11/2026, vinculadas à meta M07 e ao item 5.1.</span><em>Ver galeria da Maré</em></button>
+ <button class="v2-startcard" onclick="pturV2AbrirAcao('5.1')"><span class="v2-starticon">📷</span><strong>Seminários territoriais</strong><span>Fotografias por território, incluindo o seminário da Maré de 07/11/2026. Todas vinculadas ao item 5.1.</span><em>Ver evidências</em></button>
  <button class="v2-startcard" onclick="pturV2AbrirAcao('2.4')"><span class="v2-starticon">🗂️</span><strong>Registros fotográficos iniciais</strong><span>Consulte as fotos de campo e verifique o item 2.4 do cronograma.</span><em>Ver evidências</em></button>
  <button class="v2-startcard" onclick="pturV2Go('territorios')"><span class="v2-starticon">📍</span><strong>Consultar por território</strong><span>Escolha um dos oito núcleos e veja as fotografias existentes.</span><em>Escolher território</em></button>
  <button class="v2-startcard" onclick="pturV2AbrirAcao('C.3')"><span class="v2-starticon">👥</span><strong>Treinamento da equipe</strong><span>343 fotografias do treinamento e 1 vídeo, com pastas originais.</span><em>Ver item C.3</em></button>
@@ -650,7 +649,6 @@ body{background:#f3f6fa}
   <button type="button" onclick="pturV4Quick('Mapeamento','2026-07')"><b>Mapeamento</b><small>Julho de 2026</small></button>
   <button type="button" onclick="pturV4Quick('Mapeamento','2026-08')"><b>Mapeamento</b><small>Agosto de 2026</small></button>
   <button type="button" onclick="pturV4Quick('Seminário','')"><b>Seminários</b><small>Outubro e novembro de 2026</small></button>
-  <button type="button" onclick="pturV2AbrirSeminarioMare()"><b>Seminário da Maré</b><small>07 de novembro · 69 fotos</small></button>
 </div>
 <p class="v4-note">Fotos e documentos localizados no Google Drive e relacionados aos itens do cronograma. A existência do arquivo não substitui a conferência dos relatórios, listas, datas e entregas.</p>
 
@@ -659,7 +657,7 @@ body{background:#f3f6fa}
  <label>Formato<select id="v3-g-kind" onchange="pturV2ResetGallery()"><option value="">Fotos, vídeos e PDFs</option><option value="imagem">Fotografias e imagens</option><option value="video">Vídeos</option><option value="documento">Documentos PDF</option></select></label>
  <label>Item do cronograma<select id="v3-g-item" onchange="pturV2ResetGallery()"><option value="">Todos os itens</option></select></label>
  <label>Território<select id="v2-g-ter" onchange="pturV2ResetGallery()"><option value="">Todos os territórios</option></select></label>
- <label>Competência<select id="v2-g-mes" onchange="pturV2ResetGallery()"><option value="">Todos os períodos</option><option value="2026-07">Julho/2026</option><option value="2026-10">Outubro/2026</option><option value="2026-11-07">07/11/2026 · Seminário da Maré</option></select></label>
+ <label>Competência<select id="v2-g-mes" onchange="pturV2ResetGallery()"><option value="">Todos os períodos</option><option value="2026-07">Julho/2026</option><option value="2026-10">Outubro/2026</option></select></label>
  <label class="v2-grow">Pesquisar<input id="v2-g-search" type="search" placeholder="Buscar território, evento ou categoria" oninput="pturV2ResetGallery()"></label>
 </div>
 <div id="v2-gallery-label" class="v2-counter" aria-live="polite"></div>
@@ -1883,7 +1881,7 @@ function pturAbrirFotosPrefeitura(){goV('galeria');var s=document.getElementById
 function renderPrefeituraPTUR(){var fotos=pturDados().filter(function(x){return x.competencia==='2026-07';});var terr=Array.from(new Set(fotos.map(function(x){return x.territorio})));var k=document.getElementById('ptur-pref-kpis');if(k)k.innerHTML='<div class="ptur-kpi"><strong>2.4</strong><span>Item do cronograma municipal</span></div><div class="ptur-kpi"><strong>Jul/2026</strong><span>Período previsto da entrega</span></div><div class="ptur-kpi"><strong>'+terr.length+'/8</strong><span>Territórios com fotos na amostra</span></div><div class="ptur-kpi"><strong>'+fotos.length+'</strong><span>Miniaturas exemplificativas indexadas</span></div>';var grid=document.getElementById('ptur-pref-fotos');var vistos={};var amostra=fotos.filter(function(r){return r.meta==='M02';}).filter(function(r){if(vistos[r.territorio])return false;vistos[r.territorio]=true;return true;});if(grid)grid.innerHTML=amostra.length?amostra.map(function(r){return pturFotoHTML(r,pturDados().indexOf(r));}).join(''):'<div class="ptur-empty">Amostra ainda não carregada. A consulta aos documentos originais continua disponível pelo Drive oficial.</div>';}
 function pturIniciarGaleria(){
  if(PTUR_GALLERY_LOAD)return PTUR_GALLERY_LOAD;
- PTUR_GALLERY_LOAD=fetch('amostra_fotos_drive.json?rev=20261110-mare-v1',{cache:'no-store'}).then(function(res){if(!res.ok)throw new Error('manifesto indisponível');return res.json()}).then(function(doc){PTUR_GALLERY_DATA=doc;renderGaleriaPTUR();renderPrefeituraPTUR();pturV2RenderTudo();return doc}).catch(function(e){console.warn('Não foi possível carregar a amostra fotográfica:',e);PTUR_GALLERY_DATA={fotos:[]};renderGaleriaPTUR();renderPrefeituraPTUR();pturV2RenderTudo();});
+ PTUR_GALLERY_LOAD=fetch('amostra_fotos_drive.json?rev=20261110-territorios-v2',{cache:'no-store'}).then(function(res){if(!res.ok)throw new Error('manifesto indisponível');return res.json()}).then(function(doc){PTUR_GALLERY_DATA=doc;renderGaleriaPTUR();renderPrefeituraPTUR();pturV2RenderTudo();return doc}).catch(function(e){console.warn('Não foi possível carregar a amostra fotográfica:',e);PTUR_GALLERY_DATA={fotos:[]};renderGaleriaPTUR();renderPrefeituraPTUR();pturV2RenderTudo();});
  return PTUR_GALLERY_LOAD;
 }
 window.addEventListener('DOMContentLoaded',pturIniciarGaleria);
@@ -2097,10 +2095,10 @@ function pturV2ShowDetail(){
  (files.length?'<p class="v2-clarifier">Arquivos vinculados ao assunto da ação. O registro é preliminar: fotos, vídeos e peças gráficas não comprovam isoladamente a realização, aprovação ou entrega do produto.</p>':'<p class="v2-clarifier">Ainda não foram vinculados arquivos diretamente a este item. Consulte as referências abaixo; não se trata de declaração de ausência de execução.</p>')+
  (pturV3NotaItem(id)?'<p class="v3-discrepancy">'+esc(pturV3NotaItem(id))+'</p>':'')+'<h3 class="v2-sectiontitle">Pastas e documentos de origem</h3>'+
  (sources.length?'<div class="v2-doclist">'+sources.map(function(s){return '<a class="v2-doclink" target="_blank" rel="noopener" href="'+esc(s.url)+'">'+esc(s.label)+' ↗</a>'}).join('')+'</div>':'<p class="v3-sub">Nenhum link documental específico localizado nesta etapa.</p>')+
- section('Fotografias e imagens','Toque em uma imagem para ampliar e acessar o arquivo original no Google Drive.',imgs)+
+ (id==='5.1'?pturV5GradeSeminarios(imgs):section('Fotografias e imagens','Toque em uma imagem para ampliar e acessar o arquivo original no Google Drive.',imgs))+
  section('Vídeos','Use “Assistir vídeo” para abrir o reprodutor original do Drive.',vids)+
  section('Documentos e peças PDF','A miniatura é uma prévia; consulte o PDF original para conferir o conteúdo.',docs)+
- ((imgs.length>PTURV2_DETAIL_LIMIT||vids.length>PTURV2_DETAIL_LIMIT||docs.length>PTURV2_DETAIL_LIMIT)?'<div class="v2-center"><button class="v2-btn secondary" onclick="pturV2MoreDetail()">Mostrar mais mídias</button></div>':'')+
+ (((id!=='5.1'&&imgs.length>PTURV2_DETAIL_LIMIT)||vids.length>PTURV2_DETAIL_LIMIT||docs.length>PTURV2_DETAIL_LIMIT)?'<div class="v2-center"><button class="v2-btn secondary" onclick="pturV2MoreDetail()">Mostrar mais mídias</button></div>':'')+
  '<p class="v3-legalnote">Situação declarada no cronograma: '+esc(r.status||'Não informada')+' · vínculo das evidências sujeito à conferência.</p>';
  el.scrollIntoView({block:'start',behavior:'smooth'});
 }
@@ -2162,12 +2160,36 @@ function pturV3NotaItem(id){
 }
 
 
-/* Acesso rápido ao Seminário da Maré, verificado no Drive em 10/11/2026. */
-function pturV2AbrirSeminarioMare(){
+/* Seminários do item 5.1: cada território aparece dentro da ação, nunca como ação independente. */
+function pturV5GradeSeminarios(imgs){
+  var byTerr={};
+  (imgs||[]).forEach(function(f){
+    if(f.categoria!=='Seminário')return;
+    var t=f.territorio||'Território a identificar';
+    if(!byTerr[t])byTerr[t]=[];
+    byTerr[t].push(f);
+  });
+  var nomes=Object.keys(byTerr).sort(function(a,b){return a.localeCompare(b,'pt-BR')});
+  if(!nomes.length)return '<p class="v2-clarifier">Nenhuma fotografia de seminário vinculada a este item.</p>';
+  return '<h3 class="v2-sectiontitle">Seminários por território</h3>'+ 
+    '<p class="v3-sub">Escolha o território para abrir as fotografias do respectivo seminário. Os registros continuam vinculados ao item 5.1 e à meta M07.</p>'+ 
+    '<div class="v2-territorios" style="grid-template-columns:repeat(auto-fit,minmax(225px,1fr))">'+
+    nomes.map(function(terr){
+      var fotos=byTerr[terr],data=fotos[0]&&(fotos[0].dataEvento||fotos[0].competencia)||'';
+      var dataFormat=/^\d{4}-\d{2}-\d{2}$/.test(data)?data.split('-').reverse().join('/'):data;
+      var thumbs=fotos.slice(0,3).map(function(f){return '<img loading="lazy" alt="Prévia do seminário de '+esc(terr)+'" src="'+pturV2Thumb(f)+'" onerror="this.style.display=\'none\'">'}).join('');
+      return '<article class="v2-territorio"><strong>'+esc(terr)+'</strong>'+ 
+        '<span>'+fotos.length+' fotografias'+(dataFormat?' · '+esc(dataFormat):'')+'</span>'+ 
+        '<div class="v2-thumbs">'+thumbs+'</div>'+ 
+        '<button type="button" class="v2-btn secondary" data-ter="'+esc(terr)+'" onclick="pturV5VerSeminarioTerritorio(this.dataset.ter)">Ver fotos deste seminário</button></article>';
+    }).join('')+'</div>';
+}
+function pturV5VerSeminarioTerritorio(territorio){
   pturV2Go('evidenciasdrive');
-  var valores={'v2-g-cat':'Seminário','v2-g-ter':'Complexo da Maré','v2-g-mes':'2026-11-07','v3-g-kind':'imagem','v3-g-item':'5.1','v2-g-search':''};
-  Object.keys(valores).forEach(function(id){var e=document.getElementById(id);if(e)e.value=valores[id]});
-  if(typeof pturV2ResetGallery==='function')pturV2ResetGallery();
+  var filtros={'v2-g-cat':'Seminário','v2-g-ter':territorio,'v3-g-item':'5.1','v3-g-kind':'imagem','v2-g-mes':''};
+  Object.keys(filtros).forEach(function(id){var e=document.getElementById(id);if(e)e.value=filtros[id]});
+  var busca=document.getElementById('v2-g-search');if(busca)busca.value='';
+  pturV2ResetGallery();
 }
 </script>
 <!-- PTUR 2026-09-02: Diagnósticos dinâmicos + mapeamento Jul/Ago + Portal somente no card SMPC -->
