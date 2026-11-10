@@ -1,6 +1,6 @@
 {
-  "fonte": "Arquivo indexado a partir de pastas de julho/agosto 2026 e seminários de outubro 2026; materiais anteriores preservados.",
-  "dataConferencia": "2026-11-06",
+  "fonte": "Acervo verificado no Drive: fotos de campo julho/agosto, seminários outubro e Seminário do Complexo da Maré de 07/11/2026; materiais anteriores preservados.",
+  "dataConferencia": "2026-11-10",
   "carater": "Registros de mídia reais, com vínculo temático provisório ao item do cronograma; não substitui listas de presença, relatórios, formulários e homologação técnica.",
   "fotos": [
     {
@@ -58294,11 +58294,1460 @@
       "status": "arquivo_localizado_em_origem_externa_conferir_vinculo",
       "observacaoVinculo": "Registro localizado em pasta de origem/compartilhada. Confirmar se já foi migrado e se a data e o contexto correspondem à atividade antes de homologar.",
       "fonteAuditoria": "Pesquisa de arquivos do Drive — 07/11/2026"
+    },
+    {
+      "id": "1OhQT1ULXTUiz_Sv0ruZHhJtyd9h-LYum",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S3_0001.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S3_0001.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1jkQNxBxnZrga981VkfwUwccYAdZehOEc",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S3_0002.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S3_0002.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "16xLB5ZWRiY2K__GgaeGLbnPW5fZm_v4W",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S3_0003.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S3_0003.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1-HxjFjstA7Ue-V0Xv-qT9tGd06HJjY9Q",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S8_0002.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S8_0002.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "10xRdXELZCxz8zw2uQWGtZHkb1ekvMtvS",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S8_0005.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S8_0005.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1dXoSCFLcoq5-Do_atj5VXYSPhgm2Zchm",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S8_0006.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S8_0006.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1yJvyv8aTiHjlqnxEqP45_bleMqUO6QxC",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S8_0007.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S8_0007.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1TI9C9ZQrEuTjpZAsTvy_hsEKK_8TwUz4",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S8_0008.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S8_0008.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1i9SbLOlyEIZo8W92soIzz7-rjhWPmqSZ",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0001.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0001.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1piNwpyb5GjT-Qtui3j6On5oVUzykO12O",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0002.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0002.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1dc3LloCcI8M5Gjrk0FKdDkspxChlZfNn",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0003.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0003.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1FZGuGPKXVeD0Idw0lsKBdtyHRg2tj8fF",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0004.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0004.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1eeDQ2jhc7Dp_tstrT7C4WFm5OsI_qmY4",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0005.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0005.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1C-J-Hu2eewDcseM6uFDASw42rfU15WGh",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0006.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0006.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1R-fT-A2JyJETjgft-A5OpyFmC3Imv75l",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0007.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0007.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1pxNFnR8kYAx8PvMglFkyx7iIo41u4GCH",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0008.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0008.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1aR8bDC38YadgCVjio0-tvIDYARUj2Ntb",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0009.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0009.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1k1-BMD2NYUkEjKGebnwikKFKadmqAfZK",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0010.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0010.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1LRQF2X27orBvbWuSoeBq-yM81ogoZtWJ",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0011.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0011.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1Qhu0RP3rdbeBz_OlOoONZhZUUERNwNez",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0012.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0012.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "14lDq5Wxcgcqe802JyslpXqs3O4IrhewT",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0013.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0013.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1nd9fg7gH_d04N2-0V525hQIf3g_3TK-Q",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0014.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0014.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1ocZbt2kXBxVD_q-Ir4h7DfjVPl6V0kkX",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0015.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0015.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1UA3K2DBa_o0Gs20CQ01bmVdIhcfM66SI",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0016.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0016.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "182_FBxEhbRiv7mHmCNrDsKDFARYmVuBp",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0019.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0019.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1Uv0bBk-JgEdsubzyXAth19s1ICFI7h9j",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0020.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0020.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "10gxoBUDVAlfOjhuCzefr8XjUle7I5c6O",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0021.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0021.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "11zCG1rIrHyHon1aHSooUzbFC-V2ovEkE",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0022.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0022.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1synK6KA4j0rdVeYfQqYFerFKzI1GRy5t",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0023.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0023.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1woR02cLLi9tYzvFHqSWOXY0QiXSgUbGW",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0024.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0024.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1vfIKwUtVOK65QxJPPJhd4VuYRnp3K3KL",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0027.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0027.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1xv47gl_WdvlTMrISMz417rv98qrpbwnq",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0028.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0028.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1LqkvtV4ZSBUFg3MtsvUuyytdkBLfU0Hd",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0029.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0029.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1FBkftMtXqfvUj_8h71jXg8OftSqTYP5V",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0030.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0030.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1eFHZMXMPbH71Bknj9QSXoS8Q5yJK7vR_",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0031.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0031.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1av_Jq0lZxZ1Si9J4IxvaMzJUoS-LwovD",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0032.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0032.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1U0KawtqAATT2c1Onysxdnh-BHZ-5A1c9",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0033.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0033.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1Bhed3boKV1G5qkRsb84344pNHH0mvDOg",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0034.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0034.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "14sbRzBDlop5y-PEs9ij3-Dvm1aygn-ZH",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0035.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0035.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1PGv-22vlEQ5DKlW3K2n9P7FzhipGgRpn",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0036.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0036.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1GvNR4PBoXUTH9O9nvNoN9wYft_4VhVCn",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0037.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0037.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1f31BkZ-Xj3RPNBD5johXfRfSpHvwyMPN",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0038.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0038.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1HpWytUEejulso0WgQsbLn8ixbtReszZG",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0040.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0040.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1k4EDnJDh7wiH9WoFD1_-MHzKPi0C8rSz",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0043.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0043.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1vlUBT5eneKDvkSuICYLSYuKHo2T-Zvfs",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0044.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0044.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1ohFwddLbsg1EssSoasHeW7ybMeXVdxau",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0045.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0045.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1f9cO0QOF_cV4B6w882xYVoWLBycH08CO",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0046.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0046.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1TqekrZ6B_3JIqLNYVf6JeCdLCwb2bWOY",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0047.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0047.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1fQVH_2qk7yjOZIFiqJmgtDAM8CgoGRp3",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0048.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0048.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1GQ6bdfO7E4pTpdBaOETobawksBEk9TP1",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0049.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0049.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1PFXD2CuBd6IKyHD-0ixvSP9e5ttw3r_B",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0050.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0050.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1-lTPkCRXmkwgfmVEfbcBLEIp9J-CHDPn",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0052.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0052.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1Ig59IHaK3z8gX2gJ1k0Sy9gSxTzH1o5-",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0054.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0054.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1fgrQHG8hOd10rhQasSifFfA_Ja-GZcsf",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0055.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0055.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1FTEDQQt7Ypw4M9DtD6LM3hSXPT3ZBaOv",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0056.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0056.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1U_kHm9Ny4-qqTeqPHAaHS6mfFwc-MqqB",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0057.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0057.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "16Nfj8_UVi-kdNSRk0plyqHWq5euhTXkf",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0058.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0058.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1Mypp8pF4XcDH99GNrxWlTPOqFLpQTsST",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0059.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0059.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "19BEQwS_Xv4r9Z97Uyo8OOed-a_kwJxqm",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0060.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0060.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1Pfxa4i2BuSuiypgx3ysGRUIUQgrD716i",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0061.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0061.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "19NqW9zQ21_7MJCiVVOO3hRe1V6Lto_Q2",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0062.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0062.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1lqNvmmZbloWzEjDNHsS5EVFZf6jHVhxM",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0063.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0063.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1pxgYfdEMT1VOvYPDPR_wFOH33xYduxGZ",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0064.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0064.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1NDFLFmaZY4vb8S5kncfVgDo6SjkHJgC8",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0065.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0065.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "15TFJKjaJnCfENjQ3Jk8tXHmUjEAKtdbE",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0066.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0066.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1VTpLKRl8Ien6cGvuuBXoYOJezknXtWZf",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0067.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0067.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1vxsnEp5MwdiCfbRDgf0ElZ8Fh8U-W0DN",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0068.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0068.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "1XtvlcXvKuTHlMc5-iAOtBcscWHC_hYnA",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0069.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0069.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "11vTRVZItDOTG5t0LWmg0eIBZqr7o-8Zu",
+      "nome": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0070.jpg",
+      "mime": "image/jpeg",
+      "classe": "imagem",
+      "meta": "M07",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-11-07",
+      "categoria": "Seminário",
+      "tipo": "Seminário territorial — 1º ciclo",
+      "descricao": "PTUR_20261107_COMPLEXO_DA_MARE_SEM01_FOTO_HEITOR_ARCANJO_S70_0070.jpg",
+      "itemIds": [
+        "5.1"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+      "status": "foto_localizada_conferencia_documental_pendente",
+      "observacaoVinculo": "Arquivo identificado no dossiê do seminário da Maré; conferir a correspondência e as demais comprovações antes da homologação.",
+      "fonteAuditoria": "varredura Drive de 10/11/2026",
+      "dataEvento": "2026-11-07",
+      "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
     }
   ],
-  "atualizacao": "2026-11-06-campo-integral-e-seminarios",
-  "observacaoSeminarios": "472 fotografias identificadas em pastas dos quatro seminários territoriais de outubro de 2026; não afirmar que existam outras fotos sem localização comprovada.",
-  "midiasIndexadas": 2934,
+  "atualizacao": "2026-11-10-seminario-mare-07nov",
+  "observacaoSeminarios": "541 fotografias de cinco seminários territoriais, incluindo 69 fotos do Complexo da Maré de 07/11/2026. Documentos adicionais do evento permanecem para conferência.",
+  "midiasIndexadas": 3003,
   "fontesAdicionais": [
     {
       "rotulo": "Treinamento da equipe — 30/06",
@@ -58335,6 +59784,13 @@
         "C.17",
         "5.1"
       ]
+    },
+    {
+      "rotulo": "Complexo da Maré · Seminário 07/11/2026 — dossiê oficial",
+      "url": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr",
+      "itemIds": [
+        "5.1"
+      ]
     }
   ],
   "auditoriaMidias20261107": {
@@ -58346,5 +59802,23 @@
     "arquivosDiagnosticoAdicionaisEmPastasDeOrigem": 141,
     "totalIdsDeImagensCampoEncontradosIncluindoOrigens": 1954,
     "dataConferenciaLocal": "2026-11-06"
+  },
+  "auditoriaSeminarioMare20261110": {
+    "territorio": "Complexo da Maré",
+    "dataEvento": "2026-11-07",
+    "dataVerificacao": "2026-11-10",
+    "quantidadeFotografiasNovas": 69,
+    "quantidadeFotografiasDossie": 69,
+    "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr",
+    "pastaFotografias": "https://drive.google.com/drive/folders/1ltxFXb99C5blpvLYDl8sg26BDkhyz0aC",
+    "pastasSemArquivos": [
+      "01_CARDS_E_CONVITES",
+      "03_VIDEOS",
+      "08_DOCUMENTOS_A_CONFERIR"
+    ],
+    "meta": "M07",
+    "itemCronograma": "5.1",
+    "situacao": "Fotografias localizadas e indexadas; relatório e lista de presença não localizados no dossiê",
+    "observacao": "Associação por nome do evento e localização no dossiê. Não representa validação formal do cumprimento da meta."
   }
 }
