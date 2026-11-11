@@ -59743,11 +59743,163 @@
       "fonteAuditoria": "varredura Drive de 10/11/2026",
       "dataEvento": "2026-11-07",
       "pastaSeminario": "https://drive.google.com/drive/folders/12VWrYOQHH4pJu5eEq3VrLo4WhvHADHhr"
+    },
+    {
+      "id": "13HJsr2m_q4ydSzLmDfvGoS-qE-kpBDyF",
+      "nome": "PTUR_CADERNO_PEDAGOGICO_MANGUEIRA_2026.pdf",
+      "mime": "application/pdf",
+      "classe": "documento",
+      "meta": "Cadernos pedagógicos — item 3.4",
+      "territorio": "Mangueira",
+      "competencia": "2026-08",
+      "categoria": "Cadernos pedagógicos",
+      "tipo": "Caderno pedagógico por território",
+      "descricao": "Caderno pedagógico do Prospera Turismo — Mangueira",
+      "itemIds": [
+        "3.4"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ryYLv9KDV-1HsD_zu67jgvVdVrhu8On1",
+      "status": "arquivo_pdf_localizado_conferencia_documental_pendente",
+      "observacaoVinculo": "Documento localizado na pasta dos 8 cadernos. Situação de produção é a informada no cronograma; conferir aprovação e entrega.",
+      "fonteAuditoria": "Leitura da pasta oficial de cadernos — 11/11/2026"
+    },
+    {
+      "id": "1Qns8-sRX73jq2LR7iuN2FrgNcEZ6xwIn",
+      "nome": "PTUR_CADERNO_PEDAGOGICO_CANTAGALO_2026.pdf",
+      "mime": "application/pdf",
+      "classe": "documento",
+      "meta": "Cadernos pedagógicos — item 3.4",
+      "territorio": "Cantagalo",
+      "competencia": "2026-08",
+      "categoria": "Cadernos pedagógicos",
+      "tipo": "Caderno pedagógico por território",
+      "descricao": "Caderno pedagógico do Prospera Turismo — Cantagalo",
+      "itemIds": [
+        "3.4"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ryYLv9KDV-1HsD_zu67jgvVdVrhu8On1",
+      "status": "arquivo_pdf_localizado_conferencia_documental_pendente",
+      "observacaoVinculo": "Documento localizado na pasta dos 8 cadernos. Situação de produção é a informada no cronograma; conferir aprovação e entrega.",
+      "fonteAuditoria": "Leitura da pasta oficial de cadernos — 11/11/2026"
+    },
+    {
+      "id": "1C148Qub6ppfAbLwDuyiWBAlhHI4HSr7M",
+      "nome": "PTUR_CADERNO_PEDAGOGICO_SANTA_MARTA_2026.pdf",
+      "mime": "application/pdf",
+      "classe": "documento",
+      "meta": "Cadernos pedagógicos — item 3.4",
+      "territorio": "Santa Marta",
+      "competencia": "2026-08",
+      "categoria": "Cadernos pedagógicos",
+      "tipo": "Caderno pedagógico por território",
+      "descricao": "Caderno pedagógico do Prospera Turismo — Santa Marta",
+      "itemIds": [
+        "3.4"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ryYLv9KDV-1HsD_zu67jgvVdVrhu8On1",
+      "status": "arquivo_pdf_localizado_conferencia_documental_pendente",
+      "observacaoVinculo": "Documento localizado na pasta dos 8 cadernos. Situação de produção é a informada no cronograma; conferir aprovação e entrega.",
+      "fonteAuditoria": "Leitura da pasta oficial de cadernos — 11/11/2026"
+    },
+    {
+      "id": "1mgQHhcfxVQPLag5DoDcokvBo0phFQsCf",
+      "nome": "PTUR_CADERNO_PEDAGOGICO_ROCINHA_2026.pdf",
+      "mime": "application/pdf",
+      "classe": "documento",
+      "meta": "Cadernos pedagógicos — item 3.4",
+      "territorio": "Rocinha",
+      "competencia": "2026-08",
+      "categoria": "Cadernos pedagógicos",
+      "tipo": "Caderno pedagógico por território",
+      "descricao": "Caderno pedagógico do Prospera Turismo — Rocinha",
+      "itemIds": [
+        "3.4"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ryYLv9KDV-1HsD_zu67jgvVdVrhu8On1",
+      "status": "arquivo_pdf_localizado_conferencia_documental_pendente",
+      "observacaoVinculo": "Documento localizado na pasta dos 8 cadernos. Situação de produção é a informada no cronograma; conferir aprovação e entrega.",
+      "fonteAuditoria": "Leitura da pasta oficial de cadernos — 11/11/2026"
+    },
+    {
+      "id": "1qRlwRnMt6VZVxfGPguSywkvULXHnfb5A",
+      "nome": "PTUR_CADERNO_PEDAGOGICO_CHAPEU_MANGUEIRA_BABILONIA_2026.pdf",
+      "mime": "application/pdf",
+      "classe": "documento",
+      "meta": "Cadernos pedagógicos — item 3.4",
+      "territorio": "Chapéu Mangueira / Babilônia",
+      "competencia": "2026-08",
+      "categoria": "Cadernos pedagógicos",
+      "tipo": "Caderno pedagógico por território",
+      "descricao": "Caderno pedagógico do Prospera Turismo — Chapéu Mangueira / Babilônia",
+      "itemIds": [
+        "3.4"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ryYLv9KDV-1HsD_zu67jgvVdVrhu8On1",
+      "status": "arquivo_pdf_localizado_conferencia_documental_pendente",
+      "observacaoVinculo": "Documento localizado na pasta dos 8 cadernos. Situação de produção é a informada no cronograma; conferir aprovação e entrega.",
+      "fonteAuditoria": "Leitura da pasta oficial de cadernos — 11/11/2026"
+    },
+    {
+      "id": "1OC1ydgqSMgPq8DIReO65hdIajDN1m_lo",
+      "nome": "PTUR_CADERNO_PEDAGOGICO_VIDIGAL_2026.pdf",
+      "mime": "application/pdf",
+      "classe": "documento",
+      "meta": "Cadernos pedagógicos — item 3.4",
+      "territorio": "Vidigal",
+      "competencia": "2026-08",
+      "categoria": "Cadernos pedagógicos",
+      "tipo": "Caderno pedagógico por território",
+      "descricao": "Caderno pedagógico do Prospera Turismo — Vidigal",
+      "itemIds": [
+        "3.4"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ryYLv9KDV-1HsD_zu67jgvVdVrhu8On1",
+      "status": "arquivo_pdf_localizado_conferencia_documental_pendente",
+      "observacaoVinculo": "Documento localizado na pasta dos 8 cadernos. Situação de produção é a informada no cronograma; conferir aprovação e entrega.",
+      "fonteAuditoria": "Leitura da pasta oficial de cadernos — 11/11/2026"
+    },
+    {
+      "id": "1OJxCVAELTPmeyKnqxODsaIYvvcURpmCv",
+      "nome": "PTUR_CADERNO_PEDAGOGICO_COMPLEXO_DA_MARE_2026.pdf",
+      "mime": "application/pdf",
+      "classe": "documento",
+      "meta": "Cadernos pedagógicos — item 3.4",
+      "territorio": "Complexo da Maré",
+      "competencia": "2026-08",
+      "categoria": "Cadernos pedagógicos",
+      "tipo": "Caderno pedagógico por território",
+      "descricao": "Caderno pedagógico do Prospera Turismo — Complexo da Maré",
+      "itemIds": [
+        "3.4"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ryYLv9KDV-1HsD_zu67jgvVdVrhu8On1",
+      "status": "arquivo_pdf_localizado_conferencia_documental_pendente",
+      "observacaoVinculo": "Documento localizado na pasta dos 8 cadernos. Situação de produção é a informada no cronograma; conferir aprovação e entrega.",
+      "fonteAuditoria": "Leitura da pasta oficial de cadernos — 11/11/2026"
+    },
+    {
+      "id": "1_jhFaaGCRsMFbx2BzC4F9Mgw2b03IX2Y",
+      "nome": "PTUR_CADERNO_PEDAGOGICO_COMPLEXO_DO_ALEMAO_2026.pdf",
+      "mime": "application/pdf",
+      "classe": "documento",
+      "meta": "Cadernos pedagógicos — item 3.4",
+      "territorio": "Complexo do Alemão",
+      "competencia": "2026-08",
+      "categoria": "Cadernos pedagógicos",
+      "tipo": "Caderno pedagógico por território",
+      "descricao": "Caderno pedagógico do Prospera Turismo — Complexo do Alemão",
+      "itemIds": [
+        "3.4"
+      ],
+      "pasta": "https://drive.google.com/drive/folders/1ryYLv9KDV-1HsD_zu67jgvVdVrhu8On1",
+      "status": "arquivo_pdf_localizado_conferencia_documental_pendente",
+      "observacaoVinculo": "Documento localizado na pasta dos 8 cadernos. Situação de produção é a informada no cronograma; conferir aprovação e entrega.",
+      "fonteAuditoria": "Leitura da pasta oficial de cadernos — 11/11/2026"
     }
   ],
-  "atualizacao": "2026-11-10-seminario-mare-07nov",
+  "atualizacao": "2026-11-11-cadernos-pedagogicos-e-exibicao-sem-repeticoes",
   "observacaoSeminarios": "541 fotografias de cinco seminários territoriais, incluindo 69 fotos do Complexo da Maré de 07/11/2026. Documentos adicionais do evento permanecem para conferência.",
-  "midiasIndexadas": 3003,
+  "midiasIndexadas": 3011,
   "fontesAdicionais": [
     {
       "rotulo": "Treinamento da equipe — 30/06",
@@ -59791,6 +59943,13 @@
       "itemIds": [
         "5.1"
       ]
+    },
+    {
+      "rotulo": "8 cadernos pedagógicos por território — item 3.4",
+      "url": "https://drive.google.com/drive/folders/1ryYLv9KDV-1HsD_zu67jgvVdVrhu8On1",
+      "itemIds": [
+        "3.4"
+      ]
     }
   ],
   "auditoriaMidias20261107": {
@@ -59820,5 +59979,22 @@
     "itemCronograma": "5.1",
     "situacao": "Fotografias localizadas e indexadas; relatório e lista de presença não localizados no dossiê",
     "observacao": "Associação por nome do evento e localização no dossiê. Não representa validação formal do cumprimento da meta."
+  },
+  "auditoriaCadernos20261111": {
+    "itemCronograma": "3.4",
+    "pasta": "https://drive.google.com/drive/folders/1ryYLv9KDV-1HsD_zu67jgvVdVrhu8On1",
+    "quantidadePDFs": 8,
+    "territorios": [
+      "Mangueira",
+      "Cantagalo",
+      "Santa Marta",
+      "Rocinha",
+      "Chapéu Mangueira / Babilônia",
+      "Vidigal",
+      "Complexo da Maré",
+      "Complexo do Alemão"
+    ],
+    "status": "Oito PDFs indexados sem alterar o status do cronograma nem os arquivos do Drive",
+    "verificacao": "11/11/2026"
   }
 }
