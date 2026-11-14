@@ -450,6 +450,23 @@ body{background:#f3f6fa}
 .ptur-v6-minor{font:11px 'Open Sans',Arial,sans-serif;color:#6c7c8d;margin:15px 0 0}
 @media(max-width:800px){.ptur-v6-deliveries{grid-template-columns:1fr}.ptur-v6-criteria{grid-template-columns:1fr}}
 
+
+/* Acessibilidade da navegação por entregas: desconta cabeçalho fixo. */
+#ptur-meta-doc-grid,#ptur-meta-consolidado,#ptur-meta-media-anchor,
+#ptur-meta-planos,#ptur-meta-meeting,#ptur-meta-sem-grid{
+  scroll-margin-top:110px;
+}
+.ptur-meta-selected{
+  outline:2px solid rgba(0,183,215,.34);
+  outline-offset:5px;
+  border-radius:12px;
+  transition:outline-color .18s ease;
+}
+@media(max-width:780px){
+  #ptur-meta-doc-grid,#ptur-meta-consolidado,#ptur-meta-media-anchor,
+  #ptur-meta-planos,#ptur-meta-meeting,#ptur-meta-sem-grid{scroll-margin-top:155px}
+  .ptur-e-step button{min-height:44px}
+}
 </style>
 
 <style id="ptur-v3-media-styles">
@@ -2817,7 +2834,7 @@ function pturMetaDocuments(type){
  return '<div class="ptur-v9-docgrid" id="ptur-meta-doc-grid"></div>';
 }
 function pturMetaSems(){
- return '<div class="ptur-meta-albumgrid">'+PTUR_V9_SEMINARS.map(function(s){
+ return '<div id="ptur-meta-sem-grid" class="ptur-meta-albumgrid">'+PTUR_V9_SEMINARS.map(function(s){
   var n=esc(s.territorio),data=s.data.split('-').reverse().join('/');
   return '<article class="ptur-meta-album"><h3>'+n+' <span class="ptur-v9-count">'+s.count+' fotos</span></h3><p>'+data+' · seminário territorial · item 5.1</p>'+ 
    '<div class="ptur-meta-albumphotos">'+s.photos.slice(0,3).map(function(f,i){return '<button type="button" data-ter="'+n+'" data-pos="'+i+'" onclick="pturV9OpenPhoto(this.dataset.ter,Number(this.dataset.pos))" aria-label="Ampliar fotografia do seminário de '+n+'"><img loading="lazy" src="'+f.src+'" alt="Registro real do seminário de '+n+'"></button>'}).join('')+'</div>'+ 
@@ -3025,7 +3042,31 @@ function meetingHtml(){return '<section id="ptur-meta-meeting" aria-label="Apoio
 function territoryHtml(metaId){var files=pturMetaPrimaryEvidence(metaId).filter(function(f){return pturV3Classe(f)==='imagem'});var groups=new Map();files.forEach(function(f){if(f.territorio&&f.territorio!=='Projeto inteiro'){if(!groups.has(f.territorio))groups.set(f.territorio,[]);groups.get(f.territorio).push(f)}});
  var rows=[...groups].sort(function(a,b){return a[0].localeCompare(b[0],'pt-BR')});if(!rows.length)return '';
  return '<section><h2 class="ptur-e-detailhead">Registros territoriais — amostras reais</h2><p class="ptur-e-nodes">Cada grupo reúne fotos identificadas naquele território. Para consultar todas, abra a galeria da meta e filtre pelo território. Relatórios e mapas completos devem ser conferidos com os documentos oficiais.</p><div class="ptur-e-territorypreview">'+rows.map(function(row){var name=row[0],all=row[1],p=selectedPics(all,3);return '<article class="ptur-e-territory"><h3>'+esc(name)+'</h3><div class="ptur-e-coverstrip">'+p.map(function(f){return '<img loading="lazy" src="'+pturV2Thumb(f)+'" alt="Registro '+esc(name)+'" onerror="this.style.opacity=.3">'}).join('')+'</div><small>'+all.length+' imagens no catálogo</small><button data-ter="'+esc(name)+'" type="button" onclick="pturMetaTerritory(this.dataset.ter)">Ver galeria do território</button></article>'}).join('')+'</div></section>'}
-function pturMetaJump(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+/* Navegação das entregas: função pública para os botões HTML (onclick).
+   Mantém páginas, evidências e filtros existentes sem reconstruir o catálogo. */
+window.pturMetaJump = function(id){
+  var target=document.getElementById(id);
+  if(!target){
+    var fallbacks={
+      'ptur-meta-sem-grid':'ptur-meta-media-anchor',
+      'ptur-meta-doc-grid':'ptur-meta-detail-title',
+      'ptur-meta-consolidado':'ptur-meta-detail-title',
+      'ptur-meta-planos':'ptur-meta-detail-title',
+      'ptur-meta-meeting':'ptur-meta-detail-title'
+    };
+    target=document.getElementById(fallbacks[id]||'ptur-meta-detail-title');
+  }
+  if(!target) return;
+  var section=target.closest('section')||target;
+  var previous=section.classList.contains('ptur-meta-selected');
+  document.querySelectorAll('.ptur-meta-selected').forEach(function(e){e.classList.remove('ptur-meta-selected')});
+  section.classList.add('ptur-meta-selected');
+  target.scrollIntoView({behavior:'smooth',block:'start'});
+  if(typeof target.focus==='function'){
+    if(!target.hasAttribute('tabindex')) target.setAttribute('tabindex','-1');
+    target.focus({preventScroll:true});
+  }
+};
 function deliveryHtml(id){var items;
  switch(id){case 'M01':items=[['ENTREGA 01','8 diagnósticos territoriais','Síntese socioterritorial em PDF por território','ptur-meta-doc-grid','Abrir cadernos'],['ENTREGA 02','Diagnóstico geral consolidado','Documento técnico consolidado','ptur-meta-consolidado','Abrir consolidado'],['EVIDÊNCIAS DE CAMPO','Fotografias e vídeos de pesquisa','Registros de visita, pesquisa e sistematização','ptur-meta-media-anchor','Abrir galeria']];break;
  case 'M02':items=[['ENTREGA 01','Mapeamento de ativos turísticos','Relatórios e bases territoriais previstos','ptur-meta-media-anchor','Ver registros'],['EVIDÊNCIAS DE CAMPO','Registros de julho e agosto','Fotografias e fontes originais vinculadas ao mapeamento','ptur-meta-media-anchor','Abrir galeria'],['CONFERÊNCIA','Mapas e bases georreferenciadas','Verificar correspondência entre registros e produtos finais','ptur-meta-media-anchor','Abrir evidências']];break;
