@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Prospera Turismo — consulte metas, entregas e evidências fotográficas dos oito territórios, com acesso aos documentos originais e relatórios do projeto.">
 <title>Prospera Turismo | Sistema de Monitoramento de Prestação de Contas — SMPC</title>
 
 <style>
@@ -539,6 +540,96 @@ body{background:#f3f6fa}
 @media(max-width:950px){.hdri{flex-direction:column;align-items:stretch;padding:10px 16px}.ptur-v9-nav{flex-wrap:nowrap!important;overflow-x:auto;width:100%;justify-content:flex-start!important;max-width:none;padding:3px 0}.ptur-mobile-menu.v2-mobile.ptur-v9-mobile{display:flex;overflow-x:auto;gap:6px;justify-content:flex-start;grid-template-columns:none;scrollbar-width:thin}.ptur-v9-mobile button{flex:0 0 auto;min-width:65px;padding:7px 10px}.ptur-v9-heading{padding:24px 19px}.ptur-v9-docgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.ptur-v9-quick,.ptur-v9-acervogrid,.ptur-v9-semgrid{grid-template-columns:1fr}.ptur-v9-docgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ptur-v9-doccover{height:165px}.ptur-v9-docbody{padding:11px}.ptur-v9-sectionhead{align-items:stretch;flex-direction:column}.ptur-v9-link{width:max-content;max-width:100%;white-space:normal}.ptur-v9-photogrid{grid-template-columns:repeat(2,minmax(0,1fr))}.ptur-v9-semthumbs img{height:100px}.ptur-v9-feature{flex-wrap:wrap}.ptur-v9-modal{padding:5px}.ptur-v9-modalpanel{height:96vh}.ptur-v9-arrow{width:33px;min-width:33px}.ptur-v9-modalbody img{max-width:calc(100% - 70px)}}
 </style>
+
+<style id="ptur-meta-premium-style">
+/* Navegação por metas oficiais. Preserva identidade institucional e estilos das galerias existentes. */
+.ptur-meta-onboarding{margin:20px 0 25px;padding:24px;border:1px solid #d5e3ed;border-radius:16px;background:#fff;box-shadow:0 8px 23px rgba(9,32,64,.045)}
+.ptur-meta-overline{color:#03849e;letter-spacing:1.5px;font:700 10px Montserrat,Arial,sans-serif}
+.ptur-meta-onboarding h2{font:700 17px Montserrat,Arial,sans-serif;color:#092040;margin:8px 0 16px}
+.ptur-meta-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.ptur-meta-steps>div{padding:13px;background:#f6f9fc;border:1px solid #e1ebf3;border-radius:11px}
+.ptur-meta-steps span{display:inline-flex;background:#e2f9fe;border-radius:50%;color:#05738d;width:29px;height:29px;align-items:center;justify-content:center;font:700 10px Montserrat}
+.ptur-meta-steps strong{display:block;color:#092040;font:700 12px Montserrat;margin:8px 0 6px}
+.ptur-meta-steps p{font:11px/1.6 'Open Sans',Arial,sans-serif;color:#536a82}
+.ptur-meta-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ptur-meta-feature-grid button{display:flex;flex-direction:column;align-items:flex-start;gap:9px;border:1px solid #d1dfeb;border-left:5px solid #00b7d7;background:#fff;border-radius:14px;padding:21px;text-align:left;cursor:pointer;transition:.15s}
+.ptur-meta-feature-grid button:hover{transform:translateY(-2px);box-shadow:0 9px 25px #0920401a}
+.ptur-meta-feature-grid button span{color:#0582a0;font:700 11px Montserrat}.ptur-meta-feature-grid button strong{color:#092040;font:700 16px/1.5 Montserrat}.ptur-meta-feature-grid button small{color:#53697f;font:12px/1.6 'Open Sans'}.ptur-meta-feature-grid button em{font:700 11px Montserrat;color:#0084a3;font-style:normal;margin-top:auto}
+.ptur-meta-support-cta{display:flex;justify-content:space-between;align-items:center;gap:14px;background:#eaf5fa;border:1px solid #c4e5f0;border-radius:13px;padding:20px;margin:22px 0}
+.ptur-meta-support-cta strong{display:block;font:700 14px Montserrat;color:#092040}.ptur-meta-support-cta span{display:block;color:#526981;font:12px/1.65 'Open Sans';margin-top:5px}.ptur-meta-support-cta button{background:#092040;color:#fff;border:0;border-radius:8px;padding:12px 15px;font:700 11px Montserrat;cursor:pointer;min-width:195px}
+.ptur-meta-pagehero{background:linear-gradient(110deg,#071a38,#11446c);border-radius:17px;color:#fff;padding:30px 32px;margin:0 0 19px;box-shadow:0 10px 30px #09204013}
+.ptur-meta-pagehero>span{font:700 10px Montserrat;color:#ecc203;letter-spacing:1.1px}.ptur-meta-pagehero h1{color:#fff;font:700 clamp(22px,2.7vw,30px)/1.25 Montserrat;margin:9px 0}.ptur-meta-pagehero p{font:13px/1.7 'Open Sans';color:#d8e8f4;max-width:850px}.ptur-meta-pagehero .ptur-meta-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}.ptur-meta-pagehero .ptur-meta-pills b{font:700 10px Montserrat;border:1px solid #ffffff40;padding:7px 10px;border-radius:22px;background:#ffffff0e;color:#f2f8ff}
+.ptur-meta-filterbar{display:flex;gap:11px;flex-wrap:wrap;padding:16px;background:#fff;border:1px solid #d8e3ed;border-radius:12px;margin:17px 0}.ptur-meta-filterbar label{display:flex;flex:1 1 200px;flex-direction:column;gap:6px;font:700 11px Montserrat;color:#2e516e}.ptur-meta-filterbar label.ptur-meta-search{flex:2 1 320px}.ptur-meta-filterbar input,.ptur-meta-filterbar select{min-height:43px;border:1px solid #c9d9e6;border-radius:8px;padding:9px 12px;font:12px 'Open Sans';background:white;color:#092040;width:100%}
+.ptur-meta-count{color:#516c82;font-size:12px;margin:10px 0}.ptur-meta-directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.ptur-meta-card{background:#fff;border:1px solid #d8e2ee;border-radius:14px;padding:21px;display:flex;flex-direction:column;gap:11px;min-width:0;box-shadow:0 2px 9px #0920400b}
+.ptur-meta-card:hover{border-color:#00b7d7}.ptur-meta-cardtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.ptur-meta-number{background:#e4f8fc;color:#086c84;border-radius:7px;padding:6px 9px;font:700 12px Montserrat}.ptur-meta-group{font:700 9px Montserrat;color:#526f84;letter-spacing:.5px;text-transform:uppercase}.ptur-meta-card h3{font:700 14px/1.45 Montserrat;color:#092040}.ptur-meta-card p{font:11px/1.6 'Open Sans';color:#526a82}.ptur-meta-statline{display:flex;gap:7px;flex-wrap:wrap}.ptur-meta-statline span{font:700 10px Montserrat;color:#126980;background:#e4f8fc;border-radius:20px;padding:6px 9px}.ptur-meta-statline span.empty{background:#f1f4f7;color:#647589}.ptur-meta-card button,.ptur-meta-button{background:#092040;border:0;border-radius:8px;padding:11px 15px;color:#fff;font:700 11px Montserrat;cursor:pointer}.ptur-meta-card button{align-self:flex-start;margin-top:auto}.ptur-meta-back{background:#fff;border:1px solid #c4d4e2;color:#092040;border-radius:9px;padding:10px 13px;font:700 11px Montserrat;margin:0 0 16px;cursor:pointer}
+.ptur-meta-subhead{display:flex;gap:15px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;margin:27px 0 14px;padding-left:13px;border-left:4px solid #00b7d7}
+.ptur-meta-subhead h2{color:#092040;font:700 19px Montserrat;margin:0 0 5px}.ptur-meta-subhead p{font:12px/1.6 'Open Sans';color:#557088}.ptur-meta-subhead a{background:#fff;border:1px solid #b5ccde;border-radius:8px;padding:10px 12px;text-decoration:none;font:700 11px Montserrat;color:#092040}.ptur-meta-attach{border:1px solid #dae5ed;background:#fff;border-radius:12px;padding:14px;margin:15px 0;color:#536a7f;font-size:12px}.ptur-meta-media-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.ptur-meta-tile{overflow:hidden;min-width:0;border:1px solid #d8e4ed;background:#fff;border-radius:12px;display:flex;flex-direction:column}.ptur-meta-photo-btn{width:100%;border:0;background:#e7eef5;padding:0;cursor:pointer;display:block}.ptur-meta-photo-btn img{width:100%;height:172px;object-fit:cover;display:block}.ptur-meta-tilecopy{padding:11px 12px;flex:1;display:flex;flex-direction:column;gap:6px}.ptur-meta-tilecopy h3{font:700 11px/1.45 Montserrat;color:#092040}.ptur-meta-tilecopy p{font:10px/1.5 'Open Sans';color:#667a8d}.ptur-meta-tilecopy a,.ptur-meta-tilecopy button{align-self:flex-start;margin-top:auto;background:#e9f8fc;color:#09637c;border:1px solid #a7dfed;padding:7px 9px;border-radius:7px;text-decoration:none;font:700 10px Montserrat;cursor:pointer}.ptur-meta-morewrap{text-align:center;margin:20px 0 34px}.ptur-meta-empty{border:1px dashed #abc4d5;background:#f7fafc;border-radius:11px;color:#526a82;font:12px/1.7 'Open Sans';padding:22px;margin:15px 0}.ptur-meta-docnote{font:11px/1.6 'Open Sans';color:#526a82;border-left:3px solid #ecc203;background:#fffbee;padding:10px 14px;border-radius:6px}.ptur-meta-albumgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.ptur-meta-album{background:#fff;border:1px solid #d8e3ed;border-radius:13px;padding:15px}.ptur-meta-album h3{font:700 14px Montserrat;color:#092040}.ptur-meta-album p{font:11px/1.6 'Open Sans';color:#62748c;margin:6px 0 12px}.ptur-meta-albumphotos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.ptur-meta-albumphotos button{border:0;padding:0;background:#eef2f6;border-radius:8px;overflow:hidden;cursor:pointer}.ptur-meta-albumphotos img{display:block;width:100%;height:123px;object-fit:cover}.ptur-meta-album button.ptur-meta-button{margin-top:12px}.ptur-meta-team-meeting{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.ptur-meta-team-meeting button{padding:0;border:1px solid #d8e2ed;background:#fff;border-radius:10px;overflow:hidden;cursor:pointer;text-align:left}.ptur-meta-team-meeting img{width:100%;height:120px;object-fit:cover;display:block}.ptur-meta-team-meeting span{font:700 10px Montserrat;color:#092040;padding:7px;display:block}
+@media(max-width:1100px){.ptur-meta-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ptur-meta-media-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ptur-meta-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.ptur-meta-team-meeting{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.ptur-meta-directory-grid,.ptur-meta-feature-grid,.ptur-meta-albumgrid{grid-template-columns:1fr}.ptur-meta-pagehero{padding:25px 20px}.ptur-meta-media-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ptur-meta-support-cta{flex-direction:column;align-items:stretch}.ptur-meta-support-cta button{min-width:0;width:100%}.ptur-meta-team-meeting{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.ptur-meta-steps{grid-template-columns:1fr}.ptur-meta-media-grid{grid-template-columns:1fr}.ptur-meta-photo-btn img{height:210px}.ptur-meta-team-meeting img{height:95px}}
+</style>
+
+<style id="ptur-evidence-first-styles">
+/* Atualização não destrutiva: metas com evidências em primeiro plano, demais metas preservadas */
+#ptur-meta-directory-grid{display:block!important;}
+.ptur-e-instruction{font-size:13px;line-height:1.65;color:#38536a;padding:16px 20px;background:#eef8fb;border:1px solid #c9eaf3;border-left:4px solid #00B7D7;border-radius:12px;margin:18px 0 22px}
+.ptur-e-sectionhead{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:29px 0 14px;flex-wrap:wrap}
+.ptur-e-sectionhead h2{font:700 19px Montserrat,Arial,sans-serif;color:#092040}
+.ptur-e-sectionhead p{font-size:12px;color:#63798d;line-height:1.6;margin-top:5px}
+.ptur-e-richgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-bottom:24px}
+.ptur-e-richcard{background:#fff;border:1px solid #d5e1ec;border-radius:17px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 5px 22px rgba(8,34,63,.045);min-width:0}
+.ptur-e-richcard:hover{box-shadow:0 12px 30px rgba(8,34,63,.10);border-color:#91dce9}
+.ptur-e-cardtop{padding:21px 22px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ptur-e-code{background:#e6f7fb;color:#09556c;font:700 11px Montserrat;padding:7px 10px;border-radius:999px}
+.ptur-e-state{font:700 10px Montserrat;color:#74600e;background:#fff4be;padding:6px 9px;border-radius:999px}
+.ptur-e-richcard h3{font:700 19px Montserrat;color:#092040;line-height:1.34;padding:0 22px;margin:2px 0 9px}
+.ptur-e-richcard .ptur-e-desc{font-size:12px;color:#617689;line-height:1.6;padding:0 22px 12px;min-height:48px}
+.ptur-e-coverstrip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:3px 20px 14px;height:136px}
+.ptur-e-coverstrip img{width:100%;height:136px;object-fit:cover;border-radius:8px;background:#ebf1f6;border:1px solid #e2eaf2;min-width:0}
+.ptur-e-tags{display:flex;flex-wrap:wrap;gap:6px;padding:0 22px 14px}
+.ptur-e-tags span{font:700 10px Montserrat;padding:6px 9px;border-radius:999px;background:#e8f8fb;color:#145d6e}
+.ptur-e-delivery{margin:0 20px 15px;border-top:1px solid #e7edf3;padding-top:13px;font-size:12px;color:#465d73;line-height:1.6;flex:1}
+.ptur-e-delivery strong{color:#092040}
+.ptur-e-actions{padding:0 20px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ptur-e-open{font:700 11px Montserrat;border:0;border-radius:9px;background:#092040;color:#fff;min-height:42px;padding:12px 16px;cursor:pointer}
+.ptur-e-open:hover{background:#0c5472}
+.ptur-e-hint{font-size:11px;color:#7a8997}
+.ptur-e-secondary{border:1px solid #d6e2ee;border-radius:13px;background:white;overflow:hidden;margin:22px 0}
+.ptur-e-secondary summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:13px;padding:20px 22px;font:700 14px Montserrat;color:#092040}
+.ptur-e-secondary summary::-webkit-details-marker{display:none}
+.ptur-e-secondary summary:after{content:'▾';color:#007f99;font-size:17px}
+.ptur-e-secondary[open] summary:after{content:'▴'}
+.ptur-e-secondary .ptur-e-secondarybody{border-top:1px solid #e3ebf3;padding:20px}
+.ptur-e-secondary .ptur-meta-directory-grid{margin:0}
+.ptur-e-explain{font-size:12px;color:#64768b;line-height:1.65;margin-bottom:14px}
+.ptur-e-planlinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:17px 0 23px}
+.ptur-e-plan{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:17px;background:#f6fafc;border:1px solid #d7e5ef;border-radius:12px}
+.ptur-e-plan strong{display:block;font:700 13px Montserrat;color:#092040;line-height:1.4}
+.ptur-e-plan small{display:block;font-size:11px;color:#607387;line-height:1.5;margin-top:5px}
+.ptur-e-plan button,.ptur-e-plan a{white-space:nowrap;border:0;background:#092040;color:white;font:700 11px Montserrat;padding:10px 13px;border-radius:8px;text-decoration:none;cursor:pointer}
+.ptur-e-timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:15px 0 25px}
+.ptur-e-step{border:1px solid #dce8f1;background:#fff;border-radius:11px;padding:15px}
+.ptur-e-step b{font:700 11px Montserrat;color:#00A1BC;display:block;margin-bottom:7px}
+.ptur-e-step strong{font:700 12px Montserrat;color:#092040;display:block;line-height:1.4}
+.ptur-e-step small{font-size:11px;color:#718094;line-height:1.5;display:block;margin-top:6px}
+.ptur-e-photos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:13px 0 20px}
+.ptur-e-photos button{cursor:pointer;min-width:0;background:white;border:1px solid #d9e7ef;border-radius:10px;padding:0;overflow:hidden}
+.ptur-e-photos img{width:100%;height:112px;object-fit:cover;display:block}
+.ptur-e-photos span{display:block;font:700 9px Montserrat;color:#0a3356;padding:7px 3px;text-align:center}
+.ptur-e-evidnote{font-size:12px;color:#586f82;background:#e8f7fb;padding:13px 15px;border-radius:10px;margin:14px 0 18px;line-height:1.6}
+.ptur-e-territorypreview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:10px 0 25px}
+.ptur-e-territory{background:white;border:1px solid #d6e3ee;border-radius:12px;padding:11px;min-width:0}
+.ptur-e-territory h3{font:700 12px Montserrat;color:#092040;margin:0 0 7px;min-height:32px}
+.ptur-e-territory .ptur-e-coverstrip{height:75px;margin:0 0 8px;gap:3px}
+.ptur-e-territory .ptur-e-coverstrip img{height:75px;border-radius:5px}
+.ptur-e-territory small{font-size:10px;color:#6c7f91}
+.ptur-e-territory button{cursor:pointer;font:700 10px Montserrat;border:0;background:#eef8fb;color:#0b6077;border-radius:7px;padding:9px;margin-top:9px;width:100%}
+.ptur-e-detailhead{font:700 16px Montserrat;color:#092040;margin:22px 0 8px}
+.ptur-e-nodes{font-size:11px;color:#667f90;line-height:1.5}
+@media(max-width:960px){.ptur-e-richgrid,.ptur-e-planlinks{grid-template-columns:1fr}.ptur-e-territorypreview{grid-template-columns:repeat(2,minmax(0,1fr))}.ptur-e-photos{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.ptur-e-cardtop{padding:16px 17px 10px}.ptur-e-richcard h3,.ptur-e-richcard .ptur-e-desc{padding-left:17px;padding-right:17px}.ptur-e-coverstrip{margin:0 15px 13px;height:104px}.ptur-e-coverstrip img{height:104px}.ptur-e-tags{padding:0 17px 13px}.ptur-e-delivery{margin:0 17px 14px}.ptur-e-actions{padding:0 17px 17px}.ptur-e-plan{align-items:flex-start;flex-direction:column}.ptur-e-photos{grid-template-columns:repeat(2,minmax(0,1fr))}.ptur-e-timeline{grid-template-columns:1fr}.ptur-e-territorypreview{grid-template-columns:1fr 1fr;gap:7px}}
+</style>
 </head>
 
 <body>
@@ -571,13 +662,10 @@ body{background:#f3f6fa}
       </div>
     </div>
     <nav class="hnav ptur-v9-nav" aria-label="Navegação principal">
-      <button class="nbtn on" data-view="dashboard" onclick="pturV2Go('dashboard')">Visão geral</button>
-      <button class="nbtn" data-view="acoes" onclick="pturV2Go('acoes')">Metas e ações</button>
-      <button class="nbtn" data-view="governanca" onclick="pturV2Go('governanca')">Governança</button>
-      <button class="nbtn" data-view="diagnosticos" onclick="pturV2Go('diagnosticos')">Diagnósticos</button>
-      <button class="nbtn" data-view="seminarios" onclick="pturV2Go('seminarios')">Seminários</button>
-      <button class="nbtn" data-view="evidenciasdrive" onclick="pturV2Go('evidenciasdrive')">Galeria</button>
-      <button class="nbtn" data-view="acervo" onclick="pturV2Go('acervo')">Acervo</button>
+      <button class="nbtn on" data-view="dashboard" onclick="pturMetaNav('dashboard')">Início</button>
+      <button class="nbtn" data-view="meta-directory" onclick="pturMetaNav('meta-directory')">Metas e evidências</button>
+      <button class="nbtn" data-view="evidenciasdrive" onclick="pturMetaNav('evidenciasdrive')">Galeria geral</button>
+      <button class="nbtn" data-view="territorios" onclick="pturMetaNav('territorios')">Territórios</button>
     </nav>
   </div>
 </header>
@@ -585,25 +673,29 @@ body{background:#f3f6fa}
 <main class="wrap">
   <section class="vw on" id="vw-dashboard">
 <div class="v2-hero"><div class="v2-eyebrow">PROSPERA TURISMO · CENTRAL DE EVIDÊNCIAS</div>
-<h1>Encontre a ação. Confira a comprovação.</h1>
-<p>Selecione um item do plano de trabalho para ver fotografias, registros e os arquivos originais organizados por território. Cada vínculo mostra o que já foi localizado e o que ainda precisa de conferência.</p>
-<div class="v2-heroactions"><button class="v2-btn main" onclick="pturV2Go('acoes')">Consultar ações e evidências</button><button class="v2-btn outline-light" onclick="pturV2Go('evidenciasdrive')">Abrir galeria de fotos</button></div>
+<h1>Metas claras. Entregas à vista. Evidências reais.</h1>
+<p>Acompanhe o projeto pelas metas oficiais. Abra cada meta para visualizar entregas, cadernos, fotografias, vídeos e os documentos originais por território, sem confundir arquivo encontrado com meta homologada.</p>
+<div class="v2-heroactions"><button class="v2-btn main" onclick="pturMetaNav('meta-directory')">Explorar as 25 metas</button><button class="v2-btn outline-light" onclick="pturMetaNav('evidenciasdrive')">Abrir galeria de fotos</button></div>
 </div>
 <div id="v2-overview" class="v2-numbers" aria-live="polite"></div>
-<div class="ptur-v9-quick" aria-label="Acesso direto às entregas recentes">
- <button type="button" onclick="pturV2Go('governanca')"><span>01</span><strong>Planejamento pedagógico</strong><small>8 cadernos e reunião de 24/08</small></button>
- <button type="button" onclick="pturV2Go('diagnosticos')"><span>02</span><strong>Diagnósticos territoriais</strong><small>8 PDFs + relatório consolidado</small></button>
- <button type="button" onclick="pturV2Go('seminarios')"><span>03</span><strong>Seminários territoriais</strong><small>541 fotografias · 5 territórios</small></button>
-</div><h2 class="v2-sectiontitle">Comece pelas comprovações</h2>
-<div class="v2-startgrid">
- <button class="v2-startcard" onclick="pturV2AbrirAcao('5.1')"><span class="v2-starticon">📷</span><strong>Seminários territoriais</strong><span>Fotografias por território, incluindo o seminário da Maré de 07/11/2026. Todas vinculadas ao item 5.1.</span><em>Ver evidências</em></button>
- <button class="v2-startcard" onclick="pturV2AbrirAcao('2.4')"><span class="v2-starticon">🗂️</span><strong>Registros fotográficos iniciais</strong><span>Consulte as fotos de campo e verifique o item 2.4 do cronograma.</span><em>Ver evidências</em></button>
- <button class="v2-startcard" onclick="pturV2Go('territorios')"><span class="v2-starticon">📍</span><strong>Consultar por território</strong><span>Escolha um dos oito núcleos e veja as fotografias existentes.</span><em>Escolher território</em></button>
- <button class="v2-startcard" onclick="pturV2AbrirAcao('3.4')"><span class="v2-starticon">📚</span><strong>8 cadernos pedagógicos</strong><span>Documentos PDF por território, vinculados à entrega 3.4 do cronograma.</span><em>Abrir os cadernos</em></button>
- <button class="v2-startcard" onclick="pturV2AbrirAcao('C.3')"><span class="v2-starticon">👥</span><strong>Treinamento da equipe</strong><span>343 fotografias do treinamento e 1 vídeo, com pastas originais.</span><em>Ver item C.3</em></button>
- <button class="v2-startcard" onclick="pturV2AbrirAcao('C.16')"><span class="v2-starticon">🎨</span><strong>Identidade visual</strong><span>Logotipos, aplicações, elementos e réguas para conferência.</span><em>Ver item C.16</em></button>
- <button class="v2-startcard" onclick="pturV2AbrirAcao('C.5')"><span class="v2-starticon">🎥</span><strong>Pesquisa de campo</strong><span>Vídeos da Rocinha e Santa Marta vinculados à pesquisa inicial.</span><em>Ver item C.5</em></button>
+<section class="ptur-meta-onboarding" aria-label="Como consultar as comprovações">
+ <div class="ptur-meta-overline">COMO USAR ESTE SISTEMA</div>
+ <h2>Encontre a comprovação em quatro passos</h2>
+ <div class="ptur-meta-steps">
+  <div><span>01</span><strong>Escolha a meta</strong><p>Consulte a entrega prevista no Plano de Trabalho.</p></div>
+  <div><span>02</span><strong>Abra a página da meta</strong><p>Veja os documentos e os registros associados.</p></div>
+  <div><span>03</span><strong>Filtre as evidências</strong><p>Escolha o território, amplie fotos e navegue entre registros.</p></div>
+  <div><span>04</span><strong>Confira a origem</strong><p>Acesse o PDF ou arquivo original no Drive.</p></div>
+ </div>
+</section>
+<h2 class="v2-sectiontitle">Comece pelas metas com evidências</h2>
+<div class="ptur-meta-feature-grid">
+ <button type="button" onclick="pturMetaOpen('M01')"><span>M01 · Diagnóstico</span><strong>Diagnósticos socioterritoriais</strong><small>Oito cadernos de diagnóstico, registros de campo e galeria de fotos.</small><em>Abrir a meta →</em></button>
+ <button type="button" onclick="pturMetaOpen('M02')"><span>M02 · Mapeamento</span><strong>Ativos turísticos</strong><small>Fotografias e registros de mapeamento por território e competência.</small><em>Ver registros →</em></button>
+ <button type="button" onclick="pturMetaOpen('M03')"><span>M03 · Formação</span><strong>Trilhas e cadernos pedagógicos</strong><small>Oito cadernos territoriais e referências de planejamento pedagógico.</small><em>Ver os cadernos →</em></button>
+ <button type="button" onclick="pturMetaOpen('M07')"><span>M07 · Formação</span><strong>Seminários territoriais</strong><small>Cinco seminários com 541 fotografias, organizadas por território.</small><em>Explorar os seminários →</em></button>
 </div>
+<div class="ptur-meta-support-cta"><div><strong>Reuniões e formação da equipe</strong><span>Treinamento da equipe, reunião de alinhamento pedagógico e evidências transversais reunidos num só lugar.</span></div><button type="button" onclick="pturMetaNav('team-support')">Consultar encontros e formação</button></div>
 <h2 class="v2-sectiontitle">Prévia de diferentes tipos de evidência</h2>
 <div id="v2-home-photos" class="v2-previewgrid"></div>
 
@@ -748,10 +840,10 @@ body{background:#f3f6fa}
   </section>
 
   <section class="vw" id="vw-evidenciasdrive">
-<div class="v2-pagehead"><span class="v2-eyebrow muted">CENTRAL DE COMPROVAÇÕES</span><h1>Entregas do projeto e suas evidências</h1><p>Encontre primeiro o <strong>item do cronograma</strong> e a <strong>entrega prevista</strong>. Depois abra a galeria correspondente, organizada por território e tipo de arquivo.</p></div>
-<div class="v2-numbers" id="v2-gallery-numbers"></div><div class="ptur-v9-gallery-bridge"><strong>Galeria e amostra fotográfica:</strong> escolha uma entrega ou explore o acervo completo. <button type="button" onclick="pturV2Go('governanca')">Ver 10 fotos da reunião pedagógica</button> <button type="button" onclick="pturV2Go('seminarios')">Ver seminários por território</button></div>
+<div class="v2-pagehead"><span class="v2-eyebrow muted">CENTRAL DE COMPROVAÇÕES</span><h1>Galeria geral de evidências</h1><p>Esta é a consulta ao acervo completo. Para uma leitura por entrega e comprovação, selecione primeiro uma <strong>meta</strong> e abra sua galeria própria.</p></div>
+<div class="v2-numbers" id="v2-gallery-numbers"></div><div class="ptur-v9-gallery-bridge"><strong>Galeria e amostra fotográfica:</strong> abra uma meta ou explore o acervo completo. <button type="button" onclick="pturMetaNav('team-support')">Ver reunião pedagógica</button> <button type="button" onclick="pturMetaOpen('M07')">Ver seminários por território</button></div>
 <div class="ptur-v6-modes" role="group" aria-label="Modo de consulta da galeria">
- <button id="ptur-v6-mode-entregas" class="ptur-v6-mode on" type="button" onclick="pturV6Mode('entregas')">Por item e entrega</button>
+ <button id="ptur-v6-mode-entregas" class="ptur-v6-mode on" type="button" onclick="pturMetaNav('meta-directory')">Consultar por meta</button>
  <button id="ptur-v6-mode-arquivos" class="ptur-v6-mode" type="button" onclick="pturV6Mode('arquivos')">Explorar todos os arquivos</button>
 </div>
 <div id="ptur-v6-filters" hidden><div class="v4-quick" aria-label="Acesso rápido aos registros fotográficos">
@@ -760,7 +852,7 @@ body{background:#f3f6fa}
   <button type="button" onclick="pturV4Quick('Mapeamento','2026-08')"><b>Mapeamento</b><small>Agosto de 2026</small></button>
   <button type="button" onclick="pturV4Quick('Seminário','')"><b>Seminários</b><small>Outubro e novembro de 2026</small></button>
 </div>
-<p class="v4-note">As peças institucionais são apresentadas nas entregas de comunicação e identidade visual. Fotografias de campo e seminários ficam em suas respectivas ações. Localizar arquivos não equivale à homologação da entrega.</p>
+<p class="v4-note">As fotografias de campo, seminários, documentos e materiais de apoio continuam no acervo. Localizar um arquivo não comprova automaticamente a execução da meta.</p>
 
 <div class="v2-filters" aria-label="Filtros da galeria">
  <label>Tipo de ação<select id="v2-g-cat" onchange="pturV2ResetGallery()"><option value="">Todas as ações</option><option value="Seminário">Seminários</option><option value="Mapeamento">Mapeamentos</option><option value="Diagnóstico">Diagnósticos</option></select></label>
@@ -881,8 +973,29 @@ body{background:#f3f6fa}
  <section class="v2-detail" id="v2-action-detail" hidden aria-live="polite"></section>
 </section>
 
-<nav class="ptur-mobile-menu v2-mobile ptur-v9-mobile" aria-label="Navegação rápida"><button onclick="pturV2Go('dashboard')">Início</button><button onclick="pturV2Go('acoes')">Metas</button><button onclick="pturV2Go('governanca')">Governança</button><button onclick="pturV2Go('diagnosticos')">Diagnósticos</button><button onclick="pturV2Go('seminarios')">Seminários</button><button onclick="pturV2Go('evidenciasdrive')">Galeria</button><button onclick="pturV2Go('acervo')">Acervo</button></nav>
+<nav class="ptur-mobile-menu v2-mobile ptur-v9-mobile" aria-label="Navegação rápida"><button onclick="pturMetaNav('dashboard')">Início</button><button onclick="pturMetaNav('meta-directory')">Metas</button><button onclick="pturMetaNav('evidenciasdrive')">Galeria</button><button onclick="pturMetaNav('territorios')">Territórios</button></nav>
   
+
+<!-- Navegação por metas oficiais: preserva integralmente o restante do Index e seus arquivos -->
+<section class="vw" id="vw-meta-directory" aria-labelledby="ptur-meta-index-title">
+ <div class="ptur-meta-pagehero"><span>PLANO DE TRABALHO · 25 METAS OFICIAIS</span><h1 id="ptur-meta-index-title">Metas, entregas e suas evidências</h1><p>Primeiro consulte as metas que já possuem documentos e fotografias organizados. As outras metas continuam disponíveis para acompanhamento e conciliação, sem sugerir que a ausência de vínculo signifique ausência de execução.</p></div>
+ <div class="ptur-meta-filterbar"><label class="ptur-meta-search">Encontrar meta<input id="ptur-meta-search" type="search" placeholder="Ex.: diagnóstico, seminário, M07, caderno..." oninput="pturMetaRenderDirectory()"></label><label>Área temática<select id="ptur-meta-category" onchange="pturMetaRenderDirectory()"><option value="">Todas as áreas</option><option>Diagnóstico</option><option>Formação</option><option>Consultoria</option><option>Fomento</option><option>Produção editorial</option><option>Infraestrutura</option><option>Comunicação</option><option>Monitoramento</option></select></label></div>
+ <p id="ptur-meta-directory-status" class="ptur-meta-count"></p><div id="ptur-meta-directory-grid" class="ptur-meta-directory-grid"></div>
+ <div class="ptur-meta-support-cta"><div><strong>Reuniões e formação da equipe</strong><span>Documentação institucional transversal, separada da contagem física das metas.</span></div><button onclick="pturMetaNav('team-support')" type="button">Abrir área de apoio</button></div>
+</section>
+<section class="vw" id="vw-meta-detail" aria-labelledby="ptur-meta-detail-title"><div id="ptur-meta-detail-root" aria-live="polite"></div></section>
+<section class="vw" id="vw-team-support" aria-labelledby="ptur-meta-team-title">
+ <button type="button" class="ptur-meta-back" onclick="pturMetaNav('meta-directory')">← Voltar às metas</button>
+ <div class="ptur-meta-pagehero"><span>APOIO À EXECUÇÃO · ENCONTROS E FORMAÇÃO DA EQUIPE</span><h1 id="ptur-meta-team-title">Reuniões e capacitação da equipe</h1><p>Registros de planejamento, treinamento e alinhamento de abrangência geral. Estes documentos são fontes complementares, não comprovação automática da realização de uma meta.</p></div>
+ <div class="ptur-meta-subhead"><h2>Reunião de alinhamento pedagógico</h2><p><strong>24/08/2026</strong> · equipe geral e oito territórios · dez fotografias reais.</p><a href="https://drive.google.com/drive/folders/1Qfmjx9KM0CQrEi0EerTsHcZfCQJo5eIJ" target="_blank" rel="noopener noreferrer">Pasta oficial no Drive</a></div>
+ <div id="ptur-meta-team-meeting" class="ptur-meta-team-meeting"></div>
+ <div class="ptur-meta-subhead"><h2>Treinamento da equipe</h2><p><strong>30/06/2026</strong> · registros fotográficos e um vídeo vinculados ao treinamento.</p></div>
+ <div class="ptur-meta-attach" id="ptur-meta-team-stats"></div>
+ <div class="ptur-meta-filterbar"><label>Filtrar registros<select id="ptur-meta-team-kind" onchange="pturMetaRenderTeam()"><option value="">Fotos e vídeos</option><option value="imagem">Fotografias</option><option value="video">Vídeos</option></select></label></div>
+ <div class="ptur-meta-media-grid" id="ptur-meta-team-grid"></div>
+ <div class="ptur-meta-morewrap"><button id="ptur-meta-team-more" class="ptur-meta-button" type="button" onclick="pturMetaMoreTeam()">Ver mais registros</button></div>
+ </section>
+
 <!-- PTUR 14/11/2026 · Camada documental oficial, agregada sem substituir vistas legadas -->
 <section class="vw" id="vw-governanca" aria-labelledby="ptur-v9-gov-title">
   <div class="ptur-v9-heading"><div class="ptur-v9-eyebrow">GOVERNANÇA · PLANEJAMENTO PEDAGÓGICO</div><h1 id="ptur-v9-gov-title">Planejamento pedagógico e registros de alinhamento</h1><p>Documentos e fotografias de abrangência geral; o vínculo documental não substitui a validação da execução.</p><div class="ptur-v9-chips"><span>Item 3.4 do cronograma</span><span>8 territórios</span><span>Reunião: 24/08/2026</span></div></div>
@@ -2342,7 +2455,7 @@ function pturV5VerSeminarioTerritorio(territorio){
 }
 
 /* Padrão didático por item, meta e entrega (não classifica homologação). */
-var PTUR_V6_MODE='entregas';
+var PTUR_V6_MODE='arquivos';
 var PTUR_V6_DELIVERIES=[
  {id:'2.1',nome:'Diagnósticos socioterritoriais',grupo:'Execução territorial',categoria:['Diagnóstico'],nota:'Registros de campo; relatórios finais devem ser conferidos separadamente.'},
  {id:'2.2',nome:'Mapeamentos de ativos turísticos',grupo:'Execução territorial',categoria:['Mapeamento'],nota:'Imagens de mapeamento não substituem as bases e os relatórios técnicos.'},
@@ -2599,7 +2712,259 @@ function pturV9Init(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',pturV9Init);else pturV9Init();
 
+
+/* 14/11/2026 — Navegação oficial por META. As vistas históricas e o inventário permanecem preservados. */
+var PTUR_META_CATALOG=[{"id":"M01","grupo":"Diagnóstico","titulo":"Diagnósticos socioterritoriais concluídos","planejado":8,"indicador":"Diagnósticos entregues","meio":"Relatório PDF por território","prazo":"Meses 1 a 2"},{"id":"M02","grupo":"Diagnóstico","titulo":"Mapeamentos de ativos turísticos","planejado":8,"indicador":"Mapeamentos finalizados","meio":"Relatório PDF","prazo":"Meses 1 a 2"},{"id":"M03","grupo":"Formação","titulo":"Trilhas formativas estruturadas","planejado":8,"indicador":"Trilhas aprovadas","meio":"Documento pedagógico","prazo":"Mês 2"},{"id":"M04","grupo":"Formação","titulo":"Cursos de 20h realizados","planejado":320,"indicador":"Cursos executados","meio":"Lista de presença simples","prazo":"Meses 3 a 8"},{"id":"M05","grupo":"Formação","titulo":"Oficinas de 8h realizadas","planejado":480,"indicador":"Oficinas executadas","meio":"Lista de presença","prazo":"Meses 3 a 8"},{"id":"M06","grupo":"Formação","titulo":"Palestras realizadas","planejado":96,"indicador":"Eventos registrados","meio":"Lista de presença, foto, vídeos e registro","prazo":"Meses 3 a 12"},{"id":"M07","grupo":"Formação","titulo":"Seminários realizados","planejado":16,"indicador":"Eventos registrados","meio":"Presença, foto e vídeos","prazo":"Meses 1 e 6"},{"id":"M08","grupo":"Formação","titulo":"Participações totais nas formações","planejado":15000,"indicador":"Presenças contabilizadas","meio":"Registro de presença padronizado","prazo":"Meses 3 a 8"},{"id":"M09","grupo":"Consultoria","titulo":"Consultorias individuais de 8h","planejado":1200,"indicador":"Consultorias concluídas","meio":"Ficha de atendimento por participante","prazo":"Meses 4 a 8"},{"id":"M10","grupo":"Consultoria","titulo":"Diagnósticos individuais de negócio concluídos","planejado":1200,"indicador":"Documentos entregues","meio":"PDF ou formulário enviado","prazo":"Mês 8"},{"id":"M11","grupo":"Fomento","titulo":"Bolsas de mérito pagas","planejado":400,"indicador":"Beneficiários validados","meio":"Lista nominal e comprovante","prazo":"Meses 4 a 12"},{"id":"M12","grupo":"Fomento","titulo":"Prêmios de capital semente","planejado":320,"indicador":"Propostas selecionadas","meio":"Ata simples de seleção","prazo":"Mês 9"},{"id":"M13","grupo":"Produção editorial","titulo":"Vídeos promocionais","planejado":8,"indicador":"Produtos entregues","meio":"Link ou arquivo enviado","prazo":"Meses 5 a 9"},{"id":"M14","grupo":"Produção editorial","titulo":"Guias digitais","planejado":8,"indicador":"Guias finalizados","meio":"PDF final","prazo":"Meses 5 a 9"},{"id":"M15","grupo":"Produção editorial","titulo":"Catálogos turísticos","planejado":8,"indicador":"Materiais concluídos","meio":"PDF final","prazo":"Meses 5 a 9"},{"id":"M16","grupo":"Produção editorial","titulo":"Ensaios fotográficos","planejado":8,"indicador":"Pastas entregues","meio":"Arquivo ou link","prazo":"Meses 5 a 9"},{"id":"M17","grupo":"Produção editorial","titulo":"Identidade visual das rotas","planejado":8,"indicador":"Kits aprovados","meio":"Arquivos digitais","prazo":"Meses 6 a 9"},{"id":"M18","grupo":"Infraestrutura","titulo":"Sinalização turística implantada","planejado":8,"indicador":"Instalação concluída","meio":"Fotografias da instalação","prazo":"Mês 10"},{"id":"M19","grupo":"Infraestrutura","titulo":"Rotas turísticas estruturadas","planejado":8,"indicador":"Rotas finalizadas","meio":"PDF do mapa e fotografias","prazo":"Meses 6 a 11"},{"id":"M20","grupo":"Infraestrutura","titulo":"Testes e validações de rota","planejado":8,"indicador":"Testes realizados","meio":"Relato e fotografia","prazo":"Meses 7 e 11"},{"id":"M21","grupo":"Comunicação","titulo":"Carro de som para mobilização","planejado":96,"indicador":"Ativações realizadas","meio":"Nota fiscal e fotografia","prazo":"Meses 1 a 12"},{"id":"M22","grupo":"Comunicação","titulo":"Impressos distribuídos (banners, folders, panfletos, cartazes)","planejado":24000,"indicador":"Materiais entregues","meio":"Foto de distribuição no território","prazo":"Meses 1 a 12"},{"id":"M23","grupo":"Comunicação","titulo":"Campanhas digitais publicadas","planejado":60,"indicador":"Postagens realizadas","meio":"Capturas de tela (prints)","prazo":"Meses 1 a 12"},{"id":"M24","grupo":"Monitoramento","titulo":"Dashboards mensais de monitoramento","planejado":12,"indicador":"Acompanhamento registrado","meio":"PDF ou planilha","prazo":"Meses 1 a 12"},{"id":"M25","grupo":"Monitoramento","titulo":"Relatório final de avaliação","planejado":1,"indicador":"Documento entregue","meio":"PDF final consolidado","prazo":"Mês 12"}];
+var PTUR_META_CURRENT=null,PTUR_META_TERR='',PTUR_META_LIMIT=48,PTUR_META_ALBUM=[],PTUR_META_TEAM_LIMIT=48,PTUR_META_SHOW_ALL=false;
+var PTUR_META_MEMO=null,PTUR_META_MEMO_SOURCE=null;
+var PTUR_META_CATEGORIES={M01:['Diagnóstico','Pesquisa de campo','Cadernos de diagnóstico socioterritorial','Diagnóstico socioterritorial consolidado'],M02:['Mapeamento'],M03:['Cadernos pedagógicos'],M07:['Seminário','Convites de seminários'],M22:['Material impresso'],M23:['Comunicação digital','Divulgação','Convite digital','Divulgação de cursos']};
+function pturMetaMap(){
+ var src=pturV2Data();if(src===PTUR_META_MEMO_SOURCE&&PTUR_META_MEMO)return PTUR_META_MEMO;
+ var m=new Map();PTUR_META_CATALOG.forEach(function(v){m.set(v.id,[])});
+ src.forEach(function(f){if(!f||!f.id)return;var assigned=null,c=f.categoria||'',x=String(f.meta||'');
+  if(/^M(?:01|02|07)$/.test(x)) assigned=x;
+  else if(c==='Cadernos pedagógicos')assigned='M03';
+  else if(c==='Cadernos de diagnóstico socioterritorial'||c==='Diagnóstico socioterritorial consolidado')assigned='M01';
+  else if(c==='Material impresso')assigned='M22';
+  else if(['Comunicação digital','Divulgação','Convite digital','Divulgação de cursos'].includes(c))assigned='M23';
+  else if(c==='Convites de seminários')assigned='M07';
+  if(assigned&&m.has(assigned))m.get(assigned).push(f);
+ });
+ m.forEach(function(list,id){var seen=new Set();m.set(id,list.filter(function(f){if(seen.has(f.id))return false;seen.add(f.id);return true}))});
+ PTUR_META_MEMO_SOURCE=src;PTUR_META_MEMO=m;return m;
+}
+function pturMetaFiles(id){return pturMetaMap().get(id)||[]}
+function pturMetaPrimaryEvidence(id){var all=pturMetaFiles(id);return id==='M07'?all.filter(function(x){return x.categoria==='Seminário'}):all}
+function pturMetaNav(view){
+ if(view==='dashboard'||view==='evidenciasdrive'||view==='territorios'){
+  if(view==='evidenciasdrive')PTUR_V6_MODE='arquivos';
+  pturV2Go(view);
+ }else{
+  goV(view);
+  if(view==='meta-directory')pturMetaRenderDirectory();
+  if(view==='meta-detail')pturMetaRenderDetail();
+  if(view==='team-support')pturMetaRenderTeam();
+  window.scrollTo(0,0);
+ }
+ // Meta detail and support are nested pages; use the Meta navigation highlight.
+ var active=(view==='meta-detail'||view==='team-support')?'meta-directory':view;
+ document.querySelectorAll('.hnav [data-view]').forEach(function(b){b.classList.toggle('on',b.dataset.view===active)});
+}
+function pturMetaOpen(id){if(!PTUR_META_CATALOG.some(function(m){return m.id===id}))return;PTUR_META_CURRENT=id;PTUR_META_TERR='';PTUR_META_LIMIT=48;PTUR_META_SHOW_ALL=false;pturMetaNav('meta-detail')}
+function pturMetaDynamicStatus(id){try{var x=metasDetalhadasAgrupadasPTUR().find(function(m){return m.id===id});return x||null}catch(e){return null}}
+function pturMetaCard(m){
+ var f=pturMetaPrimaryEvidence(m.id),imgs=f.filter(function(x){return pturV3Classe(x)==='imagem'}).length,docs=f.filter(function(x){return pturV3Classe(x)==='documento'}).length,vids=f.filter(function(x){return pturV3Classe(x)==='video'}).length;
+ return '<article class="ptur-meta-card"><div class="ptur-meta-cardtop"><span class="ptur-meta-number">'+esc(m.id)+'</span><span class="ptur-meta-group">'+esc(m.grupo)+'</span></div><h3>'+esc(m.titulo)+'</h3><p><strong>Previsão:</strong> '+m.planejado+' · '+esc(m.indicador)+'</p><div class="ptur-meta-statline">'+
+ (imgs?'<span>'+imgs+' imagens</span>':'')+(docs?'<span>'+docs+' PDFs</span>':'')+(vids?'<span>'+vids+' vídeos</span>':'')+(!f.length?'<span class="empty">Sem vínculo no catálogo</span>':'')+'</div><p><strong>Meio de verificação:</strong> '+esc(m.meio)+'</p><button type="button" data-id="'+m.id+'" onclick="pturMetaOpen(this.dataset.id)">Abrir página da meta</button></article>';
+}
+function pturMetaRenderDirectory(){
+ var el=document.getElementById('ptur-meta-directory-grid');if(!el)return;
+ var term=(document.getElementById('ptur-meta-search')?.value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ var cat=document.getElementById('ptur-meta-category')?.value||'';
+ var found=PTUR_META_CATALOG.filter(function(m){var x=(m.id+' '+m.titulo+' '+m.grupo+' '+m.meio).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();return (!cat||m.grupo===cat)&&(!term||x.includes(term))});
+ el.innerHTML=found.length?found.map(pturMetaCard).join(''):'<p class="ptur-meta-empty">Nenhuma meta corresponde à pesquisa. Tente outro nome ou número.</p>';
+ document.getElementById('ptur-meta-directory-status').textContent='Exibindo '+found.length+' de '+PTUR_META_CATALOG.length+' metas oficiais · evidências localizadas não equivalem a homologação.';
+}
+function pturMetaDocuments(type){
+ var source=type==='pedagogico'?PTUR_V9_PEDAGOGICOS:PTUR_V9_DIAGNOSTICOS;
+ return '<div class="ptur-v9-docgrid" id="ptur-meta-doc-grid"></div>';
+}
+function pturMetaSems(){
+ return '<div class="ptur-meta-albumgrid">'+PTUR_V9_SEMINARS.map(function(s){
+  var n=esc(s.territorio),data=s.data.split('-').reverse().join('/');
+  return '<article class="ptur-meta-album"><h3>'+n+' <span class="ptur-v9-count">'+s.count+' fotos</span></h3><p>'+data+' · seminário territorial · item 5.1</p>'+ 
+   '<div class="ptur-meta-albumphotos">'+s.photos.slice(0,3).map(function(f,i){return '<button type="button" data-ter="'+n+'" data-pos="'+i+'" onclick="pturV9OpenPhoto(this.dataset.ter,Number(this.dataset.pos))" aria-label="Ampliar fotografia do seminário de '+n+'"><img loading="lazy" src="'+f.src+'" alt="Registro real do seminário de '+n+'"></button>'}).join('')+'</div>'+ 
+   '<div class="ptur-v9-sem-actions"><button class="ptur-meta-button" type="button" data-ter="'+n+'" onclick="pturMetaTerritory(this.dataset.ter)">Abrir todas as fotos deste território</button><a class="ptur-v9-btn light" target="_blank" rel="noopener noreferrer" href="'+s.folder+'">Acervo no Drive</a></div></article>';}).join('')+'</div>';
+}
+function pturMetaBody(id){
+ var f=pturMetaPrimaryEvidence(id),m=PTUR_META_CATALOG.find(function(x){return x.id===id});
+ var imgs=f.filter(function(x){return pturV3Classe(x)==='imagem'}).length,vids=f.filter(function(x){return pturV3Classe(x)==='video'}).length,docs=f.filter(function(x){return pturV3Classe(x)==='documento'}).length;
+ var dyn=pturMetaDynamicStatus(id),prog=dyn&&Number.isFinite(Number(dyn.realizado))?'<b>'+Number(dyn.realizado).toLocaleString('pt-BR')+' realizado(s) segundo monitoramento</b>':'';
+ var h='<button class="ptur-meta-back" type="button" onclick="pturMetaNav(\'meta-directory\')">← Todas as metas</button>'+ 
+  '<div class="ptur-meta-pagehero"><span>'+esc(m.id)+' · '+esc(m.grupo.toUpperCase())+'</span><h1 id="ptur-meta-detail-title">'+esc(m.titulo)+'</h1><p>Entrega prevista: '+esc(m.indicador)+'. Consulte os documentos, fotografias e registros por território. A existência de um arquivo não representa aprovação ou cumprimento automático da meta.</p><div class="ptur-meta-pills"><b>Meta prevista: '+m.planejado+'</b><b>Meio de verificação: '+esc(m.meio)+'</b><b>'+imgs+' imagens · '+vids+' vídeos · '+docs+' PDFs localizados</b>'+(prog?prog:'')+'</div></div>';
+ if(id==='M01')h+='<div class="ptur-meta-subhead"><div><h2>8 cadernos de diagnóstico socioterritorial</h2><p>Documentos por território, vinculados ao item 3.1. Diferentes dos cadernos pedagógicos.</p></div><a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/drive/folders/1fdQMAWovJAN0rdPGHb_DgrlAm6Aolxzm">Pasta oficial</a></div>'+pturMetaDocuments('diagnostico')+
+ '<div class="ptur-meta-attach"><strong>Diagnóstico geral consolidado</strong> · <button class="ptur-meta-button" type="button" onclick="pturV9OpenPdf(PTUR_V9_GERAL,\'Diagnóstico geral consolidado\')">Visualizar PDF consolidado</button></div>';
+ if(id==='M03')h+='<div class="ptur-meta-subhead"><div><h2>8 cadernos pedagógicos por território</h2><p>Documentos da estruturação das trilhas; item 3.4 do cronograma.</p></div><a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/drive/folders/1ryYLv9KDV-1HsD_zu67jgvVdVrhu8On1">Pasta oficial</a></div>'+pturMetaDocuments('pedagogico')+
+ '<div class="ptur-meta-support-cta"><div><strong>Reuniões e capacitação da equipe</strong><span>Registros institucionais de planejamento, sem somá-los à execução física da M03.</span></div><button type="button" onclick="pturMetaNav(\'team-support\')">Ver registros de apoio</button></div>';
+ if(id==='M07')h+='<div class="ptur-meta-subhead"><div><h2>Seminários por território</h2><p>5 seminários com registros fotográficos localizados. A amostra e os acervos completos ficam dentro desta meta.</p></div></div>'+pturMetaSems();
+ if(id==='M22'||id==='M23')h+='<div class="ptur-meta-docnote">Atenção: as peças de comunicação abaixo foram localizadas como materiais de apoio. Sua existência não comprova distribuição (M22) ou publicação (M23); são necessárias as evidências específicas previstas na meta.</div>';
+ if(id==='M01'||id==='M02'||id==='M07'||(id!=='M03'&&(imgs||vids||docs))){
+   h+='<div class="ptur-meta-subhead" id="ptur-meta-media-anchor"><div><h2>Galeria de evidências da meta</h2><p>Arquivos vinculados à '+esc(id)+' · filtre por território e navegue dentro do sistema. Miniaturas repetidas são evitadas na seleção inicial; os originais permanecem preservados.</p></div></div>'+ 
+ '<div class="ptur-meta-filterbar"><label>Território<select id="ptur-meta-territory" onchange="pturMetaTerritory(this.value)"><option value="">Todos os territórios</option></select></label><label>Tipo de arquivo<select id="ptur-meta-kind" onchange="pturMetaResetFiles()"><option value="">Fotos, vídeos e documentos</option><option value="imagem">Fotografias</option><option value="video">Vídeos</option><option value="documento">Documentos PDF</option></select></label></div>'+ 
+ '<p id="ptur-meta-file-count" class="ptur-meta-count" aria-live="polite"></p><button type="button" id="ptur-meta-all-toggle" class="ptur-meta-back" onclick="pturMetaToggleAll()">Ver acervo completo (inclui sequências)</button><div id="ptur-meta-file-grid" class="ptur-meta-media-grid"></div><div class="ptur-meta-morewrap"><button id="ptur-meta-more" class="ptur-meta-button" type="button" onclick="pturMetaMore()">Carregar mais evidências</button></div>';
+ }else h+='<div class="ptur-meta-empty">Ainda não foram encontradas evidências diretamente vinculadas a esta meta no catálogo publicado. Isso não significa que a atividade não tenha ocorrido. A equipe pode consultar o Drive oficial e vincular os documentos antes de submetê-los à conferência.</div>';
+ return h;
+}
+function pturMetaRenderDetail(){
+ var id=PTUR_META_CURRENT;if(!id)return;var root=document.getElementById('ptur-meta-detail-root');if(!root)return;
+ root.innerHTML=pturMetaBody(id);
+ if(id==='M01')pturV9DocumentCards('ptur-meta-doc-grid',PTUR_V9_DIAGNOSTICOS,'diagnostico');
+ if(id==='M03')pturV9DocumentCards('ptur-meta-doc-grid',PTUR_V9_PEDAGOGICOS,'pedagogico');
+ var select=document.getElementById('ptur-meta-territory');if(select){var found=Array.from(new Set(pturMetaPrimaryEvidence(id).map(function(x){return x.territorio||''}).filter(function(x){return x&&x!=='Projeto inteiro'}))).sort();select.innerHTML='<option value="">Todos os territórios</option>'+found.map(function(x){return '<option value="'+esc(x)+'">'+esc(x)+'</option>'}).join('');if(found.includes(PTUR_META_TERR))select.value=PTUR_META_TERR;pturMetaRenderFiles()}
+}
+function pturMetaTerritory(t){PTUR_META_TERR=t||'';PTUR_META_LIMIT=48;var el=document.getElementById('ptur-meta-territory');if(el)el.value=PTUR_META_TERR;pturMetaRenderFiles();document.getElementById('ptur-meta-media-anchor')?.scrollIntoView({behavior:'smooth',block:'start'})}
+function pturMetaResetFiles(){PTUR_META_LIMIT=48;pturMetaRenderFiles()}
+function pturMetaMore(){PTUR_META_LIMIT+=48;pturMetaRenderFiles()}
+function pturMetaToggleAll(){PTUR_META_SHOW_ALL=!PTUR_META_SHOW_ALL;PTUR_META_LIMIT=48;pturMetaRenderFiles()}
+function pturMetaVisibleFiles(){var k=document.getElementById('ptur-meta-kind')?.value||'';
+ return pturMetaPrimaryEvidence(PTUR_META_CURRENT).filter(function(f){return (!PTUR_META_TERR||f.territorio===PTUR_META_TERR)&&(!k||pturV3Classe(f)===k)});
+}
+function pturMetaFileTile(f,i){
+ var kind=pturV3Classe(f),name=esc(f.nome||f.descricao||'Arquivo do projeto'),ter=esc(f.territorio||'Registro institucional'),link='https://drive.google.com/file/d/'+encodeURIComponent(f.id)+'/view';
+ if(kind==='imagem')return '<article class="ptur-meta-tile"><button type="button" class="ptur-meta-photo-btn" data-i="'+i+'" onclick="pturMetaOpenPhoto(Number(this.dataset.i))" aria-label="Ampliar foto de '+ter+'"><img loading="lazy" src="'+pturV2Thumb(f)+'" alt="Fotografia real: '+ter+'" onerror="this.style.opacity=.3;this.alt=\'Prévia indisponível — confira o Drive\'"></button><div class="ptur-meta-tilecopy"><h3>'+ter+'</h3><p>'+esc(f.competencia||'')+' · '+esc(f.categoria||'Registro')+'</p><a target="_blank" rel="noopener noreferrer" href="'+link+'">Original no Drive</a></div></article>';
+ return '<article class="ptur-meta-tile"><div class="ptur-meta-photo-btn" style="height:140px;display:grid;place-items:center;color:#092040;font-weight:700">'+(kind==='video'?'▶ Vídeo':'▣ PDF')+'</div><div class="ptur-meta-tilecopy"><h3>'+ter+' · '+esc(f.categoria||kind)+'</h3><p>'+name+'</p><button type="button" data-id="'+esc(f.id)+'" data-title="'+name+'" onclick="pturMetaOpenMedia(this.dataset.id,this.dataset.title)">Visualizar '+(kind==='video'?'vídeo':'PDF')+'</button><a target="_blank" rel="noopener noreferrer" href="'+link+'">Original no Drive</a></div></article>';
+}
+function pturMetaRenderFiles(){
+ var grid=document.getElementById('ptur-meta-file-grid');if(!grid)return;
+ var all=pturMetaVisibleFiles(),images=all.filter(function(f){return pturV3Classe(f)==='imagem'}),others=all.filter(function(f){return pturV3Classe(f)!=='imagem'});
+ // Selection preserves the original records. Name-duplicates and long adjacent series are not repeated in the initial display.
+ var curated=PTUR_META_SHOW_ALL?images:(typeof pturV7SelectDisplay==='function'?pturV7SelectDisplay(images):images);
+ var list=curated.concat(others),toDisplay=list.slice(0,PTUR_META_LIMIT);
+ PTUR_META_ALBUM=images.map(function(f){return {src:'https://drive.google.com/thumbnail?id='+encodeURIComponent(f.id)+'&sz=w1800',original:'https://drive.google.com/file/d/'+encodeURIComponent(f.id)+'/view',nome:f.nome||f.descricao||'Fotografia',id:f.id}});
+ grid.innerHTML=toDisplay.length?toDisplay.map(function(f){return pturMetaFileTile(f,pturV3Classe(f)==='imagem'?images.findIndex(function(x){return x.id===f.id}):-1)}).join(''):'<div class="ptur-meta-empty">Não há registros deste tipo vinculados à meta no catálogo atual. Consulte a origem oficial se houver documentos ainda não indexados.</div>';
+ document.getElementById('ptur-meta-file-count').textContent='Arquivos relacionados: '+all.length+' · '+images.length+' imagens · '+others.length+' vídeos/PDFs · exibindo '+toDisplay.length+(PTUR_META_SHOW_ALL?' registros do acervo completo.':' itens selecionados, sem repetições desnecessárias.');
+ var toggle=document.getElementById('ptur-meta-all-toggle');if(toggle)toggle.textContent=PTUR_META_SHOW_ALL?'Voltar à seleção sem repetições':'Ver acervo completo (inclui sequências fotográficas)';
+ document.getElementById('ptur-meta-more').hidden=list.length<=PTUR_META_LIMIT;
+}
+function pturMetaOpenPhoto(i){
+ if(i<0||i>=PTUR_META_ALBUM.length)return;
+ PTUR_V9_ALBUM=PTUR_META_ALBUM;PTUR_V9_ALBUM_INDEX=i;
+ var modal=document.getElementById('ptur-v9-modal');if(!modal)return;modal.hidden=false;document.body.style.overflow='hidden';
+ document.getElementById('ptur-v9-pdf-frame').hidden=true;document.getElementById('ptur-v9-pdf-frame').src='about:blank';
+ document.getElementById('ptur-v9-photo-content').hidden=false;pturV9ShowPhoto();document.getElementById('ptur-v9-close').focus();
+}
+function pturMetaOpenMedia(id,title){
+ var file=pturV2Data().find(function(f){return f.id===id});if(!file||!['documento','video'].includes(pturV3Classe(file)))return;
+ var modal=document.getElementById('ptur-v9-modal');modal.hidden=false;document.body.style.overflow='hidden';
+ PTUR_V9_ALBUM=null;document.getElementById('ptur-v9-photo-content').hidden=true;
+ var iframe=document.getElementById('ptur-v9-pdf-frame');iframe.hidden=false;iframe.src='https://drive.google.com/file/d/'+encodeURIComponent(id)+'/preview';
+ document.getElementById('ptur-v9-modal-title').textContent=title||'Visualizar arquivo';document.getElementById('ptur-v9-original').href='https://drive.google.com/file/d/'+encodeURIComponent(id)+'/view';
+ document.getElementById('ptur-v9-modal-counter').textContent='Prévia no próprio sistema · original no Google Drive';document.getElementById('ptur-v9-close').focus();
+}
+function pturMetaRenderTeam(){
+ var meeting=document.getElementById('ptur-meta-team-meeting');if(!meeting)return;
+ meeting.innerHTML=PTUR_V9_MEETING.map(function(f,i){return '<button type="button" onclick="pturV9OpenPhoto(\'meeting\','+i+')"><img loading="lazy" src="'+f.src+'" alt="Reunião pedagógica 24/08/2026 · foto '+(i+1)+'"><span>Registro '+String(i+1).padStart(2,'0')+'</span></button>'}).join('');
+ var all=pturV2Data().filter(function(f){return f.categoria==='Treinamento'}),k=document.getElementById('ptur-meta-team-kind')?.value||'';
+ var matched=all.filter(function(f){return !k||pturV3Classe(f)===k});
+ var images=matched.filter(function(f){return pturV3Classe(f)==='imagem'}),show=(typeof pturV7SelectDisplay==='function'?pturV7SelectDisplay(images):images).concat(matched.filter(function(f){return pturV3Classe(f)!=='imagem'}));
+ PTUR_META_ALBUM=images.map(function(f){return {src:'https://drive.google.com/thumbnail?id='+encodeURIComponent(f.id)+'&sz=w1800',original:'https://drive.google.com/file/d/'+encodeURIComponent(f.id)+'/view',nome:f.nome||'Treinamento da equipe'}});
+ document.getElementById('ptur-meta-team-stats').textContent='Arquivos identificados: '+all.length+' · fotografias e vídeo. Estes registros são de apoio à execução e não alteram indicadores físicos.';
+ document.getElementById('ptur-meta-team-grid').innerHTML=show.slice(0,PTUR_META_TEAM_LIMIT).map(function(f){return pturMetaFileTile(f,pturV3Classe(f)==='imagem'?images.findIndex(function(x){return x.id===f.id}):-1)}).join('');
+ document.getElementById('ptur-meta-team-more').hidden=show.length<=PTUR_META_TEAM_LIMIT;
+}
+function pturMetaMoreTeam(){PTUR_META_TEAM_LIMIT+=48;pturMetaRenderTeam()}
+function pturMetaRefreshHome(){var el=document.getElementById('v2-overview');if(!el)return;var data=pturV2Data(),n=data.length;
+ el.innerHTML='<div class="v2-num"><strong>25</strong><span>Metas oficiais para consultar</span></div><div class="v2-num"><strong>'+n.toLocaleString('pt-BR')+'</strong><span>Arquivos indexados (imagens, vídeos e PDFs)</span></div><div class="v2-num"><strong>8</strong><span>Territórios do projeto</span></div><div class="v2-num"><strong>5</strong><span>Seminários com fotos localizadas</span></div>';
+}
+(function(){var base=pturV2RenderTudo;pturV2RenderTudo=function(){base();pturMetaRefreshHome();if(document.getElementById('vw-meta-directory')?.classList.contains('on'))pturMetaRenderDirectory()};})();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',pturMetaRefreshHome);else pturMetaRefreshHome();
+
 </script>
 <!-- PTUR 2026-09-02: Diagnósticos dinâmicos + mapeamento Jul/Ago + Portal somente no card SMPC -->
+<script id="ptur-evidence-first-js">
+/* Camada de apresentação documental; preserva fontes, índices e funções existentes. */
+(function(){
+'use strict';
+var V=window;
+var baseDirectory=V.pturMetaRenderDirectory;
+var baseBody=V.pturMetaBody;
+var baseHome=V.pturMetaRefreshHome;
+var primary=['M01','M02','M03','M07'];
+var support=['M22','M23'];
+var plans=[
+ {id:'1p8YzcymVQH5CkwcxdS5PhYG4929NXrT0',title:'Plano de Ação e Trilhas Formativas',note:'Planejamento técnico da UFF · documento de preparação, sem homologação automática'},
+ {id:'1rYkadakUhO2tw14tES67bwt96CbO7OsN',title:'Plano de Ação Pedagógico',note:'Planejamento pedagógico e etapas de qualificação · versão disponível no Drive'}
+];
+function norm(s){return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
+function selectedPics(files,n){var arr=(files||[]).filter(function(f){return f&&(f.classe==='imagem'||(f.mime||'').startsWith('image/'))});
+ var seen=new Set(),x=arr.filter(function(f){if(seen.has(f.id))return false;seen.add(f.id);return true});
+ if(!x.length)return [];
+ var positions=n===3?[0,Math.floor(x.length*.38),Math.floor(x.length*.76)]:Array.from({length:n},function(_,i){return Math.floor(i*x.length/n)});
+ var out=[];positions.forEach(function(i){if(x[i]&&!out.some(function(z){return z.id===x[i].id}))out.push(x[i])});return out;
+}
+function documentCover(id,kind){if(kind==='diagnostico'){
+ var d=PTUR_V9_DIAGNOSTICOS.find(function(x){return x.id===id});return d&&d.cover||'';
+ }return typeof PTUR_V8_COVER_DATA==='object'&&PTUR_V8_COVER_DATA[id]||'https://drive.google.com/thumbnail?id='+encodeURIComponent(id)+'&sz=w400';}
+function getPreviews(id){
+ if(id==='M01')return PTUR_V9_DIAGNOSTICOS.slice(0,3).map(function(x){return {src:documentCover(x.id,'diagnostico'),name:'Capa do diagnóstico socioterritorial — '+x.territorio}});
+ if(id==='M03')return PTUR_V9_PEDAGOGICOS.slice(0,3).map(function(x){return {src:documentCover(x.id,'pedagogico'),name:'Capa do caderno pedagógico — '+x.territorio}});
+ if(id==='M07')return PTUR_V9_SEMINARS.slice(0,3).map(function(s){var f=s.photos[Math.min(Math.floor(s.photos.length/2),s.photos.length-1)];return {src:f&&f.src||'',name:'Seminário de '+s.territorio}});
+ return selectedPics(pturMetaPrimaryEvidence(id),3).map(function(f){return {src:pturV2Thumb(f),name:'Registro real de '+(f.territorio||'atividade')}});
+}
+function quantities(id){var arr=pturMetaPrimaryEvidence(id),a=0,v=0,d=0;arr.forEach(function(f){var k=pturV3Classe(f);if(k==='imagem')a++;else if(k==='video')v++;else if(k==='documento')d++});return {a:a,v:v,d:d};}
+var captions={
+ M01:'8 sínteses territoriais e relatório geral; registros de pesquisa de campo e vídeos por território.',
+ M02:'Registros fotográficos de julho e agosto, com consulta por território e fonte original.',
+ M03:'8 cadernos pedagógicos, planos de ação e registros complementares de alinhamento.',
+ M07:'Cinco seminários documentados, separados por território, data e acervo fotográfico.',
+ M22:'Peças e materiais impressos identificados; distribuição exige comprovação própria.',
+ M23:'Peças digitais localizadas; comprovação de publicação continua em conferência.'
+};
+var deliveries={
+ M01:'8 diagnósticos territoriais + diagnóstico consolidado + registros de campo',
+ M02:'8 mapeamentos previstos + registros fotográficos e referências de campo',
+ M03:'8 cadernos pedagógicos + planos de ação e trilhas + alinhamento pedagógico',
+ M07:'Seminários territoriais + registros fotográficos; listas e relatórios sujeitos à conferência',
+ M22:'Material gráfico e impresso; distribuição a verificar',
+ M23:'Peças digitais; publicações a verificar'
+};
+function featureCard(id){var m=PTUR_META_CATALOG.find(function(x){return x.id===id});if(!m)return '';
+ var q=quantities(id),p=getPreviews(id),tags=[];
+ if(id==='M01')tags.push('8 relatórios territoriais','1 consolidado','243 fotos de campo','27 vídeos');
+ else if(id==='M03')tags.push('8 cadernos','2 planos de ação','10 fotos de reunião');
+ else {if(q.a)tags.push(q.a.toLocaleString('pt-BR')+' fotografias');if(q.v)tags.push(q.v+' vídeos');if(q.d)tags.push(q.d+' documentos');if(id==='M07')tags.unshift('5 seminários com acervo');}
+ return '<article class="ptur-e-richcard"><div class="ptur-e-cardtop"><span class="ptur-e-code">'+esc(m.id)+' · '+esc(m.grupo)+'</span><span class="ptur-e-state">Arquivos localizados</span></div>'+ 
+ '<h3>'+esc(m.titulo)+'</h3><p class="ptur-e-desc">'+esc(captions[id]||m.indicador)+'</p>'+ 
+ '<div class="ptur-e-coverstrip">'+p.map(function(x){return '<img loading="lazy" src="'+x.src+'" alt="'+esc(x.name)+'" onerror="this.style.opacity=.25">'}).join('')+'</div>'+ 
+ '<div class="ptur-e-tags">'+tags.map(function(t){return '<span>'+esc(t)+'</span>'}).join('')+'</div>'+ 
+ '<div class="ptur-e-delivery"><strong>Entregas relacionadas:</strong> '+esc(deliveries[id]||m.indicador)+'</div>'+ 
+ '<div class="ptur-e-actions"><button class="ptur-e-open" type="button" data-meta="'+esc(id)+'" onclick="pturMetaOpen(this.dataset.meta)">Abrir entregas e galerias</button><span class="ptur-e-hint">Documentação em conferência</span></div></article>';
+}
+V.pturMetaRenderDirectory=function(){var el=document.getElementById('ptur-meta-directory-grid');if(!el)return;
+ var q=document.getElementById('ptur-meta-search')?.value||'',filter=document.getElementById('ptur-meta-category')?.value||'';
+ var term=norm(q),found=PTUR_META_CATALOG.filter(function(m){return (!filter||m.grupo===filter)&&(!term||norm(m.id+' '+m.titulo+' '+m.grupo+' '+m.meio).includes(term))});
+ if(term||filter){el.innerHTML='<div class="ptur-e-sectionhead"><div><h2>Resultados da consulta</h2><p>Consulte qualquer meta do Plano de Trabalho; ausência de vínculo no catálogo não comprova ausência de execução.</p></div></div>'+
+  '<div class="ptur-meta-directory-grid">'+(found.length?found.map(function(m){return [...primary,...support].includes(m.id)?featureCard(m.id):pturMetaCard(m)}).join(''):'<p class="ptur-meta-empty">Nenhuma meta corresponde à pesquisa.</p>')+'</div>';
+  document.getElementById('ptur-meta-directory-status').textContent=found.length+' meta(s) encontradas no Plano de Trabalho.';return;}
+ var other=PTUR_META_CATALOG.filter(function(m){return !primary.includes(m.id)&&!support.includes(m.id)});
+ el.innerHTML='<div class="ptur-e-instruction"><strong>Como consultar:</strong> escolha uma meta que já possui acervo vinculado, abra suas entregas e navegue pelas fotografias, relatórios, cadernos e arquivos originais. A presença de documentos não equivale à homologação de uma entrega.</div>'+ 
+ '<section aria-label="Metas com evidências identificadas"><div class="ptur-e-sectionhead"><div><h2>Metas com acervo documental e fotográfico</h2><p>Comece pelas entregas que já possuem fotos, vídeos e documentos vinculados no sistema.</p></div></div><div class="ptur-e-richgrid">'+primary.map(featureCard).join('')+'</div></section>'+ 
+ '<section aria-label="Documentação de comunicação em conferência"><div class="ptur-e-sectionhead"><div><h2>Materiais de comunicação identificados</h2><p>Peças produzidas e registradas; é preciso verificar a distribuição e as publicações para comprovar os respectivos indicadores.</p></div></div><div class="ptur-e-richgrid">'+support.map(featureCard).join('')+'</div></section>'+ 
+ '<details class="ptur-e-secondary"><summary>Consultar as demais '+other.length+' metas do Plano de Trabalho</summary><div class="ptur-e-secondarybody"><p class="ptur-e-explain">Todas as 25 metas continuam cadastradas. As metas abaixo exigem conciliação documental ou possuem entregas em etapas posteriores. Isso não significa que a equipe não tenha trabalhado nessas frentes.</p><div class="ptur-meta-directory-grid">'+other.map(pturMetaCard).join('')+'</div></div></details>';
+ document.getElementById('ptur-meta-directory-status').textContent='6 metas com materiais relacionados em destaque · demais metas disponíveis para acompanhamento · total de 25 metas oficiais.';
+};
+function planHtml(){return '<section aria-label="Documentos de planejamento pedagógico"><h2 class="ptur-e-detailhead">Planejamento da execução formativa</h2><p class="ptur-e-nodes">Os documentos de planejamento são apresentados como apoio técnico à estruturação das trilhas; o vínculo não implica aprovação formal.</p><div class="ptur-e-planlinks">'+plans.map(function(p){return '<article class="ptur-e-plan"><div><strong>'+esc(p.title)+'</strong><small>'+esc(p.note)+'</small></div><button type="button" data-id="'+esc(p.id)+'" data-title="'+esc(p.title)+'" onclick="pturEOpenSupportPdf(this.dataset.id,this.dataset.title)">Visualizar PDF</button></article>'}).join('')+'</div></section>'}
+V.pturEOpenSupportPdf=function(id,title){if(!plans.some(function(x){return x.id===id}))return;
+ var modal=document.getElementById('ptur-v9-modal'),frame=document.getElementById('ptur-v9-pdf-frame');if(!modal||!frame)return;
+ PTUR_V9_ALBUM=null;document.getElementById('ptur-v9-photo-content').hidden=true;frame.hidden=false;
+ frame.src='https://drive.google.com/file/d/'+encodeURIComponent(id)+'/preview';
+ document.getElementById('ptur-v9-modal-title').textContent=title||'Plano de ação';document.getElementById('ptur-v9-original').href='https://drive.google.com/file/d/'+encodeURIComponent(id)+'/view';
+ document.getElementById('ptur-v9-modal-counter').textContent='Documento de planejamento · original no Drive';modal.hidden=false;document.body.style.overflow='hidden';document.getElementById('ptur-v9-close')?.focus();
+};
+function meetingHtml(){return '<section aria-label="Apoio ao planejamento pedagógico"><h2 class="ptur-e-detailhead">Alinhamento pedagógico geral — 24/08/2026</h2><p class="ptur-e-nodes">Registro complementar de reunião da equipe · dez fotografias localizadas. Não é contado como execução de trilha formativa.</p><div class="ptur-e-photos">'+PTUR_V9_MEETING.map(function(f,i){return '<button type="button" onclick="pturV9OpenPhoto(\'meeting\','+i+')"><img loading="lazy" src="'+f.src+'" alt="Fotografia real '+(i+1)+' da reunião pedagógica"><span>Registro '+(i+1)+'</span></button>'}).join('')+'</div></section>'}
+function territoryHtml(metaId){var files=pturMetaPrimaryEvidence(metaId).filter(function(f){return pturV3Classe(f)==='imagem'});var groups=new Map();files.forEach(function(f){if(f.territorio&&f.territorio!=='Projeto inteiro'){if(!groups.has(f.territorio))groups.set(f.territorio,[]);groups.get(f.territorio).push(f)}});
+ var rows=[...groups].sort(function(a,b){return a[0].localeCompare(b[0],'pt-BR')});if(!rows.length)return '';
+ return '<section><h2 class="ptur-e-detailhead">Registros territoriais — amostras reais</h2><p class="ptur-e-nodes">Cada grupo reúne fotos identificadas naquele território. Para consultar todas, abra a galeria da meta e filtre pelo território. Relatórios e mapas completos devem ser conferidos com os documentos oficiais.</p><div class="ptur-e-territorypreview">'+rows.map(function(row){var name=row[0],all=row[1],p=selectedPics(all,3);return '<article class="ptur-e-territory"><h3>'+esc(name)+'</h3><div class="ptur-e-coverstrip">'+p.map(function(f){return '<img loading="lazy" src="'+pturV2Thumb(f)+'" alt="Registro '+esc(name)+'" onerror="this.style.opacity=.3">'}).join('')+'</div><small>'+all.length+' imagens no catálogo</small><button data-ter="'+esc(name)+'" type="button" onclick="pturMetaTerritory(this.dataset.ter)">Ver galeria do território</button></article>'}).join('')+'</div></section>'}
+function deliveryHtml(id){var items;
+ switch(id){case 'M01':items=[['ENTREGA 01','8 diagnósticos territoriais','Síntese socioterritorial em PDF por território'],['ENTREGA 02','Diagnóstico geral consolidado','Documento técnico consolidado'],['EVIDÊNCIAS DE CAMPO','Fotografias e vídeos de pesquisa','Registros de visita, pesquisa e sistematização']];break;
+ case 'M02':items=[['ENTREGA 01','Mapeamento de ativos turísticos','Relatórios e bases territoriais previstos'],['EVIDÊNCIAS DE CAMPO','Registros de julho e agosto','Fotografias e fontes originais vinculadas ao mapeamento'],['CONFERÊNCIA','Mapas e bases georreferenciadas','Verificar correspondência entre registros e produtos finais']];break;
+ case 'M03':items=[['ENTREGA 01','8 cadernos pedagógicos territoriais','Documentos da estruturação das trilhas'],['PLANEJAMENTO','Plano de Ação e Trilhas Formativas','Estrutura de cursos, oficinas, etapas e metodologia'],['APOIO TÉCNICO','Reunião e alinhamento pedagógico','Registros institucionais, sem contagem física da meta']];break;
+ case 'M07':items=[['ENTREGA 01','Seminários por território','Acervos fotográficos com data e local'],['COMPROVAÇÃO COMPLEMENTAR','Presença, vídeos e relatórios','Verificação documental adicional necessária'],['ACERVO','Galerias completas','Fotos originais vinculadas aos cinco eventos']];break;
+ default:return '';}
+ return '<section aria-label="Entregas relacionadas à meta"><h2 class="ptur-e-detailhead">Entregas e meios de verificação</h2><div class="ptur-e-timeline">'+items.map(function(x){return '<div class="ptur-e-step"><b>'+esc(x[0])+'</b><strong>'+esc(x[1])+'</strong><small>'+esc(x[2])+'</small></div>'}).join('')+'</div></section>';
+}
+V.pturMetaBody=function(id){var html=baseBody(id);if(!['M01','M02','M03','M07'].includes(id))return html;
+ var firstSection=html.indexOf('<div class="ptur-meta-subhead"');if(firstSection<0)firstSection=html.indexOf('<div class="ptur-meta-empty"');
+ // Keep source cards and galleries unmodified; insert a clear explanatory delivery strip.
+ if(firstSection>0)html=html.slice(0,firstSection)+deliveryHtml(id)+html.slice(firstSection);
+ if(id==='M03'){html=html.replace(/<div class="ptur-meta-empty">Ainda não foram encontradas evidências diretamente vinculadas[\s\S]*?<\/div>/,'');var pos=html.indexOf('<div class="ptur-meta-support-cta"');if(pos>0)html=html.slice(0,pos)+planHtml()+meetingHtml()+html.slice(pos);}
+ if(id==='M01'||id==='M02'){var grid=html.indexOf('<div class="ptur-meta-subhead" id="ptur-meta-media-anchor"');if(grid>0)html=html.slice(0,grid)+territoryHtml(id)+html.slice(grid);}
+ return html;
+};
+V.pturMetaRefreshHome=function(){baseHome();var el=document.getElementById('v2-overview');if(!el)return;
+ var a=pturV2Data();el.innerHTML='<div class="v2-num"><strong>4</strong><span>Metas com galerias ou cadernos em destaque</span></div><div class="v2-num"><strong>'+a.length.toLocaleString('pt-BR')+'</strong><span>Registros do acervo indexado</span></div><div class="v2-num"><strong>8</strong><span>Territórios acompanhados</span></div><div class="v2-num"><strong>5</strong><span>Seminários com fotos localizadas</span></div>';
+};
+})();
+</script>
 </body>
 </html>
